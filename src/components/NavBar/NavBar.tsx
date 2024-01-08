@@ -1,9 +1,6 @@
 import "./NavBar.scss";
 import { Link } from 'react-router-dom';
 
-// type NavBarProps = {
-
-// };
 
 const NavBar = () => {
     return (
