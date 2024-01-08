@@ -1,36 +1,41 @@
+@use '../../styles/variables' as *;
+@use '../../styles/typography' as *;
+
 .nav{
     display: none;
-    font-family:  'Poppins', sans-serif;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #8AAAE5;
+    background-color: $clr-primary-lt;
     border-radius: 0 30px 0 0;
-    width: 307px;
+    width: 16rem;
     height: 100%;
     align-items: center;
-    font-size: 18px;
+    font-weight: lighter;
     padding: 157px 0 0 0;
-    color: #ffffff10;
 
     &__list{
         display: flex;
         flex-direction: column;
         width: 100%;
 
-        
         &--item{
         display: flex;
-        padding: 20px; 
+        padding: 20px;
+        align-items: center;
+        color: $clr-secondary-lt;
+        font-family: 'Poppins', sans-serif;
+        font-size: .90rem;
         }
 
         &--item:hover{
-            background-color: #2A5FC2;
+            background-color: $clr-primary-accent;
+            color:$clr-white;
         }
     }
 
     &__image {
-        width: 16px;
-        height: 17.73px;
+        width: 1rem;
+        height: 1.1rem;
         margin-right: 40px;
         margin-left: 40px;
     }
@@ -45,7 +50,7 @@ a:link, a:visited{
 }
 
 hr {
-margin: 30px 30px;
+margin: 30px 40px;
 width: 75%;
 
 }
