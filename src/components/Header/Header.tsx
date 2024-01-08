@@ -1,16 +1,17 @@
 import logo from "../../../public/images/logo.png";
+import "./Header.scss";
 
 type HeaderProps = {
-    headerTitle: string; 
-}
+  headerTitle: string;
+};
 
-const Header = ({headerTitle} : HeaderProps) => {
-    return (
-        <div className="header">
-        <img src={logo} className="header__logo" alt="logo"/>
-        <h1 className="header__title">{headerTitle}</h1>
-        </div>
-    )
-}
+const Header = ({ headerTitle }: HeaderProps) => {
+  return (
+    <div className="header">
+      <img src={logo} className="header__logo" alt="logo" />
+      <h1 className="header__title">{headerTitle}</h1>
+    </div>
+  );
+};
 
 export default Header;

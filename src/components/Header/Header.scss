@@ -1,0 +1,11 @@
+.header {
+  background-color: #8aaae5;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    align-self: center;
+    width: 7.8rem;
+  }
+}
