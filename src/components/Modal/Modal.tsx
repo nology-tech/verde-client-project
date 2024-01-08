@@ -1,0 +1,3 @@
+import "./Modal.scss"
+
+
