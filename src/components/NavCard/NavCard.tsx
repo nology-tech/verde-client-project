@@ -1,4 +1,4 @@
-import './NavCard.scss'
+/* import './NavCard.scss'
 type NavcardProps = {
 name : string;
 }
@@ -12,4 +12,4 @@ const NavCard = ({name}:NavcardProps) => {
   )
 }
 
-export default NavCard
+export default NavCard */
