@@ -1,0 +1,10 @@
+@use "../../assets/styles/variables" as *;
+
+.navcardlist {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media screen and (max-width: $tablet-breakpoint) {}

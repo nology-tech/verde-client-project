@@ -1,13 +1,19 @@
+import NavCard from "../NavCard/NavCard";
 import "./NavCardList.scss";
+import { Labels } from "../../data/labels";
 
-// type NavCardProps = {
-//     label:
-// };
+type NavCardProps = {
+  labels: typeof Labels;
+};
 
-const NavCard = () => {
+const NavCardList = ({ labels }: NavCardProps) => {
   return (
-    <p>Test</p>
+    <div className="navcardlist">
+      {labels.map((label) => (
+        <NavCard label={label.label} buttonLabel={label.buttonLabel} />
+      ))}
+    </div>
   );
 };
 
-export default NavCard;
+export default NavCardList;
