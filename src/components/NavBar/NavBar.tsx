@@ -1,19 +1,20 @@
 import "./NavBar.scss";
+import { Link } from 'react-router-dom';
 
-type NavBarProps = {
+// type NavBarProps = {
 
-};
+// };
 
 const NavBar = () => {
     return (
         <nav>
             <ul>
-                <li><img src="" alt="Home Button"/>Home</li>
-                <li><img src="" alt="Book Appointment"/>Book Appointment</li>
-                <li><img src="" alt="Staff"/>Staff</li>
-                <li><img src="" alt="Clients"/>Clients</li>
+            <Link to="/"><li><img src="/src/assets/images/home-icon.png" alt="Home Button"/>Home</li></Link>
+            <Link to="/book-appointment"><li><img src="/src/assets/images/appointment-icon.png" alt="Book Appointment"/>Book Appointment</li></Link>
+            <Link to="/staff"><li><img src="/src/assets/images/staff-icon.png" alt="Staff"/>Staff</li></Link>
+            <Link to="/clients"><li><img src="/src/assets/images/clients-icon.png" alt="Clients"/>Clients</li></Link>
                 <hr/>
-                <li><img src="" alt="Settings"/>Settings</li>
+            <Link to="settings"><li><img src="/src/assets/images/settings-icon.png" alt="Settings"/>Settings</li></Link>
             </ul>
         </nav>
     )
