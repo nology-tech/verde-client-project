@@ -1,8 +1,10 @@
 import Layout from "../../components/Layout/Layout";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Home = () => {
   return (
     <Layout>
+      <NavBar />
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>
