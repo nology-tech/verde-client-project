@@ -1,22 +1,49 @@
-@use "src/assets/styles/variables" as *;
+@use "../../styles/variables" as *;
 
-.navcard {
-    background-color: $clr-white;
-    padding: 0.6rem 1.5rem;
-    border-radius: 0.3rem;
+
+.navcard{
     display: flex;
+    background-color: $clr-white;
+    width:100%;
+    padding:0.6rem 1rem;
+    border-radius: 0.3rem;
+    border: solid 0.12rem $clr-accent-grey;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    width: 9rem;
-    height: 8rem;
-    border: 2px solid $clr-accent-grey;
-    color: $clr-black;
-
-    &:hover {
-        transform: scale(1.03);
-    }
+   
+    &__name {
+        font-weight: 600;
+        font-size: 1.1rem;
+        
+        }
 
 }
 
-@media screen and (max-width: $tablet-breakpoint) {
+.button {
+    display: none;
 }
+
+
+
+
+
+
+// @media screen and (max-width: $tablet-breakpoint) {
+//     .navcard {
+//         background-color: $clr-white;
+//         padding: 0.6rem 1.5rem;
+//         border-radius: 0.3rem;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-around;
+//         width: 9rem;
+//         height: 8rem;
+//         border: 2px solid $clr-accent-grey;
+//         color: $clr-black;
+    
+//         &:hover {
+//             transform: scale(1.03);
+//         }
+    
+//     }
+// }

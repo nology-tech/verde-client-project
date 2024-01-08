@@ -1,10 +1,14 @@
-@use "../../assets/styles/variables" as *;
+@use "../../styles/variables" as *;
 
 .navcardlist {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 1rem;
+  text-decoration: none;
+  &__link {
+    text-decoration: none;
+  }
 }
 
-@media screen and (max-width: $tablet-breakpoint) {}
+// @media screen and (max-width: $tablet-breakpoint) {}

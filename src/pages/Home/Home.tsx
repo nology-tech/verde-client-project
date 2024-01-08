@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout/Layout";
-
+import NavCardList from "../../components/NavCardList/NavCardList";
+import { Labels } from "../../data/labels";
 const Home = () => {
   return (
     <Layout>
@@ -13,7 +14,13 @@ const Home = () => {
         maxime tempora, temporibus beatae voluptas repellat rerum. Dignissimos,
         necessitatibus.
       </p>
+      <div>
+        <p>here</p>
+      <NavCardList labels={Labels}/>
+      </div>
+     
     </Layout>
+    
   );
 };
 
