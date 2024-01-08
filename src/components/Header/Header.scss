@@ -21,14 +21,33 @@
   &__title {
     color: $clr-white;
   }
+
+  &__button{
+    display:none;
+  }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .header {
     background-color: $clr-white;
+    display: flex;
+    flex-direction: row;
 
     &__title {
       color: $clr-black;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__title {
+      margin-left:25.6rem;
+
+    }
+
+    &__button {
+      display: unset;
     }
   }
 }
