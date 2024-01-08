@@ -1,8 +1,14 @@
 import './NavCard.scss'
+type NavcardProps = {
+name : string;
+}
 
-const NavCard = () => {
+const NavCard = ({name}:NavcardProps) => {
   return (
-    <div>NavCard</div>
+    <div>
+      <p>{name}</p>
+      <button> {'>'} </button>
+    </div>
   )
 }
 
