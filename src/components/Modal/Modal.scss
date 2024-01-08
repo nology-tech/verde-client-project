@@ -1,2 +1,24 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
+
+.modal{
+    margin: 1rem;
+    background-color: $clr-secondary-lt;
+    border: solid 5px $clr-accent-grey;
+    box-shadow: 0px 10px 25px $clr-accent-grey;
+    
+    &__title{
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 3rem;
+    }
+}
+
+
+// media query 

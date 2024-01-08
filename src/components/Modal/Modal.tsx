@@ -17,9 +17,9 @@ type ModalProps = {
 const Modal = ({title, variant, label, onClick, path, button2, label2, variant2, onClick2} : ModalProps) => {
 
     return (
-        <section>
-            <h2>{title}</h2>
-            <div> 
+        <section className="modal">
+            <h2 className="modal__title" >{title}</h2>
+            <div className="modal__buttons"> 
                 <Link to = {path}>
                     <Button label={label} variant={variant} onClick={onClick}></Button> 
                 </Link>
