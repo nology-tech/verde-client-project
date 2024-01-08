@@ -1,11 +1,34 @@
+@use "../../styles/variables" as *;
+
 .header {
-  background-color: #8aaae5;
-  padding: 0.6rem;
+  padding: 1rem 0.6rem;
   display: flex;
   flex-direction: column;
+
+  &--light {
+    background-color: $clr-primary-lt;
+  }
+
+  &--dark {
+    background-color: $clr-primary-dk;
+  }
 
   &__logo {
     align-self: center;
     width: 7.8rem;
+  }
+
+  &__title {
+    color: $clr-white;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .header {
+    background-color: $clr-white;
+
+    &__title {
+      color: $clr-black;
+    }
   }
 }

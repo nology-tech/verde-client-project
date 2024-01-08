@@ -2,14 +2,15 @@ import logo from "../../../public/images/logo.png";
 import "./Header.scss";
 
 type HeaderProps = {
-  headerTitle: string;
+  title: string;
+  variant: "light" | "dark";
 };
 
-const Header = ({ headerTitle }: HeaderProps) => {
+const Header = ({ title, variant }: HeaderProps) => {
   return (
-    <div className="header">
+    <div className={`header header--${variant}`}>
       <img src={logo} className="header__logo" alt="logo" />
-      <h1 className="header__title">{headerTitle}</h1>
+      <h1 className="header__title">{title}</h1>
     </div>
   );
 };

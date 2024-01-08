@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout";
 const Home = () => {
   return (
     <Layout>
-      <Header headerTitle="HOME" />
+      <Header title="HOME" variant="dark" />
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>
