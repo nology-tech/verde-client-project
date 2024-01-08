@@ -1,0 +1,26 @@
+// @use "../../assets/styles/variables" as *;
+
+.button {
+    min-width: 5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem; // to be changed
+
+    &--yellow {
+        background-color: lightgoldenrodyellow; // update with variable
+        border: none;
+    }
+
+    &--grey {
+        background-color: lightgrey; //update with variable name
+        border: 0.125rem solid black;
+    }
+
+    &--red {
+        background-color: red; //update with variable name
+        border: 0.125rem solid black;
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 8px rgba(255, 251, 251, 0.2);
+    }
+}
