@@ -1,0 +1,27 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.footer{
+    height: 6.25rem;
+    background-color: $clr-white;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+
+    &__button{
+        border: none;
+        background-color:  $clr-white;
+
+        &--image{
+            width: 2rem;
+        }
+    }
+}
+
+@media screen and (min-Width: 768px) {
+
+    .footer{
+        display: none;
+    }
+}
