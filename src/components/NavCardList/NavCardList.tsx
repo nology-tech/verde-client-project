@@ -10,7 +10,7 @@ type NavCardList = {
 const NavCardList = () => {
   return (
     <div>
-   <Link to=""> <NavCard name="New booking"/> </Link>
+   <Link to=""> <NavCard name="New booking"/> 
       <Link to=""> <NavCard name="Staff Detail"/> </Link>
       <Link to=""> <NavCard name="Client Detail"/> </Link>
       <Link to=""> <NavCard name="Resources"/> </Link>
