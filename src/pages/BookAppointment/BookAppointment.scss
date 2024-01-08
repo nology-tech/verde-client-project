@@ -1,0 +1,24 @@
+.book-appointment {
+    display: flex;
+
+    &_header {
+        color: black;
+    }
+
+    
+}
+
+label {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+select {
+    color: black;
+}
