@@ -11,16 +11,17 @@ type ModalProps = {
 }
 
 const Modal = ({title, variant, label, onClick, path} : ModalProps) => {
-const handleClick = () => {
-    console.log("clicked")
-}
+    //if (!isShown) return null; 
+    //const handleClick = () => {
+    //console.log("clicked")
+
     return (
         <section>
         <h2>{title}</h2>
         <div> 
             <Link to = {path}>
                 <Button label={label} variant={variant} onClick={onClick}></Button> 
-                
+
             </Link>
         </div>
         </section>
