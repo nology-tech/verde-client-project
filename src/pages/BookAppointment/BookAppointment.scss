@@ -1,24 +1,113 @@
-.book-appointment {
-    display: flex;
+@import "../../styles/_variables.scss";
+@import "react-calendar/dist/Calendar.css"; //react-calendar default stylesheet
 
-    &_header {
-        color: black;
+@media screen and (min-width: $mobile-breakpoint) {
+  .book-appointment {
+    background-color: $clr-secondary-lt;
+
+    &__header {
+      color: $clr-primary-dk;
+      background-color: $clr-white;
+      font-family: "PT Sans";
     }
 
-    
+    &__form {
+      &--leftside {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &--rightside {
+      }
+    }
+
+    .calendar-desktop {
+      display: none;
+    }
+  }
 }
 
-label {
-    color: black;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2px;
+@media screen and (min-width: $tablet-breakpoint) {
+  .calendar-desktop {
+    display: none;
+  }
 }
 
-input {
-    margin-bottom: 10px;
-}
+@media screen and (min-width: $desktop-breakpoint) {
+  .book-appointment {
+    background-color: $clr-secondary-lt;
 
-select {
-    color: black;
+    &__header {
+      color: $clr-primary-dk;
+      background-color: $clr-white;
+      font-family: "PT Sans";
+    }
+
+    &__form {
+      &__header {
+        background-color: $clr-white;
+        font-family: "PT Sans";
+      }
+
+      display: flex;
+      flex-direction: row;
+      .calendar-desktop {
+        display: block;
+        background-color: $clr-secondary-lt;
+        border: none;
+      }
+
+      &--leftside {
+        width: 450px;
+
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        label {
+          color: black;
+          display: flex;
+
+          margin-bottom: 2px;
+        }
+
+        input {
+          margin-bottom: 10px;
+          width: 450px;
+        }
+
+        select {
+          color: black;
+          width: 450px;
+        }
+
+        option {
+          width: 450px;
+        }
+
+        label {
+          width: 450px;
+        }
+      }
+
+      &--rightside {
+        width: 450px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        select {
+          color: black;
+          width: 450px;
+        }
+
+        option {
+          width: 450px;
+        }
+
+        label {
+          width: 450px;
+        }
+      }
+    }
+  }
 }
