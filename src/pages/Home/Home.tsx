@@ -4,7 +4,14 @@ import Layout from "../../components/Layout/Layout";
 const Home = () => {
   return (
     <Layout>
-      <Header title="HOME" variant="dark" />
+      <Header
+        title="HOME"
+        variant="dark"
+        onClick={() => {}}
+        buttonOption={true}
+        buttonLabel=""
+        buttonVariant={"yellow"}
+      />
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>
