@@ -8,24 +8,26 @@ type ModalProps = {
     label: string; 
     onClick: () => void;
     path: string; 
+    button2: boolean;
+    variant2?: "yellow" | "red";
+    label2?: string | undefined;
+    onClick2?: () => void;  
 }
 
-const Modal = ({title, variant, label, onClick, path} : ModalProps) => {
-    //if (!isShown) return null; 
-    //const handleClick = () => {
-    //console.log("clicked")
+const Modal = ({title, variant, label, onClick, path, button2, label2, variant2, onClick2} : ModalProps) => {
 
     return (
         <section>
-        <h2>{title}</h2>
-        <div> 
-            <Link to = {path}>
-                <Button label={label} variant={variant} onClick={onClick}></Button> 
-
-            </Link>
-        </div>
+            <h2>{title}</h2>
+            <div> 
+                <Link to = {path}>
+                    <Button label={label} variant={variant} onClick={onClick}></Button> 
+                </Link>
+            {button2 && label2 && variant2 && onClick2 ? ( 
+              <Button label={label2} variant={variant2} onClick={onClick2}></Button>) : null }
+          </div>
         </section>
-    )
-}
+    );
+};
 
-export default Modal
+export default Modal;
