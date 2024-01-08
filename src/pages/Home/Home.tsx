@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import Layout from "../../components/Layout/Layout";
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
         maxime tempora, temporibus beatae voluptas repellat rerum. Dignissimos,
         necessitatibus.
       </p>
-      <Footer />
     </Layout>
   );
 };
