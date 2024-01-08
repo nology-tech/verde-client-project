@@ -1,10 +1,26 @@
-// breakpoints
+/* breakpoints */
 $mobile-breakpoint: 320px;
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1024px;
-$large-desktop-breakpoint: 1440px;
-$extra-large-desktop-breakpoint: 2560px;
 
-//colors
-$text-color: #f3f2e8;
-$background-color: #1f1b1b;
+
+/* colors - light mode */
+$clr-primary-lt: #8AAAE5;
+$clr-primary-accent: #5A84D3;
+$clr-secondary-lt: #F8F8FF;
+$clr-white: #FFFFFF;
+$clr-black: Black;
+
+
+/* colors - dark mode */
+$clr-primary-dk: #2D3748;
+$clr-secondary-dk: #95ACCB;
+
+
+/* colors - accent */
+$clr-accent-grey: #D6D5DE;
+$clr-accent-yellow: #E5C58A;
+$clr-accent-red: #EE6161;
+$clr-accent-purple:  #724BCB;
+
+

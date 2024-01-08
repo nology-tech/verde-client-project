@@ -1,53 +1,71 @@
 @use "./variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@400;500;600;700&display=swap');
 
-// here we use rem for font-size
-// rem is relative to the :root element in the dom (html tag)
-// we can manipulate the :root element's font-size at different breakpoints to scale up the font-size application-wide
+/* here we use rem for font-size 
+ * rem is relative to the :root element in the dom (html tag)
+ * we can manipulate the :root element's font-size at different breakpoints to scale up the font-size application-wide */
 
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  color: $text-color;
+  font-family: 'PT Sans', 'Poppins', sans-serif;
+  color: $clr-black;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p {
-  // adding display and width prevents margin collapse on these semantic text elements
-  margin: 0.5rem 0;
+  /* adding display and width prevents margin collapse on these semantic text elements */
+  margin: 0.5rem 0.5rem;
   display: inline-block;
   width: 100%;
 }
 
+p {
+  font-size: 1.125rem;
+  font-family: 'PT Sans', sans-serif;
+}
+
 button {
   font-size: 1rem;
+  font-weight: bold;
 }
 
 h1 {
-  font-size: 2.1rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 1.65rem;
+  font-size: 1.5rem;
 }
 
 h3 {
   font-size: 1.25rem;
 }
 
+h4 {
+  font-size: 1.125rem;
+}
+
+h1, 
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
 @media screen and (min-width: $tablet-breakpoint) {
-  // increases font-size of all items by 10%
+  /* increases font-size of all items by 10% */
   :root {
     font-size: 110%;
   }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
-  // increases font-size of all items by 20%
+  /* increases font-size of all items by 20% */
   :root {
     font-size: 120%;
   }
