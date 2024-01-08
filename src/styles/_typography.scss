@@ -16,7 +16,7 @@ h3,
 h4,
 p {
   /* adding display and width prevents margin collapse on these semantic text elements */
-  margin: 0.5rem 0;
+  margin: 0.5rem 0.5rem;
   display: inline-block;
   width: 100%;
 }
