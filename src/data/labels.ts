@@ -4,26 +4,26 @@ export const Labels = [
   {
     label: "New Appointments",
     buttonLabel: "Go",
-    path: "/"
+    path: "/",
   },
   {
     label: "Staff Details",
     buttonLabel: "Go",
-    path: "/"
+    path: "/",
   },
   {
     label: "Client Details",
     buttonLabel: "Go",
-    path: "/"
+    path: "/",
   },
   {
     label: "Resources",
     buttonLabel: "Go",
-    path: "/"
+    path: "/",
   },
   {
     label: "Settings",
     buttonLabel: "Go",
-    path: "/"
+    path: "/",
   },
 ];

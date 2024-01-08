@@ -1,6 +1,5 @@
 export type Label = {
-    label: string;
-    buttonLabel: string;
-    path:string;
-
+  label: string;
+  buttonLabel: string;
+  path: string;
 };

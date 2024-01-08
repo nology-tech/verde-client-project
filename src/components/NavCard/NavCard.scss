@@ -1,22 +1,24 @@
 @use "../../styles/variables" as *;
 
-
-.navcard{
+.navcard {
     display: flex;
     background-color: $clr-white;
-    width:100%;
-    padding:0.6rem 1rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
     border-radius: 0.3rem;
     border: solid 0.12rem $clr-accent-grey;
     justify-content: center;
     align-items: center;
-   
+
     &__name {
         font-weight: 600;
         font-size: 1.1rem;
-        
-        }
+    }
 
+    &__arrow {
+        width: 1.7rem;
+        height: auto;
+    }
 }
 
 .button {
@@ -24,26 +26,33 @@
 }
 
 
+@media screen and (min-width: $tablet-breakpoint) {
+    .navcard {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 16rem;
+        height: 19rem;
+        border: none;
+        box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
 
+        &__name {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
 
+        .button {
+            display: unset;
+            width: 9rem;
+            padding: 0.9rem 0.5rem;
+        }
 
+        &__arrow {
+            display: none;
+        }
 
-// @media screen and (max-width: $tablet-breakpoint) {
-//     .navcard {
-//         background-color: $clr-white;
-//         padding: 0.6rem 1.5rem;
-//         border-radius: 0.3rem;
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-around;
-//         width: 9rem;
-//         height: 8rem;
-//         border: 2px solid $clr-accent-grey;
-//         color: $clr-black;
-    
-//         &:hover {
-//             transform: scale(1.03);
-//         }
-    
-//     }
-// }
+    }
+}

@@ -1,14 +1,26 @@
 @use "../../styles/variables" as *;
 
 .navcardlist {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  gap: 1rem;
-  text-decoration: none;
-  &__link {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
     text-decoration: none;
-  }
+
+    &__link {
+        text-decoration: none;
+    }
 }
 
-// @media screen and (max-width: $tablet-breakpoint) {}
+@media screen and (min-width: $tablet-breakpoint) {
+    .navcardlist {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.7rem;
+
+        &__link {
+            cursor: default;
+        }
+    }
+}
