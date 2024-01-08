@@ -5,9 +5,10 @@ import Arrow from "../../assets/images/Arrow.svg";
 type NavCardProps = {
   label: string;
   buttonLabel: string;
+ 
 };
 
-const NavCard = ({ label, buttonLabel }: NavCardProps) => {
+const NavCard = ({ label, buttonLabel,}: NavCardProps) => {
   function onButtonClick(): void {
     throw new Error("Function not implemented.");
   }
