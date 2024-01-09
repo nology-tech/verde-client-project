@@ -4,6 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import NavBar from "../../components/NavBar/NavBar";
 import "./Home.scss";
 
+
 const Home = () => {
 
   const onClick = () => {
