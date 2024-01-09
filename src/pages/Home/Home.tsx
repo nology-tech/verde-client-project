@@ -1,4 +1,6 @@
 import Layout from "../../components/Layout/Layout";
+import NavCardList from "../../components/NavCardList/NavCardList";
+import { Labels } from "../../data/labels";
 
 const Home = () => {
   return (
@@ -13,6 +15,7 @@ const Home = () => {
         maxime tempora, temporibus beatae voluptas repellat rerum. Dignissimos,
         necessitatibus.
       </p>
+      <NavCardList labels={Labels} variant={"light"}/>
     </Layout>
   );
 };
