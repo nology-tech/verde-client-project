@@ -2,31 +2,38 @@ import "./Modal.scss"
 import Button from "../Button/Button"
 import { Link } from "react-router-dom"
 
+/* Modal takes button object array as prop. This is to allow for multiple buttons on the modal.   */
 type ModalProps = {
     title: string;
-    variant: "yellow" | "red";
-    label: string; 
-    onClick: () => void;
-    path: string; 
-    button2: boolean;
-    variant2?: "yellow" | "red";
-    label2?: string | undefined;
-    onClick2?: () => void;  
+    buttons: ButtonProps[];
+    variant: "light" | "dark"
 }
 
-const Modal = ({title, variant, label, onClick, path, button2, label2, variant2, onClick2} : ModalProps) => {
+/* Added path as a button prop for this modal to allow links to different pages */
+type ButtonProps = {
+    label: string;
+    buttonVariant: "yellow" | "red";
+    onClick: () => void;
+    path: string; 
+}
+
+const Modal = ({title, buttons, variant} : ModalProps) => {
 
     return (
-        <section className="modal">
+        <div className={`modal modal--${variant}`} >
             <h2 className="modal__title" >{title}</h2>
             <div className="modal__buttons"> 
-                <Link to = {path}>
-                    <Button label={label} variant={variant} onClick={onClick}></Button> 
-                </Link>
-            {button2 && label2 && variant2 && onClick2 ? ( 
-              <Button label={label2} variant={variant2} onClick={onClick2}></Button>) : null }
-          </div>
-        </section>
+                {buttons.map((button) => (
+                    <Link to={button.path}>
+                        <Button
+                            label={button.label}
+                            variant={button.buttonVariant}
+                            onClick={button.onClick}
+                        />
+                    </Link>
+                ))}
+            </div>
+        </div>
     );
 };
 
