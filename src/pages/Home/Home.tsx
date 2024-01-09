@@ -1,8 +1,6 @@
 import Layout from "../../components/Layout/Layout";
 import StaffProfileCard from "../../components/StaffProfileCard/StaffProfileCard";
-
 const Home = () => {
-
   const StaffList = [
     {
       id: 1,
@@ -12,6 +10,7 @@ const Home = () => {
       manager: "Manager 1",
       role: "role",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      image: "",
     },
     {
       id: 2,
@@ -21,6 +20,7 @@ const Home = () => {
       manager: "Manager 1",
       role: "role",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      image: "",
     },
     {
       id: 3,
@@ -30,6 +30,7 @@ const Home = () => {
       manager: "Manager 1",
       role: "role",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      image: "",
     },
     {
       id: 4,
@@ -39,6 +40,7 @@ const Home = () => {
       manager: "Manager 1",
       role: "role",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      image: "",
     },
     {
       id: 5,
@@ -48,13 +50,13 @@ const Home = () => {
       manager: "Manager 1",
       role: "role",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      image: "",
     },
   ];
 
   return (
     <Layout>
-    
-      <StaffProfileCard employee={StaffList}/>
+      <StaffProfileCard employee={StaffList[0]} />
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>

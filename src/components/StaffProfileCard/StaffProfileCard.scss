@@ -1,36 +1,35 @@
 @use "../../styles/variables" as *;
 
-.staffcard{ 
+.staffcard {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 .card-container {
-  border: 0.001rem solid $clr-secondary-dk;
+  border-radius: 0.5rem;
   width: 18.4rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   &__description {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: $clr-white;
     padding: 1.25rem;
-    border-radius: 0.125rem;
+    border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom: 1px solid $clr-secondary-dk;
 
     &--title {
       font-size: 0.75rem;
       margin-bottom: 0.625rem;
+      font-weight: 600;
     }
 
     &--info {
       font-size: 0.625rem;
+      font-weight: 400;
       color: $clr-secondary-dk;
     }
   }
@@ -38,7 +37,6 @@
   &__information {
     background-color: $clr-white;
     padding: 1.25rem;
-    border: 0.001rem solid $clr-secondary-dk;
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     display: grid;
@@ -50,11 +48,40 @@
     &--Manager {
       font-size: 0.625rem;
       color: $clr-black;
+      font-weight: 500;
     }
 
     &--answer {
       font-size: 0.625rem;
       color: $clr-secondary-dk;
+      font-weight: 400;
+      text-align: end;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .staffcard {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card-container {
+    width: 12.5rem;
+    height: 19.2rem;
+
+    &__description {
+      text-align: start;
+      padding: 0.625rem;
+    }
+    &__information {
+      gap: 0rem;
+      padding: 0.625rem;
+      height: 100%;
+
+      &--answer {
+        padding-right: 0.625rem;
+      }
     }
   }
 }
