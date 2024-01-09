@@ -1,6 +1,5 @@
 import "./Modal.scss"
 import Button from "../Button/Button"
-import { Link } from "react-router-dom"
 
 /* Modal takes button object array as prop. This is to allow for multiple buttons on the modal.   */
 type ModalProps = {
@@ -9,10 +8,9 @@ type ModalProps = {
     variant: "light" | "dark"
 }
 
-/* Added path as a button prop for this modal to allow links to different pages */
 type ButtonProps = {
     label: string;
-    buttonVariant: "yellow" | "red";
+    buttonVariant: "yellow" | "grey" | "red" | "purple" | "red-alt";
     onClick?: () => void
     path?: string; 
     size?: 'large' | 'small'
@@ -28,8 +26,8 @@ const Modal = ({title, buttons, variant} : ModalProps) => {
                         <Button
                             label={button.label}
                             variant={button.buttonVariant}
-                            onClick={() => button.onClick && button.onClick()}
-                            path={button.path? button.path : '#'}
+                            onClick={button.onClick}
+                            path={button.path}
                             size={button.size}
                         />
                 ))}
