@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./BookAppointment.scss";
 import Calendar from "react-calendar";
+import DatePicker from "react-datepicker";
 import Button from "../../components/Button/Button";
 
 type Staff = {
@@ -7,11 +9,28 @@ type Staff = {
   name: string;
 };
 
-const handleClick = () => {
-  console.log("add handleclick logic to this later");
+type Appointment = {
+  date: string;
+  time: string;
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
+  mobileNumber: string;
+  selectedStaff: string;
 };
 
 const BookAppointment = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
+  const [datePickerDate, setDatePickerDate] = useState<Date | null>(null);
+
+  const [selectedTime, setSelectedTime] = useState<string>("");
+  const [appointments, setAppointments] = useState<object[]>([]);
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [emailAddress, setEmailAddress] = useState<string>("");
+  const [mobileNumber, setMobileNumber] = useState<string>("");
+  const [selectedStaff, setSelectedStaff] = useState<string>("");
+
   const staffList: Staff[] = [
     { id: 1, name: "John Doe" },
     { id: 2, name: "Jane Smith" },
@@ -27,9 +46,9 @@ const BookAppointment = () => {
 
   const timeIntervals: string[] = [];
   const startTime = new Date();
-  startTime.setHours(9, 0, 0);
+  startTime.setHours(9, 0, 0, 0);
   const endTime = new Date();
-  endTime.setHours(17, 3, 0);
+  endTime.setHours(17, 30, 0);
 
   while (startTime < endTime) {
     timeIntervals.push(
@@ -37,6 +56,92 @@ const BookAppointment = () => {
     );
     startTime.setMinutes(startTime.getMinutes() + 30);
   }
+
+  const handleDateChange = (date: Date) => {
+    setSelectedDate(date);
+
+    console.log(date);
+  };
+
+  const handleSubmit = () => {
+    console.log(selectedDate);
+
+    if (
+      !selectedDate ||
+      !selectedTime ||
+      !firstName ||
+      !lastName ||
+      !emailAddress ||
+      !mobileNumber ||
+      !selectedStaff
+    ) {
+      console.log("Please fill in all fields");
+      return;
+    }
+
+    let formattedDate: string;
+
+    if (selectedDate instanceof Date) {
+      formattedDate = selectedDate.toLocaleDateString();
+    } else {
+      console.error("Invalid date format");
+      return;
+    }
+
+    const newAppointment: Appointment = {
+      date: formattedDate,
+      time: selectedTime,
+      firstName,
+      lastName,
+      emailAddress,
+      mobileNumber,
+      selectedStaff,
+    };
+
+    setAppointments([...appointments, newAppointment]);
+
+    console.log("Appointment saved:", newAppointment);
+    // we can add the logic to connect to a database or another form of storing  data here
+  };
+
+  const handleDatePickerChange = (date: Date | null) => {
+    setDatePickerDate(date);
+    console.log(date);
+  };
+
+  const handleDatePickerSubmit = () => {
+    console.log(datePickerDate);
+
+    if (
+      !datePickerDate ||
+      !selectedTime ||
+      !firstName ||
+      !lastName ||
+      !emailAddress ||
+      !mobileNumber ||
+      !selectedStaff
+    ) {
+      console.log("Please fill in all fields");
+      return;
+    }
+
+    const formattedDate: string = datePickerDate.toLocaleDateString();
+
+    const newAppointment: Appointment = {
+      date: formattedDate,
+      time: selectedTime,
+      firstName,
+      lastName,
+      emailAddress,
+      mobileNumber,
+      selectedStaff,
+    };
+
+    setAppointments([...appointments, newAppointment]);
+
+    console.log("Appointment saved:", newAppointment);
+    // Additional logic for saving data, connecting to a database, etc.
+  };
 
   return (
     <div className="book-appointment">
@@ -46,15 +151,39 @@ const BookAppointment = () => {
       <form className="book-appointment__form">
         <div className="book-appointment__form--leftside">
           <label>First Name</label>
-          <input type="text" name="firstName"></input>
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          ></input>
           <label>Last Name</label>
-          <input type="text" name="lastName"></input>
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          ></input>
           <label>Email Address</label>
-          <input type="email" name="emailAddress"></input>
+          <input
+            type="email"
+            name="emailAddress"
+            value={emailAddress}
+            onChange={(e) => setEmailAddress(e.target.value)}
+          ></input>
           <label>Mobile Number</label>
-          <input type="text" name="mobileNumber"></input>
+          <input
+            type="text"
+            name="mobileNumber"
+            value={mobileNumber}
+            onChange={(e) => setMobileNumber(e.target.value)}
+          ></input>
           <label>Staff Member</label>
-          <select name="staffMember">
+          <select
+            name="staffMember"
+            value={selectedStaff}
+            onChange={(e) => setSelectedStaff(e.target.value)}
+          >
             <option value="" disabled>
               Select Staff
             </option>
@@ -68,12 +197,23 @@ const BookAppointment = () => {
         </div>
 
         <div className="book-appointment__form--rightside">
-          <Calendar className="calendar-desktop" />
+          <Calendar
+            className="calendar-desktop"
+            onChange={(date: any) => handleDateChange(date)}
+            value={selectedDate as Date}
+          />
+
           <label>Appointment Time</label>
-          <select name="appointmentTime">
+
+          <select
+            name="appointmentTime"
+            value={selectedTime}
+            onChange={(e) => setSelectedTime(e.target.value)}
+          >
             <option value="" disabled>
-              Select Time
+              Select time
             </option>
+
             {timeIntervals.map((time, index) => (
               <option key={index} value={time}>
                 {time}
@@ -82,10 +222,23 @@ const BookAppointment = () => {
           </select>
         </div>
       </form>
-      {/* button component needs buttonprops so we cana hide the submit button on desktop view and show it on mobile view */}
-      <Button label="Cancel" variant="grey" onClick={handleClick} />
-      <Button label="Save" variant="yellow" onClick={handleClick} />
-      <Button label="Submit" variant="yellow" onClick={handleClick} />
+      {/* button component needs buttonprops so we cant hide the submit button on desktop view and show it on mobile view */}
+      <Button
+        label="Cancel"
+        variant="grey"
+        onClick={() => console.log("Cancel button clicked")}
+      />
+      <Button label="Save" variant="yellow" onClick={handleSubmit} />
+      <Button
+        label="Submit"
+        variant="yellow"
+        onClick={handleDatePickerSubmit}
+      />
+      <DatePicker
+        selected={datePickerDate as Date}
+        className="datepicker-mobile"
+        onChange={handleDatePickerChange}
+      />
     </div>
   );
 };
