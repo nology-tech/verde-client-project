@@ -13,8 +13,9 @@ type ModalProps = {
 type ButtonProps = {
     label: string;
     buttonVariant: "yellow" | "red";
-    onClick: () => void;
-    path: string; 
+    onClick?: () => void
+    path?: string; 
+    size?: 'large' | 'small'
 }
 
 const Modal = ({title, buttons, variant} : ModalProps) => {
@@ -24,13 +25,13 @@ const Modal = ({title, buttons, variant} : ModalProps) => {
             <h2 className="modal__title" >{title}</h2>
             <div className="modal__buttons"> 
                 {buttons.map((button) => (
-                    <Link to={button.path}>
                         <Button
                             label={button.label}
                             variant={button.buttonVariant}
-                            onClick={button.onClick}
+                            onClick={() => button.onClick && button.onClick()}
+                            path={button.path? button.path : '#'}
+                            size={button.size}
                         />
-                    </Link>
                 ))}
             </div>
         </div>
