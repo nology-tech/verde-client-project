@@ -32,44 +32,52 @@
         }
     }
 
-    &__arrow {
-        width: 1.7rem;
-        height: auto;
-    }
+  &__arrow {
+    width: 1.7rem;
+    height: auto;
+  }
 }
+
+/*
+dark mode will be worked on later as we are unsure of the 
+naming conventions using toggle. 
+.navcard--dark {
+    background-color: $clr-primary-dk;
+    color: $clr-white;
+    border:$clr-white; 
+
+ }*/
 
 .button {
-    display: none;
+  display: none;
 }
 
-
 @media screen and (min-width: $tablet-breakpoint) {
-    .navcard {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        width: 16rem;
-        height: 19rem;
-        border: none;
-        box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
+  .navcard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 16rem;
+    height: 19rem;
+    border: none;
+    box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
 
-        &__name {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .button {
-            display: unset;
-            width: 9rem;
-            padding: 0.9rem 0.5rem;
-        }
-
-        &__arrow {
-            display: none;
-        }
-
+    &__name {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
+
+    .button {
+      display: unset;
+      width: 9rem;
+      padding: 0.9rem 0.5rem;
+    }
+
+    &__arrow {
+      display: none;
+    }
+  }
 }
