@@ -2,9 +2,59 @@ import Layout from "../../components/Layout/Layout";
 import StaffProfileCard from "../../components/StaffProfileCard/StaffProfileCard";
 
 const Home = () => {
+
+  const StaffList = [
+    {
+      id: 1,
+      name: "Staff 1",
+      start: "01/01/2022",
+      courseEnd: "02/01/2022",
+      manager: "Manager 1",
+      role: "role",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: 2,
+      name: "Staff 2",
+      start: "01/01/2022",
+      courseEnd: "02/01/2022",
+      manager: "Manager 1",
+      role: "role",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: 3,
+      name: "Staff 3",
+      start: "01/01/2022",
+      courseEnd: "02/01/2022",
+      manager: "Manager 1",
+      role: "role",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: 4,
+      name: "Staff 4",
+      start: "01/01/2022",
+      courseEnd: "02/01/2022",
+      manager: "Manager 1",
+      role: "role",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: 5,
+      name: "Staff 5",
+      start: "01/01/2022",
+      courseEnd: "02/01/2022",
+      manager: "Manager 1",
+      role: "role",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    },
+  ];
+
   return (
     <Layout>
-      <StaffProfileCard/>
+    
+      <StaffProfileCard employee={StaffList}/>
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>

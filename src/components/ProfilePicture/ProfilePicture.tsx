@@ -1,10 +1,15 @@
 import "./ProfilePicture.scss";
 
-const ProfilePicture = () => {
+type ProfilePictureProps = {
+    profileImg: string,
+    memberName: string,
+}
+
+const ProfilePicture = ({profileImg, memberName}: ProfilePictureProps) => {
     return (
     <div className="profile">
-        <img src= "" className="profile__img" alt="Profile Picture"/>
-        <h1>Staff 01</h1>
+        <img src= {profileImg} className="profile__img" alt="Profile Picture"/>
+        <h1 className="profile__name">{memberName}</h1>
     </div>
     )
 }

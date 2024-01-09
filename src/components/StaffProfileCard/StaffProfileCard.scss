@@ -1,8 +1,18 @@
 @use "../../styles/variables" as *;
 
+.staffcard{ 
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .card-container {
-  border: 0.02px solid $clr-secondary-dk;
-  width: 294px;
+  border: 0.001rem solid $clr-secondary-dk;
+  width: 18.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__description {
     display: flex;
@@ -10,40 +20,40 @@
     justify-content: center;
     align-items: center;
     background-color: $clr-white;
-    padding: 20px;
-    border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    border-radius: 0.125rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 
     &--title {
-      font-size: 12px;
-      margin-bottom: 10px;
+      font-size: 0.75rem;
+      margin-bottom: 0.625rem;
     }
 
     &--info {
-      font-size: 10px;
+      font-size: 0.625rem;
       color: $clr-secondary-dk;
     }
   }
 
   &__information {
     background-color: $clr-white;
-    padding: 20px;
-    border: 0.02px solid $clr-secondary-dk;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    border: 0.001rem solid $clr-secondary-dk;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 0.625rem;
 
     &--date,
     &--complete,
     &--Manager {
-      font-size: 10px;
+      font-size: 0.625rem;
       color: $clr-black;
     }
 
     &--answer {
-      font-size: 10px;
+      font-size: 0.625rem;
       color: $clr-secondary-dk;
     }
   }
