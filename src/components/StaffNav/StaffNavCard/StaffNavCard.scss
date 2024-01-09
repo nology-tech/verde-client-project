@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/typography' as *;
+@use "../../../styles/variables" as *;
+@use "../../../styles/typography" as *;
 
 .staffnavcard {
     display: flex;
@@ -28,33 +28,32 @@
         }
     }
 
-    &__arrow {
-        width: 1.7rem;
-        height: auto;
-    }
+  &__arrow {
+    width: 1.7rem;
+    height: auto;
+  }
 }
 
 @media screen and (min-width: $tablet-breakpoint) {
-    .staffnavcard {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        width: 16rem;
-        height: 19rem;
-        border: none;
-        box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
+  .staffnavcard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 16rem;
+    height: 19rem;
+    border: none;
+    box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
 
-        &__name {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        &__arrow {
-            display: none;
-        }
-
+    &__name {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
+
+    &__arrow {
+      display: none;
+    }
+  }
 }

@@ -11,7 +11,7 @@ export type Staff = {
 export const StaffList = [
   {
     id: 1,
-    name: "Staff1",
+    name: "Staff 1",
     start: "01/01/2022",
     courseEnd: "02/01/2022",
     manager: "Manager 1",
@@ -20,7 +20,7 @@ export const StaffList = [
   },
   {
     id: 2,
-    name: "Staff2",
+    name: "Staff 2",
     start: "01/01/2022",
     courseEnd: "02/01/2022",
     manager: "Manager 1",
@@ -29,7 +29,7 @@ export const StaffList = [
   },
   {
     id: 3,
-    name: "Staff3",
+    name: "Staff 3",
     start: "01/01/2022",
     courseEnd: "02/01/2022",
     manager: "Manager 1",
@@ -38,7 +38,7 @@ export const StaffList = [
   },
   {
     id: 4,
-    name: "Staff4",
+    name: "Staff 4",
     start: "01/01/2022",
     courseEnd: "02/01/2022",
     manager: "Manager 1",
@@ -47,7 +47,7 @@ export const StaffList = [
   },
   {
     id: 5,
-    name: "Staff5",
+    name: "Staff 5",
     start: "01/01/2022",
     courseEnd: "02/01/2022",
     manager: "Manager 1",
