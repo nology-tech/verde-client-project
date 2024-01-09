@@ -26,6 +26,7 @@
 
         &__button{
             border: none;
+            background-color: $clr-primary-dk;
     
             &--image{
                 filter: brightness(100);
