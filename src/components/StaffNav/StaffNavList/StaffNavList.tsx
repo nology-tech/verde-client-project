@@ -10,7 +10,7 @@ const StaffNavList = ({ staff }: StaffNavListProps) => {
   return (
     <div className="staffnavlist">
       {staff.map((employee) => (
-        <Link to="/" key={employee.id}>
+        <Link className="staffnavcard__link" to="/" key={employee.id}>
           <StaffNavCard label={employee.name} />
         </Link>
       ))}{" "}
