@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Staff } from "../data";
+import { Staff } from "../../../types/StaffNavTypes";
 import StaffNavCard from "../StaffNavCard/StaffNavCard";
 import "./StaffNavList.scss";
 
