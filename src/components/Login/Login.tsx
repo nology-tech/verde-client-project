@@ -2,7 +2,7 @@ import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../Button/Button";
 
-type LoginProps = {};
+
 
 const Login = () => {
   return (
@@ -14,20 +14,23 @@ const Login = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
         <form className="login__form">
+          
           <div className="login__form-container">
-            <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" required />
+            <label htmlFor="email" className="login__form-label">Email Address</label>
+            <input type="email" id="email" required className="login__form-input" />
           </div>
           <div className="login__form-container">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" required />
+            <label htmlFor="password" className="login__form-label">Password</label>
+            <input type="password" id="password" required className="login__form-input"/>
           </div>
+          <div className="login__form-container-button">
           <Button
             label={"Login"}
             variant={"yellow"}
-            size={"large"}
+            size={"extra-large"}
             onClick={() => void {}}
           />
+          </div>
         </form>
       </div>
     </div>
