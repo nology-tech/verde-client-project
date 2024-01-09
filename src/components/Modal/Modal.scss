@@ -1,16 +1,28 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
-.modal{
+.modal {
+    position: absolute;
     margin: 1rem;
-    background-color: $clr-secondary-lt;
     border: solid 5px $clr-accent-grey;
     box-shadow: 0px 10px 25px $clr-accent-grey;
+    z-index: 1;
+    width: 95%;
     
+    &--light {
+        background-color: $clr-secondary-lt;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        color: $clr-white;
+    }
+
     &__title{
         text-align: center;
         padding-top: 2rem;
         padding-bottom: 1rem;
+        color: inherit;
     }
 
     &__buttons{
@@ -21,4 +33,10 @@
 }
 
 
-// media query 
+@media screen and (min-width: $desktop-breakpoint) {
+    .modal {
+        left: 25%;
+        top: 50%;
+        width: 50%;
+    }
+}
