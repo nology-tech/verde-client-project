@@ -1,10 +1,10 @@
 import NavCard from "../NavCard/NavCard";
 import "./NavCardList.scss";
-import { Label } from "../../data/types";
+import { NavCardLabel } from "../../data/NavCardTypes";
 import { Link } from "react-router-dom";
 
 type NavCardListProps = {
-  labels: Label[];
+  labels: NavCardLabel[];
   variant: "light" | "dark";
 };
 

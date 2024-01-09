@@ -1,4 +1,4 @@
-export const Labels = [
+export const NavCardLabels = [
   /*paths need to be updated with the correct paths 
   once components are completed */
   {
