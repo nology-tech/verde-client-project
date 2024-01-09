@@ -33,7 +33,7 @@
 
 }
 
-@media screen and (min-Width: 768px) {
+@media screen and (min-Width: $desktop-breakpoint) {
     .footer{
         display: none;
     }
