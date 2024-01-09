@@ -12,7 +12,7 @@ const StaffNavList = ({ staff }: StaffNavListProps) => {
     <div className="staffnavlist">
       {staff.map((employee) => (
         <Link className="staffnavlist__link" to="/" key={employee.id}>
-          <StaffNavCard label={employee.name} />
+          <StaffNavCard label={employee.name} variant={"light"} />
         </Link>
       ))}
       {/* this is to be updatedd with name and surname? */}
