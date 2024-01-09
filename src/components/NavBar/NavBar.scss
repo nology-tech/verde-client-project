@@ -4,14 +4,28 @@
 .nav{
     display: none;
     flex-direction: column;
-    flex-wrap: wrap;
-    background-color: $clr-primary-lt;
     border-radius: 0 1.8rem 0 0;
     width: 16rem;
     height: 100%;
     align-items: center;
     font-weight: lighter;
-    padding: 9.8rem 0 0 0;
+    padding: 2.6rem 0 ;
+
+    &--light {
+        background-color: $clr-primary-lt;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+    }
+    
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
 
     &__list{
         display: flex;
@@ -39,6 +53,8 @@
         margin-right: 2.5rem;
         margin-left: 2.5rem;
     }
+
+
 }
 
 ul {
@@ -54,7 +70,7 @@ margin: 1.8rem 1.8rem;
 width: 75%;
 
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop-breakpoint) {
     .nav{
         display: flex;
     }
