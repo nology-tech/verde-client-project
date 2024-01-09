@@ -11,16 +11,25 @@ type StaffBookingCardProps = {
     path: string;
 }
 
-const StaffBookingCard = ({ clientName, email, mobileNumber, bookingDate, bookingTime, path }: StaffBookingCardProps) => {
+const StaffBookingCard = ({ 
+    clientName, 
+    email, 
+    mobileNumber, 
+    bookingDate, 
+    bookingTime, 
+    path 
+}: StaffBookingCardProps) => {
+    
     return (
-        <Link to={path}>
+        <Link className='booking-card__link' to={path}>
             <div className='booking-card'>
                 <p className='booking-card__name'>{clientName}</p>
-                <p className='booking-card__email'>{email}</p>
-                <p className='booking-card__number'>{mobileNumber}</p>
-                <p className='booking-card__date'>{`${bookingDate}`}</p>
+                <p className='booking-card__email booking-card__info'>{email}</p>
+                <p className='booking-card__number booking-card__info'>{mobileNumber}</p>
+                <p className='booking-card__date booking-card__info'>{`${bookingDate}`}</p>
                 <p className='booking-card__time'>{`${bookingTime}`}</p>
                 <img className='booking-card__img' src={arrow} alt='arrow'/>
+                
             </div>
         </Link>
     )
