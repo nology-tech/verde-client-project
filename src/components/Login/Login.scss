@@ -15,52 +15,53 @@
         justify-content: center;
         font-weight: 600;
         font-size: 2rem;
+        margin-bottom: 1.2rem;
     }
 
     &__message {
         display: flex;
-        align-self: center;
-        justify-content: center;
+        margin: 0;
+        text-align: center;
         text-wrap: wrap;
         font-size: 0.95rem;
         color: #7B7B7B;
+        margin-bottom: 1.7rem;
     }
 
-   
+    &__container {
+        padding: 1.5rem;
+    }
 
     &__form {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 1rem;
-        
-    
 
-    &-label {
-        margin-bottom:1rem;
-        font-size:0.85rem;
-        font-weight:bold;
+        &--label {
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        &--input {
+            padding: 0.75rem 0;
+            border-radius: 0.3rem;
+            border: 0.06rem $clr-accent-grey solid;
+        }
+
+        &--button {
+            margin-top: 2rem;
+            text-align: center;
+        }
     }
-    &-container {
+
+    &__form-container {
         display: flex;
         flex-direction: column;
         padding: 0.5rem 0;
-        &-button{
-            
-            
-            width: 100%;
-        }
-
-    }
-    &-input {
-        padding:0.75rem 0;
-        border-radius: 0.3rem;
-        border: 0.06rem  $clr-accent-grey solid; 
-        
-       
-
-    }
     }
 
-  
 }
+
+//media query for larger screens to be added
+@media screen and (min-width: $tablet-breakpoint) {}

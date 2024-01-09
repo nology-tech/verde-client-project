@@ -2,8 +2,6 @@ import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../Button/Button";
 
-
-
 const Login = () => {
   return (
     <div className="login">
@@ -11,25 +9,39 @@ const Login = () => {
       <div className="login__container">
         <h2 className="login__welcome">Welcome Back</h2>
         <p className="login__message">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Feugiat magna viverra pellentesque habitant. Libero id amet nisl,
+          tellus cras eleifend et in.
         </p>
         <form className="login__form">
-          
           <div className="login__form-container">
-            <label htmlFor="email" className="login__form-label">Email Address</label>
-            <input type="email" id="email" required className="login__form-input" />
+            <label htmlFor="email" className="login__form--label">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              required
+              className="login__form--input"
+            />
           </div>
           <div className="login__form-container">
-            <label htmlFor="password" className="login__form-label">Password</label>
-            <input type="password" id="password" required className="login__form-input"/>
+            <label htmlFor="password" className="login__form--label">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              required
+              className="login__form--input"
+            />
           </div>
-          <div className="login__form-container-button">
-          <Button
-            label={"Login"}
-            variant={"yellow"}
-            size={"extra-large"}
-            onClick={() => void {}}
-          />
+          <div className="login__form--button">
+            <Button
+              label={"Login"}
+              variant={"yellow"}
+              size={"extra-large"}
+              onClick={() => void {}}
+            />
           </div>
         </form>
       </div>
