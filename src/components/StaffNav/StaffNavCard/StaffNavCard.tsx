@@ -1,5 +1,5 @@
 import "./StaffNavCard.scss";
-import Arrow from "../../assets/images/Arrow.svg";
+import Arrow from "../../../assets/images/home-icon.png";
 
 type StaffNavCardProps = {
   label: string;
@@ -8,9 +8,9 @@ type StaffNavCardProps = {
 const StaffNavCard = ({ label }: StaffNavCardProps) => {
   return (
     <>
-      <div className="navcard">
-        <h3 className="navcard__name">{label}</h3>
-        <img className="navcard__arrow" src={Arrow} alt={label}></img>
+      <div className="staffnavcard">
+        <h3 className="staffnavcard__name">{label}</h3>
+        <img className="staffnavcard__arrow" src={Arrow} alt={label}></img>
       </div>
     </>
   );
