@@ -6,19 +6,46 @@
   .book-appointment {
     background-color: $clr-secondary-lt;
 
-    &__header {
-      color: $clr-primary-dk;
-      background-color: $clr-white;
-      font-family: "PT Sans";
-    }
-
     &__form {
       &--leftside {
         display: flex;
         flex-direction: column;
+        label {
+          color: black;
+          display: flex;
+
+          margin-bottom: 2px;
+        }
+
+        input {
+          margin-bottom: 10px;
+          
+        }
+
+        select {
+          margin-bottom: 10px;
+        }
       }
 
       &--rightside {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: black;
+          display: flex;
+
+          margin-bottom: 2px;
+        }
+
+        input {
+          margin-bottom: 10px;
+          
+        }
+
+        select {
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -38,20 +65,10 @@
   .book-appointment {
     background-color: $clr-secondary-lt;
 
-    &__header {
-      color: $clr-primary-dk;
-      background-color: $clr-white;
-      font-family: "PT Sans";
-    }
-
     &__form {
-      &__header {
-        background-color: $clr-white;
-        font-family: "PT Sans";
-      }
-
       display: flex;
       flex-direction: row;
+
       .calendar-desktop {
         display: block;
         background-color: $clr-secondary-lt;
@@ -64,10 +81,11 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+
         label {
           color: black;
           display: flex;
-
+          width: 450px;
           margin-bottom: 2px;
         }
 
@@ -82,10 +100,6 @@
         }
 
         option {
-          width: 450px;
-        }
-
-        label {
           width: 450px;
         }
       }

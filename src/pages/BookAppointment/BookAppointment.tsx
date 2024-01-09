@@ -3,6 +3,8 @@ import "./BookAppointment.scss";
 import Calendar from "react-calendar";
 import DatePicker from "react-datepicker";
 import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
+import NavBar from "../../components/NavBar/NavBar";
 
 type Staff = {
   id: number;
@@ -18,6 +20,7 @@ type Appointment = {
   mobileNumber: string;
   selectedStaff: string;
 };
+
 
 const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
@@ -145,8 +148,9 @@ const BookAppointment = () => {
 
   return (
     <div className="book-appointment">
-      <h1 className="book-appointment__header">Book Appointment</h1>
+      <Header title="Book Appointment" variant="light" onClick={() => console.log("Shall I go home??")} buttonOption={true} buttonLabel="" buttonVariant="yellow"/>
       {/* uses npmjs react-calendar package */}
+      <NavBar variant="light"/>
 
       <form className="book-appointment__form">
         <div className="book-appointment__form--leftside">
@@ -185,7 +189,7 @@ const BookAppointment = () => {
             onChange={(e) => setSelectedStaff(e.target.value)}
           >
             <option value="" disabled>
-              Select Staff
+              Select staff member...
             </option>
 
             {staffList.map((staff) => (
@@ -203,7 +207,15 @@ const BookAppointment = () => {
             value={selectedDate as Date}
           />
 
-          <label>Appointment Time</label>
+          <label>Date:</label>
+          <DatePicker
+          selected={datePickerDate as Date}
+          className="datepicker-mobile"
+          onChange={handleDatePickerChange}
+          placeholderText="Select date..."
+          />
+
+          <label>Time:</label>
 
           <select
             name="appointmentTime"
@@ -211,7 +223,7 @@ const BookAppointment = () => {
             onChange={(e) => setSelectedTime(e.target.value)}
           >
             <option value="" disabled>
-              Select time
+              Select time...
             </option>
 
             {timeIntervals.map((time, index) => (
@@ -233,11 +245,6 @@ const BookAppointment = () => {
         label="Submit"
         variant="yellow"
         onClick={handleDatePickerSubmit}
-      />
-      <DatePicker
-        selected={datePickerDate as Date}
-        className="datepicker-mobile"
-        onChange={handleDatePickerChange}
       />
     </div>
   );
