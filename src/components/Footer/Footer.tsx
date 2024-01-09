@@ -2,7 +2,7 @@ import "./Footer.scss";
 import { Link } from "react-router-dom";
 
 type FooterProps = {
-   variant : "lightMode" | "darkMode"
+    variant: "light" | "dark";
 };
 
 const Footer = ( { variant } : FooterProps ) => {
