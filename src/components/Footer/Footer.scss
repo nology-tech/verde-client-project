@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.footer{
+    height: 6.25rem;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+
+    &--light {
+        background-color: $clr-white;
+
+        &__button{
+            border: none;
+            background-color: $clr-white;
+    
+            &--image{
+                width: 2rem;
+            }
+        }
+    }
+
+    &--dark{
+        background-color: $clr-primary-dk;
+
+        &__button{
+            border: none;
+            background-color: $clr-primary-dk;
+    
+            &--image{
+                filter: brightness(100);
+            }
+        
+    }
+
+}
+}
+
+@media screen and (min-Width: $desktop-breakpoint) {
+    .footer{
+        display: none;
+    }
+}
