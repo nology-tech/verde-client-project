@@ -1,5 +1,5 @@
 import './StaffBookingCard.scss'
-import '../../assets/images/Arrow.svg'
+import arrow from '../../assets/images/Arrow.svg'
 import { Link } from 'react-router-dom'
 
 type StaffBookingCardProps = {
@@ -20,6 +20,7 @@ const StaffBookingCard = ({ clientName, email, mobileNumber, bookingDate, bookin
                 <p className='booking-card__number'>{mobileNumber}</p>
                 <p className='booking-card__date'>{`${bookingDate}`}</p>
                 <p className='booking-card__time'>{`${bookingTime}`}</p>
+                <img className='booking-card__img' src={arrow} alt='arrow'/>
             </div>
         </Link>
     )
