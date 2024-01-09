@@ -1,0 +1,39 @@
+@use "../../styles/variables" as *;
+
+.login {
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        align-self: center;
+        padding: 2rem;
+    }
+
+    &__welcome {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    &__message {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        text-wrap: wrap;
+        font-size: 0.9rem;
+        color: #7B7B7B;
+    }
+
+    &__container {
+
+    }
+
+    &__form {
+        //display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
