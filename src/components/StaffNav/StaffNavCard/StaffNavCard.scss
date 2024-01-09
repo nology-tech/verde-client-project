@@ -1,0 +1,41 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/typography" as *;
+
+.staffnavcard {
+    display: flex;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 0.3rem;
+    justify-content: center;
+    align-items: center;
+
+    &--light {
+        background-color: $clr-white;
+        border: solid 0.12rem $clr-accent-grey;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        border: solid 0.12rem $clr-white;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 1.1rem;
+
+        &--dark {
+            color: $clr-white;
+        }
+    }
+
+  &__arrow {
+    width: 1.7rem;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .staffnavcard {
+    display: none;
+  }
+}
