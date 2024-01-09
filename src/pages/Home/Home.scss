@@ -21,7 +21,16 @@
 
 
 @media screen and (min-width: $desktop-breakpoint) {
-    .button--small{
+    .button--large{
         display: none;
     }
+
+    .main{
+
+        &__container{
+            justify-content: center;
+        }
+    }
+
+
 }
