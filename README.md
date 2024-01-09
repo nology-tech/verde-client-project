@@ -23,3 +23,10 @@
 ## Code Quality 🌟
 
 - This project uses prettier and ESlint to increase code readability and consistency.
+
+## NAVIGATION
+
+-We have created the NavBar component which links to the different pages. This has been done for DESKTOP view .
+
+-React-router-dom has been installed.
+
