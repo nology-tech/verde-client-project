@@ -27,6 +27,18 @@
     justify-content: center;
     align-items: center;
   }
+
+  &__title {
+    text-align: center;
+    color: $clr-secondary-dk;
+    font-weight: 400;
+  }
+
+  &__edit {
+    font-size: 8px;
+    text-align: center;
+    text-decoration: underline;
+  }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {

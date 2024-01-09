@@ -1,7 +1,7 @@
 import "./StaffProfileCard.scss";
 import ProfilePicture from "../ProfilePicture/ProfilePicture";
 
-export type Staff = {
+type Staff = {
   id: number | null;
   name: string;
   start: string;
@@ -19,7 +19,13 @@ type StaffCardProps = {
 const StaffProfileCard = ({ employee }: StaffCardProps) => {
   return (
     <div className="staffcard">
-      <ProfilePicture profileImg={employee.image} memberName={employee.name} />
+      <ProfilePicture
+        image={employee.image}
+        name={employee.name}
+        titleOption={true}
+        titleLabel={employee.role}
+        editOption={true}
+      />
       <div className="card-container">
         <div className="card-container__description">
           <h1 className="card-container__description--title">

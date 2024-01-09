@@ -1,17 +1,28 @@
 import "./ProfilePicture.scss";
 
 type ProfilePictureProps = {
-    profileImg: string,
-    memberName: string,
-}
+  image: string;
+  name: string;
+  titleOption: boolean;
+  titleLabel: string | null;
+  editOption: boolean;
+};
 
-const ProfilePicture = ({profileImg, memberName}: ProfilePictureProps) => {
-    return (
+const ProfilePicture = ({
+  image,
+  name,
+  titleOption,
+  titleLabel,
+  editOption,
+}: ProfilePictureProps) => {
+  return (
     <div className="profile">
-        <img src= {profileImg} className="profile__img" alt="Profile Picture"/>
-        <h1 className="profile__name">{memberName}</h1>
+      <img src={image} className="profile__img" alt="Profile Picture" />
+      <h1 className="profile__name">{name}</h1>
+      {titleOption && <h3 className="profile__title">{titleLabel}</h3>}
+      {editOption && <a className="profile__edit">Edit Client</a>}
     </div>
-    )
-}
+  );
+};
 
 export default ProfilePicture;
