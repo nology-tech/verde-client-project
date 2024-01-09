@@ -2,17 +2,34 @@
 
 .navcard {
     display: flex;
-    background-color: $clr-white;
     width: 100%;
     padding: 0.6rem 1rem;
     border-radius: 0.3rem;
-    border: solid 0.12rem $clr-accent-grey;
     justify-content: center;
     align-items: center;
+
+    &--light {
+        background-color: $clr-white;
+        border: solid 0.12rem $clr-accent-grey;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        border: solid 0.12rem $clr-white;
+        color: $clr-white;
+    }
 
     &__name {
         font-weight: 600;
         font-size: 1.1rem;
+
+        &--light {
+            color: $clr-black;
+        }
+
+        &--dark {
+            color: $clr-white;
+        }
     }
 
     &__arrow {
