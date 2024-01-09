@@ -19,7 +19,7 @@
     }
 
 }
-//This can be used for the toggle-function in order to change the footer into dark mode by using this class.
+
 .footer--dark {
     background-color: $clr-primary-dk;
 
@@ -34,7 +34,6 @@
 }
 
 @media screen and (min-Width: 768px) {
-
     .footer{
         display: none;
     }
