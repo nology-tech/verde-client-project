@@ -1,8 +1,10 @@
 import Layout from "../../components/Layout/Layout";
+import StaffProfileCard from "../../components/StaffProfileCard/StaffProfileCard";
 
 const Home = () => {
   return (
     <Layout>
+      <StaffProfileCard/>
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>

@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+
+.card-container {
+
+    border: 0.02px solid $clr-secondary-dk;
+    width: 294px;
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $clr-white;
+      padding: 20px;
+      border-radius: 2px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      //margin-bottom: 20px;
+  
+      &--title {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+  
+      &--info {
+        font-size: 10px;
+        color: $clr-secondary-dk;;
+      }
+    }
+  
+    &__information {
+      background-color: $clr-white;
+      padding: 20px;
+      border: 0.02px solid $clr-secondary-dk;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+  
+      &--date,
+      &--complete,
+      &--Manager {
+        font-size: 10px;
+        color: $clr-black;
+      }
+  
+      &--answer {
+        font-size: 10px;
+        color: $clr-secondary-dk;
+      }
+    }
+  }
