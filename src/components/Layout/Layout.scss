@@ -5,6 +5,8 @@
   width: 100vw;
   background-color: $clr-secondary-lt;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (min-width:$desktop-breakpoint) {
