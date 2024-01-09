@@ -3,34 +3,37 @@
 
 .footer{
     height: 6.25rem;
-    background-color: $clr-white;
     display: flex;
     align-self: flex-end;
     align-items: center;
     justify-content: center;
 
-    &__button{
-        border: none;
+    &--light {
         background-color: $clr-white;
 
-        &--image{
-            width: 2rem;
+        &__button{
+            border: none;
+            background-color: $clr-white;
+    
+            &--image{
+                width: 2rem;
+            }
         }
+    }
+
+    &--dark{
+        background-color: $clr-primary-dk;
+
+        &__button{
+            border: none;
+    
+            &--image{
+                filter: brightness(100);
+            }
+        
     }
 
 }
-
-.footer--dark {
-    background-color: $clr-primary-dk;
-
-    &__button{
-        border: none;
-
-        &--image{
-            filter: brightness(100);
-        }
-    }
-
 }
 
 @media screen and (min-Width: $desktop-breakpoint) {
