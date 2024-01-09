@@ -20,7 +20,7 @@
 
 }
 //This can be used for the toggle-function in order to change the footer into dark mode by using this class.
-.footer__darkMode {
+.footer--darkMode {
     background-color: $clr-primary-dk;
 
     &__button{
