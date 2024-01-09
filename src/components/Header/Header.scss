@@ -1,0 +1,53 @@
+@use "../../styles/variables" as *;
+
+.header {
+  padding: 1rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+
+  &--light {
+    background-color: $clr-primary-lt;
+  }
+
+  &--dark {
+    background-color: $clr-primary-dk;
+  }
+
+  &__logo {
+    align-self: center;
+    width: 7.8rem;
+  }
+
+  &__title {
+    color: $clr-white;
+  }
+
+  &__button{
+    display:none;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .header {
+    background-color: $clr-white;
+    display: flex;
+    flex-direction: row;
+
+    &__title {
+      color: $clr-black;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__title {
+      margin-left:25.6rem;
+
+    }
+
+    &__button {
+      display: unset;
+    }
+  }
+}
