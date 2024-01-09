@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+
+.main{
+    width: 100%;
+}
+
+.button{
+    margin-left: 1rem;
+}
+
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .button{
+        display: none;
+    }
+}
