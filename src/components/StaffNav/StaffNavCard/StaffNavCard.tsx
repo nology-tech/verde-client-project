@@ -1,5 +1,5 @@
 import "./StaffNavCard.scss";
-import Arrow from "../../../assets/images/settings-icon.png";/*path to image needs to be updated. */
+import Arrow from "../../../assets/images/arrow-icon.svg";
 
 type StaffNavCardProps = {
   label: string;
