@@ -1,6 +1,6 @@
 import NavCard from "../NavCard/NavCard";
 import "./NavCardList.scss";
-import { NavCardLabel } from "../../data/NavCardTypes";
+import { NavCardLabel } from "../../types/NavCardTypes";
 import { Link } from "react-router-dom";
 
 type NavCardListProps = {
