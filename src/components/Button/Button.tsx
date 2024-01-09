@@ -2,7 +2,7 @@ import "./Button.scss";
 
 type ButtonProps = {
   label: string;
-  variant: "yellow" | "grey" | "red" | "purple";
+  variant: "yellow" | "grey" | "red" | "purple" | "red-alt";
   onClick: () => void;
 };
 
