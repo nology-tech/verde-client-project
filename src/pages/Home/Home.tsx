@@ -1,3 +1,4 @@
+import Header from "../../components/Header/Header";
 import Layout from "../../components/Layout/Layout";
 import StaffNavList from "../../components/StaffNav/StaffNavList/StaffNavList";
 import { StaffList } from "../../components/StaffNav/data";
@@ -15,7 +16,9 @@ const Home = () => {
         maxime tempora, temporibus beatae voluptas repellat rerum. Dignissimos,
         necessitatibus.
       </p>
+      
       <StaffNavList staff={StaffList} />
+  
     </Layout>
   );
 };

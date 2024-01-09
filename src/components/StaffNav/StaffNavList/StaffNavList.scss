@@ -1,12 +1,13 @@
-@use '../../styles/variables' as *;
-@use '../../styles/typography' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/typography' as *;
 
-.staffnavcardlist {
+.staffnavlist {
     display: flex;
     flex-direction: column;
     margin: 1rem;
     gap: 1rem;
     text-decoration: none;
+    
 
     &__link {
         text-decoration: none;
@@ -14,7 +15,7 @@
 }
 
 @media screen and (min-width: $tablet-breakpoint) {
-    .staffnavcardlist {
+    .staffnavlist {
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
