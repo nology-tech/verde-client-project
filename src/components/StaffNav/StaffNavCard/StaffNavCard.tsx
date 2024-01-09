@@ -3,13 +3,14 @@ import Arrow from "../../../assets/images/home-icon.png";
 
 type StaffNavCardProps = {
   label: string;
+  variant: "dark" | "light";
 };
 
-const StaffNavCard = ({ label }: StaffNavCardProps) => {
+const StaffNavCard = ({ label, variant }: StaffNavCardProps) => {
   return (
     <>
-      <div className="staffnavcard">
-        <h3 className="staffnavcard__name">{label}</h3>
+      <div className={`staffnavcard staffnavcard--${variant}`}>
+        <h3 className={`staffnavcard__name staffnavcard__name--${variant}`}>{label}</h3>
         <img className="staffnavcard__arrow" src={Arrow} alt={label}></img>
       </div>
     </>
