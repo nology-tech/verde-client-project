@@ -1,34 +1,51 @@
-// @use "../../assets/styles/variables" as *;
+@use "../../styles/variables" as *;
 
 .button {
   min-width: 5rem;
   padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem; // to be changed
+  border-radius: 0.5rem;
+  margin: 0.5rem;
 
   &--yellow {
-    background-color: rgb(202, 171, 86); // update with variable
-    color: white;
+    background-color: $clr-accent-yellow;
+    color: $clr-white;
     border: none;
   }
 
   &--grey {
-    background-color: lightgrey; //update with variable name
+    background-color: $clr-accent-grey;
     color: white;
     border: none;
   }
 
   &--red {
-    background-color: red; //update with variable name
+    background-color: $clr-accent-red;
     border: none;
   }
+
+  &--red-alt {
+    background-color: $clr-white;
+    border: 0.12rem solid $clr-accent-red;
+    color: $clr-accent-red;
+  }
+
   &--purple {
-    background-color: rgb(255, 255, 255); //update with variable name
-    border: 0.12rem solid purple;
-    color: purple;
+    background-color: $clr-white;
+    border: 0.12rem solid $clr-accent-purple;
+    color: $clr-accent-purple;
+  }
+
+  &--large {
+    width: 90%;
+    padding: 0.9rem 1.25rem;
+  }
+
+  &--small {
+    width: 40%;
   }
 
   &:hover {
-    box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.262);//update colour with variable name
+    box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-dk, 0.262);
     cursor: pointer;
   }
 }
