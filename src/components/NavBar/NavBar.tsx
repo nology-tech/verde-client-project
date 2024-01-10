@@ -12,7 +12,7 @@ const NavBar = ({ variant }: NavBarProps ) => {
         <nav className= {className}>
             <img alt="Brand Logo" className="nav__logo" src="images/logo.png"/>
             <ul className="nav__list">
-            <Link to="/"><li className="nav__list--item"><img src="images/home-icon.png" alt="Home Button" className="nav__image"/>Home</li></Link>
+            <Link to="/home"><li className="nav__list--item"><img src="images/home-icon.png" alt="Home Button" className="nav__image"/>Home</li></Link>
             <Link to="/book-appointment"><li className="nav__list--item"><img src="images/appointment-icon.png" alt="Book Appointment" className="nav__image"/>Book Appointment</li></Link>
             <Link to="/staff"><li className="nav__list--item"><img src="images/staff-icon.png" alt="Staff" className="nav__image"/>Staff</li></Link>
             <Link to="/clients"><li className="nav__list--item"><img src="images/clients-icon.png" alt="Clients" className="nav__image"/>Clients</li></Link>
