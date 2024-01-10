@@ -7,19 +7,23 @@
 
   &--light {
     background-color: $clr-primary-lt;
+
+    &__title {
+      color: $clr-white;
+    }
   }
 
   &--dark {
     background-color: $clr-primary-dk;
+
+    &__title {
+      color: $clr-white;
+    }
   }
 
   &__logo {
     align-self: center;
     width: 7.8rem;
-  }
-
-  &__title {
-    color: $clr-white;
   }
 
   &__button{
@@ -33,17 +37,29 @@
     display: flex;
     flex-direction: row;
 
+    &--light {
+      background-color: $clr-white;
+      
     &__title {
       color: $clr-black;
+      margin-left: 3rem;
     }
+
+    }
+  
+    &--dark {
+      background-color: $clr-primary-dk;
+
+      
+    &__title {
+      color: $clr-white;
+      margin-left: 3rem;
+    }
+    }
+
 
     &__logo {
       display: none;
-    }
-
-    &__title {
-      margin-left:3rem;
-
     }
 
     &__button {

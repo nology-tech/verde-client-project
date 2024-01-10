@@ -5,15 +5,18 @@ import Button from  "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList"
 import{NavCardLabels} from "../../data/NavCardLabels"
 import './Home.scss'
+type HomeProps = {
+  variant: "light" | "dark";
+};
 
-const Home = () => {
+const Home = ({ variant }: HomeProps) => {
 return (
 <Layout>
-      <NavBar variant={"light"}/>
-      <main className="main">
-          <Header title="Home" variant="light" buttonOption={false} buttonLabel="Home" buttonVariant="purple" />
+      <NavBar variant={variant}/>
+      <main  className={`main main--${variant}`}>
+          <Header title="Home" variant={variant} buttonOption={false} buttonLabel="Home" buttonVariant="purple" />
           <div className="main__container">
-            <NavCardList labels={NavCardLabels} variant={"light"} />
+            <NavCardList labels={NavCardLabels} variant={variant} />
             <Button size="large" label="Log Out" variant="yellow"  path="/login"/>
           </div>
       </main>
