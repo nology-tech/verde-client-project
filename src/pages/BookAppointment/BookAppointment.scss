@@ -1,6 +1,6 @@
 @import "../../styles/_variables.scss";
 @import "react-calendar/dist/Calendar.css"; //react-calendar default stylesheet
-@import 'react-datepicker/dist/react-datepicker.css';
+@import "react-datepicker/dist/react-datepicker.css";
 
 @media screen and (min-width: $mobile-breakpoint) {
   .book-appointment {
@@ -10,16 +10,15 @@
       &--leftside {
         display: flex;
         flex-direction: column;
+
         label {
           color: black;
           display: flex;
-
           margin-bottom: 2px;
         }
 
         input {
           margin-bottom: 10px;
-          
         }
 
         select {
@@ -34,13 +33,11 @@
         label {
           color: black;
           display: flex;
-
           margin-bottom: 2px;
         }
 
         input {
           margin-bottom: 10px;
-          
         }
 
         select {
@@ -53,8 +50,18 @@
       display: none;
     }
   }
+  .save-button {
+    display: none;
+  }
+  .submit-button {
+    display: flex;
+    justify-content: center;
+  }
+  .cancel-button {
+    display: grid;
+    grid-template-rows: 100vw;
+  }
 }
-
 @media screen and (min-width: $tablet-breakpoint) {
   .calendar-desktop {
     display: none;
@@ -77,7 +84,6 @@
 
       &--leftside {
         width: 450px;
-
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
@@ -124,5 +130,13 @@
         }
       }
     }
+  }
+
+  .save-button {
+    display: block;
+  }
+
+  .submit-button {
+    display: none;
   }
 }

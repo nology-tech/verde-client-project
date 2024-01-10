@@ -148,10 +148,16 @@ const BookAppointment = () => {
 
   return (
     <div className="book-appointment">
-      <Header title="Book Appointment" variant="light" onClick={() => console.log("Shall I go home??")} buttonOption={true} buttonLabel="" buttonVariant="yellow"/>
+      <Header
+        title="Book Appointment"
+        variant="light"
+        onClick={() => console.log("Shall I go home??")}
+        buttonOption={true}
+        buttonLabel=""
+        buttonVariant="yellow"
+      />
       {/* uses npmjs react-calendar package */}
-      <NavBar variant="light"/>
-
+      <NavBar variant="light" />
       <form className="book-appointment__form">
         <div className="book-appointment__form--leftside">
           <label>First Name</label>
@@ -209,10 +215,10 @@ const BookAppointment = () => {
 
           <label>Date:</label>
           <DatePicker
-          selected={datePickerDate as Date}
-          className="datepicker-mobile"
-          onChange={handleDatePickerChange}
-          placeholderText="Select date..."
+            selected={datePickerDate as Date}
+            className="datepicker-mobile"
+            onChange={handleDatePickerChange}
+            placeholderText="Select date..."
           />
 
           <label>Time:</label>
@@ -235,17 +241,24 @@ const BookAppointment = () => {
         </div>
       </form>
       {/* button component needs buttonprops so we cant hide the submit button on desktop view and show it on mobile view */}
-      <Button
-        label="Cancel"
-        variant="grey"
-        onClick={() => console.log("Cancel button clicked")}
-      />
-      <Button label="Save" variant="yellow" onClick={handleSubmit} />
-      <Button
-        label="Submit"
-        variant="yellow"
-        onClick={handleDatePickerSubmit}
-      />
+      <div className="save-button">
+        <Button label="Save" variant="yellow" onClick={handleSubmit} />
+      </div>
+      <div className="submit-button">
+        <Button
+          label="Submit"
+          variant="yellow"
+          onClick={handleDatePickerSubmit}
+        />
+      </div>
+      <div className="cancel-button">
+        <Button
+          label="Cancel"
+          variant="grey"
+          onClick={() => console.log("Cancel button clicked")}
+          size="large"
+        />
+      </div>
     </div>
   );
 };
