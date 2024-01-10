@@ -64,4 +64,20 @@
 }
 
 //media query for larger screens to be added
-@media screen and (min-width: $tablet-breakpoint) {}
+@media screen and (min-width: $tablet-breakpoint) {
+    .login {
+
+        &__logo {
+            align-self: flex-start;
+        }
+
+        &__container {
+            padding: 2rem 10rem;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+
+    
+}

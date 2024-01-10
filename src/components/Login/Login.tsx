@@ -1,8 +1,11 @@
 import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../Button/Button";
+import login from "../../assets/images/login-pic.png";
 
 const Login = () => {
+  // add useState for email, password, error
+
   return (
     <div className="login">
       <img src={logo} alt="logo" className="login__logo" />
@@ -45,6 +48,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <img className="login__picture" src={login} />
     </div>
   );
 };
