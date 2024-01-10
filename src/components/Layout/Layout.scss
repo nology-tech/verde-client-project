@@ -3,5 +3,16 @@
 .layout {
   height: 100vh;
   width: 100vw;
-  background-color: $clr-white;
+  background-color: $clr-secondary-lt;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width:$desktop-breakpoint) {
+
+  .layout{
+    display: flex;
+    flex-direction: row;
+  }
 }
