@@ -13,8 +13,12 @@ const NavCardList = ({ labels, variant }: NavCardListProps) => {
     <div className="navcardlist">
       {labels.map((label, index) => (
         <Link to={label.path} key={index} className="navcardlist__link">
-          {/* link needs to be changed once other components added  */}
-          <NavCard label={label.label} buttonLabel={label.buttonLabel} variant={variant} />
+          <NavCard
+            label={label.label}
+            buttonLabel={label.buttonLabel}
+            variant={variant}
+            path={label.path}
+          />
         </Link>
       ))}
     </div>
