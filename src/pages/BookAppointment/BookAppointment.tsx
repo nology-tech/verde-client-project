@@ -6,21 +6,8 @@ import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
-
-type Staff = {
-  id: number;
-  name: string;
-};
-
-type Appointment = {
-  date: string;
-  time: string;
-  firstName: string;
-  lastName: string;
-  emailAddress: string;
-  mobileNumber: string;
-  selectedStaff: string;
-};
+import { Appointment } from "../../types/BookAppointmentTypes";
+import { staffList } from "../../data/StaffList";
 
 const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
@@ -33,19 +20,6 @@ const BookAppointment = () => {
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
-
-  const staffList: Staff[] = [
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Jane Smith" },
-    { id: 3, name: "Bob Johnson" },
-    { id: 4, name: "Alice Williams" },
-    { id: 5, name: "Charlie Brown" },
-    { id: 6, name: "Emily Davis" },
-    { id: 7, name: "Frank White" },
-    { id: 8, name: "Grace Miller" },
-    { id: 9, name: "Henry Wilson" },
-    { id: 10, name: "Ivy Robinson" },
-  ];
 
   const timeIntervals: string[] = [];
   const startTime = new Date();
@@ -62,13 +36,9 @@ const BookAppointment = () => {
 
   const handleDateChange = (date: Date) => {
     setSelectedDate(date);
-
-    console.log(date);
   };
 
   const handleSubmit = () => {
-    console.log(selectedDate);
-
     if (
       !selectedDate ||
       !selectedTime ||
@@ -109,12 +79,9 @@ const BookAppointment = () => {
 
   const handleDatePickerChange = (date: Date | null) => {
     setDatePickerDate(date);
-    console.log(date);
   };
 
   const handleDatePickerSubmit = () => {
-    console.log(datePickerDate);
-
     if (
       !datePickerDate ||
       !selectedTime ||
