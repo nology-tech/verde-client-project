@@ -15,7 +15,7 @@ const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
         titleOption={true}
         titleLabel={staff.role}
         editOption={true}
-        variant="light"
+        variant={variant}
       />
       <div className={`card-container card-container--${variant}`}>
         <div className={`description description--${variant}`}>

@@ -23,11 +23,12 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-bottom: 1px solid $clr-secondary-dk;
+    border-bottom: 0.06rem  solid $clr-secondary-dk;
 
     &--dark{
       background-color: $clr-primary-dk;
-      border: 1px solid $clr-white;
+      border-left: 0.06rem  solid $clr-white;
+      border-right: 0.06rem  solid $clr-white;
     }
 
     &--light{
@@ -66,7 +67,9 @@
 
     &--dark{
       background-color: $clr-primary-dk;
-      border: 1px solid $clr-white;
+      border-left: 0.06rem  solid $clr-white;
+      border-right: 0.06rem  solid $clr-white;
+      border-bottom: 0.06rem  solid $clr-white;
     }
 
     &--light{
@@ -109,6 +112,10 @@
     .description {
       text-align: start;
       padding: 0.625rem;
+
+      &--dark{
+      border-top: 0.06rem  solid $clr-white;
+      }
     }
 
     .information {
