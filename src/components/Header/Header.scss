@@ -39,16 +39,21 @@
   .header {
     background-color: $clr-white;
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 300px;
 
+    &__container{
+      display: flex;
+      flex-direction: column;
+    }
     &--light {
       background-color: $clr-white;
       
-    &__title {
-      color: $clr-black;
-      margin-left: 3rem;
-    }
-
+      &__title {
+        color: $clr-black;
+        // margin-left: 3rem;
+        font-size: 1em;
+      }
     }
   
     &--dark {
@@ -61,13 +66,8 @@
     }
     }
 
-
     &__logo {
       display: none;
-    }
-
-    &__button {
-      display: flex;
     }
 
     &__dropdown{
@@ -80,4 +80,9 @@
       border-bottom: 3px solid purple;
     }
   }
+.header__button{
+  display: unset;
+  display: flex;
+  background-color: red;
+}
 }

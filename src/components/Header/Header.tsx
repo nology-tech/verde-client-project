@@ -25,6 +25,7 @@ const Header = ({
   return (
     <div className={`header header--${variant}`}>
       <img src={logo} className="header__logo" alt="logo" />
+      <div className="header__container">
       <h1 className={`header--${variant}__title`}>{title}</h1>
       {dropdownOption && (
         <select className={`header__dropdown`} name="staff" id="stafflist">
@@ -33,6 +34,7 @@ const Header = ({
             )}
         </select>
       )}
+      </div>
       {buttonOption && (
         <div className="header__button">
           <Button
