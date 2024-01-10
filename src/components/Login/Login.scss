@@ -3,6 +3,11 @@
 .login {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+
+    &__picture {
+        display: none;
+    }
 
     &__logo {
         align-self: center;
@@ -78,6 +83,26 @@
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
+    .login {
+        display: flex;
+        flex-direction: row;
 
-    
+        &__page {
+            width: 70%;
+        }
+
+        &__picture {
+            display: unset;
+            width: 30%;
+            filter: blur(0.9rem);
+            background-color: rgba(#d9d9d9, 0.262);
+            padding: 5.5rem 0;
+        }
+
+        &__container {
+            padding: 2rem 14rem;
+            align-content: center;
+        }
+    }
+
 }
