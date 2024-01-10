@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Button from  "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList"
 import{NavCardLabels} from "../../data/NavCardLabels"
+import SettingsCard from "../../components/SettingsCard/SettingsCard";
 import './Home.scss'
 type HomeProps = {
   variant: "light" | "dark";
@@ -18,6 +19,7 @@ return (
           <div className="main__container">
             <NavCardList labels={NavCardLabels} variant={variant} />
             <Button size="large" label="Log Out" variant="yellow"  path="/login"/>
+            <SettingsCard/>
           </div>
       </main>
     </Layout>
