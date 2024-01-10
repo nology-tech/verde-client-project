@@ -9,6 +9,7 @@ type StaffBookingCardProps = {
     bookingDate: string;
     bookingTime: string;
     path: string;
+    variant: "light" | "dark";
 }
 
 const StaffBookingCard = ({ 
@@ -17,19 +18,19 @@ const StaffBookingCard = ({
     mobileNumber, 
     bookingDate, 
     bookingTime, 
-    path 
+    path, 
+    variant,
 }: StaffBookingCardProps) => {
     
     return (
         <Link className='booking-card__link' to={path}>
-            <div className='booking-card'>
+            <div className={`booking-card booking-card--${variant}`}>
                 <p className='booking-card__name'>{clientName}</p>
                 <p className='booking-card__email booking-card__info'>{email}</p>
                 <p className='booking-card__number booking-card__info'>{mobileNumber}</p>
                 <p className='booking-card__date booking-card__info'>{`${bookingDate}`}</p>
                 <p className='booking-card__time'>{`${bookingTime}`}</p>
                 <img className='booking-card__img' src={arrow} alt='arrow'/>
-                
             </div>
         </Link>
     )
