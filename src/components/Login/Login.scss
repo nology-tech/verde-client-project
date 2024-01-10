@@ -1,108 +1,125 @@
 @use "../../styles/variables" as *;
 
 .login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &__page {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__picture {
-        display: none;
+  &__picture {
+    display: none;
+  }
+
+  &__logo {
+    align-self: center;
+    padding: 2rem;
+  }
+
+  &__welcome {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__message {
+    display: flex;
+    margin: 0;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 0.95rem;
+    color: #7b7b7b;
+    margin-bottom: 1.7rem;
+  }
+
+  &__container {
+    padding: 1.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--label {
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: bold;
     }
 
-    &__logo {
-        align-self: center;
-        padding: 2rem;
+    &--input {
+      padding: 0.75rem 0;
+      border-radius: 0.3rem;
+      border: 0.06rem $clr-accent-grey solid;
     }
 
-    &__welcome {
-        display: flex;
-        align-self: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
+    &--button {
+      margin-top: 2rem;
+      text-align: center;
     }
+  }
 
-    &__message {
-        display: flex;
-        margin: 0;
-        text-align: center;
-        text-wrap: wrap;
-        font-size: 0.95rem;
-        color: #7B7B7B;
-        margin-bottom: 1.7rem;
-    }
-
-    &__container {
-        padding: 1.5rem;
-    }
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        &--label {
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        &--input {
-            padding: 0.75rem 0;
-            border-radius: 0.3rem;
-            border: 0.06rem $clr-accent-grey solid;
-        }
-
-        &--button {
-            margin-top: 2rem;
-            text-align: center;
-        }
-    }
-
-    &__form-container {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem 0;
-    }
-
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
 }
 
 //media query for larger screens to be added
 @media screen and (min-width: $tablet-breakpoint) {
-    .login {
-
-        &__logo {
-            align-self: flex-start;
-        }
-
-        &__container {
-            padding: 2rem 10rem;
-        }
+  .login {
+    &__logo {
+      align-self: flex-start;
     }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      padding: 2rem 10rem;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
-    .login {
-        display: flex;
-        flex-direction: row;
+  .login {
+    display: flex;
+    flex-direction: row;
 
-        &__page {
-            width: 70%;
-        }
-
-        &__picture {
-            display: unset;
-            width: 30%;
-            filter: blur(0.9rem);
-            background-color: rgba(#d9d9d9, 0.262);
-            padding: 5.5rem 0;
-        }
-
-        &__container {
-            padding: 2rem 14rem;
-            align-content: center;
-        }
+    &__page {
+      width: 70%;
+      height: 100vh;
     }
 
+    &__picture {
+      object-fit: cover;
+      display: unset;
+      filter: blur(0.9rem);
+      max-width: 100%;
+    }
+
+    &__container {
+      padding: 2rem 10rem;
+      align-content: center;
+    }
+
+    &__picture-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      height: 100vh;
+      background-color: rgba(#d9d9d9, 0.2);
+    }
+  }
 }

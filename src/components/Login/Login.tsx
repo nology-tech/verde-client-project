@@ -50,7 +50,9 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <div className="login__picture-container">
       <img className="login__picture" src={login} />
+      </div>
     </div>
   );
 };
