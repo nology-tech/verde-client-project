@@ -1,16 +1,44 @@
 @use "../../styles/variables" as *;
 
 .main{
-    width: 100%;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &--light{
+        background-color: $clr-secondary-lt;
+    }
+
+    &--dark{
+        background-color: $clr-secondary-dk;
+    }
+
+    &__container{
+        margin: 1.5rem 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
-.button{
+.button--large{
     margin-left: 1rem;
 }
 
 
-@media screen and (min-width: $desktop-breakpoint) {
-    .button{
+@media screen and (min-width: $tablet-breakpoint) {
+    .button--large{
         display: none;
     }
+
+    .main{
+
+        &__container{
+            justify-content: center;
+        }
+    }
+
+
 }

@@ -4,11 +4,9 @@ import Home from "./Home";
 import { customRender } from "../../utils/testUtils";
 
 it("should render the form", () => {
-  customRender(<Home />);
+  customRender(<Home variant={"light"} />);
 
-  const heading = screen.getByRole("heading", {
-    name: /page heading/i,
-  });
+  const main = screen.getByRole("main");
 
-  expect(heading).toBeInTheDocument();
+  expect(main).toBeInTheDocument();
 });
