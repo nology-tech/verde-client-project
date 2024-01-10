@@ -8,7 +8,21 @@
     background-color: $clr-white;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 1rem 0.5rem;
+    margin: 0rem 0.5rem 1rem 0.5rem;
+
+    &--light {
+        background-color: $clr-white;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        color: $clr-white
+    }
+
+    &__name {
+        font-weight: bold;
+        color: inherit
+    }
 
     &__info, &__time {
         display: none;
@@ -24,17 +38,11 @@
     }
 }
 
-
-
 @media screen and (min-width: $tablet-breakpoint) {
     .booking-card {
         text-align: center;
-        grid-template-columns: repeat(6, auto);
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
         gap: 0.5rem;
-
-        &__name {
-            font-weight: bold;
-        }
 
         &__info {
             color: $clr-accent-grey;
@@ -49,5 +57,11 @@
     }
 }
 
+@media screen and (min-width: $desktop-breakpoint) {
+    .booking-card {
+        text-align: center;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    }
+}
 
 
