@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
 
-  &__description {
+  .description {
     display: flex;
     flex-direction: column;
     background-color: $clr-white;
@@ -21,20 +21,20 @@
     text-align: center;
     border-bottom: 1px solid $clr-secondary-dk;
 
-    &--title {
+    &__title {
       font-size: 0.75rem;
       margin-bottom: 0.625rem;
       font-weight: 600;
     }
 
-    &--info {
+    &__content {
       font-size: 0.625rem;
       font-weight: 400;
       color: $clr-secondary-dk;
     }
   }
 
-  &__information {
+  .information {
     background-color: $clr-white;
     padding: 1.25rem;
     border-radius: 0.5rem;
@@ -43,15 +43,13 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.625rem;
 
-    &--date,
-    &--complete,
-    &--Manager {
+    &__title {
       font-size: 0.625rem;
       color: $clr-black;
       font-weight: 500;
     }
 
-    &--answer {
+    &__content {
       font-size: 0.625rem;
       color: $clr-secondary-dk;
       font-weight: 400;
@@ -70,16 +68,17 @@
     width: 12.5rem;
     height: 19.2rem;
 
-    &__description {
+    .description {
       text-align: start;
       padding: 0.625rem;
     }
-    &__information {
+
+    .information {
       gap: 0rem;
       padding: 0.625rem;
       height: 100%;
 
-      &--answer {
+      &__content {
         padding-right: 0.625rem;
       }
     }

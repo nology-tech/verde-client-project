@@ -1,57 +1,34 @@
 import "./StaffProfileCard.scss";
 import ProfilePicture from "../ProfilePicture/ProfilePicture";
-
-type Staff = {
-  id: number | null;
-  name: string;
-  start: string;
-  courseEnd: string;
-  manager: string;
-  role: string | null;
-  description: string;
-  image: string;
-};
+import { Staff } from "../../types/StaffNavTypes";
 
 type StaffCardProps = {
-  employee: Staff;
+  staff: Staff;
+  variant: "light" | "dark";
 };
 
-const StaffProfileCard = ({ employee }: StaffCardProps) => {
+const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
   return (
     <div className="staffcard">
       <ProfilePicture
-        image={employee.image}
-        name={employee.name}
+        name={staff.name}
         titleOption={true}
-        titleLabel={employee.role}
+        titleLabel={staff.role}
         editOption={true}
+        variant="light"
       />
       <div className="card-container">
-        <div className="card-container__description">
-          <h1 className="card-container__description--title">
-            Employee Overview
-          </h1>
-          <h2 className="card-container__description--info">
-            {employee.description}
-          </h2>
+        <div className="description">
+          <h1 className="description__title">Employee Overview</h1>
+          <h2 className="description__content">{staff.description}</h2>
         </div>
-        <div className="card-container__information">
-          <h2 className="card-container__information--date">
-            Employee start Date:
-          </h2>
-          <h2 className="card-container__information--answer">
-            {employee.start}
-          </h2>
-          <h2 className="card-container__information--complete">
-            Course Completion:
-          </h2>
-          <h2 className="card-container__information--answer">
-            {employee.courseEnd}
-          </h2>
-          <h2 className="card-container__information--Manager">Manager:</h2>
-          <h2 className="card-container__information--answer">
-            {employee.manager}
-          </h2>
+        <div className="information">
+          <h2 className="information__title">Employee start Date:</h2>
+          <h2 className="information__content">{staff.start}</h2>
+          <h2 className="information__title">Course Completion:</h2>
+          <h2 className="information__content">{staff.courseEnd}</h2>
+          <h2 className="information__title">Manager:</h2>
+          <h2 className="information__content">{staff.manager}</h2>
         </div>
       </div>
     </div>
