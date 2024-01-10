@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 type Staff = {
   id: number;
@@ -20,7 +21,6 @@ type Appointment = {
   mobileNumber: string;
   selectedStaff: string;
 };
-
 
 const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
@@ -249,6 +249,7 @@ const BookAppointment = () => {
           label="Submit"
           variant="yellow"
           onClick={handleDatePickerSubmit}
+          size="large"
         />
       </div>
       <div className="cancel-button">
@@ -259,6 +260,7 @@ const BookAppointment = () => {
           size="large"
         />
       </div>
+      <Footer variant="light" />
     </div>
   );
 };

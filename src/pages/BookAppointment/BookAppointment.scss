@@ -4,44 +4,64 @@
 
 @media screen and (min-width: $mobile-breakpoint) {
   .book-appointment {
-    background-color: $clr-secondary-lt;
+    background-color: $clr-white;
+    font-weight: bold;
 
     &__form {
+      font-size: 14px;
+
       &--leftside {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
 
         label {
           color: black;
           display: flex;
           margin-bottom: 2px;
+          width: 250px;
         }
 
         input {
           margin-bottom: 10px;
+          width: 250px;
+          border: 0.5px solid $clr-accent-grey;
+          border-radius: 3px;
         }
 
         select {
           margin-bottom: 10px;
+          width: 250px;
+          border: 0.5px solid $clr-accent-grey;
+          border-radius: 3px;
         }
       }
 
       &--rightside {
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         label {
           color: black;
           display: flex;
           margin-bottom: 2px;
+          width: 250px;
         }
 
         input {
           margin-bottom: 10px;
+          width: 250px;
+          border: 0.5px solid $clr-accent-grey;
+          border-radius: 3px;
         }
 
         select {
           margin-bottom: 10px;
+          width: 250px;
+          border: 0.5px solid $clr-accent-grey;
+          border-radius: 3px;
         }
       }
     }
@@ -50,16 +70,22 @@
       display: none;
     }
   }
+
   .save-button {
     display: none;
   }
+
   .submit-button {
-    display: flex;
-    justify-content: center;
+    a {
+      display: flex;
+      justify-content: center;
+    }
   }
   .cancel-button {
-    display: grid;
-    grid-template-rows: 100vw;
+    a {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 @media screen and (min-width: $tablet-breakpoint) {
