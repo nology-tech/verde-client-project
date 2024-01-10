@@ -44,6 +44,7 @@ const Login = () => {
                 label={"Login"}
                 variant={"yellow"}
                 size={"extra-large"}
+                path="/home"
                 onClick={() => void {}}
               />
             </div>
@@ -51,7 +52,7 @@ const Login = () => {
         </div>
       </div>
       <div className="login__picture-container">
-      <img className="login__picture" src={login} />
+        <img className="login__picture" src={login} />
       </div>
     </div>
   );
