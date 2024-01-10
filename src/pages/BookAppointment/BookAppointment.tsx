@@ -147,120 +147,134 @@ const BookAppointment = () => {
   };
 
   return (
-    <div className="book-appointment">
-      <Header
-        title="Book Appointment"
-        variant="light"
-        onClick={() => console.log("Shall I go home??")}
-        buttonOption={true}
-        buttonLabel=""
-        buttonVariant="yellow"
-      />
-      {/* uses npmjs react-calendar package */}
-      <NavBar variant="light" />
-      <form className="book-appointment__form">
-        <div className="book-appointment__form--leftside">
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          ></input>
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          ></input>
-          <label>Email Address</label>
-          <input
-            type="email"
-            name="emailAddress"
-            value={emailAddress}
-            onChange={(e) => setEmailAddress(e.target.value)}
-          ></input>
-          <label>Mobile Number</label>
-          <input
-            type="text"
-            name="mobileNumber"
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
-          ></input>
-          <label>Staff Member</label>
-          <select
-            name="staffMember"
-            value={selectedStaff}
-            onChange={(e) => setSelectedStaff(e.target.value)}
-          >
-            <option value="" disabled>
-              Select staff member...
-            </option>
-
-            {staffList.map((staff) => (
-              <option key={staff.id} value={staff.name}>
-                {staff.name}
-              </option>
-            ))}
-          </select>
+    <div className="container">
+      <div className="book-appointment">
+        <div className="book-appointment__navbar">
+          <NavBar variant="light" />
         </div>
-
-        <div className="book-appointment__form--rightside">
-          <Calendar
-            className="calendar-desktop"
-            onChange={(date: any) => handleDateChange(date)}
-            value={selectedDate as Date}
+        <div className="book-appointment__header">
+          <Header
+            title="Book Appointment"
+            variant="light"
+            onClick={() => console.log("Shall I go home??")}
+            buttonOption={false}
+            buttonLabel=""
+            buttonVariant="yellow"
           />
-
-          <label>Date:</label>
-          <DatePicker
-            selected={datePickerDate as Date}
-            className="datepicker-mobile"
-            onChange={handleDatePickerChange}
-            placeholderText="Select date..."
-          />
-
-          <label>Time:</label>
-
-          <select
-            name="appointmentTime"
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-          >
-            <option value="" disabled>
-              Select time...
-            </option>
-
-            {timeIntervals.map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
+          {/* uses npmjs react-calendar package */}
         </div>
-      </form>
-      {/* button component needs buttonprops so we cant hide the submit button on desktop view and show it on mobile view */}
-      <div className="save-button">
-        <Button label="Save" variant="yellow" onClick={handleSubmit} />
+        <form className="book-appointment__form">
+          <div className="book-appointment__form--leftside">
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            ></input>
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            ></input>
+            <label>Email Address</label>
+            <input
+              type="email"
+              name="emailAddress"
+              value={emailAddress}
+              onChange={(e) => setEmailAddress(e.target.value)}
+            ></input>
+            <label>Mobile Number</label>
+            <input
+              type="text"
+              name="mobileNumber"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+            ></input>
+            <label>Staff Member</label>
+            <select
+              name="staffMember"
+              value={selectedStaff}
+              onChange={(e) => setSelectedStaff(e.target.value)}
+            >
+              <option value="" disabled>
+                Select staff member...
+              </option>
+
+              {staffList.map((staff) => (
+                <option key={staff.id} value={staff.name}>
+                  {staff.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="book-appointment__form--rightside">
+            <Calendar
+              className="calendar-desktop"
+              onChange={(date: any) => handleDateChange(date)}
+              value={selectedDate as Date}
+            />
+            <div className="datepicker">
+              <label>Date:</label>
+              <DatePicker
+                selected={datePickerDate as Date}
+                className="datepicker-mobile"
+                onChange={handleDatePickerChange}
+                placeholderText="Select date..."
+              />
+            </div>
+            <label>Time:</label>
+
+            <select
+              name="appointmentTime"
+              value={selectedTime}
+              onChange={(e) => setSelectedTime(e.target.value)}
+            >
+              <option value="" disabled>
+                Select time...
+              </option>
+
+              {timeIntervals.map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="book-appointment__buttons">
+            <div className="save-button">
+              <Button
+                label="Save"
+                variant="yellow"
+                onClick={handleSubmit}
+                size="large"
+              />
+            </div>
+            <div className="submit-button">
+              <Button
+                label="Submit"
+                variant="yellow"
+                onClick={handleDatePickerSubmit}
+                size="large"
+              />
+            </div>
+            <div className="cancel-button">
+              <Button
+                label="Cancel"
+                variant="grey"
+                onClick={() => console.log("Cancel button clicked")}
+                size="large"
+              />
+            </div>
+          </div>
+        </form>
+
+        <Footer variant="light" />
       </div>
-      <div className="submit-button">
-        <Button
-          label="Submit"
-          variant="yellow"
-          onClick={handleDatePickerSubmit}
-          size="large"
-        />
-      </div>
-      <div className="cancel-button">
-        <Button
-          label="Cancel"
-          variant="grey"
-          onClick={() => console.log("Cancel button clicked")}
-          size="large"
-        />
-      </div>
-      <Footer variant="light" />
     </div>
   );
 };
