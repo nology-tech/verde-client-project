@@ -29,13 +29,17 @@
   &__button{
     display:none;
   }
+
+  &__dropdown{
+    display: none;
+  }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .header {
     background-color: $clr-white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     &--light {
       background-color: $clr-white;
@@ -63,7 +67,17 @@
     }
 
     &__button {
+      display: flex;
+    }
+
+    &__dropdown{
       display: unset;
+      justify-self: flex-start;
+      margin-left: 3rem;
+      height: 2rem;
+      width: 4rem;
+      border: none;
+      border-bottom: 3px solid purple;
     }
   }
 }
