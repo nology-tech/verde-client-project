@@ -1,0 +1,123 @@
+@use "../../styles/variables" as *;
+
+.staffcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--dark{
+    background-color: $clr-secondary-dk;
+  }
+}
+.card-container {
+  border-radius: 0.5rem;
+  width: 18.4rem;
+  display: flex;
+  flex-direction: column;
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    background-color: $clr-white;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom: 0.06rem  solid $clr-secondary-dk;
+
+    &--dark{
+      background-color: $clr-primary-dk;
+    }
+
+    &--light{
+      background-color: $clr-white;
+    }
+
+    &__title {
+      font-size: 0.75rem;
+      margin-bottom: 0.625rem;
+      font-weight: 600;
+
+      &--dark{
+        color: $clr-white;
+       }
+    }
+
+    &__content {
+      font-size: 0.625rem;
+      font-weight: 400;
+      color: $clr-secondary-dk;
+
+      &--dark{
+        color: $clr-white;
+       }
+    }
+  }
+
+  .information {
+    background-color: $clr-white;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.625rem;
+
+    &--dark{
+      background-color: $clr-primary-dk;
+    }
+
+    &--light{
+      background-color: $clr-white;
+    }
+
+    &__title {
+      font-size: 0.625rem;
+      color: $clr-black;
+      font-weight: 500;
+
+      &--dark{
+       color: $clr-white;
+      }
+    }
+
+    &__content {
+      font-size: 0.625rem;
+      color: $clr-secondary-dk;
+      font-weight: 400;
+      text-align: end;
+
+      &--dark{
+        color: $clr-white;
+       }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .staffcard {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card-container {
+    width: 12.5rem;
+    height: 19.2rem;
+
+    .description {
+      text-align: start;
+      padding: 0.625rem;
+
+    }
+
+    .information {
+      gap: 0rem;
+      padding: 0.625rem;
+      height: 100%;
+
+      &__content {
+        padding-right: 0.625rem;
+      }
+    }
+  }
+}
