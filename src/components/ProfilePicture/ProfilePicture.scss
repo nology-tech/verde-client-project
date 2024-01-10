@@ -12,6 +12,11 @@
   width: 16.875rem;
   height: 19.2rem;
 
+  &--dark{
+    background-color: $clr-primary-dk;
+    border: 1px solid $clr-white;
+  }
+
   &__img {
     border-radius: 50%;
     width: 9.75rem;
@@ -26,18 +31,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &--dark{
+      color: $clr-white;
+     }
   }
 
   &__title {
     text-align: center;
     color: $clr-secondary-dk;
     font-weight: 400;
+    
+    &--dark{
+      color: $clr-white;
+     }
   }
 
   &__edit {
     font-size: 8px;
     text-align: center;
     text-decoration: underline;
+
+    &--dark{
+      color: $clr-white;
+     }
   }
 }
 

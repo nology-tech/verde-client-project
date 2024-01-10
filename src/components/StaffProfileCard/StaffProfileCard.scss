@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &--dark{
+    background-color: $clr-secondary-dk;
+  }
 }
 .card-container {
   border-radius: 0.5rem;
@@ -21,16 +25,33 @@
     text-align: center;
     border-bottom: 1px solid $clr-secondary-dk;
 
+    &--dark{
+      background-color: $clr-primary-dk;
+      border: 1px solid $clr-white;
+    }
+
+    &--light{
+      background-color: $clr-white;
+    }
+
     &__title {
       font-size: 0.75rem;
       margin-bottom: 0.625rem;
       font-weight: 600;
+
+      &--dark{
+        color: $clr-white;
+       }
     }
 
     &__content {
       font-size: 0.625rem;
       font-weight: 400;
       color: $clr-secondary-dk;
+
+      &--dark{
+        color: $clr-white;
+       }
     }
   }
 
@@ -43,10 +64,23 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.625rem;
 
+    &--dark{
+      background-color: $clr-primary-dk;
+      border: 1px solid $clr-white;
+    }
+
+    &--light{
+      background-color: $clr-white;
+    }
+
     &__title {
       font-size: 0.625rem;
       color: $clr-black;
       font-weight: 500;
+
+      &--dark{
+       color: $clr-white;
+      }
     }
 
     &__content {
@@ -54,6 +88,10 @@
       color: $clr-secondary-dk;
       font-weight: 400;
       text-align: end;
+
+      &--dark{
+        color: $clr-white;
+       }
     }
   }
 }

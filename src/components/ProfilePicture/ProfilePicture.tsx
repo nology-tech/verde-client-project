@@ -17,15 +17,15 @@ const ProfilePicture = ({
   variant,
 }: ProfilePictureProps) => {
   return (
-    <div className="profile">
+    <div className={`profile profile--${variant}`}>
       <img
         src={profilePicture}
-        className="profile__img"
+        className={`profile__img profile__img--${variant}`}
         alt="Profile Picture"
       />
-      <h1 className="profile__name">{name}</h1>
-      {titleOption && <h3 className="profile__title">{titleLabel}</h3>}
-      {editOption && <a className="profile__edit">Edit Client</a>}
+      <h1 className={`profile__name profile__name--${variant}`}>{name}</h1>
+      {titleOption && <h3 className={`profile__title profile__title--${variant}`}>{titleLabel}</h3>}
+      {editOption && <a className={`profile__edit profile__edit--${variant}`}>Edit Client</a>}
     </div>
   );
 };

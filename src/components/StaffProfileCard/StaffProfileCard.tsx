@@ -9,7 +9,7 @@ type StaffCardProps = {
 
 const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
   return (
-    <div className="staffcard">
+    <div className={`staffcard staffcard--${variant}`}>
       <ProfilePicture
         name={staff.name}
         titleOption={true}
@@ -17,18 +17,18 @@ const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
         editOption={true}
         variant="light"
       />
-      <div className="card-container">
-        <div className="description">
-          <h1 className="description__title">Employee Overview</h1>
-          <h2 className="description__content">{staff.description}</h2>
+      <div className={`card-container card-container--${variant}`}>
+        <div className={`description description--${variant}`}>
+          <h1 className={`description__title description__title--${variant}`} >Employee Overview</h1>
+          <h2 className={`description__content description__content--${variant}`} >{staff.description}</h2>
         </div>
-        <div className="information">
-          <h2 className="information__title">Employee start Date:</h2>
-          <h2 className="information__content">{staff.start}</h2>
-          <h2 className="information__title">Course Completion:</h2>
-          <h2 className="information__content">{staff.courseEnd}</h2>
-          <h2 className="information__title">Manager:</h2>
-          <h2 className="information__content">{staff.manager}</h2>
+        <div className={`information information--${variant}`} >
+          <h2 className={`information__title information__title--${variant}`} >Employee start Date:</h2>
+          <h2 className={`information__content information__content--${variant}`}>{staff.start}</h2>
+          <h2 className={`information__title information__title--${variant}`} >Course Completion:</h2>
+          <h2 className= {`information__content information__content--${variant}`}>{staff.courseEnd}</h2>
+          <h2 className={`information__title information__title--${variant}`} >Manager:</h2>
+          <h2 className={`information__content information__content--${variant}`}>{staff.manager}</h2>
         </div>
       </div>
     </div>

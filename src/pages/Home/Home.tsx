@@ -1,12 +1,8 @@
 import Layout from "../../components/Layout/Layout";
-import StaffProfileCard from "../../components/StaffProfileCard/StaffProfileCard";
-
-import { StaffList } from "../../data/StaffNavList";
 
 const Home = () => {
   return (
     <Layout>
-      <StaffProfileCard staff={StaffList[0]} variant="light" />
       <h1>Page Heading</h1>
       <h2>Section Heading</h2>
       <h3>Panel Heading</h3>
