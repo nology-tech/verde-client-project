@@ -1,0 +1,53 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+.booking-card {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    border: $clr-accent-grey 1px solid;
+    background-color: $clr-white;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+
+    &__info, &__time {
+        display: none;
+    }
+
+    &__img {
+        align-self: center;
+        justify-self: right;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .booking-card {
+        text-align: center;
+        grid-template-columns: repeat(6, auto);
+        gap: 0.5rem;
+
+        &__name {
+            font-weight: bold;
+        }
+
+        &__info {
+            color: $clr-accent-grey;
+            display: unset;
+        }
+
+        &__time {
+            font-weight: bold;
+            color: $clr-secondary-dk;
+            display: unset;
+        }
+    }
+}
+
+
+
