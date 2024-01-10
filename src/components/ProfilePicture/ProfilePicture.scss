@@ -14,9 +14,6 @@
 
   &--dark{
     background-color: $clr-primary-dk;
-    border-left: 0.06rem  solid $clr-white;
-    border-right: 0.06rem  solid $clr-white;
-    border-top: 0.06rem solid $clr-white;
   }
 
   &__img {
@@ -63,9 +60,5 @@
 @media screen and (min-width: $desktop-breakpoint) {
   .profile {
     margin: 1.25rem;
-
-    &--dark{
-      border-bottom: 0.06rem solid $clr-white;
-      }
   }
 }
