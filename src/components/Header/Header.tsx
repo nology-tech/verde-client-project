@@ -5,7 +5,7 @@ import "./Header.scss";
 type HeaderProps = {
   title: string;
   variant: "light" | "dark";
-  onClick: () => void;
+  onClick?: () => void;
   buttonOption: boolean;
   buttonLabel: string;
   buttonVariant: "yellow" | "purple";
