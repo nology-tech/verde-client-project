@@ -192,15 +192,17 @@
           display: grid;
           background-color: $clr-secondary-lt;
           border: none;
-          margin-top: 3rem;
-          margin-left: 4rem;
+          margin-top: 4rem;
+          margin-bottom: 3rem;
         }
 
         &--leftside {
           display: grid;
+
           flex-direction: column;
           margin-left: 6.3rem;
           margin-bottom: 6.3rem;
+          margin-top: 4rem;
 
           label {
             color: black;
@@ -231,6 +233,10 @@
         &--rightside {
           display: grid;
           flex-direction: column;
+
+          margin-left: 1rem;
+          margin-bottom: 6.3rem;
+          margin-top: 3rem;
 
           select {
             color: black;
