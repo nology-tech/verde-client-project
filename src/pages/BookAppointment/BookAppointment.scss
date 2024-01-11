@@ -10,25 +10,19 @@
     background-color: $clr-white;
     font-weight: bold;
 
-    &__header {
-      .header {
-        &__title {
-          display: flex;
-          justify-content: center;
-          font-size: 30px;
-          align-items: center;
-        }
-      }
-    }
-
     &__form {
       font-size: 11px;
+
 
       &--leftside {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         margin-top: 10px;
+        padding-left: 1.2rem;
+        padding-top: 1rem;
+        margin-right: 1.1rem;
+
 
         label {
           color: black;
@@ -40,29 +34,33 @@
 
         input {
           margin-bottom: 10px;
-          width: 250px;
+          width: 100%;
           height: 30px;
           border: 0.5px solid #e2e8f0;
           border-radius: 3px;
           font-family: "Poppins", sans-serif;
+          padding-left: 1rem;
         }
 
         select {
           margin-bottom: 10px;
-          width: 250px;
+          width: 100%;
           height: 30px;
           border: 0.5px solid #e2e8f0;
-          height: 30px;
           border-radius: 3px;
           font-family: "Poppins", sans-serif;
+          padding-left: 1rem;
+
         }
       }
 
       &--rightside {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         margin-bottom: 10px;
+        padding-left: 1.2rem;
+        margin-right: 1.1rem;
 
         label {
           color: black;
@@ -74,20 +72,28 @@
 
         input {
           margin-bottom: 10px;
-          width: 250px;
+          width: 100%;
           border: 0.5px solid #e2e8f0;
           height: 30px;
           border-radius: 3px;
           font-family: "Poppins", sans-serif;
+          padding-left: 1rem;
         }
 
+        .datepicker-mobile {
+          select {
+          background-color: red;
+          width: 100%;
+        }
+        }
         select {
           margin-bottom: 10px;
-          width: 250px;
+          width: 100%;
           height: 30px;
           border: 0.5px solid #e2e8f0;
           border-radius: 3px;
           font-family: "Poppins", sans-serif;
+          padding-left: 1rem;
         }
       }
     }
@@ -101,17 +107,7 @@
       }
 
       .submit-button {
-        a {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 10px;
-        }
-      }
-      .cancel-button {
-        a {
-          display: flex;
-          justify-content: center;
-        }
+        margin-bottom: 10px;
       }
     }
 
