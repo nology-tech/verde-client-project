@@ -13,7 +13,6 @@
     &__form {
       font-size: 11px;
 
-
       &--leftside {
         display: flex;
         flex-direction: column;
@@ -23,12 +22,11 @@
         padding-top: 1rem;
         margin-right: 1.1rem;
 
-
         label {
           color: black;
           display: flex;
           margin-bottom: 5px;
-          width: 250px;
+          width: 100%;
           font-family: "Poppins", sans-serif;
         }
 
@@ -50,7 +48,6 @@
           border-radius: 3px;
           font-family: "Poppins", sans-serif;
           padding-left: 1rem;
-
         }
       }
 
@@ -66,7 +63,7 @@
           color: black;
           display: flex;
           margin-bottom: 5px;
-          width: 250px;
+          width: 100%;
           font-family: "Poppins", sans-serif;
         }
 
@@ -80,15 +77,28 @@
           padding-left: 1rem;
         }
 
-        .datepicker-mobile {
-          select {
-          background-color: red;
-          width: 100%;
-        }
-        }
+        .react-datepicker-wrapper>.react-datepicker__input-container input {
+          all: unset !important;
+          width: 100% !important;
+      }
+      
+      .datepicker  {
+        width: 100%;
+        border: 0.5px solid #e2e8f0;
+        height: 30px;
+        border-radius: 3px;
+        font-family: "Poppins", sans-serif;
+        padding-left: 1.1rem;
+        margin-bottom: 10px ;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        font-weight:lighter;
+      }
+
         select {
           margin-bottom: 10px;
-          width: 100%;
+          width: 100% !important;
           height: 30px;
           border: 0.5px solid #e2e8f0;
           border-radius: 3px;
@@ -116,6 +126,7 @@
     }
   }
 }
+
 
 @media screen and (min-width: $tablet-breakpoint) {
   .calendar-desktop {
@@ -147,17 +158,21 @@
         display: none;
       }
 
-      &__header {
-        background-color: white;
-        grid-column: 2/5;
-        grid-row: 1/2;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        width: 100vw;
-        height: 150px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      .datepicker-label {
+        display: none;
       }
+
+      // &__header {
+      //   background-color: white;
+      //   grid-column: 2/5;
+      //   grid-row: 1/2;
+      //   text-align: center;
+      //   display: flex;
+      //   justify-content: center;
+      //   width: 100vw;
+      //   height: 150px;
+      //   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      // }
 
       &__navbar {
         grid-column: 1/ 2;

@@ -184,8 +184,8 @@ const BookAppointment = () => {
               onChange={(date: any) => handleDateChange(date)}
               value={selectedDate as Date}
             />
+            <label className="datepicker-label">Date:</label>
             <div className="datepicker">
-              <label>Date:</label>
               <DatePicker
                 selected={datePickerDate as Date}
                 className="datepicker-mobile"
