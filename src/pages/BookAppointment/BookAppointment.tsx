@@ -128,6 +128,7 @@ const BookAppointment = () => {
               buttonOption={false}
               buttonLabel=""
               buttonVariant="yellow"
+              dropdownOption={false}
             />
             {/* uses npmjs react-calendar package */}
           </div>

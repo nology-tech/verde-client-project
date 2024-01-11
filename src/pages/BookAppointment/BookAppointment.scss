@@ -164,6 +164,7 @@
         flex-wrap: wrap;
         width: 100%;
         justify-content: space-evenly;
+        background-color: $clr-secondary-lt;
 
       .calendar-desktop, .calendar-title {
         display: block;
@@ -190,16 +191,17 @@
         }
       }
 
-
       &--leftside {
         display: flex;
         height: 100%;
         flex-direction: column;
         justify-content: space-around;
         font-size: 0.6rem;
+        margin-bottom: 2rem;
 
         input {
           background-color: $clr-secondary-lt;
+          width: 15rem ;
         }
 
         select {
@@ -209,11 +211,17 @@
         option {
           background-color: $clr-secondary-lt;
         }
-
-        .cancel-button .save-button {
-          display: flex;
-        }
       }
     }
+  }
+
+  .book-appointment__buttons {
+    margin-left: 5rem;
+
+    .save-button {
+      margin-right: 2rem;
+      height: 1rem;
+    }
+
   }
 }
