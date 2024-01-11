@@ -5,8 +5,6 @@ import Button from "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
-import StaffBookingList from "../../components/StaffBookingList/StaffBookingList";
-import { StaffBookingsList } from "../../data/StaffBookingsList";
 type HomeProps = {
   variant: "light" | "dark";
 };
@@ -27,7 +25,6 @@ const Home = ({ variant }: HomeProps) => {
           <NavCardList labels={NavCardLabels} variant={variant} />
           <Button size="large" label="Log Out" variant="yellow" path="/login" />
         </div>
-      <StaffBookingList bookings={StaffBookingsList} variant="dark"/>
       </main>
     </Layout>
   );
