@@ -132,6 +132,7 @@ const BookAppointment = () => {
             />
             {/* uses npmjs react-calendar package */}
           </div>
+          
           <form className="book-appointment__form">
             <div className="book-appointment__form--leftside">
               <label>First Name</label>
@@ -240,6 +241,7 @@ const BookAppointment = () => {
                 />
               </div>
             </div>
+            
           </form>
         </div>
         <Footer variant="light" />

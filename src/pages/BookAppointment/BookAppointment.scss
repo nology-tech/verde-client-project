@@ -7,6 +7,7 @@
 .book-appointment {
   background-color: $clr-white;
   font-weight: bold;
+  height: 100vh;
 
   &__form {
     font-size: 0.7rem;
@@ -97,14 +98,20 @@
   &__buttons {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  
 
     .save-button {
       display: none;
+      
     }
 
     .submit-button {
-      margin-bottom: 0.6rem;
+      margin-right: 1rem
+     
+      
     }
   }
 
@@ -120,6 +127,12 @@
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
+
+  .container {
+    width: 100%;
+    background-color: $clr-secondary-lt;
+  }
+  
   .book-appointment {
     width: 100%;
     background-color: $clr-secondary-lt;
@@ -137,7 +150,8 @@
 
         display: flex;
         flex-direction: row;
-        margin-right: 25rem; 
+        margin-right: 20rem; 
+        flex-wrap: nowrap;
 
         .save-button {
           display: block;
@@ -155,13 +169,18 @@
       }
 
       .headerForm-container {
+        background-color: $clr-secondary-lt;
         width: 100%;
+        
+        
+        
+
       }
 
       .book-appointment__form{
         padding: 2rem;
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         width: 100%;
         justify-content: space-evenly;
         background-color: $clr-secondary-lt;
@@ -177,6 +196,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        background-color: $clr-secondary-lt;
 
         input {
           background-color: $clr-secondary-lt;
@@ -198,6 +218,7 @@
         justify-content: space-around;
         font-size: 0.6rem;
         margin-bottom: 2rem;
+        background-color: $clr-secondary-lt;
 
         input {
           background-color: $clr-secondary-lt;
@@ -216,10 +237,9 @@
   }
 
   .book-appointment__buttons {
-    margin-left: 5rem;
+    margin-left: 3rem;
 
     .save-button {
-      margin-right: 2rem;
       height: 1rem;
     }
 
