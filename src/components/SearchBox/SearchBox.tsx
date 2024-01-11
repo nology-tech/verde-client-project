@@ -16,6 +16,9 @@ const SearchBox = ({searchTerm, handleInput }: SearchBoxProps) => {
         onInput={handleInput}
         className="search-box__input"
       />
+      <div className="search-box__img-container">
+        <img className='search-box__img-container--img' src='images/search.png' />
+      </div>
     </div>
   );
 };

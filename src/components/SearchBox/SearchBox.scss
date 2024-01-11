@@ -1,9 +1,13 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
 
 
 .search-box {
   display: flex;
   flex-direction: column;
   padding: 0 3.125rem;
+  
+  
 
   .search-box__label {
     font-size: 1.25rem;
@@ -13,9 +17,9 @@
     margin: 1.25rem 0;
     padding: 0.625rem;
     font-size: 1.125rem;
-    // border: 0.313rem $color-grey solid;
-    border-radius: 1rem;
-    // color: $color-black;
+    background-color: $clr-accent-grey;
+    color: $clr-black;
+    border: 1px;
 
     &:focus {
       // border: 0.313rem $color-primary solid;
