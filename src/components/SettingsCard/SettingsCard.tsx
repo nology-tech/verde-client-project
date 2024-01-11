@@ -1,5 +1,6 @@
 import "./SettingsCard.scss";
 import {useState} from "react";
+import Button from "../Button/Button";
 
 
 const SettingsCard = () => {
@@ -36,6 +37,13 @@ const SettingsCard = () => {
               Tech
             </label>
           </div>
+            <Button
+                label={"Apply"}
+                variant={"yellow"}
+                size={"small"}
+                path="/home"
+                onClick={() => void {}}
+              />
         </div>
       </div>
     );

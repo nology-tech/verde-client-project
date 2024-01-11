@@ -26,6 +26,7 @@ const Home = ({ variant }: HomeProps) => {
           <NavCardList labels={NavCardLabels} variant={variant} />
           <Button size="large" label="Log Out" variant="yellow" path="/login" />
         </div>
+        <SettingsCard/>
       </main>
     </Layout>
   );
