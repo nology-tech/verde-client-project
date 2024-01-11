@@ -11,6 +11,7 @@ type HeaderProps = {
   buttonLabel: string;
   buttonVariant: "yellow" | "purple";
   dropdownOption: boolean;
+  onChange?: () => void;
 };
 
 const Header = ({
@@ -20,7 +21,8 @@ const Header = ({
   buttonOption,
   buttonLabel,
   buttonVariant,
-  dropdownOption
+  dropdownOption,
+  onChange
 }: HeaderProps) => {
   return (
     <div className={`header header--${variant}`}>
@@ -28,7 +30,7 @@ const Header = ({
       <div className="header__container">
       <h1 className={`header--${variant}__title`}>{title}</h1>
       {dropdownOption && (
-        <select className={`header__dropdown`} name="staff" id="stafflist">
+        <select className={`header__dropdown`} name="staff" id="stafflist" onChange={onChange}>
           {StaffList.map(staff => 
           <option className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`} </option>
             )}
