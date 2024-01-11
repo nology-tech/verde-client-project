@@ -5,7 +5,7 @@ type ButtonProps = {
   label: string;
   variant: "yellow" | "grey" | "red" | "purple" | "red-alt";
   onClick?: () => void;
-  size?: "large" | "small";
+  size?: "extra-large"|"large" | "small";
   path?: string;
 };
 
