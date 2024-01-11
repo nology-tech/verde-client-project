@@ -5,22 +5,22 @@ import ToggleSwitch from "../Toggle/Toggle";
 import moon from "../../assets/images/moon.svg";
 import sun from "../../assets/images/sun.svg";
 
-
 type SettingsCardProps = {
   variant: "light" | "dark";
-}
-const SettingsCard = ({variant} : SettingsCardProps) => {
+};
+const SettingsCard = ({ variant }: SettingsCardProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleToggleChange = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-
   return (
     <div className={`settings-card settings-card--${variant}`}>
       <div className="settings-card__section">
-        <h2 className={`settings-card__title settings-card__title--${variant}`}>Light/Dark Mode:</h2>
+        <h2 className={`settings-card__title settings-card__title--${variant}`}>
+          Light/Dark Mode:
+        </h2>
         <div className="settings-card__container-mode">
           <img
             className="settings-card__icon settings-card__icon--sun"
@@ -36,11 +36,17 @@ const SettingsCard = ({variant} : SettingsCardProps) => {
         </div>
       </div>
       <div className="settings-card__section">
-        <h2 className={`settings-card__title settings-card__title--${variant}`}>Select Theme:</h2>
+        <h2 className={`settings-card__title settings-card__title--${variant}`}>
+          Select Theme:
+        </h2>
         <div className="settings-card__container-theme">
           <div className="settings-card__radio">
             <label className="settings-card__radio-container">
-              <p className={`settings-card__option settings-card__option--${variant}`}>Modern</p>
+              <p
+                className={`settings-card__option settings-card__option--${variant}`}
+              >
+                Modern
+              </p>
               <input
                 className="settings-card__radio--label"
                 type="radio"
@@ -51,7 +57,11 @@ const SettingsCard = ({variant} : SettingsCardProps) => {
           </div>
           <div className="settings-card__radio">
             <label className="settings-card__radio-container">
-              <p className={`settings-card__option settings-card__option--${variant}`}>Tech</p>
+              <p
+                className={`settings-card__option settings-card__option--${variant}`}
+              >
+                Tech
+              </p>
               <input
                 className="settings-card__radio--label"
                 type="radio"
@@ -61,14 +71,14 @@ const SettingsCard = ({variant} : SettingsCardProps) => {
             </label>
           </div>
         </div>
-        <div className="settings-card__button">
-          <Button
-            label={"Apply"}
-            variant={"yellow"}
-            size={"small"}
-            onClick={() => void {}}
-          />
-        </div>
+      </div>
+      <div className="settings-card__button">
+        <Button
+          label={"Apply"}
+          variant={"yellow"}
+          size={"small"}
+          onClick={() => void {}}
+        />
       </div>
     </div>
   );

@@ -2,7 +2,6 @@
 
 .settings-card {
   background-color: $clr-white;
-  padding: 1.25rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   margin: 1.25rem;
@@ -14,7 +13,6 @@
     background-color: $clr-primary-dk;
   }
 
-
   &__button {
     display: flex;
     margin-left: 0.4rem;
@@ -22,6 +20,7 @@
 
   &__section {
     margin-bottom: 0.9rem;
+
   }
 
   &__title {
@@ -29,7 +28,7 @@
     font-weight: 600;
     margin-bottom: 0.63rem;
 
-    &--dark{
+    &--dark {
       color: $clr-white;
     }
   }
@@ -68,7 +67,7 @@
     color: $clr-secondary-dk;
     font-size: 1rem;
 
-    &--dark{
+    &--dark {
       color: $clr-white;
     }
   }
@@ -89,21 +88,52 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
 
-  .settings-card{
-    width: 27.25rem;
-    height: 16rem;
+  .settings-card {
+    width: 27rem;
+    height: auto;
+    padding: 2rem;
 
-    &__section{
+    &__section {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
 
-      &__container-mode{
+      &__container-mode {
         display: flex;
         flex-direction: row;
-        justify-content:end;
+        justify-content: end;
       }
+    }
+
+    &__radio-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__radio {
+
+      &--label {
+        margin-right: 0;
+      }
+    }
+
+    &__option {
+      margin-left: 2.5rem;
+    }
+
+    &__container-theme {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &__button {
+      margin-top: 1.9rem;
     }
   }
 
-}
 
+
+
+
+}
