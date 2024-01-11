@@ -4,7 +4,6 @@ import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
-import SettingsCard from "../../components/SettingsCard/SettingsCard";
 import "./Home.scss";
 type HomeProps = {
   variant: "light" | "dark";
@@ -27,7 +26,6 @@ const Home = ({ variant }: HomeProps) => {
           <NavCardList labels={NavCardLabels} variant={variant} />
           <Button size="large" label="Log Out" variant="yellow" path="/login" />
         </div>
-        <SettingsCard variant="dark"/>
       </main>
     </Layout>
   );

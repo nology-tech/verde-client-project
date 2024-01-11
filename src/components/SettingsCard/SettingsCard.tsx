@@ -76,7 +76,6 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
         <Button
           label={"Apply"}
           variant={"yellow"}
-          size={"small"}
           onClick={() => void {}}
         />
       </div>
