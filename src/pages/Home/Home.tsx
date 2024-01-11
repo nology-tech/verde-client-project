@@ -17,7 +17,7 @@ const Home = ({ variant }: HomeProps) => {
         <Header
           title="Home"
           variant={variant}
-          buttonOption={true}
+          buttonOption={false}
           buttonLabel="Home"
           buttonVariant="purple"
           dropdownOption={false}
