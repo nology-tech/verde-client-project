@@ -1,0 +1,46 @@
+@use "../../styles/variables" as *;
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 2.8rem;
+    height: 1.25rem;
+  
+    &__input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  
+    &__slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $clr-white;
+      border-radius: 2.1rem;
+      transition: 0.4s;
+      border: 0.06rem solid $clr-secondary-dk;
+  
+      &:before {
+        position: absolute;
+        content: '';
+        height: 0.85rem;
+        width: 0.85rem;
+        left: 0.125rem;
+        bottom: 0.162rem;
+        background-color: $clr-secondary-dk;
+        border-radius: 50%;
+        transition: 0.4s;
+      }
+    }
+  
+    input:checked + &__slider {
+      background-color: $clr-white;
+  
+      &:before {
+        transform: translateX(1.625rem);
+      }
+    }
+  }

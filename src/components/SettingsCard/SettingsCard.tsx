@@ -1,6 +1,7 @@
 import "./SettingsCard.scss";
 import {useState} from "react";
 import Button from "../Button/Button";
+import ToggleSwitch from "../Toggle/Toggle";
 
 
 const SettingsCard = () => {
@@ -15,13 +16,7 @@ const SettingsCard = () => {
       <div className="settings-card">
         <div className="settings-card__section">
           <h2 className="settings-card__section--title">Light/Dark Mode:</h2>
-          <label className="settings-card__toggle">
-            <input type="checkbox" 
-            className="settings-card__toggle--checkbox"
-            checked={isDarkMode}
-            onChange={handleToggleChange}/>
-            <span className="settings-card__toggle--slider"></span>
-          </label>
+          <ToggleSwitch onToggle={handleToggleChange}/> 
         </div>
         <div className="settings-card__section">
           <h2 className="settings-card__section--title">Select Theme:</h2>
