@@ -90,6 +90,7 @@
         align-items: center;
         font-weight: lighter;
       }
+
     }
   }
 
@@ -119,23 +120,11 @@
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
-  html,
-  body {
-    margin: 0;
-    padding: 0;
+  .book-appointment {
+    width: 100%;
     background-color: $clr-secondary-lt;
-  }
-
-  .container {
-    background-color: $clr-secondary-lt;
-    width: 100vw;
-
-    .book-appointment {
-      background-color: $clr-secondary-lt;
-      display: grid;
-
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 3fr 3fr 3fr;
+    display: flex;
+    flex-wrap: nowrap;
 
       .datepicker {
         display: none;
@@ -144,25 +133,11 @@
       .datepicker-label {
         display: none;
       }
-
-      &__header {
-        grid-column: 2/5;
-        grid-row: 1/2;
-
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      &__navbar {
-        grid-column: 1/ 2;
-        grid-row: 1/5;
-      }
-
       &__buttons {
-        grid-column: 1/ 2;
-        grid-row: 3/4;
+
         display: flex;
         flex-direction: row;
-        margin-right: 25rem;
+        margin-right: 25rem; 
 
         .save-button {
           display: block;
@@ -179,79 +154,64 @@
         }
       }
 
-      &__form {
-        font-size: 1.1rem;
-        width: 100vw;
+      .headerForm-container {
+        width: 100%;
+      }
 
-        grid-column: 2/5;
-        grid-row: 2/4;
-        grid-template-columns: 1fr 1fr;
-        display: grid;
+      .book-appointment__form{
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-evenly;
 
-        .calendar-desktop {
-          display: grid;
+      .calendar-desktop, .calendar-title {
+        display: block;
+        width: 14rem;
+        background-color:$clr-secondary-lt;
+        border: none;
+      }
+
+      &--rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        input {
           background-color: $clr-secondary-lt;
-          border: none;
-          margin-top: 4rem;
-          margin-bottom: 3rem;
         }
 
-        &--leftside {
-          display: grid;
-
-          flex-direction: column;
-          margin-left: 6.3rem;
-          margin-bottom: 6.3rem;
-          margin-top: 4rem;
-
-          label {
-            color: black;
-            width: 28.1rem;
-            margin-bottom: 0.6rem;
-          }
-
-          input {
-            margin-bottom: 0.6rem;
-            width: 28.1rem;
-            background-color: $clr-secondary-lt;
-            margin-bottom: 1.3rem;
-          }
-
-          select {
-            color: black;
-            width: 28.1rem;
-            background-color: $clr-secondary-lt;
-            margin-bottom: 0.6rem;
-          }
-
-          option {
-            width: 28.1rem;
-            background-color: $clr-secondary-lt;
-          }
+        select {
+          background-color: $clr-secondary-lt;
         }
 
-        &--rightside {
-          display: grid;
-          flex-direction: column;
+        option {
+          background-color: $clr-secondary-lt;
+        }
+      }
 
-          margin-left: 1rem;
-          margin-bottom: 6.3rem;
-          margin-top: 3rem;
 
-          select {
-            color: black;
-            width: 28.1rem;
-            background-color: $clr-secondary-lt;
-          }
+      &--leftside {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 0.6rem;
 
-          option {
-            width: 28.1rem;
-            background-color: $clr-secondary-lt;
-          }
+        input {
+          background-color: $clr-secondary-lt;
+        }
 
-          label {
-            width: 28.1rem;
-          }
+        select {
+          background-color: $clr-secondary-lt;
+        }
+
+        option {
+          background-color: $clr-secondary-lt;
+        }
+
+        .cancel-button .save-button {
+          display: flex;
         }
       }
     }
