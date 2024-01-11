@@ -1,0 +1,67 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+.booking-card {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    border: $clr-accent-grey 1px solid;
+    background-color: $clr-white;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0rem 0.5rem 1rem 0.5rem;
+
+    &--light {
+        background-color: $clr-white;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        color: $clr-white
+    }
+
+    &__name {
+        font-weight: bold;
+        color: inherit
+    }
+
+    &__info, &__time {
+        display: none;
+    }
+
+    &__img {
+        align-self: center;
+        justify-self: right;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .booking-card {
+        text-align: center;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+        gap: 0.5rem;
+
+        &__info {
+            color: $clr-accent-grey;
+            display: unset;
+        }
+
+        &__time {
+            font-weight: bold;
+            color: $clr-secondary-dk;
+            display: unset;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .booking-card {
+        text-align: center;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+
