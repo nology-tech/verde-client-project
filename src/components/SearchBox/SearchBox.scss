@@ -1,0 +1,33 @@
+@use "../../assets/styles/variables" as *;
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3.125rem;
+
+  .search-box__label {
+    font-size: 1.25rem;
+  }
+
+  .search-box__input {
+    margin: 1.25rem 0;
+    padding: 0.625rem;
+    font-size: 1.125rem;
+    border: 0.313rem $color-grey solid;
+    border-radius: 1rem;
+    color: $color-black;
+
+    &:focus {
+      border: 0.313rem $color-primary solid;
+      outline: none;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .search-box {
+    .search-box__input {
+      width: calc((100% / 3) - 3.125rem);
+    }
+  }
+}
