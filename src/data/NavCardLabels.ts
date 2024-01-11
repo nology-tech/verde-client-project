@@ -1,29 +1,28 @@
 export const NavCardLabels = [
-  /*paths need to be updated with the correct paths 
-  once components are completed */
+  
   {
     label: "New Appointments",
     buttonLabel: "Go",
-    path: "/",
+    path: "/book-appointment",
   },
   {
     label: "Staff Details",
     buttonLabel: "Go",
-    path: "/",
+    path: "/staff",
   },
   {
     label: "Client Details",
     buttonLabel: "Go",
-    path: "/",
+    path: "/clients",
   },
   {
     label: "Resources",
     buttonLabel: "Go",
-    path: "/",
+    path: "/resources",
   },
   {
     label: "Settings",
     buttonLabel: "Go",
-    path: "/",
+    path: "/settings",
   },
 ];
