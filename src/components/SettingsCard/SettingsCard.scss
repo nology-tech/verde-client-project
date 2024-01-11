@@ -86,3 +86,24 @@
   }
 
 }
+
+@media screen and (min-width: $desktop-breakpoint) {
+
+  .settings-card{
+    width: 27.25rem;
+    height: 16rem;
+
+    &__section{
+      display: flex;
+      flex-direction: row;
+
+      &__container-mode{
+        display: flex;
+        flex-direction: row;
+        justify-content:end;
+      }
+    }
+  }
+
+}
+
