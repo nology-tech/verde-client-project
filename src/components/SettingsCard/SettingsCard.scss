@@ -1,72 +1,75 @@
 @use "../../styles/variables" as *;
 
 .settings-card {
-    background-color: $clr-white;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    margin: 1.25rem;
-    width: 23.6rem;
-    height: 23.9rem;
-  
-    &__section {
-      margin-bottom: 0.9rem;
+  background-color: $clr-white;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin: 1.25rem;
+  width: 23.6rem;
+  height: 23.9rem;
+  padding: 1.5rem;
 
-      &--title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.63rem;
-      }
+  &__button {
+    display: flex;
+    margin-left: 0.4rem;
+  }
+
+  &__section {
+    margin-bottom: 0.9rem;
+
+    &--title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.63rem;
+    }
+  }
+
+  &__container-mode {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.8rem;
+    padding-bottom: 1.2rem;
+    margin-left: 0.4rem;
+  }
+
+  &__icon {
+    width: 0.87rem;
+    height: auto;
+
+    &--sun {
+      margin-right: 0.6rem;
     }
 
-    &__toggle {
-        position: relative;
-        display: inline-block;
-        width: 3.75rem;
-        height: 2.12;
-        background-color: red;
-  
-        &--slider{
-          position: absolute;
-          cursor: pointer;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: $clr-black;
-          border-radius: 2.12rem;
-          transition: 0.4s;
-  
-          &:before{
-              position: absolute;
-              content: '';
-              height: 1.62rem;
-              width: 1.62rem;
-              left: 0.25rem;
-              bottom: 0.25rem;
-              background-color: white;
-              border-radius: 50%;
-              transition: 0.4s;
-          }
-        }
-  
-      input {
-          opacity: 0;
-          width: 0;
-          height: 0;   
-      }
-  
-      &:checked + &--slider {
-          background-color: #2196f3;
-          
-          &:before{
-            transform: translateX(26px);
-        }
-      }
+    &--moon {
+      margin-left: 0.65rem;
     }
+  }
+
+  &__container-theme {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.3rem;
+    padding-bottom: 1.2rem;
+  }
+
+  &__option {
+    color: $clr-secondary-dk;
+    font-size: 1rem;
+  }
+
+  &__radio {
+    &--label {
+      margin-left: 0.5rem;
+      margin-right: 2rem;
+    }
+  }
+
+  &__radio-container {
+    display: flex;
+    align-items: center;
+  }
+
 }
-    
-  
-
-
-  
