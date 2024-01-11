@@ -7,6 +7,7 @@ type NavCardProps = {
   buttonLabel: string;
   variant: "light" | "dark";
   path?: string;
+  size ?:0
 };
 
 const NavCard = ({ label, buttonLabel, variant, path }: NavCardProps) => {
