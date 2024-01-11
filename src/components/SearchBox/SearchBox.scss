@@ -3,39 +3,26 @@
 
 
 .search-box {
-  display: flex;
-  align-items: center;
-  padding: 0 3.125rem;
-  
-  &__img{
-    height: 50%;
-    width: auto;
-    background-color: $clr-accent-grey;;
-  }
-  
+  justify-self: flex-end;
   .search-box__label {
     font-size: 1.25rem;
   }
 
   .search-box__input {
     margin: 1.25rem 0;
-    padding: 0.625rem;
+    padding: 0.2rem;
     font-size: 1.125rem;
     background-color: $clr-accent-grey;
     color: $clr-black;
     border: 1px;
+    background-image: url("images/search.png");
+    background-position: right center;
+    background-repeat: no-repeat;
 
     &:focus {
-      // border: 0.313rem $color-primary solid;
       outline: none;
     }
   }
 }
 
-// @media screen and (min-width: $desktop-breakpoint) {
-//   .search-box {
-//     .search-box__input {
-//       width: calc((100% / 3) - 3.125rem);
-//     }
-//   }
-// }
+
