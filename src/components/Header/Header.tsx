@@ -1,4 +1,4 @@
-import logo from "../../../public/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { StaffList } from "../../data/StaffNavList";
 import Button from "../Button/Button";
 import "./Header.scss";

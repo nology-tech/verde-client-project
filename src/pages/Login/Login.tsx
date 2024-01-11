@@ -1,6 +1,6 @@
 import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import login from "../../assets/images/login-pic.png";
 
 const Login = () => {
