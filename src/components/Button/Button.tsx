@@ -10,7 +10,7 @@ type ButtonProps = {
 };
 
 const Button = ({ label, variant, onClick, size, path }: ButtonProps) => {
-  const className = `button button--${variant} button--${size || "small"}`;
+  const className = `button button--${variant || size}`;
   return (
     <Link to={path || "#"} >
       <button className={className} onClick={onClick?() => onClick(): undefined}>
