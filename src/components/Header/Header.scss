@@ -40,11 +40,13 @@
   .header {
     background-color: $clr-white;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: nowrap;
     box-shadow: 0rem 0.4rem 0.8rem 0rem $clr-accent-grey;
     z-index: 0;
     
-
     &__container{
       display: flex;
       flex-direction: column;
@@ -89,5 +91,6 @@
   }
 .header__button{
   display: unset;
+  margin-right:1rem;
 }
 }
