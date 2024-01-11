@@ -20,7 +20,7 @@ const Home = ({ variant }: HomeProps) => {
           buttonOption={true}
           buttonLabel="Home"
           buttonVariant="purple"
-          dropdownOption={true}
+          dropdownOption={false}
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
