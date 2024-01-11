@@ -190,7 +190,7 @@ const BookAppointment = () => {
                 selected={datePickerDate as Date}
                 className="datepicker-mobile"
                 onChange={handleDatePickerChange}
-                placeholderText="Select date..."
+                placeholderText="DD/MM/YYYY"
               />
             </div>
             <label>Time:</label>
