@@ -1,4 +1,5 @@
 @use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
 
 .header {
   padding: 1rem 0.6rem;
@@ -27,7 +28,11 @@
   }
 
   &__button{
-    display:none;
+     display:none;
+  }
+
+  &__dropdown{
+    display: none;
   }
 }
 
@@ -35,16 +40,23 @@
   .header {
     background-color: $clr-white;
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    box-shadow: 0rem 0.4rem 0.8rem 0rem $clr-accent-grey;
+    z-index: 0;
+    
 
+    &__container{
+      display: flex;
+      flex-direction: column;
+    }
     &--light {
       background-color: $clr-white;
       
-    &__title {
-      color: $clr-black;
-      margin-left: 3rem;
-    }
-
+      &__title {
+        color: $clr-black;
+        margin-left: 3rem;
+        font-size: 2em;
+      }
     }
   
     &--dark {
@@ -57,13 +69,25 @@
     }
     }
 
-
     &__logo {
       display: none;
     }
 
-    &__button {
+    &__dropdown{
       display: unset;
+      justify-self: flex-end;
+      margin-left: 3rem;
+      height: 2rem;
+      width: 4rem;
+      border: none;
+      outline:0;
+      border-bottom: 0.25rem solid $clr-accent-purple;
+      font-weight: bold;
+      font-size: 1rem;
+      ;
     }
   }
+.header__button{
+  display: unset;
+}
 }
