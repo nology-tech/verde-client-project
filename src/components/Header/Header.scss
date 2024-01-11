@@ -1,4 +1,5 @@
 @use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
 
 .header {
   padding: 1rem 0.6rem;
@@ -27,7 +28,7 @@
   }
 
   &__button{
-    display:none;
+     display:none;
   }
 
   &__dropdown{
@@ -40,7 +41,7 @@
     background-color: $clr-white;
     display: flex;
     flex-wrap: nowrap;
-    height: 300px;
+    
 
     &__container{
       display: flex;
@@ -52,7 +53,7 @@
       &__title {
         color: $clr-black;
         margin-left: 3rem;
-        font-size: 1em;
+        font-size: 2em;
       }
     }
   
@@ -77,7 +78,11 @@
       height: 2rem;
       width: 4rem;
       border: none;
-      border-bottom: 3px solid purple;
+      outline:0;
+      border-bottom: 3px solid $clr-accent-purple;
+      font-weight: bold;
+      font-size: 1rem;
+      ;
     }
   }
 .header__button{

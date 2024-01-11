@@ -30,7 +30,7 @@ const Header = ({
       {dropdownOption && (
         <select className={`header__dropdown`} name="staff" id="stafflist">
           {StaffList.map(staff => 
-          <option className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`}</option>
+          <option className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`} </option>
             )}
         </select>
       )}
