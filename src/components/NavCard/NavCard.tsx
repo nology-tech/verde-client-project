@@ -7,7 +7,6 @@ type NavCardProps = {
   buttonLabel: string;
   variant: "light" | "dark";
   path?: string;
-  size ?:0
 };
 
 const NavCard = ({ label, buttonLabel, variant, path }: NavCardProps) => {
@@ -22,6 +21,7 @@ const NavCard = ({ label, buttonLabel, variant, path }: NavCardProps) => {
         <img className="navcard__arrow" src={Arrow} alt={label}></img>
         <Button
           label={buttonLabel}
+          size="small"
           variant="yellow"
           path={path}
           onClick={onButtonClick}
