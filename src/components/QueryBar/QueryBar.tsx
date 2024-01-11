@@ -19,11 +19,11 @@ const QueryBar = ({label, hasFilter, onClick, handleInput}: QueryBarProps) => {
             <SearchBox />
             <div className='querybar__sort'>
                 <img className='querybar__sort--img' src='images/sort.png' />
-                <p>Sort</p>
+                <p className='querybar__sort--text'>Sort</p>
             </div>
             <div className='querybar__filter'>
                 <img className='querybar__filter--img' src='images/filter.png' />
-                <p>Filter</p>
+                <p className='querybar__filter--text'>Filter</p>
             </div>
 
         </div>

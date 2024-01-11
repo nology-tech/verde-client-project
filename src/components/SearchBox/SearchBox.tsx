@@ -6,19 +6,16 @@ type SearchBoxProps = {
   handleInput: FormEventHandler<HTMLInputElement>;
 };
 
-const SearchBox = ({searchTerm, handleInput }: SearchBoxProps) => {
-
+const SearchBox = ({ searchTerm, handleInput }: SearchBoxProps) => {
   return (
     <div className="search-box">
-      <input
-        type="text"
-        value={searchTerm}
-        onInput={handleInput}
-        className="search-box__input"
-      />
-      <div className="search-box__img-container">
-        <img className='search-box__img-container--img' src='images/search.png' />
-      </div>
+        <input
+          type="text"
+          value={searchTerm}
+          onInput={handleInput}
+          className="search-box__input"
+        />
+        <img className="search-box__img" src="images/search.png" />
     </div>
   );
 };

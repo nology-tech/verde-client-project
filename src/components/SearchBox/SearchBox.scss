@@ -4,11 +4,15 @@
 
 .search-box {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   padding: 0 3.125rem;
   
+  &__img{
+    height: 50%;
+    width: auto;
+    background-color: $clr-accent-grey;;
+  }
   
-
   .search-box__label {
     font-size: 1.25rem;
   }
