@@ -6,9 +6,10 @@ type NavCardProps = {
   label: string;
   buttonLabel: string;
   variant: "light" | "dark";
+  path?: string;
 };
 
-const NavCard = ({ label, buttonLabel, variant }: NavCardProps) => {
+const NavCard = ({ label, buttonLabel, variant, path }: NavCardProps) => {
   function onButtonClick(): void {
     throw new Error("Function not implemented.");
   }
@@ -18,7 +19,12 @@ const NavCard = ({ label, buttonLabel, variant }: NavCardProps) => {
       <div className={`navcard navcard--${variant}`}>
         <h3 className={`navcard__name navcard__name--${variant}`}>{label}</h3>
         <img className="navcard__arrow" src={Arrow} alt={label}></img>
-        <Button label={buttonLabel} variant="yellow" onClick={onButtonClick} />
+        <Button
+          label={buttonLabel}
+          variant="yellow"
+          path={path}
+          onClick={onButtonClick}
+        />
       </div>
     </>
   );
