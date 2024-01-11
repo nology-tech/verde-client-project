@@ -5,17 +5,22 @@ import ToggleSwitch from "../Toggle/Toggle";
 import moon from "../../assets/images/moon.svg";
 import sun from "../../assets/images/sun.svg";
 
-const SettingsCard = () => {
+
+type SettingsCardProps = {
+  variant: "light" | "dark";
+}
+const SettingsCard = ({variant} : SettingsCardProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleToggleChange = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+
   return (
-    <div className="settings-card">
+    <div className={`settings-card settings-card--${variant}`}>
       <div className="settings-card__section">
-        <h2 className="settings-card__section--title">Light/Dark Mode:</h2>
+        <h2 className={`settings-card__title settings-card__title--${variant}`}>Light/Dark Mode:</h2>
         <div className="settings-card__container-mode">
           <img
             className="settings-card__icon settings-card__icon--sun"
@@ -31,11 +36,11 @@ const SettingsCard = () => {
         </div>
       </div>
       <div className="settings-card__section">
-        <h2 className="settings-card__section--title">Select Theme:</h2>
+        <h2 className={`settings-card__title settings-card__title--${variant}`}>Select Theme:</h2>
         <div className="settings-card__container-theme">
           <div className="settings-card__radio">
             <label className="settings-card__radio-container">
-              <p className="settings-card__option">Modern</p>
+              <p className={`settings-card__option settings-card__option--${variant}`}>Modern</p>
               <input
                 className="settings-card__radio--label"
                 type="radio"
@@ -46,7 +51,7 @@ const SettingsCard = () => {
           </div>
           <div className="settings-card__radio">
             <label className="settings-card__radio-container">
-              <p className="settings-card__option">Tech</p>
+              <p className={`settings-card__option settings-card__option--${variant}`}>Tech</p>
               <input
                 className="settings-card__radio--label"
                 type="radio"
