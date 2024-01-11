@@ -43,6 +43,7 @@ const Header = ({
             label={buttonLabel}
             variant={buttonVariant}
             onClick={onClick}
+            path="/"
           />
         </div>)}
     </div>
