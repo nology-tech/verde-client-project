@@ -132,9 +132,9 @@ const BookAppointment = () => {
             />
             {/* uses npmjs react-calendar package */}
           </div>
-          
           <form className="book-appointment__form">
-            <div className="book-appointment__form--leftside">
+            <div className="leftRight-wrapper">
+              <div className="book-appointment__form--leftside">
               <label>First Name</label>
               <input
                 type="text"
@@ -179,69 +179,70 @@ const BookAppointment = () => {
                   </option>
                 ))}
               </select>
-            </div>
-
-            <div className="book-appointment__form--rightside">
-              <Calendar
-                className="calendar-desktop"
-                onChange={(date: any) => handleDateChange(date)}
-                value={selectedDate as Date}
-              />
-              <label className="datepicker-label">Date:</label>
-              <div className="datepicker">
-                <DatePicker
-                  selected={datePickerDate as Date}
-                  className="datepicker-mobile"
-                  onChange={handleDatePickerChange}
-                  placeholderText="DD/MM/YYYY"
-                />
               </div>
-              <label>Time:</label>
 
-              <select
-                name="appointmentTime"
-                value={selectedTime}
-                onChange={(e) => setSelectedTime(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select time...
-                </option>
+              <div className="book-appointment__form--rightside">
+                <Calendar
+                  className="calendar-desktop"
+                  onChange={(date: any) => handleDateChange(date)}
+                  value={selectedDate as Date}
+                />
+                <label className="datepicker-label">Date:</label>
+                <div className="datepicker">
+                  <DatePicker
+                    selected={datePickerDate as Date}
+                    className="datepicker-mobile"
+                    onChange={handleDatePickerChange}
+                    placeholderText="DD/MM/YYYY"
+                  />
+                </div>
+                <label>Time:</label>
 
-                {timeIntervals.map((time, index) => (
-                  <option key={index} value={time}>
-                    {time}
+                <select
+                  name="appointmentTime"
+                  value={selectedTime}
+                  onChange={(e) => setSelectedTime(e.target.value)}
+                >
+                  <option value="" disabled>
+                    Select time...
                   </option>
-                ))}
-              </select>
-            </div>
 
-            <div className="book-appointment__buttons">
-              <div className="save-button">
-                <Button
-                  label="Save"
-                  variant="yellow"
-                  onClick={handleSubmit}
-                  size="large"
-                />
-              </div>
-              <div className="submit-button">
-                <Button
-                  label="Submit"
-                  variant="yellow"
-                  onClick={handleDatePickerSubmit}
-                  size="large"
-                />
-              </div>
-              <div className="cancel-button">
-                <Button
-                  label="Cancel"
-                  variant="grey"
-                  onClick={() => console.log("Cancel button clicked")}
-                  size="large"
-                />
+                  {timeIntervals.map((time, index) => (
+                    <option key={index} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
-            
+            <div className="buttons-wrapper" >
+              <div className="book-appointment__buttons">
+                <div className="save-button">
+                  <Button
+                    label="Save"
+                    variant="yellow"
+                    onClick={handleSubmit}
+                    size="large"
+                  />
+                </div>
+                <div className="submit-button">
+                  <Button
+                    label="Submit"
+                    variant="yellow"
+                    onClick={handleDatePickerSubmit}
+                    size="large"
+                  />
+                </div>
+                <div className="cancel-button">
+                  <Button
+                    label="Cancel"
+                    variant="grey"
+                    onClick={() => console.log("Cancel button clicked")}
+                    size="large"
+                  />
+                </div>
+              </div>
+            </div>
           </form>
         </div>
         <Footer variant="light" />

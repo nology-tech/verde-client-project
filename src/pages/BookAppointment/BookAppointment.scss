@@ -4,10 +4,14 @@
 @import "react-calendar/dist/Calendar.css"; //react-calendar default stylesheet
 @import "react-datepicker/dist/react-datepicker.css";
 
+.container {
+  width: 100%;
+}
 .book-appointment {
   background-color: $clr-white;
   font-weight: bold;
-  height: 100vh;
+  height: 100%vh;
+
 
   &__form {
     font-size: 0.7rem;
@@ -128,17 +132,13 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
 
-  .container {
-    width: 100%;
-    background-color: $clr-secondary-lt;
-  }
-  
+//when you go higher that laptop the white space on the right dissapears
   .book-appointment {
-    width: 100%;
-    background-color: $clr-secondary-lt;
+    width: 100vw;
+    height: 100%;
     display: flex;
-    flex-wrap: nowrap;
-
+    background-color: $clr-white;
+  
       .datepicker {
         display: none;
       }
@@ -171,77 +171,84 @@
       .headerForm-container {
         background-color: $clr-secondary-lt;
         width: 100%;
-        
-        
-        
 
+        .book-appointment__header{
+          width: 100%;
+        }
       }
 
       .book-appointment__form{
+        width: 100%;
         padding: 2rem;
         display: flex;
-        //flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-evenly;
-        background-color: $clr-secondary-lt;
+        flex-direction: column;
+
+        // flex-wrap: wrap;
+
+        .leftRight-wrapper{
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        &--rightside {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: $clr-secondary-lt;
+  
+          input {
+            background-color: $clr-secondary-lt;
+          }
+
+          select {
+            background-color: $clr-secondary-lt;
+            background-color: red;
+          }
+  
+          option {
+            background-color: $clr-secondary-lt;
+          }
+        }
+  
+        &--leftside {
+          width: 50%;
+          display: flex;
+          // height: 100%;
+          flex-direction: column;
+          justify-content: space-around;
+          font-size: 0.6rem;
+          margin-bottom: 2rem;
+          background-color: $clr-secondary-lt;
+  
+          input {
+            background-color: $clr-secondary-lt;
+            width: 17rem ;
+          }
+  
+          select {
+            background-color: $clr-secondary-lt;
+            width: 17rem
+          }
+  
+          option {
+            background-color: $clr-secondary-lt;
+          }
+        }
 
       .calendar-desktop, .calendar-title {
         display: block;
         width: 14rem;
         background-color:$clr-secondary-lt;
         border: none;
-      }
-
-      &--rightside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-color: $clr-secondary-lt;
-
-        input {
-          background-color: $clr-secondary-lt;
-        }
-
-        select {
-          background-color: $clr-secondary-lt;
-        }
-
-        option {
-          background-color: $clr-secondary-lt;
-        }
-      }
-
-      &--leftside {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-around;
-        font-size: 0.6rem;
-        margin-bottom: 2rem;
-        background-color: $clr-secondary-lt;
-
-        input {
-          background-color: $clr-secondary-lt;
-          width: 15rem ;
-        }
-
-        select {
-          background-color: $clr-secondary-lt;
-        }
-
-        option {
-          background-color: $clr-secondary-lt;
-        }
+        margin-bottom: 1.45rem;
       }
     }
   }
-
   .book-appointment__buttons {
-    margin-left: 3rem;
-
-    .save-button {
-      height: 1rem;
-    }
-
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1.3rem;
   }
 }
