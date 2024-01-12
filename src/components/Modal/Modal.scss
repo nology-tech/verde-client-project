@@ -34,11 +34,28 @@
     }
 }
 
-
-@media screen and (min-width: $desktop-breakpoint) {
+@media screen and (min-width: $tablet-breakpoint) {
     .modal {
         left: 25%;
-        top: 50%;
+        top: 40%;
         width: 50%;
     }
 }
+
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .modal {
+        left: 37%;
+        top: 37%;
+        width: 50%;
+    }
+}
+
+
+// @media screen and (min-width: $desktop-breakpoint) {
+//     .modal {
+//         left: 40%;
+//         top: 40%;
+//         width: 50%;
+//     }
+// }

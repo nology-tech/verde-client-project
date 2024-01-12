@@ -15,19 +15,28 @@ type SettingsProps = {
 const Settings = ({ variant }: SettingsProps) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
 
   const handleButtonClick = () => {
     setIsClicked(!isClicked);
     setIsVisible(!isVisible);
   };
 
-  const buttons = [
-    <Button label={"Logout"} variant={"red"} path={"/"} />,
+  const handleLogoutClicked = () => {
+    setIsLogoutClicked(!isLogoutClicked)
+  }
+
+  const modalOne = [
+    <Button label={"Logout"} variant={"red"} onClick={handleLogoutClicked} />,
     <Button
       label={"Back"}
       variant={"yellow"}
       onClick={handleButtonClick}
     />,
+  ];
+
+  const modalTwo = [
+    <Button label={"Back to Login"} variant={"red"} onClick={handleLogoutClicked} path="/"/>,
   ];
 
   return (
@@ -38,25 +47,36 @@ const Settings = ({ variant }: SettingsProps) => {
           title="Settings"
           variant={variant}
           buttonOption={true}
+          onClick={handleButtonClick}
           buttonLabel="Log out"
           buttonVariant="yellow"
           dropdownOption={false}
         />
+        {!isClicked && (
         <div className="settings__container">
           <SettingsCard variant={variant} />
-          <div className="settings__card">
+          <div className={`settings__card settings__card--${variant}`}>
             <Button label="Log Out" variant="red" onClick={handleButtonClick} />
           </div>
         </div>
-        <div className="settings__modal">
-          {isClicked && (
+        )}
+          <div className={"settings__modal"}>
+          {isClicked && !isLogoutClicked && (
             <Modal
               title={"Are you sure you want to log out?"}
-              buttons={buttons}
-              variant={"light"}
+              buttons={modalOne}
+              variant={"dark"}
             />
           )}
-        </div>
+          {isLogoutClicked && (
+            <Modal
+              title={"Logged out!"}
+              buttons={modalTwo}
+              variant={"dark"}
+            />
+          )}
+          </div>
+          
       </main>
 
       <Footer variant={variant} />

@@ -21,7 +21,7 @@ const App = () => {
       {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
 
       {/* <Route path="/staff" element={<Staff />} /> */}
-      <Route path="/settings" element={<Settings variant="light"/>} />
+      <Route path="/settings" element={<Settings variant="dark"/>} />
       
     </Routes>
   );
