@@ -1,4 +1,4 @@
-import logo from "../../../public/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { StaffList } from "../../data/StaffNavList";
 import Button from "../Button/Button";
 import "./Header.scss";
@@ -43,6 +43,7 @@ const Header = ({
             label={buttonLabel}
             variant={buttonVariant}
             onClick={onClick}
+            path="/"
           />
         </div>)}
     </div>
