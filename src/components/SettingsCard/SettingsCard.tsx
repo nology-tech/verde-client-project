@@ -10,6 +10,7 @@ type SettingsCardProps = {
 };
 const SettingsCard = ({ variant }: SettingsCardProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isModernTheme, setModernTheme] = useState(true);
 
   const handleToggleChange = () => {
     setIsDarkMode(!isDarkMode);
@@ -52,6 +53,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
                 type="radio"
                 value="enabled"
                 name="theme"
+                checked={isModernTheme}
               />
             </label>
           </div>
@@ -73,11 +75,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
         </div>
       </div>
       <div className="settings-card__button">
-        <Button
-          label={"Apply"}
-          variant={"yellow"}
-          onClick={() => void {}}
-        />
+        <Button label={"Apply"} variant={"yellow"} onClick={() => void {}} />
       </div>
     </div>
   );
