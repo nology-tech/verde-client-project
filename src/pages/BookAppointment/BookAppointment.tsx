@@ -176,6 +176,7 @@ const BookAppointment = () => {
                   className="calendar-desktop"
                   onChange={(date) => setSelectedDate(date as Date)}
                   value={selectedDate as Date}
+                  minDate={new Date()}
                 />
 
                 <label className="datepicker-label">Date:</label>
@@ -186,6 +187,7 @@ const BookAppointment = () => {
                     onChange={(date) => setSelectedDate(date as Date)}
                     placeholderText="DD/MM/YYYY"
                     dateFormat="dd/MM/yyyy"
+                    minDate={new Date()}
                   />
                 </div>
                 <label>Time:</label>
