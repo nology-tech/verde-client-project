@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth,  signInWithEmailAndPassword } from "firebase/auth";
-
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_TOKEN,
@@ -16,6 +15,19 @@ export const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const loginEmailPassword = async (email : string, password : string) => {
-  const userCredential = await signInWithEmailAndPassword(auth, email, password)
-}
+/**
+ * Logs in a user using email and password credentials.
+ *
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * @returns {Promise<UserCredential>} A promise that resolves to the user credential upon successful login.
+ * @throws {FirebaseError} If the login attempt fails, it throws a FirebaseError with details.
+ */
+export const loginEmailPassword = async (email: string, password: string) => {
+  const userCredential = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  return userCredential;
+};
