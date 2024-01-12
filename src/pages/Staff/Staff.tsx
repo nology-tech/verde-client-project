@@ -11,15 +11,28 @@ import { StaffBookingsList } from "../../data/StaffBookingsList";
 import Justify from "../../assets/images/bi-justify.png";
 import Justify_alt from "../../assets/images/bi-grid-3x3-gap-fill.png";
 import Sort from "../../assets/images/sort.png";
+import Search from "../../assets/images/search.png"
+import { ChangeEvent, useState } from "react";
 
 type StaffProps = {
   variant: "light" | "dark";
 };
 
+ 
+  
+
 const Staff = ({ variant }: StaffProps) => {
+  const [dropDown, setDropDown] = useState<string>("Staff 1")
+
+  const handleDropDown = (event:ChangeEvent<HTMLSelectElement>) => {
+    setDropDown(event.currentTarget.value)
+    console.log(dropDown)
+  }
+  
   return (
       <Layout>
         <NavBar variant={variant} />
+        <main className={`main main--${variant}`}>
         <Header
             title={"Staff"}
             variant={"light"}
@@ -27,14 +40,15 @@ const Staff = ({ variant }: StaffProps) => {
             buttonLabel={""}
             buttonVariant={"yellow"}
             dropdownOption={true}
+            onChange={handleDropDown}
           />
-        <main className={`main main--${variant}`}>
+        
           <section className="profile--section">
             <h1 className="profile--section__heading">Overview</h1>
             <StaffProfileCard
               staff={{
                 id: 0,
-                name: "",
+                name:"",
                 start: "",
                 courseEnd: "",
                 manager: "",
@@ -52,7 +66,10 @@ const Staff = ({ variant }: StaffProps) => {
               <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Justify} /></button>
               <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Justify_alt} /></button>
               </div>
+              <div className="search-bar">
               <input className="booking__menu--input" type="text"></input>
+              <img className= "booking__menu--icon" src={Search}></img>
+              </div>
               <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Sort} /></button>
             </div>
             <StaffBookingList bookings={StaffBookingsList} variant={"light"} /> 

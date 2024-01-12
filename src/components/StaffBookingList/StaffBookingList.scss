@@ -32,13 +32,21 @@
 @media screen and (min-width: $desktop-breakpoint) {
     .booking-list{
         &__titles{
+            
             display: grid;
             grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
             gap: 2.5rem;
             
+        
             &--spheadings{
             margin-left: 1rem;
+           
+            }
+            p{
+                font-size: 0.6rem;
             }
         }   
+       
     }
-}
+    }
+    

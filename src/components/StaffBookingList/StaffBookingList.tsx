@@ -19,6 +19,7 @@ const StaffBookingList = ({bookings, variant} : StaffBookingListProps) => {
             </div>
             {bookings.map((booking) => 
                 <StaffBookingCard 
+                key={booking.id}
                 id={booking.id}
                 clientName={booking.clientName} 
                 email={booking.emailAddress} 
