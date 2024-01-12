@@ -35,6 +35,12 @@
         justify-items: center;
         margin-bottom: 2rem;
     }
+
+    &__modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
