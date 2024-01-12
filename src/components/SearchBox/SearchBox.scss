@@ -1,0 +1,30 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+
+.search-box {
+  justify-self: flex-end;
+  .search-box__label {
+    font-size: 1.25rem;
+  }
+
+  .search-box__input {
+    margin: 1.25rem 0;
+    padding: 0.2rem;
+    font-size: 1.125rem;
+    background-color: $clr-accent-grey;
+    color: $clr-black;
+    border: none;
+    background-image: url("./../../assets/images/search.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+

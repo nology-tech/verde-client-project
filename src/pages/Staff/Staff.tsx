@@ -1,3 +1,4 @@
+import "./Staff.scss";
 import { StaffList } from "../../data/StaffNavList";
 import StaffNavList from "../../components/StaffNavList/StaffNavList";
 import Header from "../../components/Header/Header";
@@ -29,8 +30,8 @@ const Staff = ({ variant }: StaffProps) => {
             buttonVariant={"yellow"}
             dropdownOption={true}
           />
-          <section className="profile">
-            <h1 className="profile__heading">Overview</h1>
+          <section className="profile--section">
+            <h1 className="profile--section__heading">Overview</h1>
             <StaffProfileCard
               staff={{
                 id: 0,
@@ -46,12 +47,14 @@ const Staff = ({ variant }: StaffProps) => {
           </section>
           <StaffNavList staff={StaffList} variant={"light"} />
           <section className="booking">
-            <div className="booking__meanu">
-              <h1>Bookings</h1>
-              <img src={Justify} />
-              <img src={Justify_alt} />
-              <input type="text"></input>
-              <img src={Sort} />
+            <div className="booking__menu">
+              <h1 className="booking__staff">Bookings</h1>
+              <div className="display">
+              <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Justify} /></button>
+              <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Justify_alt} /></button>
+              </div>
+              <input className="booking__menu--input" type="text"></input>
+              <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Sort} /></button>
             </div>
             <StaffBookingList bookings={StaffBookingsList} variant={"light"} />
           </section>
