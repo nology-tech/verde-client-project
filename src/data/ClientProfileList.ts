@@ -1,6 +1,6 @@
 export const ClientProfileList = [
     {clientName: "John Doe",
-    role: "teacher",
+    role: "Teacher",
     dob: "24/03/1997",
     emailAddress: "john.doe@gmail.com",
     mobileNumber: "61928272888",
@@ -10,7 +10,7 @@ export const ClientProfileList = [
   },
   {
     clientName: "Bob Bob",
-    role: "fireman",
+    role: "Fireman",
     dob: "26/03/1999",
     emailAddress: "bob.bob@gmail.com",
     mobileNumber: "01928273847",
@@ -20,7 +20,7 @@ export const ClientProfileList = [
   },
   {
     clientName: "Lala land",
-    role: "actor",
+    role: "Actor",
     dob: "13/05/1992",
     emailAddress: "lala.land@gmail.com",
     mobileNumber: "31928273898",
@@ -30,7 +30,7 @@ export const ClientProfileList = [
   },
   {
     clientName: "Teheee Pee",
-    role: "toilet inspector",
+    role: "Toilet Inspector",
     dob: "19/09/1990",
     emailAddress: "tehee.pee@gmail.com",
     mobileNumber: "21928272777",
@@ -40,7 +40,7 @@ export const ClientProfileList = [
   },
   {
     clientName: "Hells Mells",
-    role: "chef",
+    role: "Chef",
     dob: "04/02/1996",
     emailAddress: "hells.mells@gmail.com",
     mobileNumber: "01928272888",
