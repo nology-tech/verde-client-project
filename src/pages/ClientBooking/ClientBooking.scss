@@ -1,21 +1,33 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
-.main__subtitle {
-  display: none;
+.page {
+  &--dark{
+    background-color: $clr-secondary-dk;
+  }
+  
+  &__subtitle--dark{
+    color: $clr-white;
+  }
+
+  &__subtitle-container {
+    display: none;
+  }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
-  .main__container {
+  .page__container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
+    flex-direction: row;
+    justify-content: space-evenly;
   }
-  
-  .main__subtitle {
-      display: unset;
-      padding-left: 1rem;
-      padding-top: 1rem;
-    }
+
+  .page__subtitle-container {
+    display: unset;
+  }
+
+  .page__subtitle {
+    padding-top: 2.5rem;
+    padding-left: 0.75rem;
+  }
 }
