@@ -1,4 +1,9 @@
 import SearchBox from "../SearchBox/SearchBox";
+import sortImg from "./../../assets/images/sort.png"
+import filterImg from "./../../assets/images/filter.png"
+import columnImg from "./../../assets/images/column-view.png"
+import gridImg from "./../../assets/images/grid-view.png"
+
 import "./QueryBar.scss";
 
 type QueryBarProps = {
@@ -28,17 +33,17 @@ const QueryBar = ({
     <div className={`querybar querybar--${variant}`}>
       <h3 className="querybar__title">{label}</h3>
       <div className="querybar__views">
-        <img className="querybar__views--column" src="images/column-view.png" onClick={columnViewClick}/>
-        <img className="querybar__views--grid" src="images/grid-view.png" onClick={gridViewClick} />
+        <img className="querybar__views--column" src={columnImg} onClick={columnViewClick}/>
+        <img className="querybar__views--grid" src={gridImg} onClick={gridViewClick} />
       </div>
       <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
       <div className="querybar__sort" onClick={sortClick}>
-        <img className="querybar__sort--img" src="images/sort.png" />
+        <img className="querybar__sort--img" src={sortImg} />
         <p className="querybar__sort--text">Sort</p>
       </div>
       {hasFilter && (
         <div className="querybar__filter" onClick={filterClick}>
-          <img className="querybar__filter--img" src="images/filter.png" />
+          <img className="querybar__filter--img" src={filterImg} />
           <p className="querybar__filter--text">Filter</p>
         </div>
       )}
