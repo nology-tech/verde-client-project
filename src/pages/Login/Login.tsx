@@ -42,7 +42,7 @@ const Login = () => {
    */
   const handleLogin = async () => {
     try {
-      const userCredential = await loginEmailPassword(email, password);
+      await loginEmailPassword(email, password);
       navigate("/home");
     } catch (error) {
       if (
