@@ -10,9 +10,11 @@ import { Appointment } from "../../types/BookAppointmentTypes";
 import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
 
-const BookAppointment = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | Date[]>();
+type ValuePiece = Date | null;
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
+const BookAppointment = () => {
+  const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
   const [firstName, setFirstName] = useState<string>("");
@@ -22,10 +24,15 @@ const BookAppointment = () => {
   const [selectedStaff, setSelectedStaff] = useState<string>("");
 
   const timeIntervals: string[] = [];
+
   const startTime = new Date();
   startTime.setHours(9, 0, 0, 0);
   const endTime = new Date();
   endTime.setHours(17, 30, 0);
+
+  const handleDateChange = (value: Value) => {
+    setSelectedDate(value);
+  };
 
   while (startTime < endTime) {
     timeIntervals.push(
@@ -101,7 +108,7 @@ const BookAppointment = () => {
     setAppointments([...appointments, newAppointment]);
 
     console.log("Appointment saved:", newAppointment);
-    // logic for saving data can be added here 
+    // logic for saving data can be added here
   };
 
   return (
@@ -185,7 +192,7 @@ const BookAppointment = () => {
                   <DatePicker
                     selected={selectedDate as Date}
                     className="datepicker-mobile"
-                    onChange={(date) => setSelectedDate(date as Date)}
+                    onChange={handleDateChange}
                     dateFormat="dd/MM/yyyy"
                     minDate={new Date()}
                     placeholderText="DD/MM/YYYY"
