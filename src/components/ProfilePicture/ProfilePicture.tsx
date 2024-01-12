@@ -1,5 +1,5 @@
 import "./ProfilePicture.scss";
-import profilePicture from "../../assets/images/profile-pic.png";
+import profilePicture from "../../assets/images/profile-picture.png";
 
 type ProfilePictureProps = {
   name: string;
