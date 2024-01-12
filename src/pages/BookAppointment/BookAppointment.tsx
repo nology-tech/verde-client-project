@@ -11,7 +11,6 @@ import { staffList } from "../../data/StaffList";
 
 const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
-  const [datePickerDate, setDatePickerDate] = useState<Date | null>(null);
 
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -33,10 +32,6 @@ const BookAppointment = () => {
     );
     startTime.setMinutes(startTime.getMinutes() + 30);
   }
-
-  // const handleDateChange = (date: Date) => {
-  //   setSelectedDate(date);
-  // };
 
   const handleSubmit = () => {
     if (
@@ -74,12 +69,11 @@ const BookAppointment = () => {
     setAppointments([...appointments, newAppointment]);
 
     console.log("Appointment saved:", newAppointment);
-    // we can add the logic to connect to a database or another form of storing  data here
   };
 
   const handleDatePickerSubmit = () => {
     if (
-      !datePickerDate ||
+      !selectedDate ||
       !selectedTime ||
       !firstName ||
       !lastName ||
@@ -91,7 +85,7 @@ const BookAppointment = () => {
       return;
     }
 
-    const formattedDate: string = datePickerDate.toLocaleDateString();
+    const formattedDate: string = selectedDate.toLocaleString();
 
     const newAppointment: Appointment = {
       date: formattedDate,
@@ -187,9 +181,9 @@ const BookAppointment = () => {
                 <label className="datepicker-label">Date:</label>
                 <div className="datepicker">
                   <DatePicker
-                    selected={datePickerDate as Date}
+                    selected={selectedDate as Date}
                     className="datepicker-mobile"
-                    onChange={(date) => setDatePickerDate(date as Date)}
+                    onChange={(date) => setSelectedDate(date as Date)}
                     placeholderText="DD/MM/YYYY"
                     dateFormat="dd/MM/yyyy"
                   />
