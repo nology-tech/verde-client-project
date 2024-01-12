@@ -6,9 +6,7 @@ import { loginEmailPassword } from "../../firebase";
 
 const Login = () => {
   // add useState for email, password, error
-
   
-
   return (
     <div className="login">
       <div className="login__page">
