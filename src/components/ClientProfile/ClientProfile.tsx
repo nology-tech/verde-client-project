@@ -14,8 +14,8 @@ const ClientProfile = ({clientinfo, variant} : ClientProfileProps) => {
             <div className={`clientcard__picture clientcard__picture--${variant}`}>
             <ProfilePicture
                 name={clientinfo.clientName}
-                titleOption={false}
-                titleLabel={"client profile"} //HOTFIX required for title label
+                titleOption={true}
+                titleLabel={clientinfo.role}
                 editOption={true}//HOTFIX (mobile version optional)
                 variant={variant}
             /></div>
