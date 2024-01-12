@@ -34,9 +34,9 @@ const BookAppointment = () => {
     startTime.setMinutes(startTime.getMinutes() + 30);
   }
 
-  const handleDateChange = (date: Date) => {
-    setSelectedDate(date);
-  };
+  // const handleDateChange = (date: Date) => {
+  //   setSelectedDate(date);
+  // };
 
   const handleSubmit = () => {
     if (
@@ -75,10 +75,6 @@ const BookAppointment = () => {
 
     console.log("Appointment saved:", newAppointment);
     // we can add the logic to connect to a database or another form of storing  data here
-  };
-
-  const handleDatePickerChange = (date: Date | null) => {
-    setDatePickerDate(date);
   };
 
   const handleDatePickerSubmit = () => {
@@ -184,16 +180,18 @@ const BookAppointment = () => {
               <div className="book-appointment__form--rightside">
                 <Calendar
                   className="calendar-desktop"
-                  onChange={(date: any) => handleDateChange(date)}
+                  onChange={(date) => setSelectedDate(date as Date)}
                   value={selectedDate as Date}
                 />
+
                 <label className="datepicker-label">Date:</label>
                 <div className="datepicker">
                   <DatePicker
                     selected={datePickerDate as Date}
                     className="datepicker-mobile"
-                    onChange={handleDatePickerChange}
+                    onChange={(date) => setDatePickerDate(date as Date)}
                     placeholderText="DD/MM/YYYY"
+                    dateFormat="dd/MM/yyyy"
                   />
                 </div>
                 <label>Time:</label>
