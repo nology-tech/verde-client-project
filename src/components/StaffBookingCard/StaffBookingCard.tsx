@@ -1,5 +1,6 @@
 import "./StaffBookingCard.scss";
 import { Link } from "react-router-dom";
+import arrow from "../../assets/images/arrow-icon.svg";
 
 type StaffBookingCardProps = {
   id: number;
@@ -33,7 +34,7 @@ const StaffBookingCard = ({
         </p>
         <p className="booking-card__date booking-card__info">{`${bookingDate}`}</p>
         <p className="booking-card__time">{`${bookingTime}`}</p>
-        <img className="booking-card__img" src={"images/Altarrow.png"} alt="arrow" />
+        <img className="booking-card__img" src={arrow} alt="arrow" />
       </div>
     </Link>
   );

@@ -98,11 +98,12 @@
   .staffcard {
     display: flex;
     flex-direction: row;
+    height: 18rem;
   }
 
   .card-container {
-    width: 12.5rem;
-    height: 19.2rem;
+    width: 15rem;
+    height: 17rem;
 
     .description {
       text-align: start;

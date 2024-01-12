@@ -18,11 +18,9 @@ type StaffProps = {
 
 const Staff = ({ variant }: StaffProps) => {
   return (
-    <div>
       <Layout>
         <NavBar variant={variant} />
-        <main className={`main main--${variant}`}>
-          <Header
+        <Header
             title={"Staff"}
             variant={"light"}
             buttonOption={false}
@@ -30,6 +28,7 @@ const Staff = ({ variant }: StaffProps) => {
             buttonVariant={"yellow"}
             dropdownOption={true}
           />
+        <main className={`main main--${variant}`}>
           <section className="profile--section">
             <h1 className="profile--section__heading">Overview</h1>
             <StaffProfileCard
@@ -56,12 +55,11 @@ const Staff = ({ variant }: StaffProps) => {
               <input className="booking__menu--input" type="text"></input>
               <button className="booking__menu--buttons"><img className="booking__menu--icons" src={Sort} /></button>
             </div>
-            <StaffBookingList bookings={StaffBookingsList} variant={"light"} />
+            <StaffBookingList bookings={StaffBookingsList} variant={"light"} /> 
           </section>
-          <Footer variant={"light"} />
         </main>
+        <Footer variant={"light"} />
       </Layout>
-    </div>
   );
 };
 
