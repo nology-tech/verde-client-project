@@ -21,7 +21,6 @@ const Login = () => {
   const handleEmailInput = (event: ChangeEvent<HTMLInputElement>) => {
     const email = event.currentTarget.value;
     setEmail(email);
-    console.log(email);
   };
 
   /**
@@ -43,7 +42,6 @@ const Login = () => {
    */
   const handleLogin = async () => {
     try {
-      console.log(email, password);
       const userCredential = await loginEmailPassword(email, password);
       navigate("/home");
     } catch (error) {
