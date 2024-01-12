@@ -1,12 +1,21 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
-.main__container--subtitle {
-    display:none;
+.main__subtitle {
+  display: none;
 }
 
-@media screen and (min-width:$desktop-breakpoint) {
-    .main__container--subtitle {
-        display:unset;
+@media screen and (min-width: $desktop-breakpoint) {
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+  
+  .main__subtitle {
+      display: unset;
+      padding-left: 1rem;
+      padding-top: 1rem;
     }
 }
