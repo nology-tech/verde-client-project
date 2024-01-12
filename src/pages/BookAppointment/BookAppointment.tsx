@@ -11,7 +11,7 @@ import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
 
 const BookAppointment = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | Date[]>();
 
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -101,7 +101,7 @@ const BookAppointment = () => {
     setAppointments([...appointments, newAppointment]);
 
     console.log("Appointment saved:", newAppointment);
-    // Additional logic for saving data, connecting to a database, etc.
+    // logic for saving data can be added here 
   };
 
   return (
@@ -186,9 +186,9 @@ const BookAppointment = () => {
                     selected={selectedDate as Date}
                     className="datepicker-mobile"
                     onChange={(date) => setSelectedDate(date as Date)}
-                    placeholderText="DD/MM/YYYY"
                     dateFormat="dd/MM/yyyy"
                     minDate={new Date()}
+                    placeholderText="DD/MM/YYYY"
                   />
                 </div>
                 <label>Time:</label>
