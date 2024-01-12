@@ -2,7 +2,6 @@ import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../../components/Button/Button";
 import login from "../../assets/images/login-picture.png";
-import QueryBar from "../../components/QueryBar/QueryBar";
 
 const Login = () => {
   // add useState for email, password, error
@@ -55,7 +54,6 @@ const Login = () => {
       <div className="login__picture-container">
         <img className="login__picture" src={login} />
       </div>
-      <QueryBar label="Best Team" hasFilter={true} variant="light"/>
     </div>
   );
 };
