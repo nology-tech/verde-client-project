@@ -21,6 +21,7 @@ const NavCard = ({ label, buttonLabel, variant, path }: NavCardProps) => {
         <img className="navcard__arrow" src={Arrow} alt={label}></img>
         <Button
           label={buttonLabel}
+          size="small"
           variant="yellow"
           path={path}
           onClick={onButtonClick}

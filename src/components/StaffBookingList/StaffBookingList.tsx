@@ -5,7 +5,6 @@ import { StaffBookings } from "../../types/StaffBookingsTypes"
 type StaffBookingListProps = {
     bookings: StaffBookings[];
     variant: "light" | "dark"
-
 } 
 
 const StaffBookingList = ({bookings, variant} : StaffBookingListProps) => {
@@ -20,6 +19,7 @@ const StaffBookingList = ({bookings, variant} : StaffBookingListProps) => {
             </div>
             {bookings.map((booking) => 
                 <StaffBookingCard 
+                id={booking.id}
                 clientName={booking.clientName} 
                 email={booking.emailAddress} 
                 mobileNumber={booking.mobNumber} 

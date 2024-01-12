@@ -17,9 +17,10 @@ const Home = ({ variant }: HomeProps) => {
         <Header
           title="Home"
           variant={variant}
-          buttonOption={false}
-          buttonLabel="Home"
-          buttonVariant="purple"
+          buttonOption={true}
+          buttonLabel="Logout"
+          buttonVariant="yellow"
+          dropdownOption={false}
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
