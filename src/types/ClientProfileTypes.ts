@@ -1,4 +1,5 @@
 export type ClientInfo = {
+    id: number;
     clientName: string;
     role: string;
     dob: string; 
@@ -6,5 +7,6 @@ export type ClientInfo = {
     mobileNumber: string; 
     appointmentDate: string; 
     appointmentTime: string;
+    path: string;
     staffMember: string;
 }
