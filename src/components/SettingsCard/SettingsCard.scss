@@ -86,18 +86,18 @@
 
 }
 
-@media screen and (min-width: $desktop-breakpoint) {
-  .settings-card {
-    width: 17rem;
-    height: 17rem;
-    margin: 0.5rem;
-  }
-}
+// @media screen and (min-width: $tablet-breakpoint) {
+//   .settings-card {
+//     width: 17rem;
+//     height: 17rem;
+//     margin: 0.5rem;
+//   }
+// }
 
 @media screen and (min-width: $desktop-breakpoint) {
 
   .settings-card {
-    width: 27rem;
+    width: 24.5rem;
     height: auto;
     padding: 2rem;
 
@@ -114,6 +114,10 @@
       }
     }
 
+    &__title{
+      font-size:0.9rem;
+    }
+
     &__radio-container {
       display: flex;
       justify-content: space-between;
@@ -128,6 +132,7 @@
 
     &__option {
       margin-left: 2.5rem;
+      font-size: 0.85rem;
     }
 
     &__container-theme {
@@ -138,6 +143,22 @@
     &__button {
       margin-top: 1.9rem;
     }
+  }
+
+  @media screen and (min-width: 1440px) {
+
+    .settings-card {
+      width: 27rem;
+      height: auto;
+
+    &__title{
+      font-size:1rem;
+    }
+
+    &__option {
+      font-size: 0.98rem;
+    }
+  }
   }
 
 
