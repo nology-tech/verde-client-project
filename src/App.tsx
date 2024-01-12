@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./styles/main.scss";
-import Login from "./components/Login/Login";
+
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 
 const App = () => {
