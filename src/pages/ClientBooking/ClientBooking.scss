@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+.main__container--subtitle {
+    display:none;
+}
+
+@media screen and (min-width:$desktop-breakpoint) {
+    .main__container--subtitle {
+        display:unset;
+    }
+}
