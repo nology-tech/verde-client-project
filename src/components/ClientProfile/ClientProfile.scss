@@ -17,6 +17,7 @@
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   width: 16.875rem;
   height: 38rem;
+  margin: 1rem;
 
   &--dark {
     background-color: $clr-primary-dk;
@@ -61,15 +62,18 @@
   }
 
   .clientcard {
-    height: 19.2rem;
-    margin: 1.25rem;
+    height: 20rem;
+    width: 11rem;
+    margin: 1rem;
+    padding: 0.75rem;
 
     &__title{
       text-decoration: none;  
+      font-size: 1rem;
     }
 
     &__subtitle, &__info {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 
     &__desktop {
@@ -84,12 +88,12 @@
       display: flex;
       flex-direction: column;
       background-color: $clr-white;
-      padding: 1.25rem;
+      padding: 0.75rem;
       border-radius: 0.5rem;
       box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-      width: 16.875rem;
-      height: 19.2rem;
-      margin: 1.25rem;
+      width: 11rem;
+      height: 20rem;
+      margin: 1rem;
 
       &--dark {
         background-color: $clr-primary-dk;

@@ -5,7 +5,7 @@ type ProfilePictureProps = {
   name: string;
   titleOption: boolean;
   titleLabel: string | null;
-  editOption: boolean;
+  editOption?: boolean;
   variant: "light" | "dark";
 };
 
