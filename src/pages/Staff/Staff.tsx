@@ -29,6 +29,9 @@ const Staff = ({ variant }: StaffProps) => {
     console.log(dropDown)
   }
   
+  const filteredStaff = StaffList.filter(staff =>
+     staff.name === dropDown)
+
   return (
       <Layout>
         <NavBar variant={variant} />
@@ -45,18 +48,18 @@ const Staff = ({ variant }: StaffProps) => {
         
           <section className="profile--section">
             <h1 className="profile--section__heading">Overview</h1>
-            <StaffProfileCard
+            {filteredStaff.map(staff => <StaffProfileCard
               staff={{
-                id: 0,
-                name:"",
-                start: "",
-                courseEnd: "",
-                manager: "",
-                role: "",
-                description: "",
+                id: Number(`${staff.id}`),
+                name:`${staff.name}`,
+                start: `${staff.start}`,
+                courseEnd: `${staff.courseEnd}`,
+                manager: `${staff.manager}`,
+                role: `${staff.role}`,
+                description: `${staff.description}`,
               }}
               variant={"light"}
-            />
+            />)}
           </section>
           <StaffNavList staff={StaffList} variant={"light"} />
           <section className="booking">
