@@ -142,11 +142,20 @@
     &__buttons {
       display: flex;
       flex-direction: row;
-      margin-right: 20rem;
+
       flex-wrap: nowrap;
+      width: 100%;
+
+      justify-content: center;
+      margin-top: 3rem;
+
+      .button--undefined {
+        width: 8.5rem;
+      }
 
       .save-button {
         display: block;
+        margin-right: 0.5rem;
       }
 
       .submit-button a {
@@ -180,10 +189,11 @@
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
       }
 
       &--rightside {
-        width: 50%;
+        //width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -210,14 +220,13 @@
       }
 
       &--leftside {
-        width: 50%;
         display: flex;
 
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly;
         font-size: 0.6rem;
         margin-bottom: 2rem;
-        margin-left: 2rem;
+
         background-color: $clr-secondary-lt;
 
         input {
@@ -233,6 +242,10 @@
         option {
           background-color: $clr-secondary-lt;
         }
+
+        label {
+          width: 17rem;
+        }
       }
 
       .calendar-desktop,
@@ -244,10 +257,5 @@
         margin-bottom: 1.45rem;
       }
     }
-  }
-  .book-appointment__buttons {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 4rem;
   }
 }

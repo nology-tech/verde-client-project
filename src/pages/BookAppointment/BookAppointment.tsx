@@ -222,7 +222,8 @@ const BookAppointment = () => {
                     label="Save"
                     variant="yellow"
                     onClick={handleSubmit}
-                    size="large"
+                    
+                    
                   />
                 </div>
                 <div className="submit-button">
@@ -230,7 +231,7 @@ const BookAppointment = () => {
                     label="Submit"
                     variant="yellow"
                     onClick={handleDatePickerSubmit}
-                    size="large"
+                    
                   />
                 </div>
                 <div className="cancel-button">
@@ -238,7 +239,7 @@ const BookAppointment = () => {
                     label="Cancel"
                     variant="grey"
                     onClick={() => console.log("Cancel button clicked")}
-                    size="large"
+                    
                   />
                 </div>
               </div>
