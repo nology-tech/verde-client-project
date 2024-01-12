@@ -10,6 +10,7 @@ type QueryBarProps = {
   gridViewClick: () => void;
   sortClick: () => void;
   filterClick: () => void;
+  variant: "light" | "dark";
 };
 
 const QueryBar = ({
@@ -20,10 +21,11 @@ const QueryBar = ({
   filterClick,
   handleInput,
   columnViewClick,
-  gridViewClick
+  gridViewClick,
+  variant
 }: QueryBarProps) => {
   return (
-    <div className="querybar">
+    <div className={`querybar querybar--${variant}`}>
       <h3 className="querybar__title">{label}</h3>
       <div className="querybar__views">
         <img className="querybar__views--column" src="images/column-view.png" onClick={columnViewClick}/>
