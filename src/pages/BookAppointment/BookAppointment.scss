@@ -10,7 +10,6 @@
 .book-appointment {
   background-color: $clr-white;
   font-weight: bold;
-  height: 100%vh;
 
   &__form {
     font-size: 0.7rem;
@@ -129,6 +128,11 @@
     height: 100%;
     display: flex;
     background-color: $clr-white;
+    font-weight: normal;
+
+    label {
+      font-weight: bold;
+    }
 
     &__buttons {
       display: flex;
@@ -171,6 +175,8 @@
         flex-direction: column;
         justify-content: space-evenly;
         background-color: $clr-secondary-lt;
+        font-weight: bold;
+
 
         input {
           background-color: $clr-secondary-lt;
