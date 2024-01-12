@@ -4,9 +4,9 @@
   background-color: $clr-white;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  margin: 1.25rem;
-  width: 23.6rem;
-  height: 23.9rem;
+  margin: 1rem;
+  width: 19rem;
+  height: 19rem;
   padding: 1.5rem;
 
   &--dark {
@@ -19,14 +19,14 @@
   }
 
   &__section {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.6rem;
 
   }
 
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.63rem;
+    margin-bottom: 0.5rem;
 
     &--dark {
       color: $clr-white;
@@ -60,7 +60,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 0.3rem;
-    padding-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
   }
 
   &__option {
