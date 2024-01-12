@@ -135,50 +135,50 @@ const BookAppointment = () => {
           <form className="book-appointment__form">
             <div className="leftRight-wrapper">
               <div className="book-appointment__form--leftside">
-              <label>First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              ></input>
-              <label>Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              ></input>
-              <label>Email Address</label>
-              <input
-                type="email"
-                name="emailAddress"
-                value={emailAddress}
-                onChange={(e) => setEmailAddress(e.target.value)}
-              ></input>
-              <label>Mobile Number</label>
-              <input
-                type="text"
-                name="mobileNumber"
-                value={mobileNumber}
-                onChange={(e) => setMobileNumber(e.target.value)}
-              ></input>
-              <label>Staff Member</label>
-              <select
-                name="staffMember"
-                value={selectedStaff}
-                onChange={(e) => setSelectedStaff(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select staff member...
-                </option>
-
-                {staffList.map((staff) => (
-                  <option key={staff.id} value={staff.name}>
-                    {staff.name}
+                <label>First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                ></input>
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                ></input>
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name="emailAddress"
+                  value={emailAddress}
+                  onChange={(e) => setEmailAddress(e.target.value)}
+                ></input>
+                <label>Mobile Number</label>
+                <input
+                  type="text"
+                  name="mobileNumber"
+                  value={mobileNumber}
+                  onChange={(e) => setMobileNumber(e.target.value)}
+                ></input>
+                <label>Staff Member</label>
+                <select
+                  name="staffMember"
+                  value={selectedStaff}
+                  onChange={(e) => setSelectedStaff(e.target.value)}
+                >
+                  <option value="" disabled>
+                    Select staff member...
                   </option>
-                ))}
-              </select>
+
+                  {staffList.map((staff) => (
+                    <option key={staff.id} value={staff.name}>
+                      {staff.name}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="book-appointment__form--rightside">
@@ -215,15 +215,13 @@ const BookAppointment = () => {
                 </select>
               </div>
             </div>
-            <div className="buttons-wrapper" >
+            <div className="buttons-wrapper">
               <div className="book-appointment__buttons">
                 <div className="save-button">
                   <Button
                     label="Save"
                     variant="yellow"
                     onClick={handleSubmit}
-                    
-                    
                   />
                 </div>
                 <div className="submit-button">
@@ -231,7 +229,6 @@ const BookAppointment = () => {
                     label="Submit"
                     variant="yellow"
                     onClick={handleDatePickerSubmit}
-                    
                   />
                 </div>
                 <div className="cancel-button">
@@ -239,7 +236,6 @@ const BookAppointment = () => {
                     label="Cancel"
                     variant="grey"
                     onClick={() => console.log("Cancel button clicked")}
-                    
                   />
                 </div>
               </div>
