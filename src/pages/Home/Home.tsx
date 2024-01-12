@@ -24,7 +24,7 @@ const Home = ({ variant }: HomeProps) => {
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
-          <Button size="large" label="Log Out" variant="yellow" path="/login" />
+          <Button size="large" label="Log Out" variant="yellow" path="/" />
         </div>
       </main>
     </Layout>
