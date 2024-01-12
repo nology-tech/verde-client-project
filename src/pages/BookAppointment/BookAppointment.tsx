@@ -7,7 +7,8 @@ import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { Appointment } from "../../types/BookAppointmentTypes";
-import { staffList } from "../../data/StaffList";
+import { StaffList } from "../../data/StaffNavList";
+import { Staff } from "../../types/StaffNavTypes";
 
 const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date());
@@ -163,7 +164,7 @@ const BookAppointment = () => {
                     Select staff member...
                   </option>
 
-                  {staffList.map((staff) => (
+                  {StaffList.map((staff: Staff) => (
                     <option key={staff.id} value={staff.name}>
                       {staff.name}
                     </option>
