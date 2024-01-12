@@ -2,9 +2,12 @@ import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../../components/Button/Button";
 import login from "../../assets/images/login-picture.png";
+import { loginEmailPassword } from "../../firebase";
 
 const Login = () => {
   // add useState for email, password, error
+
+  
 
   return (
     <div className="login">
@@ -45,7 +48,7 @@ const Login = () => {
                 variant={"yellow"}
                 size={"extra-large"}
                 path="/home"
-                onClick={() => void {}}
+                onClick={loginEmailPassword}
               />
             </div>
           </form>
