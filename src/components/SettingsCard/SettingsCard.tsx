@@ -10,7 +10,7 @@ type SettingsCardProps = {
 };
 const SettingsCard = ({ variant }: SettingsCardProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isModernTheme, setModernTheme] = useState(true);
+  //const [isModernTheme, setModernTheme] = useState(true);
 
   const handleToggleChange = () => {
     setIsDarkMode(!isDarkMode);
@@ -53,7 +53,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
                 type="radio"
                 value="enabled"
                 name="theme"
-                checked={isModernTheme}
+                checked={true}
               />
             </label>
           </div>
