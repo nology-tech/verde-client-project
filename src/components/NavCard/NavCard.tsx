@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import "./NavCard.scss";
-import Arrow from "../../assets/images/Arrow.svg";
+import Arrow from "../../assets/images/arrow-icon.svg";
 
 type NavCardProps = {
   label: string;

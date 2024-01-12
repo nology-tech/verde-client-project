@@ -1,7 +1,7 @@
 import "./Login.scss";
 import logo from "../../assets/images/logo-black.svg";
 import Button from "../../components/Button/Button";
-import login from "../../assets/images/login-pic.png";
+import login from "../../assets/images/login-picture.png";
 
 const Login = () => {
   // add useState for email, password, error
