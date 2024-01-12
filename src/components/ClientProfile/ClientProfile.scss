@@ -1,11 +1,16 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
+.clientprofile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .clientcard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: $clr-white;
   padding: 1.25rem;
   border-radius: 0.5rem;
@@ -53,7 +58,6 @@
   .clientprofile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
   }
 
   .clientcard {
@@ -79,8 +83,6 @@
     &__container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       background-color: $clr-white;
       padding: 1.25rem;
       border-radius: 0.5rem;
