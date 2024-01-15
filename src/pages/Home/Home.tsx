@@ -23,7 +23,6 @@ const Home = ({ variant, authorization, setAuth }: HomeProps) => {
     setAuth(false);
   }
 
-
   return (
     <Layout>
       <NavBar variant={variant} />
