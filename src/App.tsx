@@ -10,12 +10,6 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 const App = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  /**
-   * Toggles the app's theme between light and dark modes.
-   * It updates the 'theme' state to either 'light' or 'dark',
-   * depending on its current value. The updated theme is then applied
-   * to the entire app.
-   */
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
