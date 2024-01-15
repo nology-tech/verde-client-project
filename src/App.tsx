@@ -2,12 +2,9 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./styles/main.scss";
 import Login from "./pages/Login/Login";
-import { useState } from "react";
-
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 
 const App = () => {
-  const [isAuth, setIsAuth] = useState<boolean>(false)
 
   const navigate = useNavigate()
 
@@ -19,8 +16,8 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Login isAuth={isAuth} setIsAuth={setIsAuth}/>} />
-      <Route path="/home" element={<Home variant="light" authorization={authorization}  setAuth={setIsAuth} />} />
+      <Route path="/" element={<Login/>} />
+      <Route path="/home" element={<Home variant="light" authorization={authorization}/>} />
       <Route path="/book-appointment" element={<BookAppointment authorization={authorization} />} />
       {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
 

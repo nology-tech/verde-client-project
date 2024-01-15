@@ -9,10 +9,9 @@ import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
   authorization: () => void;
-  setAuth: (isAuth : boolean) => void;
 };
 
-const Home = ({ variant, authorization, setAuth }: HomeProps) => {
+const Home = ({ variant, authorization}: HomeProps) => {
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Home = ({ variant, authorization, setAuth }: HomeProps) => {
       }, [authorization])
 
   const logout = () => {
-    setAuth(false)
     window.localStorage.setItem('isAuth', 'false')
     navigate('/')
   }

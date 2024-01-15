@@ -7,12 +7,8 @@ import { ChangeEvent, useState } from "react";
 import { FirebaseError } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
-type LoginProps = {
-  isAuth: boolean;
-  setIsAuth:(isAuth: boolean) => void;
-}
 
-const Login = ({setIsAuth, isAuth}: LoginProps) => {
+const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -49,7 +45,6 @@ const Login = ({setIsAuth, isAuth}: LoginProps) => {
   const handleLogin = async () => {
     try {
       await loginEmailPassword(email, password);
-      setIsAuth(true)
       window.localStorage.setItem('isAuth', 'true')
       navigate("/home");
     } catch (error) {
