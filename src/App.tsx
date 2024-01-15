@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Login setIsAuth={setIsAuth}/>} />
-      <Route path="/home" element={<Home authorization={authorization} variant="light" setAuth={setIsAuth} />} />
+      <Route path="/home" element={<Home variant="light" authorization={authorization}  setAuth={setIsAuth} />} />
       <Route path="/book-appointment" element={<BookAppointment authorization={authorization} />} />
       {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
 
