@@ -9,9 +9,10 @@ import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
   authorization: () => void;
+  setAuth: (isAuth : boolean) => void;
 };
 
-const Home = ({ variant, authorization }: HomeProps) => {
+const Home = ({ variant, authorization, setAuth }: HomeProps) => {
   
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const Home = ({ variant, authorization }: HomeProps) => {
       }, [])
 
   const logout = () => {
-    
+    setAuth(false);
   }
 
 
@@ -37,7 +38,7 @@ const Home = ({ variant, authorization }: HomeProps) => {
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
-          <Button size="large" label="Log Out" variant="yellow" path="/" />
+          <Button size="large" label="Log Out" variant="yellow" path="/" onClick={logout}/>
         </div>
       </main>
     </Layout>
