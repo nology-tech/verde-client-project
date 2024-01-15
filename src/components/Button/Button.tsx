@@ -13,7 +13,7 @@ const Button = ({ label, variant, onClick, size, path }: ButtonProps) => {
   const className = `button button--${variant} button--${size}`;
   return (
     <Link to={path || "#"} >
-      <button className={className} onClick={onClick?() => onClick(): undefined}>
+      <button className={className} onClick={onClick ? onClick : undefined}>
         {label}
       </button>
     </Link>

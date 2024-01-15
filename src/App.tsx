@@ -12,13 +12,14 @@ const App = () => {
   const navigate = useNavigate()
 
   const authorization = () => {
-    if (!isAuth) 
-    navigate('/')
+    if (window.localStorage.getItem('isAuth') === 'false') {
+      navigate('/')
+    }
   }
 
   return (
     <Routes>
-      <Route path="/" element={<Login setIsAuth={setIsAuth}/>} />
+      <Route path="/" element={<Login isAuth={isAuth} setIsAuth={setIsAuth}/>} />
       <Route path="/home" element={<Home variant="light" authorization={authorization}  setAuth={setIsAuth} />} />
       <Route path="/book-appointment" element={<BookAppointment authorization={authorization} />} />
       {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
