@@ -21,6 +21,7 @@ const Home = ({ variant }: HomeProps) => {
           buttonLabel="Logout"
           buttonVariant="yellow"
           dropdownOption={false}
+          path="/"
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
