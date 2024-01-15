@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./styles/main.scss";
 import Login from "./pages/Login/Login";
+import Staff from "./pages/Staff/Staff";
 
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 
@@ -22,7 +23,7 @@ const App = () => {
       {/* <Route path="/clients/edit" element={<EditClient />} /> */}
       {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
 
-      {/* <Route path="/staff" element={<Staff />} /> */}
+     <Route path="/staff" element={<Staff variant="light"/>} /> 
       {/* <Route path="/settings" element={<Settings />} /> */}
       
     </Routes>

@@ -1,3 +1,4 @@
+import { ChangeEventHandler } from "react";
 import logo from "../../assets/images/logo.png";
 import { StaffList } from "../../data/StaffNavList";
 import Button from "../Button/Button";
@@ -11,7 +12,7 @@ type HeaderProps = {
   buttonLabel: string;
   buttonVariant: "yellow" | "purple";
   dropdownOption: boolean;
-  onChange?: () => void;
+  onChange?: ChangeEventHandler<HTMLSelectElement>;
 };
 
 const Header = ({
@@ -32,7 +33,7 @@ const Header = ({
       {dropdownOption && (
         <select className={`header__dropdown`} name="staff" id="stafflist" onChange={onChange}>
           {StaffList.map(staff => 
-          <option className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`} </option>
+          <option key={staff.id} className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`} </option>
             )}
         </select>
       )}
