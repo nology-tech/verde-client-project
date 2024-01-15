@@ -19,7 +19,7 @@ const NavBar = ({ variant }: NavBarProps ) => {
         <nav className= {className}>
             <img alt="Brand Logo" className="nav__logo" src={brandLogo}/>
             <ul className="nav__list">
-            <Link to="/home"><li className="nav__list--item"><img src="src/assets/images/home-icon.png" alt="Home Button" className="nav__image"/>Home</li></Link>
+            <Link to="/home"><li className="nav__list--item"><img src={homeIcon} alt="Home Button" className="nav__image"/>Home</li></Link>
             <Link to="/book-appointment"><li className="nav__list--item"><img src={appointmentIcon} alt="Book Appointment" className="nav__image"/>Book Appointment</li></Link>
             <Link to="/staff"><li className="nav__list--item"><img src={staffIcon} alt="Staff" className="nav__image"/>Staff</li></Link>
             <Link to="/clients"><li className="nav__list--item"><img src={clientsIcon} alt="Clients" className="nav__image"/>Clients</li></Link>
