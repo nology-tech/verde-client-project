@@ -31,6 +31,9 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
     .booking-list{
+
+        overflow-y: scroll;
+        
         &__titles{
             
             display: grid;
