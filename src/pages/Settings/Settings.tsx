@@ -16,6 +16,7 @@ const Settings = ({ variant }: SettingsProps) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
 
   const handleButtonClick = () => {
     setIsClicked(!isClicked);
@@ -65,14 +66,14 @@ const Settings = ({ variant }: SettingsProps) => {
             <Modal
               title={"Are you sure you want to log out?"}
               buttons={modalOne}
-              variant={"dark"}
+              variant={variant}
             />
           )}
           {isLogoutClicked && (
             <Modal
               title={"Logged out!"}
               buttons={modalTwo}
-              variant={"dark"}
+              variant={variant}
             />
           )}
           </div>

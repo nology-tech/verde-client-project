@@ -8,6 +8,7 @@ import sun from "../../assets/images/sun.svg";
 type SettingsCardProps = {
   variant: "light" | "dark";
 };
+
 const SettingsCard = ({ variant }: SettingsCardProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   //const [isModernTheme, setModernTheme] = useState(true);
@@ -28,7 +29,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
             src={sun}
             alt="Sun Icon"
           ></img>
-          <ToggleSwitch onToggle={handleToggleChange} />
+          <ToggleSwitch checked={isDarkMode} onToggle={handleToggleChange} />
           <img
             className="settings-card__icon settings-card__icon--moon"
             src={moon}
