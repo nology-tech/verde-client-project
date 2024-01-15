@@ -10,9 +10,11 @@ const Footer = ( { variant } : FooterProps ) => {
     const className = `footer footer--${variant}`;
 
     return (
-        <footer className= {className}>
-            <Link to="/"><button className={`footer--${variant}__button`}><img src={homeIconFooter} alt="home-button" className={`footer--${variant}__button--image`}/></button></Link>
-        </footer>
+        <div>
+            <footer className= {className}>
+                <Link to="/"><button className={`footer--${variant}__button`}><img src={homeIconFooter} alt="home-button" className={`footer--${variant}__button--image`}/></button></Link>
+            </footer>
+        </div>
     )
 };
 
