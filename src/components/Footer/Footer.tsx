@@ -1,4 +1,5 @@
 import "./Footer.scss";
+import homeIconFooter from "../../assets/images/home-footer-icon.svg"
 import { Link } from "react-router-dom";
 
 type FooterProps = {
