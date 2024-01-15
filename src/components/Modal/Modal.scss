@@ -8,8 +8,9 @@
     box-shadow: 0px 10px 25px $clr-accent-grey;
     z-index: 1;
     width: 95%;
+    top: 30%;
     border-radius: 0.5rem;
-    
+
     &--light {
         background-color: $clr-secondary-lt;
     }
@@ -19,7 +20,7 @@
         color: $clr-white;
     }
 
-    &__title{
+    &__title {
         text-align: center;
         padding-top: 2rem;
         padding-bottom: 1rem;
@@ -27,7 +28,7 @@
         font-weight: 500;
     }
 
-    &__buttons{
+    &__buttons {
         display: flex;
         justify-content: space-evenly;
         padding-bottom: 3rem;
@@ -45,17 +46,8 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
     .modal {
-        left: 37%;
-        top: 37%;
+        left: 40%;
+        top: 40%;
         width: 50%;
     }
 }
-
-
-// @media screen and (min-width: $desktop-breakpoint) {
-//     .modal {
-//         left: 40%;
-//         top: 40%;
-//         width: 50%;
-//     }
-// }

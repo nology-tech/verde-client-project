@@ -2,7 +2,7 @@
 @use "../../styles/typography" as *;
 
 .footer{
-    height: 6.25rem;
+    height: 6rem;
     display: flex;
     align-self: flex-end;
     align-items: center;
@@ -35,6 +35,12 @@
     }
 
 }
+}
+
+@media screen and (min-Width: $tablet-breakpoint) {
+    .footer{
+        height: 4.7rem;
+    }
 }
 
 @media screen and (min-Width: $desktop-breakpoint) {
