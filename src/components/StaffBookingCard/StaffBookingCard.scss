@@ -6,7 +6,7 @@
     grid-template-columns: repeat(3, auto);
     border: $clr-accent-grey 1px solid;
     background-color: $clr-white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     margin: 0rem 0.5rem 1rem 0.5rem;
 
@@ -47,6 +47,8 @@
         text-align: center;
         grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
         gap: 0.5rem;
+        height: 3rem;
+        align-content: center;
 
         &__id{
             display: none;
@@ -69,6 +71,12 @@
     .booking-card {
         text-align: center;
         grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+
+        &__name, &__info, &__time {
+            font-size: 0.7rem;
+        }
+
+    
     }
 }
 
