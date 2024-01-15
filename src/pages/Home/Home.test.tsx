@@ -1,12 +1,10 @@
-// import { screen } from "@testing-library/react";
-// import Home from "./Home";
+import { render } from '@testing-library/react';
+import Home from './Home';
 
-// import { customRender } from "../../utils/testUtils";
 
-// it("should render the form", () => {
-//   customRender(<Home variant={"light"} />);
+test('renders Home component', () => {
+  const authorizationMock = jest.fn();
+  const setAuthMock = jest.fn();
 
-//   const main = screen.getByRole("main");
-
-//   expect(main).toBeInTheDocument();
-// });
+  render(<Home variant="light" authorization={authorizationMock} setAuth={setAuthMock} />);
+});
