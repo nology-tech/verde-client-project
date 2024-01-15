@@ -1,6 +1,6 @@
 import "./NavBar.scss";
 import { Link } from 'react-router-dom';
-import homeIcon from '../../assets/images/home-icon.svg'
+import homeIcon from '../../assets/images/home-icon.png'
 import brandLogo from '../../assets/images/logo.png';
 import appointmentIcon from '../../assets/images/appointment-icon.png';
 import staffIcon from '../../assets/images/staff-icon.png';
