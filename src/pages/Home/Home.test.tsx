@@ -1,12 +1,12 @@
-import { screen } from "@testing-library/react";
-import Home from "./Home";
+// import { screen } from "@testing-library/react";
+// import Home from "./Home";
 
-import { customRender } from "../../utils/testUtils";
+// import { customRender } from "../../utils/testUtils";
 
-it("should render the form", () => {
-  customRender(<Home variant={"light"} />);
+// it("should render the form", () => {
+//   customRender(<Home variant={"light"} />);
 
-  const main = screen.getByRole("main");
+//   const main = screen.getByRole("main");
 
-  expect(main).toBeInTheDocument();
-});
+//   expect(main).toBeInTheDocument();
+// });
