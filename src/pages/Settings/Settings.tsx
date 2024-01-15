@@ -10,13 +10,14 @@ import { useState } from "react";
 
 type SettingsProps = {
   variant: "light" | "dark";
+  setTheme: (theme: "light" | "dark") => void;
 };
 
-const Settings = ({ variant }: SettingsProps) => {
+const Settings = ({ variant, setTheme }: SettingsProps) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+  const [tempTheme, setTempTheme] = useState<"light" | "dark">(variant);
 
   const handleButtonClick = () => {
     setIsClicked(!isClicked);
@@ -24,20 +25,31 @@ const Settings = ({ variant }: SettingsProps) => {
   };
 
   const handleLogoutClicked = () => {
-    setIsLogoutClicked(!isLogoutClicked)
-  }
+    setIsLogoutClicked(!isLogoutClicked);
+  };
+
+  const handleToggleDarkMode = (newThemeState: boolean) => {
+    setTempTheme(newThemeState ? "dark" : "light");
+  };
+
+  const handleApplyChanges = () => {
+    if (tempTheme !== variant) {
+      setTheme(tempTheme);
+    }
+  };
 
   const modalOne = [
     <Button label={"Logout"} variant={"red"} onClick={handleLogoutClicked} />,
-    <Button
-      label={"Back"}
-      variant={"yellow"}
-      onClick={handleButtonClick}
-    />,
+    <Button label={"Back"} variant={"yellow"} onClick={handleButtonClick} />,
   ];
 
   const modalTwo = [
-    <Button label={"Back to Login"} variant={"red"} onClick={handleLogoutClicked} path="/"/>,
+    <Button
+      label={"Back to Login"}
+      variant={"red"}
+      onClick={handleLogoutClicked}
+      path="/"
+    />,
   ];
 
   return (
@@ -54,14 +66,22 @@ const Settings = ({ variant }: SettingsProps) => {
           dropdownOption={false}
         />
         {!isClicked && (
-        <div className="settings__container">
-          <SettingsCard variant={variant} />
-          <div className={`settings__card settings__card--${variant}`}>
-            <Button label="Log Out" variant="red" onClick={handleButtonClick} />
+          <div className="settings__container">
+            <SettingsCard
+              variant={variant}
+              onToggleDarkMode={handleToggleDarkMode}
+              onApplyChanges={handleApplyChanges}
+            />
+            <div className={`settings__card settings__card--${variant}`}>
+              <Button
+                label="Log Out"
+                variant="red"
+                onClick={handleButtonClick}
+              />
+            </div>
           </div>
-        </div>
         )}
-          <div className={"settings__modal"}>
+        <div className={"settings__modal"}>
           {isClicked && !isLogoutClicked && (
             <Modal
               title={"Are you sure you want to log out?"}
@@ -70,14 +90,9 @@ const Settings = ({ variant }: SettingsProps) => {
             />
           )}
           {isLogoutClicked && (
-            <Modal
-              title={"Logged out!"}
-              buttons={modalTwo}
-              variant={variant}
-            />
+            <Modal title={"Logged out!"} buttons={modalTwo} variant={variant} />
           )}
-          </div>
-          
+        </div>
       </main>
 
       <Footer variant={variant} />

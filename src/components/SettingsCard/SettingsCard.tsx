@@ -7,14 +7,21 @@ import sun from "../../assets/images/sun.svg";
 
 type SettingsCardProps = {
   variant: "light" | "dark";
+  onToggleDarkMode: (isDarkMode: boolean) => void;
+  onApplyChanges: () => void;
 };
 
-const SettingsCard = ({ variant }: SettingsCardProps) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  //const [isModernTheme, setModernTheme] = useState(true);
+const SettingsCard = ({
+  variant,
+  onToggleDarkMode,
+  onApplyChanges,
+}: SettingsCardProps) => {
+  const [isToggleOn, setIsToggleOn] = useState<boolean>(variant === "dark");
 
   const handleToggleChange = () => {
-    setIsDarkMode(!isDarkMode);
+    const newToggleState = !isToggleOn;
+    setIsToggleOn(newToggleState);
+    onToggleDarkMode(newToggleState);
   };
 
   return (
@@ -29,7 +36,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
             src={sun}
             alt="Sun Icon"
           ></img>
-          <ToggleSwitch checked={isDarkMode} onToggle={handleToggleChange} />
+          <ToggleSwitch checked={isToggleOn} onToggle={handleToggleChange} />
           <img
             className="settings-card__icon settings-card__icon--moon"
             src={moon}
@@ -76,7 +83,7 @@ const SettingsCard = ({ variant }: SettingsCardProps) => {
         </div>
       </div>
       <div className="settings-card__button">
-        <Button label={"Apply"} variant={"yellow"} onClick={() => void {}} />
+        <Button label={"Apply"} variant={"yellow"} onClick={onApplyChanges} />
       </div>
     </div>
   );
