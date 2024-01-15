@@ -50,7 +50,6 @@ const Login = ({setIsAuth, isAuth}: LoginProps) => {
     try {
       await loginEmailPassword(email, password);
       setIsAuth(true)
-      console.log(isAuth)
       window.localStorage.setItem('isAuth', 'true')
       navigate("/home");
     } catch (error) {

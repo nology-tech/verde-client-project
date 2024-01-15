@@ -1,7 +1,6 @@
 import Layout from "../../components/Layout/Layout";
 import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
-import Button from "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
@@ -22,10 +21,8 @@ const Home = ({ variant, authorization, setAuth }: HomeProps) => {
 
   const logout = () => {
     setAuth(false)
-    console.log('test')
     window.localStorage.setItem('isAuth', 'false')
     navigate('/')
-    
   }
 
   return (
@@ -39,10 +36,10 @@ const Home = ({ variant, authorization, setAuth }: HomeProps) => {
           buttonLabel="Logout"
           buttonVariant="yellow"
           dropdownOption={false}
+          onClick={logout}
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
-          <Button size="large" label="Log Out" variant="yellow"  onClick={logout}/>
         </div>
       </main>
     </Layout>
