@@ -25,7 +25,7 @@ const NavBar = ({ variant }: NavBarProps ) => {
             <Link to="/clients"><li className="nav__list--item"><img src={clientsIcon} alt="Clients" className="nav__image"/>Clients</li></Link>
             <Link to="/resources"><li className="nav__list--item"><img src={resourcesIcon} alt="Resources" className="nav__image"/>Resources</li></Link>
                 <hr/>
-            <Link to="settings"><li className="nav__list--item"><img src={settingsIcon} alt="Settings" className="nav__image"/>Settings</li></Link>
+            <Link to="/settings"><li className="nav__list--item"><img src={settingsIcon} alt="Settings" className="nav__image"/>Settings</li></Link>
             </ul>
         </nav>
     )
