@@ -29,7 +29,7 @@ const BookAppointment = ({authorization}: BookAppointmentTypes) => {
 
   useEffect(() => {
     authorization()
-      }, [])
+      }, [authorization])
 
   const timeIntervals: string[] = [];
 

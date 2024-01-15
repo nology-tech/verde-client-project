@@ -17,7 +17,7 @@ const Home = ({ variant, authorization, setAuth }: HomeProps) => {
 
   useEffect(() => {
     authorization()
-      }, [])
+      }, [authorization])
 
   const logout = () => {
     setAuth(false);
