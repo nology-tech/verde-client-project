@@ -119,13 +119,13 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
     <div className="container">
       <div className={`book-appointment book-appointment--${variant}`}>
         <div className="book-appointment__navbar">
-          <NavBar variant="dark" />
+          <NavBar variant="light" />
         </div>
         <div className="headerForm-container">
           <div className="book-appointment__header">
             <Header
               title="Book Appointment"
-              variant="dark"
+              variant="light"
               onClick={() => console.log("Shall I go home??")}
               buttonOption={false}
               buttonLabel=""
