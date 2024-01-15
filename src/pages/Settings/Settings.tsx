@@ -19,19 +19,34 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
   const [tempTheme, setTempTheme] = useState<"light" | "dark">(variant);
 
+  /**
+   * Handles the button click event to toggle the 'log out' modal visibility.
+   */
   const handleButtonClick = () => {
     setIsClicked(!isClicked);
     setIsVisible(!isVisible);
   };
 
+  /**
+   * Handles the button click event when the logout button is clicked.
+   */
   const handleLogoutClicked = () => {
     setIsLogoutClicked(!isLogoutClicked);
   };
 
+  /**
+   * Handles the toggle of dark mode.
+   *
+   * @param {boolean} newThemeState - The new state of dark mode (true for dark, false for light).
+   */
   const handleToggleDarkMode = (newThemeState: boolean) => {
     setTempTheme(newThemeState ? "dark" : "light");
   };
 
+  /**
+   * Handles applying theme changes when the "Apply" button is clicked.
+   * Only applies changes if the selected theme is different from the current theme.
+   */
   const handleApplyChanges = () => {
     if (tempTheme !== variant) {
       setTheme(tempTheme);

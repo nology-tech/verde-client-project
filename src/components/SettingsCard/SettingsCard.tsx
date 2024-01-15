@@ -18,6 +18,9 @@ const SettingsCard = ({
 }: SettingsCardProps) => {
   const [isToggleOn, setIsToggleOn] = useState<boolean>(variant === "dark");
 
+  /**
+   * Handles the change event when the toggle switch for light/dark mode is clicked.
+   */
   const handleToggleChange = () => {
     const newToggleState = !isToggleOn;
     setIsToggleOn(newToggleState);

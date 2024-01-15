@@ -6,6 +6,10 @@ type ToggleSwitchProps = {
 };
 
 const ToggleSwitch = ({ onToggle, checked }: ToggleSwitchProps) => {
+  
+  /**
+   * Handles the toggle event when the toggle switch state changes.
+   */
   const handleToggle = () => {
     onToggle(!checked);
   };
