@@ -12,7 +12,7 @@ const StaffNavList = ({ staff, variant }: StaffNavListProps) => {
   return (
     <div className="staffnavlist">
       {staff.map((employee) => (
-        <Link className="staffnavlist__link" to="/" key={employee.id}>
+        <Link className="staffnavlist__link" to={`/staff-details`} key={employee.id}>
           <StaffNavCard label={employee.name} variant={variant} />
         </Link>
       ))}
