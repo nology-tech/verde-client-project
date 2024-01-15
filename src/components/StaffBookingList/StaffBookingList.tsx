@@ -17,8 +17,10 @@ const StaffBookingList = ({bookings, variant} : StaffBookingListProps) => {
                 <p className="booking-list__titles--spheadings">Booking Date</p>
                 <p className="booking-list__titles--spheadings">Booking Time</p>
             </div>
+            <div className='booking-list__container'>
             {bookings.map((booking) => 
                 <StaffBookingCard 
+                key={booking.id}
                 id={booking.id}
                 clientName={booking.clientName} 
                 email={booking.emailAddress} 
@@ -28,7 +30,8 @@ const StaffBookingList = ({bookings, variant} : StaffBookingListProps) => {
                 path={booking.path} 
                 variant={variant}
                 />
-            )}    
+            )}  
+            </div>  
             </div>
     )
 }
