@@ -7,10 +7,15 @@ import { ChangeEvent, useState } from "react";
 import { FirebaseError } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+type LoginProps ={
+  setIsAuth:(isAuth: boolean) => void;
+}
+
+const Login = ({setIsAuth}: LoginProps) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  
 
   /**
    * Handles the change event when the user inputs their email.
@@ -43,6 +48,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       await loginEmailPassword(email, password);
+      setIsAuth(true)
       navigate("/home");
     } catch (error) {
       if (

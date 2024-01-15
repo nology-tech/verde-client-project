@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./BookAppointment.scss";
 import Calendar from "react-calendar";
 import DatePicker from "react-datepicker";
@@ -13,7 +13,11 @@ import { Staff } from "../../types/StaffNavTypes";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-const BookAppointment = () => {
+type BookAppointmentTypes = {
+  authorization: () => void;
+}
+
+const BookAppointment = ({authorization}: BookAppointmentTypes) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -22,6 +26,10 @@ const BookAppointment = () => {
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
+
+  useEffect(() => {
+    authorization()
+      }, [])
 
   const timeIntervals: string[] = [];
 

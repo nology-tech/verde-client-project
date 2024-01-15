@@ -5,11 +5,24 @@ import Button from "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
+import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
+  authorization: () => void;
 };
 
-const Home = ({ variant }: HomeProps) => {
+const Home = ({ variant, authorization }: HomeProps) => {
+  
+
+  useEffect(() => {
+    authorization()
+      }, [])
+
+  const logout = () => {
+    
+  }
+
+
   return (
     <Layout>
       <NavBar variant={variant} />

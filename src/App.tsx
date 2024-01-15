@@ -1,16 +1,26 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./styles/main.scss";
 import Login from "./pages/Login/Login";
+import { useState } from "react";
 
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 
 const App = () => {
+  const [isAuth, setIsAuth] = useState<boolean>(false)
+
+  const navigate = useNavigate()
+
+  const authorization = () => {
+    if (!isAuth) 
+    navigate('/')
+  }
+
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home variant="light" />} />
-      <Route path="/book-appointment" element={<BookAppointment />} />
+      <Route path="/" element={<Login setIsAuth={setIsAuth}/>} />
+      <Route path="/home" element={<Home authorization={authorization} variant="light" />} />
+      <Route path="/book-appointment" element={<BookAppointment authorization={authorization} />} />
       {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
 
       {/* <Route path="/resources" element={<Resources />} /> */}
