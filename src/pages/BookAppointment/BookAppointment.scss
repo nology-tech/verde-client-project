@@ -262,4 +262,35 @@
       display: none;
     }
   }
+
+  .book-appointment--dark {
+    .leftRight-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk
+    }
+
+
+
+    .buttons-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk;
+      padding-bottom: 3rem;
+    }
+
+    &__form {
+      background-color: $clr-primary-dk;
+
+      label {
+        background-color: $clr-primary-dk;
+      }
+  
+      select {
+        background-color: $clr-primary-dk;
+      }
+  
+      input {
+        background-color: $clr-primary-dk;
+      }
+    }
+  }
 }
