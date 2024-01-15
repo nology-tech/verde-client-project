@@ -65,6 +65,7 @@ const Staff = ({ variant }: StaffProps) => {
                 description: `${staff.description}`,
               }}
               variant={"light"}
+              key={staff.id}
             />
           ))}
         </section>
