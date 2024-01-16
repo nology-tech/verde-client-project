@@ -14,10 +14,12 @@ import Modal from "../../components/Modal/Modal";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
+
 type BookAppointmentProps = {
   variant: "dark" | "light";
 };
-const BookAppointment = ({ variant }: BookAppointmentProps) => {
+
+const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -27,6 +29,7 @@ const BookAppointment = ({ variant }: BookAppointmentProps) => {
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
   const [modal, setModal] = useState<boolean>(false);
+
 
   const timeIntervals: string[] = [];
 
