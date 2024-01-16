@@ -1,15 +1,15 @@
 export const ClientProfileList = [
-
-    {
-        
-        clientName: "John Doe",
-        role: "Teacher",
-        dob: "24/03/1997",
-        emailAddress: "john.doe@gmail.com",
-        mobileNumber: "61928272888",
-        appointmentDate: "07/02/2022",
-        appointmentTime: "14.00pm",
-        staffMember: "Staff 01",
+  {
+    id: 1,
+    clientName: "John Doe",
+    role: "Teacher",
+    dob: "24/03/1997",
+    emailAddress: "john.doe@gmail.com",
+    mobileNumber: "61928272888",
+    appointmentDate: "07/02/2022",
+    appointmentTime: "14.00pm",
+    staffMember: "Staff 01",
+    path: "#",
   },
   {
     id: 2,
@@ -21,9 +21,10 @@ export const ClientProfileList = [
     appointmentDate: "01/01/2022",
     appointmentTime: "13.00pm",
     staffMember: "Staff 03",
+    path: "#",
   },
   {
-  id: 3,
+    id: 3,
     clientName: "Lala land",
     role: "Actor",
     dob: "13/05/1992",
@@ -32,6 +33,7 @@ export const ClientProfileList = [
     appointmentDate: "05/01/2022",
     appointmentTime: "17.00pm",
     staffMember: "Staff 02",
+    path: "#",
   },
   {
     id: 4,
@@ -43,6 +45,7 @@ export const ClientProfileList = [
     appointmentDate: "07/02/2022",
     appointmentTime: "18.00pm",
     staffMember: "Staff 01",
+    path: "#",
   },
   {
     id: 5,
@@ -54,5 +57,6 @@ export const ClientProfileList = [
     appointmentDate: "07/02/2022",
     appointmentTime: "14.00pm",
     staffMember: "Staff 01",
+    path: "#",
   },
 ];
