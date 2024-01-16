@@ -19,7 +19,7 @@ type StaffProps = {
 };
 
 const Staff = ({ variant }: StaffProps) => {
-  const [dropDown, setDropDown] = useState<string>("Staff 1");
+  const [dropDown, setDropDown] = useState<string>("Sarah Stanley");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleDropDown = (event: ChangeEvent<HTMLSelectElement>) => {
