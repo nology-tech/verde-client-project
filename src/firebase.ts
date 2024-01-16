@@ -1,9 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword, 
-  onAuthStateChanged 
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_TOKEN,
@@ -36,13 +32,10 @@ export const loginEmailPassword = async (email: string, password: string) => {
   return userCredential;
 };
 
-const monitorAuthState= async() => {
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      console.log(user)
-      
-    } else {
-      
-    }
-  })
-}
+export const logout = async () => {
+  try {
+    await auth.signOut();
+  } catch (error) {
+    console.error("Error logging out");
+  }
+};

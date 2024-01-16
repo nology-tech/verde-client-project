@@ -5,21 +5,19 @@ import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
 import { useNavigate } from "react-router";
+import { logout } from "../../firebase";
+import Button from "../../components/Button/Button";
 // import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
-  authorization: () => void;
+
 };
 
 const Home = ({ variant }: HomeProps) => {
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   authorization()
-  //     }, [authorization])
-
-  const logout = () => {
-    window.localStorage.setItem('isAuth', 'false')
+  const handleLogout = () => {
+    logout();
     navigate('/')
   }
 
@@ -34,10 +32,11 @@ const Home = ({ variant }: HomeProps) => {
           buttonLabel="Logout"
           buttonVariant="yellow"
           dropdownOption={false}
-          onClick={logout}
+          onClick={handleLogout}
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
+          <Button size="large" label="Log Out" variant="yellow" path="/" />
         </div>
       </main>
     </Layout>

@@ -13,11 +13,8 @@ import { Staff } from "../../types/StaffNavTypes";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-type BookAppointmentTypes = {
-  authorization: () => void;
-}
 
-const BookAppointment = ({authorization}: BookAppointmentTypes) => {
+const BookAppointment = () => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -27,9 +24,6 @@ const BookAppointment = ({authorization}: BookAppointmentTypes) => {
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
 
-  useEffect(() => {
-    authorization()
-      }, [authorization])
 
   const timeIntervals: string[] = [];
 
