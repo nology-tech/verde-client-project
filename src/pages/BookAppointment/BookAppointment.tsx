@@ -148,14 +148,8 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
               dropdownOption={false}
             />
           </div>
-          {modal && (
-            <Modal
-              title="Booking Confirmed!"
-              buttons={confirmModal}
-              variant={variant}
-            />
-          )}
-
+          {!modal && (
+            
           <form className="book-appointment__form">
             <div className="leftRight-wrapper">
               <div className="book-appointment__form--leftside">
@@ -269,6 +263,16 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
               </div>
             </div>
           </form>
+
+)}
+
+          {modal && (
+            <Modal
+              title="Booking Confirmed!"
+              buttons={confirmModal}
+              variant={variant}
+            />
+          )}
         </div>
         <Footer variant={variant} />
       </div>
