@@ -26,7 +26,7 @@ const App = () => {
     });
     
     return () => unsubscribe();
-  }, []);
+  }, [navigate]);
   
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
