@@ -5,18 +5,18 @@ import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
 import { useNavigate } from "react-router";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
   authorization: () => void;
 };
 
-const Home = ({ variant, authorization}: HomeProps) => {
+const Home = ({ variant }: HomeProps) => {
   const navigate = useNavigate()
 
-  useEffect(() => {
-    authorization()
-      }, [authorization])
+  // useEffect(() => {
+  //   authorization()
+  //     }, [authorization])
 
   const logout = () => {
     window.localStorage.setItem('isAuth', 'false')

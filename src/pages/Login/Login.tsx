@@ -45,7 +45,6 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       await loginEmailPassword(email, password);
-      window.localStorage.setItem('isAuth', 'true')
       navigate("/home");
     } catch (error) {
       if (

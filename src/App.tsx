@@ -4,9 +4,9 @@ import "./styles/main.scss";
 import Login from "./pages/Login/Login";
 import Staff from "./pages/Staff/Staff";
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const App = () => {
-
   const navigate = useNavigate()
 
   const authorization = () => {
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Login/>} />
-      <Route path="/home" element={<Home variant="light" authorization={authorization}/>} />
+      <Route path="/home" element={<PrivateRoute element={<Home variant="light" />} />} />
       <Route path="/book-appointment" element={<BookAppointment authorization={authorization} />} />
       {/* <Route path="/book-appointment" element={<BookAppointment />} /> */}
 

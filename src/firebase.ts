@@ -1,5 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { 
+  getAuth, 
+  signInWithEmailAndPassword, 
+  onAuthStateChanged 
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_TOKEN,
@@ -11,9 +15,9 @@ const firebaseConfig = {
   measurementId: "G-NG4YBJ04DP",
 };
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 /**
  * Logs in a user using email and password credentials.
@@ -31,3 +35,14 @@ export const loginEmailPassword = async (email: string, password: string) => {
   );
   return userCredential;
 };
+
+const monitorAuthState= async() => {
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      console.log(user)
+      
+    } else {
+      
+    }
+  })
+}
