@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./BookAppointment.scss";
 import Calendar from "react-calendar";
 import DatePicker from "react-datepicker";
