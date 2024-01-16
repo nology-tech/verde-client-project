@@ -13,13 +13,14 @@
 
   &--grey {
     background-color: $clr-accent-grey;
-    color: white;
+    color: $clr-white;
     border: none;
   }
 
   &--red {
     background-color: $clr-accent-red;
     border: none;
+    color: $clr-white;
   }
 
   &--red-alt {

@@ -3,10 +3,17 @@ import Home from "./pages/Home/Home";
 import "./styles/main.scss";
 import Login from "./pages/Login/Login";
 import Staff from "./pages/Staff/Staff";
-
+import Settings from "./pages/Settings/Settings";
+import { useState } from "react";
 import BookAppointment from "./pages/BookAppointment/BookAppointment";
 
 const App = () => {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />
@@ -23,9 +30,11 @@ const App = () => {
       {/* <Route path="/clients/edit" element={<EditClient />} /> */}
       {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
 
-     <Route path="/staff" element={<Staff variant="light"/>} /> 
-      {/* <Route path="/settings" element={<Settings />} /> */}
-      
+     <Route path="/staff" element={<Staff variant={theme}/>} /> 
+      <Route
+        path="/settings"
+        element={<Settings variant={theme} setTheme={toggleTheme} />}
+      />
     </Routes>
   );
 };
