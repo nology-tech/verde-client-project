@@ -12,6 +12,7 @@ type HeaderProps = {
   buttonLabel: string;
   buttonVariant: "yellow" | "purple";
   dropdownOption: boolean;
+  path?: string;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 };
 
@@ -23,7 +24,8 @@ const Header = ({
   buttonLabel,
   buttonVariant,
   dropdownOption,
-  onChange
+  onChange,
+  path
 }: HeaderProps) => {
   return (
     <div className={`header header--${variant}`}>
@@ -31,9 +33,9 @@ const Header = ({
       <div className="header__container">
       <h1 className={`header--${variant}__title`}>{title}</h1>
       {dropdownOption && (
-        <select className={`header__dropdown`} name="staff" id="stafflist" onChange={onChange}>
+        <select className={`header__dropdown header__dropdown--${variant}`} name="staff" id="stafflist" onChange={onChange}>
           {StaffList.map(staff => 
-          <option key={staff.id} className={`header___dropdown--options`} value={`${staff.name}`} >{`${staff.name}`} </option>
+          <option key={staff.id} className={`header___dropdown--options--${variant}`} value={`${staff.name}`} >{`${staff.name}`} </option>
             )}
         </select>
       )}
@@ -44,7 +46,7 @@ const Header = ({
             label={buttonLabel}
             variant={buttonVariant}
             onClick={onClick}
-            path="/"
+            path={path}
           />
         </div>)}
     </div>

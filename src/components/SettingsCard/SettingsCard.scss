@@ -4,9 +4,9 @@
   background-color: $clr-white;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  margin: 1.25rem;
-  width: 23.6rem;
-  height: 23.9rem;
+  margin: 1rem;
+  width: 19rem;
+  height: 19rem;
   padding: 1.5rem;
 
   &--dark {
@@ -19,14 +19,14 @@
   }
 
   &__section {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.6rem;
 
   }
 
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.63rem;
+    margin-bottom: 0.5rem;
 
     &--dark {
       color: $clr-white;
@@ -60,7 +60,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 0.3rem;
-    padding-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
   }
 
   &__option {
@@ -89,7 +89,7 @@
 @media screen and (min-width: $desktop-breakpoint) {
 
   .settings-card {
-    width: 27rem;
+    width: 24.5rem;
     height: auto;
     padding: 2rem;
 
@@ -106,6 +106,10 @@
       }
     }
 
+    &__title {
+      font-size: 0.9rem;
+    }
+
     &__radio-container {
       display: flex;
       justify-content: space-between;
@@ -120,6 +124,7 @@
 
     &__option {
       margin-left: 2.5rem;
+      font-size: 0.85rem;
     }
 
     &__container-theme {
@@ -129,6 +134,22 @@
 
     &__button {
       margin-top: 1.9rem;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+
+    .settings-card {
+      width: 27rem;
+      height: auto;
+
+      &__title {
+        font-size: 1rem;
+      }
+
+      &__option {
+        font-size: 0.98rem;
+      }
     }
   }
 
