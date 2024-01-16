@@ -12,6 +12,7 @@ type HeaderProps = {
   buttonLabel: string;
   buttonVariant: "yellow" | "purple";
   dropdownOption: boolean;
+  path?: string;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 };
 
@@ -23,7 +24,8 @@ const Header = ({
   buttonLabel,
   buttonVariant,
   dropdownOption,
-  onChange
+  onChange,
+  path
 }: HeaderProps) => {
   return (
     <div className={`header header--${variant}`}>
@@ -44,7 +46,7 @@ const Header = ({
             label={buttonLabel}
             variant={buttonVariant}
             onClick={onClick}
-            path="/"
+            path={path}
           />
         </div>)}
     </div>
