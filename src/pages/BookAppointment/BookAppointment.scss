@@ -355,12 +355,22 @@
             }
             abbr {
               color: white;
+
+              
             }
 
+          
             button {
               background-color: $clr-primary-dk;
               color: white;
             }
+
+            button:hover, abbr:hover {
+              
+              background-color: $clr-secondary-dk;
+
+          
+          }
             
           }
 
