@@ -4,9 +4,9 @@ export type ClientInfo = {
     role: string;
     dob: string; 
     emailAddress: string; 
-    mobileNumber: string; 
-    appointmentDate: string; 
-    appointmentTime: string;
+    mobNumber: string; 
+    bookingDate: string; 
+    bookingTime: string;
     path: string;
     staffMember: string;
-}
+};
