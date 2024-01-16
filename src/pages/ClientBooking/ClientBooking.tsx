@@ -4,11 +4,11 @@ import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "../ClientBooking/ClientBooking.scss";
 import Layout from "../../components/Layout/Layout";
-import { ClientInfo } from "../../types/ClientProfileTypes";
+import { StaffBookings } from "../../types/StaffBookingsTypes";
 
 type ClientBookingProps = {
   variant: "light" | "dark";
-  clientInfo: ClientInfo[];
+  clientInfo: StaffBookings;
 };
 
 const ClientBooking = ({ variant, clientInfo }: ClientBookingProps) => {
@@ -30,21 +30,7 @@ const ClientBooking = ({ variant, clientInfo }: ClientBookingProps) => {
           </h3>
         </div>
         <div className="page__container">
-          {clientInfo.map((client) => 
-            <ClientProfile
-              id={client.id}
-              clientName={client.clientName}
-              role={client.role}
-              dob={client.dob}
-              emailAddress={client.emailAddress}
-              mobileNumber={client.mobileNumber}
-              appointmentDate={client.appointmentDate}
-              appointmentTime={client.appointmentTime}
-              staffMember={client.staffMember}
-              path={client.path}
-              variant={variant}
-            />
-          )}
+          <ClientProfile clients={clientInfo} variant={"light"} />
           <div>
             <Footer variant={variant} />
           </div>
