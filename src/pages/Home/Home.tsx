@@ -7,7 +7,6 @@ import "./Home.scss";
 import { useNavigate } from "react-router";
 import { logout } from "../../firebase";
 import Button from "../../components/Button/Button";
-// import { useEffect } from "react";
 type HomeProps = {
   variant: "light" | "dark";
 
