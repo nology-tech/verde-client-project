@@ -1,22 +1,23 @@
-import { useState } from 'react';
-import './Toggle.scss';
+import "./Toggle.scss";
 
 type ToggleSwitchProps = {
   onToggle: (isChecked: boolean) => void;
+  checked: boolean;
 };
 
-const ToggleSwitch = ({ onToggle } :ToggleSwitchProps) => {
-  const [isChecked, setIsChecked] = useState(false);
-
+const ToggleSwitch = ({ onToggle, checked }: ToggleSwitchProps) => {
   const handleToggle = () => {
-    const newCheckedState = !isChecked;
-    setIsChecked(newCheckedState);
-    onToggle(newCheckedState);
+    onToggle(!checked);
   };
 
   return (
     <label className="toggle-switch">
-      <input className="toggle-switch__input" type="checkbox" checked={isChecked} onChange={handleToggle} />
+      <input
+        className="toggle-switch__input"
+        type="checkbox"
+        checked={checked}
+        onChange={handleToggle}
+      />
       <span className="toggle-switch__slider"></span>
     </label>
   );

@@ -38,6 +38,12 @@
 }
 }
 
+@media screen and (min-Width: $tablet-breakpoint) {
+    .footer{
+        height: 4.7rem;
+    }
+}
+
 @media screen and (min-Width: $desktop-breakpoint) {
     .footer{
         display: none;
