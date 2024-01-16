@@ -101,6 +101,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 
     .save-button {
       display: none;
@@ -113,6 +114,57 @@
 
   .calendar-desktop {
     display: none;
+  }
+}
+
+.book-appointment--dark {
+  background-color: $clr-secondary-dk;
+
+  .book-appointment {
+    color: white;
+    &__form {
+      color: white;
+      &--leftside {
+        label {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+
+        select {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+
+        input {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+
+        option {
+          color: white;
+        }
+      }
+
+      &--rightside {
+        label {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+
+        select {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+
+        input {
+          background-color: $clr-secondary-dk;
+          color: white;
+        }
+        option {
+          color: white;
+        }
+      }
+    }
   }
 }
 
@@ -176,7 +228,6 @@
         justify-content: space-evenly;
         background-color: $clr-secondary-lt;
         font-weight: bold;
-
 
         input {
           background-color: $clr-secondary-lt;
@@ -260,6 +311,98 @@
 
     .datepicker-label {
       display: none;
+    }
+  }
+
+  .book-appointment--dark {
+    .headerForm-container {
+      background-color: $clr-secondary-dk;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .leftRight-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk;
+    }
+
+    .buttons-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk;
+      padding-bottom: 2rem;
+    }
+
+    .book-appointment {
+      &__form {
+        &--rightside {
+          color: white;
+          option {
+            color: black;
+          }
+          .calendar-desktop {
+            background-color: $clr-primary-dk;
+            color: white;
+
+            span {
+              color: white;
+            }
+            abbr {
+              color: white;
+            }
+
+            button {
+              background-color: $clr-primary-dk;
+              color: white;
+            }
+
+            button:hover,
+            abbr:hover {
+              background-color: $clr-secondary-dk;
+            }
+          }
+
+          background-color: $clr-primary-dk;
+          label {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+
+          select {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+
+          input {
+            background-color: $clr-primary-dk;
+            color: white;
+          }
+        }
+
+        &--leftside {
+          background-color: $clr-primary-dk;
+          label {
+            background-color: $clr-primary-dk;
+            color: white;
+          }
+
+          select {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+
+          input {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+          option {
+            color: black;
+          }
+        }
+      }
     }
   }
 }

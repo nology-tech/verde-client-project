@@ -10,10 +10,14 @@ import { Appointment } from "../../types/BookAppointmentTypes";
 import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
 
+
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-const BookAppointment = () => {
+type BookAppointmentProps = {
+  variant: "dark" | "light";
+};
+const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -113,15 +117,15 @@ const BookAppointment = () => {
 
   return (
     <div className="container">
-      <div className="book-appointment">
+      <div className={`book-appointment book-appointment--${variant}`}>
         <div className="book-appointment__navbar">
-          <NavBar variant="light" />
+          <NavBar variant={variant} />
         </div>
         <div className="headerForm-container">
           <div className="book-appointment__header">
             <Header
               title="Book Appointment"
-              variant="light"
+              variant={variant}
               onClick={() => console.log("Shall I go home??")}
               buttonOption={false}
               buttonLabel=""
@@ -244,7 +248,7 @@ const BookAppointment = () => {
             </div>
           </form>
         </div>
-        <Footer variant="light" />
+        <Footer variant={variant} />
       </div>
     </div>
   );
