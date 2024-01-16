@@ -43,7 +43,7 @@ const Staff = ({ variant }: StaffProps) => {
       <main className={`main main--${variant}`}>
         <Header
           title={"Staff"}
-          variant={"light"}
+          variant={variant}
           buttonOption={false}
           buttonLabel={""}
           buttonVariant={"yellow"}
@@ -64,12 +64,12 @@ const Staff = ({ variant }: StaffProps) => {
                 role: `${staff.role}`,
                 description: `${staff.description}`,
               }}
-              variant={"light"}
+              variant={variant}
               key={staff.id}
             />
           ))}
         </section>
-        <StaffNavList staff={StaffList} variant={"light"} />
+        <StaffNavList staff={StaffList} variant={variant} />
         <section className="booking">
           <div className="booking__menu">
             <h1 className="booking__staff">Bookings</h1>
@@ -94,10 +94,10 @@ const Staff = ({ variant }: StaffProps) => {
               <img className="booking__menu--icons" src={Sort} />
             </button>
           </div>
-          <StaffBookingList bookings={filteredBookings} variant={"light"} />
+          <StaffBookingList bookings={filteredBookings} variant={variant} />
         </section>
       </main>
-      <Footer variant={"light"} />
+      <Footer variant={variant} />
     </Layout>
   );
 };
