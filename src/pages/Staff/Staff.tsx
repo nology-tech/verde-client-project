@@ -13,6 +13,7 @@ import Justify_alt from "../../assets/images/bi-grid-3x3-gap-fill.png";
 import Sort from "../../assets/images/sort.png";
 import Search from "../../assets/images/search.png";
 import { ChangeEvent, useState } from "react";
+import { StaffBookings } from "../../types/StaffBookingsTypes";
 
 type StaffProps = {
   variant: "light" | "dark";
@@ -29,6 +30,23 @@ const Staff = ({ variant }: StaffProps) => {
 
   const handleSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.currentTarget.value);
+  };
+
+  const parseDateTime = (bookingDate: string, bookingTime: string) => {
+    const [day, month, year] = bookingDate.split("/");
+    const [hours, minutes] = bookingTime.split(":");
+
+    return new Date(
+      parseInt(year),
+      parseInt(month) - 1,
+      parseInt(day),
+      parseInt(hours),
+      parseInt(minutes)
+    );
+  };
+
+  const sortDateAndTimeAsc = (a : StaffBookings, b : StaffBookings) => {
+
   };
 
   const filteredStaff = StaffList.filter((staff) => staff.name === dropDown);
