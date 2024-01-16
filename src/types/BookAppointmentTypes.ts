@@ -7,7 +7,3 @@ export type Appointment = {
   mobileNumber: string;
   selectedStaff: string;
 };
-
-type BookAppointmentProps = {
-  variant: string;
-};
