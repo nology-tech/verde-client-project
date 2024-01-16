@@ -14,9 +14,11 @@ import { Staff } from "../../types/StaffNavTypes";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
+
 type BookAppointmentProps = {
   variant: "dark" | "light";
 };
+
 const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
@@ -26,6 +28,7 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
+
 
   const timeIntervals: string[] = [];
 
