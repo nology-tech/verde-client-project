@@ -33,7 +33,7 @@ const Staff = ({ variant }: StaffProps) => {
 
   const filteredStaff = StaffList.filter((staff) => staff.name === dropDown);
 
-  const filteredBookings = StaffBookingsList.filter((booking) => {
+  const filteredBookings = StaffBookingList.filter((booking) => {
     return booking.clientName.toLowerCase().includes(searchTerm);
   });
 

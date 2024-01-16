@@ -5,13 +5,15 @@ import NavBar from "../../components/NavBar/NavBar";
 import "../ClientBooking/ClientBooking.scss";
 import Layout from "../../components/Layout/Layout";
 import { StaffBookings } from "../../types/StaffBookingsTypes";
+import { StaffBookingsList } from "../../data/StaffBookingsList";
 
 type ClientBookingProps = {
   variant: "light" | "dark";
-  clientInfo: StaffBookings;
+  //clientInfo: StaffBookings;
 };
 
-const ClientBooking = ({ variant, clientInfo }: ClientBookingProps) => {
+const ClientBooking = ({ variant }: ClientBookingProps) => {
+
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -30,7 +32,18 @@ const ClientBooking = ({ variant, clientInfo }: ClientBookingProps) => {
           </h3>
         </div>
         <div className="page__container">
-          <ClientProfile clients={clientInfo} variant={"light"} />
+          <ClientProfile clients={{
+            id: ,
+            clientName: "",
+            role: undefined,
+            dob: undefined,
+            emailAddress: "",
+            mobNumber: "",
+            bookingDate: "",
+            bookingTime: "",
+            path: "",
+            staffMember: undefined
+          }} variant={variant} />
           <div>
             <Footer variant={variant} />
           </div>

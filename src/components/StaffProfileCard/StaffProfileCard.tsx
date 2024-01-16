@@ -1,6 +1,7 @@
 import "./StaffProfileCard.scss";
 import ProfilePicture from "../ProfilePicture/ProfilePicture";
 import { Staff } from "../../types/StaffNavTypes";
+import { size } from "lodash";
 
 type StaffCardProps = {
   staff: Staff;
@@ -15,6 +16,7 @@ const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
         titleOption={true}
         titleLabel={staff.role}
         editOption={true}
+        size={size}
         variant={variant}
       />
       <div className={`card-container card-container--${variant}`}>

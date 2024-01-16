@@ -6,7 +6,7 @@ export const StaffBookingsList = [
     dob: "24/03/1997",
     emailAddress: "joe.bloggs@gmail.com",
     mobNumber: "0987654321",
-    bookingDate: "1/1/2024",
+    bookingDate: "1/3/2024",
     bookingTime: "1:30",
     staffMember: "Staff 01",
     path: "/booking-1",

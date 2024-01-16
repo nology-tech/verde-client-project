@@ -1,5 +1,6 @@
 import "./ProfilePicture.scss";
 import profilePicture from "../../assets/images/profile-picture.png";
+import { size } from "lodash";
 
 type ProfilePictureProps = {
   name: string;
@@ -7,6 +8,7 @@ type ProfilePictureProps = {
   titleLabel: string | null;
   editOption?: boolean;
   variant: "light" | "dark";
+  size: "default" | "client-booking"; 
 };
 
 const ProfilePicture = ({
@@ -15,9 +17,10 @@ const ProfilePicture = ({
   titleLabel,
   editOption,
   variant,
+  size,
 }: ProfilePictureProps) => {
   return (
-    <div className={`profile profile--${variant}`}>
+    <div className={`profile profile--${variant} profile--${size}` }>
       <img
         src={profilePicture}
         className={`profile__img profile__img--${variant}`}

@@ -59,13 +59,18 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
   .profile {
+
+    &--default{
     margin: 1rem;
     width: 11rem;
     height: 20rem;
-    
+    }
+
+    &--client-booking{
     margin: 0 1.25rem;
     width: 13rem;
     height: 15rem;
+    }
 
     &__img {
       width: 7rem;
