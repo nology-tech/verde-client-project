@@ -360,6 +360,10 @@
               color: white;
             }
 
+            button:disabled {
+              background-color: $clr-secondary-dk;
+            }
+
             button:hover,
             abbr:hover {
               background-color: $clr-secondary-dk;
