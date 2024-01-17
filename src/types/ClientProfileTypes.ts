@@ -7,4 +7,5 @@ export type ClientInfo = {
     appointmentDate: string; 
     appointmentTime: string;
     staffMember: string;
+    id:number;
 }
