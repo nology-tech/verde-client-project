@@ -6,7 +6,7 @@
  * we can manipulate the :root element's font-size at different breakpoints to scale up the font-size application-wide */
 
 * {
-  font-family: 'PT Sans', 'Poppins', sans-serif;
+  font-family: var(--font);
   color: $clr-black;
 }
 
@@ -23,7 +23,7 @@ p {
 
 p {
   font-size: 1.125rem;
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font);
 }
 
 button {
@@ -52,7 +52,7 @@ h2,
 h3,
 h4 {
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font);
 }
 
 
