@@ -8,6 +8,7 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
+import StaffEdit from "./pages/StaffEdit/StaffEdit";
 
 const App = () => {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ const App = () => {
           {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff" element={<Staff variant={theme} />} />
           <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme}/>} />
+          <Route path="/staff-edit" element={<StaffEdit variant={theme}/>} />
         </Routes>
       )}
   </>
