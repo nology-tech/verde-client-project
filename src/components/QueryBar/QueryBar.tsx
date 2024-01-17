@@ -5,12 +5,13 @@ import columnImg from "./../../assets/images/column-view.png"
 import gridImg from "./../../assets/images/grid-view.png"
 
 import "./QueryBar.scss";
+import {ChangeEventHandler } from "react";
 
 type QueryBarProps = {
   label: string;
   searchTerm: string;
   hasFilter: boolean;
-  handleInput: () => void;
+  handleInput: ChangeEventHandler<HTMLInputElement>;
   columnViewClick: () => void;
   gridViewClick: () => void;
   sortClick: () => void;
