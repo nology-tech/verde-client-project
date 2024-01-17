@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
 import "./StaffListBooking.scss";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
+import Footer from "../../components/Footer/Footer";
 
 type StaffBookingListProps = {
   variant: "light" | "dark"; 
@@ -50,6 +51,7 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
           })}
         </section>
       </main>
+      <Footer variant={variant}/>
     </Layout>
   );
 };
