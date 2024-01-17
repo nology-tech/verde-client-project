@@ -33,7 +33,7 @@
   .booking-list {
     &__container {
       overflow-y: scroll;
-      height: 9rem;
+      height: 18rem;
       padding: 0.5rem;
     }
 
@@ -59,7 +59,5 @@
       height: 10.5rem;
       padding: 0.5rem;
     }
-
-    
-}
+  }
 }

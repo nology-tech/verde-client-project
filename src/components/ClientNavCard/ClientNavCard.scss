@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.clientnavcard {
+    display: flex;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem; 
+
+    &__info, &__sp {
+        display:none;
+    }  
+
+    &--light {
+        background-color: $clr-white;
+        border: solid 0.12rem $clr-accent-grey;
+    }
+
+    &--dark {
+        background-color: $clr-primary-dk;
+        border: solid 0.12rem $clr-white;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 1.1rem;
+
+        &--dark {
+            color: $clr-white;
+        }
+      
+
+    }
+
+  &__arrow {
+    width: 1.7rem;
+    height: auto;
+
+    
+
+  }
+
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    .clientnavcard {
+        text-align: center;
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+        gap: 0.5rem;
+        height: 3rem;
+        align-content: center;
+
+        &__info, &__sp {
+            color: $clr-accent-grey;
+            display: unset;
+        }
+
+    }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .clientnavcard {
+        text-align: center;
+        grid-template-columns: 1fr 2fr 0.6fr 1fr 1fr 1fr;
+
+        &__name, &__info, &__sp {
+            font-size: 0.7rem;
+        }
+
+        &__sp{
+            text-align: center;
+        }
+
+    
+    }
+
+}
+}
+

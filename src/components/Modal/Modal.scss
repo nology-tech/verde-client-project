@@ -18,6 +18,7 @@
     &--dark {
         background-color: $clr-primary-dk;
         color: $clr-white;
+        box-shadow: none;
     }
 
     &__title {
