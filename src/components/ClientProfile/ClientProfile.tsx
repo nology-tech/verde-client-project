@@ -1,10 +1,10 @@
 import "../ClientProfile/ClientProfile.scss"
 import ProfilePicture from "../ProfilePicture/ProfilePicture"
-import { ClientInfo } from "../../types/ClientProfileTypes"
+import { StaffBookings } from "../../types/StaffBookingsTypes"
 
 
 type ClientProfileProps = {
-    clientinfo: ClientInfo;
+    clientinfo: StaffBookings;
     variant: "light" | "dark";
 }
 
@@ -16,7 +16,7 @@ const ClientProfile = ({clientinfo, variant} : ClientProfileProps) => {
                 name={clientinfo.clientName}
                 titleOption={true}
                 titleLabel={clientinfo.role}
-                editOption={true}//HOTFIX (mobile version optional)
+                editOption={true}
                 variant={variant}
             /></div>
 
@@ -28,20 +28,20 @@ const ClientProfile = ({clientinfo, variant} : ClientProfileProps) => {
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant}`} >Email Address:</h2>
                 <h3 className={`clientcard__info clientcard__info--${variant}`} >{clientinfo.emailAddress}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant}`} >Mobile Number:</h2>
-                <h3 className={`clientcard__info clientcard__info--${variant}`} >{clientinfo.mobileNumber}</h3>
+                <h3 className={`clientcard__info clientcard__info--${variant}`} >{clientinfo.mobNumber}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__mobile`} >Date:</h2>
-                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__mobile`} >{clientinfo.appointmentDate}</h3>
+                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__mobile`} >{clientinfo.bookingDate}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__mobile`} >Time:</h2>
-                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__mobile`} >{clientinfo.appointmentTime}</h3>
+                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__mobile`} >{clientinfo.bookingTime}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__mobile`} >Staff Member:</h2>
                 <h3 className={`clientcard__info clientcard__info--${variant} clientcard__mobile`} >{clientinfo.staffMember}</h3>
             </div>
             <div className={`clientcard__container clientcard__container--${variant} clientcard__desktop`}>
                 <h1 className={`clientcard__title clientcard__title--${variant} clientcard__desktop`} >Booking Details</h1>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__desktop`} >Date:</h2>
-                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__desktop`} >{clientinfo.appointmentDate}</h3>
+                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__desktop`} >{clientinfo.bookingDate}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__desktop`} >Time:</h2>
-                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__desktop`} >{clientinfo.appointmentTime}</h3>
+                <h3 className={`clientcard__info clientcard__info--${variant} clientcard__desktop`} >{clientinfo.bookingTime}</h3>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant} clientcard__desktop`} >Staff Member:</h2>
                 <h3 className={`clientcard__info clientcard__info--${variant} clientcard__desktop`} >{clientinfo.staffMember}</h3>
             </div>
