@@ -15,9 +15,10 @@ const ResourceCard = ({
 }: ResourceCardProps) => {
   return (
     <>
-      <div className={`resource-card--${variant}`}>
+      
         <Link to={path} key={id}>
-          <p className="resource-card__name">{resourceName}</p>
+        <div className={`resource-card resource-card--${variant}`}>
+          <p className={`resource-card__name resource-card__name--${variant}`}>{resourceName}</p>
           <p className="resource-card__quantity">{quantityRemaining}</p>
           <p className="resource-card__cost">{costPerUnit}</p>
           <p className="resource-card__autopurchase">{autoPurchase}</p>
@@ -26,8 +27,9 @@ const ResourceCard = ({
           </p>
 
           <img className="resource-card__arrow" src={arrow} alt="arrow"></img>
+          </div>
         </Link>
-      </div>
+      
     </>
   );
 };
