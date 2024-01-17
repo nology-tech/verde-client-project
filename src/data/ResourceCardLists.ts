@@ -1,4 +1,3 @@
-
 export const ResourceCardListHealth = [
   {
     id: 1,
@@ -7,7 +6,7 @@ export const ResourceCardListHealth = [
     costPerUnit: "12.99",
     autoPurchase: "YES",
     autoPurchaseLevel: 50,
-    path: "/healthresource/1",
+    path: "/healthresource/1"
   },
   {
     id: 2,
@@ -59,14 +58,14 @@ export const ResourceCardListHealth = [
   },
 ];
 
-export const resourceCardListAdmin = [
-  {
-    id: 1,
-    resourceName: "Notepad",
-    quantityRemaining: 20,
-    costPerUnit: "1.99",
-    autoPurchase: "YES",
-    autoPurchaseLevel: 10,
-    path: "/adminresource/1",
-  },
-];
+// export const resourceCardListAdmin = [
+//   {
+//     id: 1,
+//     resourceName: "Notepad",
+//     quantityRemaining: 20,
+//     costPerUnit: "1.99",
+//     autoPurchase: "YES",
+//     autoPurchaseLevel: 10,
+//     path: "/adminresource/1",
+//   },
+// ];

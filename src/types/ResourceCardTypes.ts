@@ -6,5 +6,5 @@ export type ResourceCardProps = {
   autoPurchase: string;
   autoPurchaseLevel: string | number;
   path: string;
-  variant:  "light" | "dark";
+  variant?:  "light" | "dark";
 };

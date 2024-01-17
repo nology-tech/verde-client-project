@@ -1,16 +1,35 @@
 import "./Resources.scss";
-import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import ResourceCardList from "../../components/ResourceCardList/ResourceCardList";
-const Resources = () => {
-  return (
-    <div>
-      <h1>Resources</h1>
-      {/* <ResourceCardList
-          staff="Staff"
+import Layout from "../../components/Layout/Layout";
+import Footer from "../../components/Footer/Footer";
+import { ResourceCardListHealth } from "../../data/ResourceCardLists";
+import Header from "../../components/Header/Header";
+import NavBar from "../../components/NavBar/NavBar";
 
-          
-          /> */}
-    </div>
+type ResourcesProps = {
+  variant: "light" | "dark";
+};
+
+const Resources = ({ variant }: ResourcesProps) => {
+  return (
+    <Layout>
+      <NavBar variant={variant} />
+      <main className={`resources resources--${variant}`}>
+        <Header
+          title="Resources"
+          variant={variant}
+          buttonOption={true}
+          //onClick={handleButtonClick}
+          buttonLabel="+ Create"
+          buttonVariant="yellow"
+          dropdownOption={false}
+        />
+      <div>
+          <ResourceCardList staff="Staff" resources={ResourceCardListHealth} />
+        </div>
+      </main>
+      <Footer variant={variant} /> 
+    </Layout>
   );
 };
 
