@@ -1,5 +1,5 @@
 export type StaffBookings = {
-    id: number;
+    id?: number;
     clientName: string;
     role?: string;
     dob?: string;
@@ -7,6 +7,6 @@ export type StaffBookings = {
     mobNumber: string;
     bookingDate: string;
     bookingTime: string;
-    path: string;
+    path?: string;
     staffMember?: string;
 }

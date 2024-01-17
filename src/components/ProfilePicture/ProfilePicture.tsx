@@ -4,7 +4,7 @@ import profilePicture from "../../assets/images/profile-picture.png";
 type ProfilePictureProps = {
   name: string;
   titleOption: boolean;
-  titleLabel: string | null;
+  titleLabel?: string | null;
   editOption: boolean;
   variant: "light" | "dark";
 };

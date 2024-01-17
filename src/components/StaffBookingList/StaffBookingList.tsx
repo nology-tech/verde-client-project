@@ -25,7 +25,7 @@ const StaffBookingList = ({ bookings, variant }: StaffBookingListProps) => {
             id={booking.id}
             clientName={booking.clientName}
             email={booking.emailAddress}
-            mobileNumber={booking.mobNumber}
+            mobNumber={booking.mobNumber}
             bookingDate={booking.bookingDate}
             bookingTime={booking.bookingTime}
             path={booking.path + "/" + booking.id}
