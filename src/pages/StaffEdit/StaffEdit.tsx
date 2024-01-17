@@ -10,6 +10,7 @@ import { Appointment } from "../../types/BookAppointmentTypes";
 import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
 import Modal from "../../components/Modal/Modal";
+import { StaffBookingsList } from "../../data/StaffBookingsList";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -19,7 +20,7 @@ type StaffEditProps = {
   variant: "dark" | "light";
 };
 
-const BookAppointment = ({variant}: StaffEditProps ) => {
+const StaffEdit = ({variant}: StaffEditProps ) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
@@ -88,39 +89,6 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
     console.log("Appointment saved:", newAppointment);
   };
 
-  const handleDatePickerSubmit = () => {
-    if (
-      !selectedDate ||
-      !selectedTime ||
-      !firstName ||
-      !lastName ||
-      !emailAddress ||
-      !mobileNumber ||
-      !selectedStaff
-    ) {
-      console.log("Please fill in all fields");
-      return;
-    }
-
-    const formattedDate: string = selectedDate.toLocaleString();
-
-    const newAppointment: Appointment = {
-      date: formattedDate,
-      time: selectedTime,
-      firstName,
-      lastName,
-      emailAddress,
-      mobileNumber,
-      selectedStaff,
-    };
-
-    setAppointments([...appointments, newAppointment]);
-    setModal(!modal);
-
-    console.log("Appointment saved:", newAppointment);
-    // logic for saving data can be added here
-  };
-
   const handleContinue = () => {
     setModal(false);
   };
@@ -128,6 +96,8 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
   const confirmModal = [
     <Button label={"Continue"} variant={"yellow"} onClick={handleContinue} />,
   ];
+  const filteredClient = StaffBookingsList.filter(client => client.clientName === "Joe Bloggs")
+  const bookingDate = StaffBookingsList.map(client => new Date(client.bookingDate));
 
   return (
     <div className="container">
@@ -136,10 +106,10 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
           <NavBar variant={variant} />
         </div>
 
-        <div className="headerForm-container">
+        {filteredClient.map(client => <div className="headerForm-container">
           <div className="staff-edit__header">
             <Header
-              title="Staff Edit"
+              title={`Clients - ${client.clientName}`}
               variant={variant}
               onClick={() => console.log("Shall I go home??")}
               buttonOption={false}
@@ -149,7 +119,6 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
             />
           </div>
           {!modal && (
-            
           <form className="staff-edit__form">
             <div className="leftRight-wrapper">
               <div className="staff-edit__form--leftside">
@@ -157,34 +126,34 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
                 <input
                   type="text"
                   name="firstName"
-                  value={firstName}
+                  value={client.clientName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
                 <label>Last Name</label>
                 <input
                   type="text"
                   name="lastName"
-                  value={lastName}
+                  value={client.clientName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
                 <label>Email Address</label>
                 <input
                   type="email"
                   name="emailAddress"
-                  value={emailAddress}
+                  value={client.emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
                 ></input>
                 <label>Mobile Number</label>
                 <input
                   type="text"
                   name="mobileNumber"
-                  value={mobileNumber}
+                  value={client.mobNumber}
                   onChange={(e) => setMobileNumber(e.target.value)}
                 ></input>
                 <label>Staff Member</label>
                 <select
                   name="staffMember"
-                  value={selectedStaff}
+                  value={client.staffMember}
                   onChange={(e) => setSelectedStaff(e.target.value)}
                 >
                   <option value="" disabled>
@@ -207,22 +176,10 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
                   minDate={new Date()}
                 />
 
-                <label className="datepicker-label">Date:</label>
-                <div className="datepicker">
-                  <DatePicker
-                    selected={selectedDate as Date}
-                    className="datepicker-mobile"
-                    onChange={handleDateChange}
-                    dateFormat="dd/MM/yyyy"
-                    minDate={new Date()}
-                    placeholderText="DD/MM/YYYY"
-                  />
-                </div>
                 <label>Time:</label>
-
                 <select
                   name="appointmentTime"
-                  value={selectedTime}
+                  value={client.bookingTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="" disabled>
@@ -239,25 +196,18 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
             </div>
             <div className="buttons-wrapper">
               <div className="staff-edit__buttons">
-                <div className="save-button">
-                  <Button
-                    label="Save"
-                    variant="yellow"
-                    onClick={handleSubmit}
-                  />
-                </div>
-                <div className="submit-button">
-                  <Button
-                    label="Submit"
-                    variant="yellow"
-                    onClick={handleDatePickerSubmit}
-                  />
-                </div>
                 <div className="cancel-button">
                   <Button
                     label="Cancel"
                     variant="grey"
                     onClick={() => console.log("Cancel button clicked")}
+                  />
+                </div>
+                <div className="save-button">
+                  <Button
+                    label="Save"
+                    variant="yellow"
+                    onClick={handleSubmit}
                   />
                 </div>
               </div>
@@ -273,11 +223,11 @@ const BookAppointment = ({variant}: StaffEditProps ) => {
               variant={variant}
             />
           )}
-        </div>
+        </div>)}
         <Footer variant={variant} />
       </div>
     </div>
   );
 };
 
-export default BookAppointment;
+export default StaffEdit;

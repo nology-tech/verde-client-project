@@ -4,7 +4,7 @@
 @import "react-calendar/dist/Calendar.css"; //react-calendar default stylesheet
 @import "react-datepicker/dist/react-datepicker.css";
 
-.container {
+/* .container {
   width: 100%;
 }
 .staff-edit {
@@ -17,7 +17,7 @@
   }
 
   &__form {
-    font-size: 0.7rem;
+
 
     &--leftside {
       display: flex;
@@ -107,9 +107,6 @@
       display: none;
     }
 
-    .submit-button {
-      margin-right: 1rem;
-    }
   }
 
   .calendar-desktop {
@@ -166,7 +163,7 @@
       }
     }
   }
-}
+} */
 
 @media screen and (min-width: $tablet-breakpoint) {
   .calendar-desktop {
@@ -189,12 +186,11 @@
     &__buttons {
       display: flex;
       flex-direction: row;
-
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       width: 100%;
-
       justify-content: center;
       margin-top: 3rem;
+      margin-bottom: 1rem;
 
       .button--undefined {
         width: 8.5rem;
@@ -221,6 +217,7 @@
       padding: 2rem;
       display: flex;
       flex-direction: column;
+      font-size: 0.7rem;
 
       &--rightside {
         display: flex;
@@ -228,7 +225,22 @@
         justify-content: space-evenly;
         background-color: $clr-secondary-lt;
         font-weight: bold;
+        align-items: start;
+        margin-bottom: 0.6rem;
+        padding-left: 1.2rem;
+        margin-right: 1.1rem;
 
+        
+      input,
+      select {
+        margin-bottom: 0.6rem;
+        width: 100%;
+        border: 0.03rem solid #e2e8f0;
+        height: 1.9rem;
+        border-radius: 0.2rem;
+        padding-left: 1rem;
+      }
+      
         input {
           background-color: $clr-secondary-lt;
         }
@@ -242,6 +254,10 @@
 
         label {
           margin-left: 0.5rem;
+          color: black;
+          display: flex;
+          margin-bottom: 0.3rem;
+          width: 100%;
         }
 
         option {
@@ -251,13 +267,27 @@
 
       &--leftside {
         display: flex;
-
         flex-direction: column;
+        align-items: start;
         justify-content: space-evenly;
         font-size: 0.6rem;
         margin-bottom: 2rem;
+        margin-top: 0.6rem;
+        padding-left: 1.2rem;
+        padding-top: 1rem;
+        margin-right: 1.1rem;
 
         background-color: $clr-secondary-lt;
+
+        
+      input,
+      select {
+        margin-bottom: 0.6rem;
+        height: 1.9rem;
+        border: 0.03rem solid #e2e8f0;
+        border-radius: 0.2rem;
+        padding-left: 1rem;
+      }
 
         input {
           background-color: $clr-secondary-lt;
@@ -275,6 +305,9 @@
 
         label {
           width: 17rem;
+          color: black;
+          display: flex;
+          margin-bottom: 0.3rem;
         }
       }
 
@@ -335,7 +368,32 @@
     .staff-edit {
       &__form {
         &--rightside {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          margin-bottom: 0.6rem;
+          padding-left: 1.2rem;
+          margin-right: 1.1rem;
           color: white;
+
+          label {
+            color: black;
+            display: flex;
+            margin-bottom: 0.3rem;
+            width: 100%;
+          }
+
+          
+      input,
+      select {
+        margin-bottom: 0.6rem;
+        width: 100%;
+        border: 0.03rem solid #e2e8f0;
+        height: 1.9rem;
+        border-radius: 0.2rem;
+        padding-left: 1rem;
+      }
+
           option {
             color: black;
           }
@@ -359,6 +417,30 @@
             .react-calendar__tile--rangeStart {
               background-color: $clr-secondary-dk;
             }
+
+            .react-datepicker-wrapper > .react-datepicker__input-container input {
+              all: unset !important;
+            }
+      
+            .react-datepicker-wrapper
+              > .react-datepicker__input-container
+              input[placeholder] {
+              font-family: "Poppins";
+            }
+
+            .datepicker {
+              width: 100%;
+              border: 0.03rem solid #e2e8f0;
+              height: 1.9rem;
+              border-radius: 0.2rem;
+              padding-left: 1.2rem;
+              margin-bottom: 0.6rem;
+              font-size: 0.8rem;
+              display: flex;
+              align-items: center;
+              font-weight: lighter;
+            }
+      
 
             button:disabled {
               background-color: $clr-secondary-dk;
@@ -410,6 +492,57 @@
           }
           option {
             color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .staff-edit--dark {
+    background-color: $clr-secondary-dk;
+  
+    .staff-edit {
+      color: white;
+      &__form {
+        color: white;
+        &--leftside {
+          label {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+  
+          select {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+  
+          input {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+  
+          option {
+            color: white;
+          }
+        }
+  
+        &--rightside {
+          label {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+  
+          select {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+  
+          input {
+            background-color: $clr-secondary-dk;
+            color: white;
+          }
+          option {
+            color: white;
           }
         }
       }
