@@ -15,7 +15,7 @@ type QueryBarProps = {
   columnViewClick: () => void;
   gridViewClick: () => void;
   sortClick: () => void;
-  filterClick: () => void;
+  filterClick?: () => void;
   variant: "light" | "dark";
 };
 
