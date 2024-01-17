@@ -6,7 +6,7 @@ emailAddress: 'joe.bloggs@gmail.com',
 mobNumber: "0987654321",
 bookingDate: "1/1/2024",
 bookingTime: "1:30",
-path: "#",
+path: "/bookings",
 },
 
 {
@@ -26,7 +26,7 @@ emailAddress: 'joe.bloggs@gmail.com',
 mobNumber: "0987654321",
 bookingDate: "1/1/2024",
 bookingTime: "2:40",
-path: "#",
+path: "/bookings",
 },
 
 {
@@ -36,7 +36,7 @@ emailAddress: 'joe.bloggs@gmail.com',
 mobNumber: "0987654321",
 bookingDate: "1/1/2024",
 bookingTime: "5:00",
-path: "#",
+path: "/bookings",
 },
 
 {
@@ -46,6 +46,6 @@ emailAddress: 'joe.bloggs@gmail.com',
 mobNumber: "0987654321",
 bookingDate: "1/1/2024",
 bookingTime: "1:30",
-path: "#",
+path: "/bookings",
 },
 ]
