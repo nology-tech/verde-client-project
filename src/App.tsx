@@ -9,6 +9,11 @@ import Resources from "./pages/Resources/Resources";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
+import StaffListBooking from "./pages/StaffListBooking/StaffListBooking";
+
+
+
+
 
 const App = () => {
   const navigate = useNavigate();
@@ -51,6 +56,7 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home variant={theme} />} />
           <Route path="/book-appointment" element={<BookAppointment variant={theme}/>} />
+          <Route path={`/bookings/:bookingsId`} element={<StaffListBooking variant={theme}/> }   />  
           {/* Additional routes can be uncommented as needed */}
           <Route path="/resources" element={<Resources variant={theme} />} />
           {/* <Route path="/resources/edit" element={<EditResources />} /> */}
