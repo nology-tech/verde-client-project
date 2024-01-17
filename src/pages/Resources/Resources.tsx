@@ -1,20 +1,17 @@
-
-import './Resources.scss';
+import "./Resources.scss";
 import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import ResourceCardList from "../../components/ResourceCardList/ResourceCardList";
-import ResourceCardListHealth from "../../components/ResourceCardListHealth/ResourceCardListHealth";
-const Resources = () => { 
-    return (
-        <div>
-        <h1>Resources</h1>
-        <ResourceCardList
+const Resources = () => {
+  return (
+    <div>
+      <h1>Resources</h1>
+      {/* <ResourceCardList
           staff="Staff"
 
           
-          />
-        
-        </div>
-    );
-    };
+          /> */}
+    </div>
+  );
+};
 
 export default Resources;
