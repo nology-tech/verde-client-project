@@ -5,7 +5,6 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
 import "./StaffListBooking.scss";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
-import { ChangeEvent, useState } from "react";
 
 type StaffBookingListProps = {
   variant: "light" | "dark"; 
@@ -14,9 +13,7 @@ type StaffBookingListProps = {
 const StaffListBooking = ({ variant }: StaffBookingListProps) => {
   const { bookingsId } = useParams();
 
-  const [dropDown, setDropDown] = useState<string>("Sarah Stanley");
-
-  const filteredClients = StaffBookingsList.filter((client) => client.staffMember === dropDown )
+  const filteredClients = StaffBookingsList.filter((client) => client.id === Number(bookingsId))
 
   return (
     <Layout>
