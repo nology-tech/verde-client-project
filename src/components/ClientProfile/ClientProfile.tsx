@@ -6,18 +6,20 @@ import { StaffBookings } from "../../types/StaffBookingsTypes"
 type ClientProfileProps = {
     clientinfo: StaffBookings;
     variant: "light" | "dark";
+    size: "default" | "staffBooking";
 }
 
-const ClientProfile = ({clientinfo, variant} : ClientProfileProps) => {
+const ClientProfile = ({clientinfo, variant, size} : ClientProfileProps) => {
     return (
         <div className={`clientprofile clientprofile--${variant}`}>
-            <div className={`clientcard__picture clientcard__picture--${variant}`}>
+            <div className={`clientcard__picture clientcard__picture--${variant} clientcard__picture--${size}`}>
             <ProfilePicture
                 name={clientinfo.clientName}
                 titleOption={true}
                 titleLabel={clientinfo.role}
                 editOption={true}
                 variant={variant}
+                size={size}
             /></div>
 
             <div className={`clientcard clientcard--${variant}`}>

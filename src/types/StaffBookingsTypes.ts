@@ -9,4 +9,5 @@ export type StaffBookings = {
     bookingTime: string;
     path?: string;
     staffMember?: string;
+    size?: string;
 }

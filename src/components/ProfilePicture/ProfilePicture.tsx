@@ -7,6 +7,7 @@ type ProfilePictureProps = {
   titleLabel?: string | null;
   editOption: boolean;
   variant: "light" | "dark";
+  size: "default" | "staffBooking";
 };
 
 const ProfilePicture = ({
@@ -15,9 +16,10 @@ const ProfilePicture = ({
   titleLabel,
   editOption,
   variant,
+  size,
 }: ProfilePictureProps) => {
   return (
-    <div className={`profile profile--${variant}`}>
+    <div className={`profile profile--${variant} profile--${size}`}>
       <img
         src={profilePicture}
         className={`profile__img profile__img--${variant}`}

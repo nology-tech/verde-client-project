@@ -17,8 +17,8 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
 
   return (
     <Layout>
-      <NavBar variant={variant} />
-      <main>
+    <NavBar variant={variant} />
+      <main className="booking-main">
         <Header
           title={"Client Booking"}
           variant={variant}
@@ -33,18 +33,17 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
             return(
               <div className={`container${client.id}`}> 
             <ClientProfile
-              clientinfo={{
-                clientName: `${client.clientName}`,
-                role: `${client.role}`,
-                dob: `${client.dob}`,
-                emailAddress: `${client.emailAddress}`,
-                mobNumber: `${client.mobNumber}`,
-                bookingDate: `${client.bookingDate}`,
-                bookingTime: `${client.bookingTime}`,
-                staffMember: `${client.staffMember}`,
-              }}
-              variant={variant}
-            />
+                  clientinfo={{
+                    clientName: `${client.clientName}`,
+                    role: `${client.role}`,
+                    dob: `${client.dob}`,
+                    emailAddress: `${client.emailAddress}`,
+                    mobNumber: `${client.mobNumber}`,
+                    bookingDate: `${client.bookingDate}`,
+                    bookingTime: `${client.bookingTime}`,
+                    staffMember: `${client.staffMember}`,
+                  }}
+                  variant={variant} size={"staffBooking"}            />
             </div>
             )
           })}

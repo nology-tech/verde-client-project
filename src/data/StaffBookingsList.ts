@@ -10,6 +10,7 @@ export const StaffBookingsList = [
     bookingTime: "14.00pm",
     staffMember: "Sarah Stanley",
     path: "/bookings",
+    size: "staffBooking"
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const StaffBookingsList = [
     bookingTime: "13.00pm",
     staffMember: "April Orr",
     path: "/bookings",
+    size: "staffBooking"
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const StaffBookingsList = [
     bookingTime: "17.00pm",
     staffMember: "Levi Taylor",
     path: "/bookings",
+    size: "staffBooking"
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const StaffBookingsList = [
     bookingTime: "18.00pm",
     staffMember: "Lowri Chavez",
     path: "/bookings",
+    size: "staffBooking"
   },
   {
     id: 5,
@@ -58,5 +62,6 @@ export const StaffBookingsList = [
     bookingTime: "14.00pm",
     staffMember: "Sam Joyce",
     path: "/bookings",
+    size: "staffBooking"
   },
 ];
