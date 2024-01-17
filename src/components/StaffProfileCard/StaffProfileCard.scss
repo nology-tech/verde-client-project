@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
 
-  &--dark{
+  &--dark {
     background-color: $clr-secondary-dk;
   }
 }
@@ -23,13 +23,13 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-bottom: 0.06rem  solid $clr-secondary-dk;
+    border-bottom: 0.06rem solid $clr-secondary-dk;
 
-    &--dark{
+    &--dark {
       background-color: $clr-primary-dk;
     }
 
-    &--light{
+    &--light {
       background-color: $clr-white;
     }
 
@@ -38,9 +38,9 @@
       margin-bottom: 0.625rem;
       font-weight: 600;
 
-      &--dark{
+      &--dark {
         color: $clr-white;
-       }
+      }
     }
 
     &__content {
@@ -49,9 +49,9 @@
       color: $clr-secondary-dk;
       height: 1.5rem;
 
-      &--dark{
+      &--dark {
         color: $clr-white;
-       }
+      }
     }
   }
 
@@ -64,11 +64,11 @@
     grid-template-columns: 1fr 1.5fr;
     gap: 0.625rem;
 
-    &--dark{
+    &--dark {
       background-color: $clr-primary-dk;
     }
 
-    &--light{
+    &--light {
       background-color: $clr-white;
     }
 
@@ -77,8 +77,8 @@
       color: $clr-black;
       font-weight: 500;
 
-      &--dark{
-       color: $clr-white;
+      &--dark {
+        color: $clr-white;
       }
     }
 
@@ -88,9 +88,9 @@
       font-weight: 400;
       text-align: end;
 
-      &--dark{
+      &--dark {
         color: $clr-white;
-       }
+      }
     }
   }
 }
@@ -105,17 +105,19 @@
   .card-container {
     width: 13rem;
     height: 15rem;
+    display: flex;
+    flex-direction: row;
 
     .description {
       text-align: start;
       padding: 0.625rem;
-
+      margin-right: 1.5rem;
+      border-bottom: 0rem;
     }
 
     .information {
       gap: 0rem;
       padding: 0.625rem;
-
 
       &__content {
         padding-right: 0.625rem;
