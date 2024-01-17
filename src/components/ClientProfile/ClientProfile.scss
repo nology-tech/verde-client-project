@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
-.clientprofile{
+.clientprofile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,26 +58,25 @@
   .clientprofile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 0rem;
+    margin: 1.25rem;
   }
 
   .clientcard {
     height: 20rem;
     width: 11rem;
-    //margin: 1.25rem;
 
-    &__picture--staffBooking{
-      margin: 0 1.25rem;
+    &__picture--staffBooking {
       width: 11rem;
       height: 20rem;
     }
 
-    &__title{
-      text-decoration: none;  
+    &__title {
+      text-decoration: none;
     }
 
-    &__subtitle, &__info {
-        font-size: 0.75rem;
+    &__subtitle,
+    &__info {
+      font-size: 0.75rem;
     }
 
     &__desktop {
@@ -101,7 +100,20 @@
       &--dark {
         background-color: $clr-primary-dk;
       }
+    }
+  }
+}
 
+@media screen and (min-width: 1440px) {
+  .clientcard {
+    width: 18rem;
+
+    &__picture--staffBooking {
+      width: 18rem;
+    }
+
+    &__container {
+      width: 18rem;
     }
   }
 }
