@@ -3,14 +3,15 @@ import { ResourceCardProps } from "../../types/ResourceCardTypes";
 import ResourceCard from "../ResourceCard/ResourceCard";
 
 type ResourceCardListProps = {
-  staff: string;
   resources: ResourceCardProps[];
+  variant: "light" | "dark";
+
 };
 
-const ResourceCardList = ({ staff, resources }: ResourceCardListProps) => {
+const ResourceCardList = ({ resources, variant }: ResourceCardListProps) => {
   return (
-    <div className="resource-card-list">
-      <div className="resource-card__titles">
+    <div className = {`resource-card-list resource-card-list--${variant}`}>
+      <div className="resource-card-list__titles">
         <p>Resource Name</p>
         <p>Quantity Remaining</p>
         <p className="resource-card-list__titles--spheadings">Cost Per Unit</p>
@@ -30,7 +31,7 @@ const ResourceCardList = ({ staff, resources }: ResourceCardListProps) => {
             autoPurchase={resource.autoPurchase}
             autoPurchaseLevel={resource.autoPurchaseLevel}
             path={resource.path}
-            variant={resource.variant}
+            variant={variant}
           />
         ))}
       </div>

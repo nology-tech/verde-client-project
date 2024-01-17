@@ -25,8 +25,10 @@ const Resources = ({ variant }: ResourcesProps) => {
           dropdownOption={false}
         />
       <div>
-          <ResourceCardList staff="Staff" resources={ResourceCardListHealth} />
+          <ResourceCardList resources={ResourceCardListHealth} variant={variant} />
         </div>
+
+        
       </main>
       <Footer variant={variant} /> 
     </Layout>
