@@ -30,13 +30,19 @@ const App = () => {
   }, [navigate]);
   
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [font, setFont] = useState<"modern" | "tech">("modern");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const changeFont = () => {
+    setFont(font === "modern" ? "tech" : "modern")
+  }
+
   return (
     <>
+    <div className={font}>
     <Routes>
       <Route path="/" element={<Login />} />
       </Routes>
@@ -58,6 +64,7 @@ const App = () => {
           <Route path="/staff-edit" element={<StaffEdit variant={theme}/>} />
         </Routes>
       )}
+    </div>
   </>
   );
 };
