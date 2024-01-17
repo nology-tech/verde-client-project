@@ -6,9 +6,10 @@ import QueryBar from "../../components/QueryBar/QueryBar";
 import "./Clients.scss";
 import { ClientProfileList } from "../../data/ClientProfileList";
 import Footer from "../../components/Footer/Footer";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import leftArrowSrc from "../../assets/images/arrow - left.png";
 import rightArrowSrc from "../../assets/images/arrow - right.png";
+import { ClientInfo } from "../../types/ClientProfileTypes";
 
 type ClientsProps = {
   variant: "light" | "dark";
@@ -18,6 +19,17 @@ export const Clients = ({ variant }: ClientsProps) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [numOfResults, setNumOfResults] = useState<number>(10);
   const [startingIndex, setStartingIndex] = useState<number>(0);
+  const [sortAsc, setSortAsc] = useState<boolean>(true);
+
+  useEffect(() => {
+    const mainElement = document.querySelector('.clients');
+
+    if (mainElement.scrollHeight > mainElement.clientHeight) {
+      console.log('Content is overflowing!');
+    } else {
+      console.log('Content is not overflowing.');
+    }
+  }, []);
 
   const handleNumOfResultsChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setNumOfResults(parseInt(event.currentTarget.value));
@@ -36,9 +48,20 @@ export const Clients = ({ variant }: ClientsProps) => {
     setSearchTerm(event.currentTarget.value.toLowerCase());
   };
 
+  const handleSortClick = () =>{
+    setSortAsc(!sortAsc);
+  }
+
+  const sortClients = (clients : ClientInfo[]) =>{
+    const sortedClients = clients.sort((a, b) => a.clientName.localeCompare(b.clientName));
+    return sortAsc ? sortedClients : sortedClients.reverse();
+  }
+
   const filteredClients = ClientProfileList.filter((client) => {
     return client.clientName.toLowerCase().includes(searchTerm);
   });
+
+  const sortedClients = sortClients(filteredClients);
 
   console.log(startingIndex);
   console.log(numOfResults);
@@ -62,9 +85,10 @@ export const Clients = ({ variant }: ClientsProps) => {
             hasFilter={true}
             variant={variant}
             handleInput={handleInput}
+            sortClick={handleSortClick}
           />
           <ClientNavList
-            clients={filteredClients}
+            clients={sortedClients}
             variant={variant}
             startingIndex={startingIndex}
             maxCards={numOfResults}
@@ -81,7 +105,7 @@ export const Clients = ({ variant }: ClientsProps) => {
             <option value="20">20</option>
             <option value="30">30</option>
           </select>
-          <p>1-10 of 30</p>
+          <p>{startingIndex + 1}-{startingIndex + numOfResults} of {filteredClients.length}</p>
           <img
             className="clients__page-results--arrow"
             src={leftArrowSrc}

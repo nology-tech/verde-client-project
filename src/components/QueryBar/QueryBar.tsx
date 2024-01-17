@@ -1,5 +1,5 @@
 import SearchBox from "../SearchBox/SearchBox";
-import sortImg from "./../../assets/images/sort.png"
+import sortImg from "./../../assets/images/sort-query-bar.png"
 import filterImg from "./../../assets/images/filter.png"
 import columnImg from "./../../assets/images/column-view.png"
 import gridImg from "./../../assets/images/grid-view.png"
