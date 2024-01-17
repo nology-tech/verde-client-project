@@ -8,8 +8,6 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
-import ClientActive from "./pages/ClientActive/ClientActive";
-import { ClientProfileList } from "./data/ClientProfileList";
 
 const App = () => {
   const navigate = useNavigate();
@@ -60,20 +58,8 @@ const App = () => {
           {/* <Route path="/clients" element={<Clients />} /> */}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
-          <Route
-            path="/clients/1"
-            element={
-              <ClientActive
-                variant={"light"}
-                clientInfo={ClientProfileList[0]}
-              />
-            }
-          />
           <Route path="/staff" element={<Staff variant={theme} />} />
-          <Route
-            path="/settings"
-            element={<Settings variant={theme} setTheme={toggleTheme} />}
-          />
+          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme} font={font} setFont={changeFont}/>} />
         </Routes>
       )}
     </>
