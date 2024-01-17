@@ -358,6 +358,11 @@
             button {
               background-color: $clr-primary-dk;
               color: white;
+              color: white;
+            }
+
+            .react-calendar__tile--rangeStart {
+              background-color: $clr-secondary-dk;
             }
 
             button:disabled {
@@ -369,6 +374,7 @@
               background-color: $clr-secondary-dk;
             }
           }
+
 
           background-color: $clr-primary-dk;
           label {
