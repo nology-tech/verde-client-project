@@ -7,6 +7,7 @@ export const ClientProfileList = [
     appointmentDate: "07/02/2022",
     appointmentTime: "14.00pm",
     staffMember: "Staff 01",
+    id: 1,
   },
   {
     clientName: "Bob Bob",
@@ -17,6 +18,7 @@ export const ClientProfileList = [
     appointmentDate: "01/01/2022",
     appointmentTime: "13.00pm",
     staffMember: "Staff 03",
+    id: 2,
   },
   {
     clientName: "Lala land",
@@ -27,6 +29,7 @@ export const ClientProfileList = [
     appointmentDate: "05/01/2022",
     appointmentTime: "17.00pm",
     staffMember: "Staff 02",
+    id: 3,
   },
   {
     clientName: "Teheee Pee",
@@ -37,6 +40,7 @@ export const ClientProfileList = [
     appointmentDate: "07/02/2022",
     appointmentTime: "18.00pm",
     staffMember: "Staff 01",
+    id: 4,
   },
   {
     clientName: "Hells Mells",
@@ -47,5 +51,6 @@ export const ClientProfileList = [
     appointmentDate: "07/02/2022",
     appointmentTime: "14.00pm",
     staffMember: "Staff 01",
+    id: 5,
   },
 ];

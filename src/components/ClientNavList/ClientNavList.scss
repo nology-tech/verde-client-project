@@ -1,0 +1,41 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.clientnavlist {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 1rem;
+  text-decoration: none;
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+.client-list {
+    &__titles {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: $desktop-breakpoint) {
+    .client-list {
+      &__titles {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1.5fr 1fr 1fr 0.5fr;
+        gap: 1.5rem;
+  
+        p {
+          font-size: 0.8rem;
+          text-align: center;
+          color: $clr-primary-dk;
+        }
+      }
+
+    &__titles--dark{
+        background-color: $clr-secondary-dk;
+      }
+
+    }
+  }

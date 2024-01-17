@@ -6,19 +6,23 @@ import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 import SettingsCard from "../../components/SettingsCard/SettingsCard";
 import Modal from "../../components/Modal/Modal";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { logout } from "../../firebase";
 
 type SettingsProps = {
   variant: "light" | "dark";
   setTheme: (theme: "light" | "dark") => void;
+  font: "modern" | "tech";
+  setFont: (font: "modern" | "tech") => void;
 };
 
-const Settings = ({ variant, setTheme }: SettingsProps) => {
+const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
   const [tempTheme, setTempTheme] = useState<"light" | "dark">(variant);
+  const [fontTheme, setFontTheme] = useState<"modern" | "tech">(font);
+  const [selectedOption, setSelectedOption] = useState<"modern" | "tech">(fontTheme);
 
   /**
    * Handles the button click event to toggle the 'log out' modal visibility.
@@ -45,6 +49,13 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
     setTempTheme(newThemeState ? "dark" : "light");
   };
 
+    
+const handleRadioClicked = (event: ChangeEvent<HTMLInputElement>) => {
+  const newTarget = event.currentTarget.value as "modern" | "tech";
+  setFontTheme(newTarget);
+  setSelectedOption(newTarget);
+};
+
   /**
    * Handles applying theme changes when the "Apply" button is clicked.
    * Only applies changes if the selected theme is different from the current theme.
@@ -53,7 +64,12 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
     if (tempTheme !== variant) {
       setTheme(tempTheme);
     }
+
+    if(fontTheme !== font){
+      setFont(fontTheme);
+    }
   };
+
 
   const modalOne = [
     <Button label={"Logout"} variant={"red"} onClick={handleLogoutClicked} />,
@@ -79,7 +95,7 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
           onClick={handleButtonClick}
           buttonLabel="Log out"
           buttonVariant="yellow"
-          dropdownOption={false}
+          dropdownOption={false} 
         />
         {!isClicked && (
           <div className="settings__container">
@@ -87,6 +103,8 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
               variant={variant}
               onToggleDarkMode={handleToggleDarkMode}
               onApplyChanges={handleApplyChanges}
+              handleRadioClicked={handleRadioClicked}
+              selectedOption={selectedOption}   
             />
             <div className={`settings__card settings__card--${variant}`}>
               <Button

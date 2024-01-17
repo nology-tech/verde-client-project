@@ -1,5 +1,5 @@
 import "./SettingsCard.scss";
-import { useState } from "react";
+import {  ChangeEventHandler,  useState } from "react";
 import Button from "../Button/Button";
 import ToggleSwitch from "../Toggle/Toggle";
 import moon from "../../assets/images/moon.svg";
@@ -7,14 +7,18 @@ import sun from "../../assets/images/sun.svg";
 
 type SettingsCardProps = {
   variant: "light" | "dark";
+  handleRadioClicked: ChangeEventHandler<HTMLInputElement>;
   onToggleDarkMode: (isDarkMode: boolean) => void;
   onApplyChanges: () => void;
+  selectedOption: string;
 };
 
 const SettingsCard = ({
   variant,
   onToggleDarkMode,
+  handleRadioClicked,
   onApplyChanges,
+  selectedOption,
 }: SettingsCardProps) => {
   const [isToggleOn, setIsToggleOn] = useState<boolean>(variant === "dark");
 
@@ -59,9 +63,10 @@ const SettingsCard = ({
               <input
                 className="settings-card__radio--label"
                 type="radio"
-                value="enabled"
+                value="modern"
                 name="theme"
-                checked={true}
+                checked={selectedOption==="modern"}
+                onChange={handleRadioClicked}
               />
             </label>
           </div>
@@ -75,8 +80,10 @@ const SettingsCard = ({
               <input
                 className="settings-card__radio--label"
                 type="radio"
-                value="disabled"
+                value="tech"
                 name="theme"
+                checked={selectedOption==="tech"}
+                onChange={handleRadioClicked}
               />
             </label>
           </div>
