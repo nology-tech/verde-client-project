@@ -21,7 +21,7 @@ type StaffEditProps = {
 };
 
 const StaffEdit = ({variant}: StaffEditProps ) => {
-  const [selectedDate, setSelectedDate] = useState<Value>();
+  const [selectedDate, setSelectedDate] = useState<Value>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [appointments, setAppointments] = useState<object[]>([]);
   const [firstName, setFirstName] = useState<string>("");
@@ -39,9 +39,9 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
   const endTime = new Date();
   endTime.setHours(17, 30, 0);
 
-  const handleDateChange = (value: Value) => {
-    setSelectedDate(value);
-  };
+  // const handleDateChange = (value: Value) => {
+  //   setSelectedDate(value);
+  // };
 
   while (startTime < endTime) {
     timeIntervals.push(
@@ -96,8 +96,10 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
   const confirmModal = [
     <Button label={"Continue"} variant={"yellow"} onClick={handleContinue} />,
   ];
+
   const filteredClient = StaffBookingsList.filter(client => client.clientName === "Joe Bloggs")
   const bookingDate = StaffBookingsList.map(client => new Date(client.bookingDate));
+  // const bookingDate =filteredClient.map((client) => new Date(client.bookingDate))[0];
 
   return (
     <div className="container">
@@ -126,14 +128,14 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                 <input
                   type="text"
                   name="firstName"
-                  value={client.clientName}
+                  value={client.clientName.split(" ").slice(0, -1).join(" ")}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
                 <label>Last Name</label>
                 <input
                   type="text"
                   name="lastName"
-                  value={client.clientName}
+                  value={client.clientName.split(" ").slice(-1).join(" ")}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
                 <label>Email Address</label>
@@ -172,7 +174,7 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                 <Calendar
                   className="calendar-desktop"
                   onChange={(date) => setSelectedDate(date as Date)}
-                  value={selectedDate as Date}
+                  defaultValue={new Date(client.bookingDate)}
                   minDate={new Date()}
                 />
 
