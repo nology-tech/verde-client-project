@@ -7,6 +7,7 @@ import "./Header.scss";
 type HeaderProps = {
   title: string;
   variant: "light" | "dark";
+  font: "modern" | "tech";
   onClick?: () => void;
   buttonOption: boolean;
   buttonLabel: string;
@@ -19,6 +20,7 @@ type HeaderProps = {
 const Header = ({
   title,
   variant,
+  font,
   onClick,
   buttonOption,
   buttonLabel,

@@ -29,10 +29,15 @@ const App = () => {
   }, [navigate]);
   
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [font, setFont] = useState<"modern" | "tech">("modern");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  const changeFont = () => {
+    setFont(font === "modern" ? "tech" : "modern")
+  }
 
   return (
     <>
@@ -53,7 +58,7 @@ const App = () => {
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
           {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff" element={<Staff variant={theme} />} />
-          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme}/>} />
+          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme} font={font} setFont={changeFont}/>} />
         </Routes>
       )}
   </>

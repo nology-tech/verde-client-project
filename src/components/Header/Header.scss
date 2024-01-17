@@ -16,6 +16,11 @@
     }
   }
 
+
+  &--tech{
+    font-family:'Courier New', Courier, monospace;
+  }
+
   &--dark {
     background-color: $clr-primary-dk;
 
