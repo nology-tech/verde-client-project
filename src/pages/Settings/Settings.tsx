@@ -22,6 +22,8 @@ const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
   const [tempTheme, setTempTheme] = useState<"light" | "dark">(variant);
   const [fontTheme, setFontTheme] = useState<string>(font);
+  //const [checked, setChecked] = useState<boolean>(true);
+  const [selectedOption, setSelectedOption] = useState("modern");
 
   /**
    * Handles the button click event to toggle the 'log out' modal visibility.
@@ -51,8 +53,17 @@ const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
     
 const handleRadioClicked = (event: ChangeEvent<HTMLInputElement>) => {
   setFontTheme(event.currentTarget.value);
-
+  console.log(fontTheme);
+  setSelectedOption(event.currentTarget.value);
 };
+
+// const handleRadioClicked = (selectedFont: string) => {
+//   setFontTheme(selectedFont);
+//   console.log(fontTheme);
+//   setSelectedOption(selectedFont);
+// };
+
+
   /**
    * Handles applying theme changes when the "Apply" button is clicked.
    * Only applies changes if the selected theme is different from the current theme.
@@ -99,9 +110,9 @@ const handleRadioClicked = (event: ChangeEvent<HTMLInputElement>) => {
             <SettingsCard
               variant={variant}
               onToggleDarkMode={handleToggleDarkMode}
-              onApplyChanges={handleApplyChanges} 
+              onApplyChanges={handleApplyChanges}
               handleRadioClicked={handleRadioClicked}
-              
+              selectedOption={selectedOption}   
             />
             <div className={`settings__card settings__card--${variant}`}>
               <Button

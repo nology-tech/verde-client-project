@@ -7,9 +7,10 @@ import sun from "../../assets/images/sun.svg";
 
 type SettingsCardProps = {
   variant: "light" | "dark";
-  handleRadioClicked: ChangeEventHandler<HTMLInputElement>; 
+  handleRadioClicked: ChangeEventHandler<HTMLInputElement>
   onToggleDarkMode: (isDarkMode: boolean) => void;
   onApplyChanges: () => void;
+  selectedOption: string;
 };
 
 const SettingsCard = ({
@@ -17,6 +18,7 @@ const SettingsCard = ({
   onToggleDarkMode,
   handleRadioClicked,
   onApplyChanges,
+  selectedOption,
 }: SettingsCardProps) => {
   const [isToggleOn, setIsToggleOn] = useState<boolean>(variant === "dark");
 
@@ -63,7 +65,7 @@ const SettingsCard = ({
                 type="radio"
                 value="modern"
                 name="theme"
-                checked={true}
+                checked={selectedOption==="modern"}
                 onChange={handleRadioClicked}
               />
             </label>
@@ -80,7 +82,7 @@ const SettingsCard = ({
                 type="radio"
                 value="tech"
                 name="theme"
-                checked={false}
+                checked={selectedOption==="tech"}
                 onChange={handleRadioClicked}
               />
             </label>
