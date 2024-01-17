@@ -8,6 +8,8 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
+import ClientActive from "./pages/ClientActive/ClientActive";
+import { ClientProfileList } from "./data/ClientProfileList";
 
 const App = () => {
   const navigate = useNavigate();
@@ -18,16 +20,15 @@ const App = () => {
     const unsubscribe = onAuthStateChanged(auth, (authUser: User | null) => {
       if (authUser) {
         setUser(authUser);
-      }
-      else{
-        setUser(null)
-        navigate("/")
+      } else {
+        setUser(null);
+        navigate("/");
       }
     });
-    
+
     return () => unsubscribe();
   }, [navigate]);
-  
+
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleTheme = () => {
@@ -36,14 +37,17 @@ const App = () => {
 
   return (
     <>
-    <Routes>
-      <Route path="/" element={<Login />} />
+      <Routes>
+        <Route path="/" element={<Login />} />
       </Routes>
 
       {user && (
         <Routes>
           <Route path="/home" element={<Home variant={theme} />} />
-          <Route path="/book-appointment" element={<BookAppointment variant={theme}/>} />
+          <Route
+            path="/book-appointment"
+            element={<BookAppointment variant={theme} />}
+          />
           {/* Additional routes can be uncommented as needed */}
           {/* <Route path="/resources" element={<Resources />} /> */}
           {/* <Route path="/resources/edit" element={<EditResources />} /> */}
@@ -51,12 +55,23 @@ const App = () => {
           {/* <Route path="/clients" element={<Clients />} /> */}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
-          {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
+          <Route
+            path="/clients/1"
+            element={
+              <ClientActive
+                variant={"light"}
+                clientInfo={ClientProfileList[0]}
+              />
+            }
+          />
           <Route path="/staff" element={<Staff variant={theme} />} />
-          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme}/>} />
+          <Route
+            path="/settings"
+            element={<Settings variant={theme} setTheme={toggleTheme} />}
+          />
         </Routes>
       )}
-  </>
+    </>
   );
 };
 

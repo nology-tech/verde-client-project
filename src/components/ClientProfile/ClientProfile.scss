@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography";
 
-.clientprofile{
+.clientprofile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
   }
 
   &__title {
-    font-size: 1.125rem;
+    font-size: 0.75rem;
     text-decoration: underline;
     text-align: left;
     padding-bottom: 1rem;
@@ -61,15 +61,18 @@
   }
 
   .clientcard {
-    height: 19.2rem;
-    margin: 1.25rem;
+    height: 17rem;
+    width: 10rem;
+    padding: 1rem;
+    margin-right: 1.25rem;
 
-    &__title{
-      text-decoration: none;  
+    &__title {
+      text-decoration: none;
     }
 
-    &__subtitle, &__info {
-        font-size: 0.75rem;
+    &__subtitle,
+    &__info {
+      font-size: 0.625rem;
     }
 
     &__desktop {
@@ -87,14 +90,12 @@
       padding: 1.25rem;
       border-radius: 0.5rem;
       box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-      width: 16.875rem;
-      height: 19.2rem;
-      margin: 1.25rem;
+      width: 10rem;
+      height: 17rem;
 
       &--dark {
         background-color: $clr-primary-dk;
       }
-
     }
   }
 }
