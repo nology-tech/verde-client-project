@@ -1,3 +1,4 @@
+import Button from "../../components/Button/Button";
 import ClientProfile from "../../components/ClientProfile/ClientProfile";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -25,6 +26,7 @@ const ClientActive = ({ variant, clientInfo }: ClientActiveProps) => {
           dropdownOption={false}
         />
         <ClientProfile clientinfo={clientInfo} variant={variant} />
+        <Button label={"Edit Client"} variant={"yellow"} size="large" />
       </main>
       <Footer variant={variant} />
     </Layout>
