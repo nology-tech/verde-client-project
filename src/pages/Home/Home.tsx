@@ -7,6 +7,7 @@ import "./Home.scss";
 import { useNavigate } from "react-router";
 import { logout } from "../../firebase";
 import Button from "../../components/Button/Button";
+import ItemRequestCard from "../../components/ItemRequestCard/ItemRequestCard";
 type HomeProps = {
   variant: "light" | "dark";
 
@@ -34,8 +35,7 @@ const Home = ({ variant }: HomeProps) => {
           onClick={handleLogout}
         />
         <div className="main__container">
-          <NavCardList labels={NavCardLabels} variant={variant} />
-          <Button size="large" label="Log Out" variant="yellow" path="/" />
+       <ItemRequestCard id={0}  placeholder={"Edit ..."}/>
         </div>
       </main>
     </Layout>
