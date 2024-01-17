@@ -5,18 +5,18 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
 import "./StaffListBooking.scss";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 type StaffBookingListProps = {
-  variant: "light" | "dark";
-  clientData
+  variant: "light" | "dark"; 
 };
 
 const StaffListBooking = ({ variant }: StaffBookingListProps) => {
   const { bookingsId } = useParams();
-  console.log(bookingsId);
 
-  const [clients, setClients] = useState([]);
+  const [dropDown, setDropDown] = useState<string>("Sarah Stanley");
+
+  const filteredClients = StaffBookingsList.filter((client) => client.staffMember === dropDown )
 
   return (
     <Layout>
@@ -32,21 +32,23 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
         />
 
         <section>
-          {StaffBookingsList.map((client) => {
+          {filteredClients.map((client) => {
             return(
+              <div className={`container${client.id}`}> 
             <ClientProfile
               clientinfo={{
-                clientName: {clientName},
+                clientName: `${client.clientName}`,
                 role: `${client.role}`,
-                dob: "",
-                emailAddress: "",
-                mobileNumber: "",
-                appointmentDate: "",
-                appointmentTime: "",
-                staffMember: "",
+                dob: `${client.dob}`,
+                emailAddress: `${client.emailAddress}`,
+                mobNumber: `${client.mobNumber}`,
+                bookingDate: `${client.bookingDate}`,
+                bookingTime: `${client.bookingTime}`,
+                staffMember: `${client.staffMember}`,
               }}
               variant={variant}
-            />;
+            />
+            </div>
             )
           })}
         </section>
