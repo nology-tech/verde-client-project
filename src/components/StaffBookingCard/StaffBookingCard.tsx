@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import arrow from "../../assets/images/arrow-icon.svg";
 
 type StaffBookingCardProps = {
-  id: number;
+  id?: number;
   clientName: string;
   email: string;
-  mobileNumber: string;
+  mobNumber: string;
   bookingDate: string;
   bookingTime: string;
   path: string;
@@ -17,7 +17,7 @@ const StaffBookingCard = ({
   id,
   clientName,
   email,
-  mobileNumber,
+  mobNumber,
   bookingDate,
   bookingTime,
   path,
@@ -30,7 +30,7 @@ const StaffBookingCard = ({
         <p className={`booking-card__id booking-card--${variant}`}>{`ID: ${id}`}</p>
         <p className="booking-card__email booking-card__info">{email}</p>
         <p className="booking-card__number booking-card__info">
-          {mobileNumber}
+          {mobNumber}
         </p>
         <p className="booking-card__date booking-card__info">{`${bookingDate}`}</p>
         <p className="booking-card__time">{`${bookingTime}`}</p>
