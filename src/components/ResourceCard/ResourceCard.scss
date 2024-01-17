@@ -9,6 +9,7 @@
   border: $clr-accent-grey 1px solid;
   justify-content: center;
   align-items: center;
+  margin: 0.7rem 0;
 
   &--light {
     background-color: $clr-white;
@@ -88,10 +89,16 @@
       font-size: 0.7rem;
       color: #95accb;
     }
+
+    
+  &__arrow {
+    width: 0.7rem;
+    height: auto;
+  }
   }
 
   @media screen and (min-width: $tablet-breakpoint) {
-    .booking-card {
+    .resource-card {
       text-align: center;
       grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
       gap: 0.5rem;

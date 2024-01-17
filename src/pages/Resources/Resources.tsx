@@ -24,7 +24,7 @@ const Resources = ({ variant }: ResourcesProps) => {
           buttonVariant="yellow"
           dropdownOption={false}
         />
-      <div>
+      <div className="resources__container">
           <ResourceCardList resources={ResourceCardListHealth} variant={variant} />
         </div>
 

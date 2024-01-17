@@ -2,7 +2,7 @@
 @use "../../styles/typography";
 
 .resource-card-list {
-   
+
     &__titles {
         display: none;
     }
@@ -10,6 +10,7 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
     .resource-card-list {
+        
         &__titles {
             display: grid;
             grid-template-columns: 1.2fr 1.5fr 1.5fr 1fr 1fr 0.5fr;
@@ -30,36 +31,36 @@
     }
 }
 
-@media screen and (min-width: $desktop-breakpoint) {
-    .resource-card-list {
-        &__container {
-            overflow-y: scroll;
-            height: 18rem;
-            padding: 0.5rem;
-        }
+// @media screen and (min-width: $desktop-breakpoint) {
+//     .resource-card-list {
+//         &__container {
+//             overflow-y: scroll;
+//             height: 18rem;
+//             padding: 0.5rem;
+//         }
 
-        &__titles {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
-            gap: 1rem;
+//         &__titles {
+//             display: grid;
+//             grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+//             gap: 1rem;
 
-            &--spheadings {
-                margin-left: 1rem;
-            }
+//             &--spheadings {
+//                 margin-left: 1rem;
+//             }
 
-            p {
-                font-size: 0.6rem;
-            }
-        }
-    }
-}
+//             p {
+//                 font-size: 0.6rem;
+//             }
+//         }
+//     }
+// }
 
-@media screen and (min-width: 1440px) {
-    .resource-card-list {
-        &__container {
-            overflow-y: scroll;
-            height: 10.5rem;
-            padding: 0.5rem;
-        }
-    }
-}
+// @media screen and (min-width: 1440px) {
+//     .resource-card-list {
+//         &__container {
+//             overflow-y: scroll;
+//             height: 10.5rem;
+//             padding: 0.5rem;
+//         }
+//     }
+// }
