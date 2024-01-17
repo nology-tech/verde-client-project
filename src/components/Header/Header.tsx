@@ -7,7 +7,6 @@ import "./Header.scss";
 type HeaderProps = {
   title: string;
   variant: "light" | "dark";
-  font: "modern" | "tech";
   onClick?: () => void;
   buttonOption: boolean;
   buttonLabel: string;
@@ -20,7 +19,6 @@ type HeaderProps = {
 const Header = ({
   title,
   variant,
-  font,
   onClick,
   buttonOption,
   buttonLabel,
@@ -33,7 +31,7 @@ const Header = ({
     <div className={`header header--${variant}`}>
       <img src={logo} className="header__logo" alt="logo" />
       <div className="header__container">
-      <h1 className={`header--${variant}__title header--${font}`}>{title}</h1>
+      <h1 className={`header--${variant}__title`}>{title}</h1>
       {dropdownOption && (
         <select className={`header__dropdown header__dropdown--${variant}`} name="staff" id="stafflist" onChange={onChange}>
           {StaffList.map(staff => 

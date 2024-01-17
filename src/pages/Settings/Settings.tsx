@@ -13,7 +13,7 @@ type SettingsProps = {
   variant: "light" | "dark";
   setTheme: (theme: "light" | "dark") => void;
   font: "modern" | "tech";
-  setFont: (font: any) => void;
+  setFont: (font: "modern" | "tech") => void;
 };
 
 const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
@@ -21,9 +21,8 @@ const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isLogoutClicked, setIsLogoutClicked] = useState<boolean>(false);
   const [tempTheme, setTempTheme] = useState<"light" | "dark">(variant);
-  const [fontTheme, setFontTheme] = useState<string>(font);
-  //const [checked, setChecked] = useState<boolean>(true);
-  const [selectedOption, setSelectedOption] = useState("modern");
+  const [fontTheme, setFontTheme] = useState<"modern" | "tech">(font);
+  const [selectedOption, setSelectedOption] = useState<"modern" | "tech">(fontTheme);
 
   /**
    * Handles the button click event to toggle the 'log out' modal visibility.
@@ -52,17 +51,10 @@ const Settings = ({ variant, setTheme, font, setFont }: SettingsProps) => {
 
     
 const handleRadioClicked = (event: ChangeEvent<HTMLInputElement>) => {
-  setFontTheme(event.currentTarget.value);
-  console.log(fontTheme);
-  setSelectedOption(event.currentTarget.value);
+  const newTarget = event.currentTarget.value as "modern" | "tech";
+  setFontTheme(newTarget);
+  setSelectedOption(newTarget);
 };
-
-// const handleRadioClicked = (selectedFont: string) => {
-//   setFontTheme(selectedFont);
-//   console.log(fontTheme);
-//   setSelectedOption(selectedFont);
-// };
-
 
   /**
    * Handles applying theme changes when the "Apply" button is clicked.
@@ -104,7 +96,7 @@ const handleRadioClicked = (event: ChangeEvent<HTMLInputElement>) => {
           buttonLabel="Log out"
           buttonVariant="yellow"
           dropdownOption={false} 
-          font={"modern"}        />
+        />
         {!isClicked && (
           <div className="settings__container">
             <SettingsCard

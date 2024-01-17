@@ -41,6 +41,7 @@ const App = () => {
 
   return (
     <>
+    <div className={font}>
     <Routes>
       <Route path="/" element={<Login />} />
       </Routes>
@@ -61,6 +62,7 @@ const App = () => {
           <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme} font={font} setFont={changeFont}/>} />
         </Routes>
       )}
+    </div>
   </>
   );
 };

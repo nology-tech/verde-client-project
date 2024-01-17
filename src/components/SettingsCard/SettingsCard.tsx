@@ -7,7 +7,7 @@ import sun from "../../assets/images/sun.svg";
 
 type SettingsCardProps = {
   variant: "light" | "dark";
-  handleRadioClicked: ChangeEventHandler<HTMLInputElement>
+  handleRadioClicked: ChangeEventHandler<HTMLInputElement>;
   onToggleDarkMode: (isDarkMode: boolean) => void;
   onApplyChanges: () => void;
   selectedOption: string;
