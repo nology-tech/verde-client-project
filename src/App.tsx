@@ -8,6 +8,7 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
+import { Clients } from "./pages/Clients/Clients";
 
 const App = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const App = () => {
           {/* <Route path="/resources" element={<Resources />} /> */}
           {/* <Route path="/resources/edit" element={<EditResources />} /> */}
           {/* <Route path="/resources/:resourceId" element={<ResourceItem />} /> */}
-          {/* <Route path="/clients" element={<Clients />} /> */}
+          {<Route path="/clients" element={<Clients variant="dark"/>} />}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
           {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
