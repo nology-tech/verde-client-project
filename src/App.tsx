@@ -60,7 +60,7 @@ const App = () => {
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
           {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff" element={<Staff variant={theme} />} />
-          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme}/>} />
+          <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme} font={font} setFont={changeFont} />} />
           <Route path="/staff-edit" element={<StaffEdit variant={theme}/>} />
         </Routes>
       )}
