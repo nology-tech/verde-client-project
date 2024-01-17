@@ -11,6 +11,11 @@
   background-color: $clr-white;
   font-weight: bold;
 
+  .headerForm-container {
+    width: 100%;
+    height: 100vh;
+  }
+
   &__form {
     font-size: 0.7rem;
 
@@ -357,6 +362,10 @@
             }
 
             .react-calendar__tile--rangeStart {
+              background-color: $clr-secondary-dk;
+            }
+
+            button:disabled {
               background-color: $clr-secondary-dk;
             }
 

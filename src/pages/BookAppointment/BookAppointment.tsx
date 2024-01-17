@@ -9,14 +9,16 @@ import Footer from "../../components/Footer/Footer";
 import { Appointment } from "../../types/BookAppointmentTypes";
 import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
-
+import Modal from "../../components/Modal/Modal";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
+
 type BookAppointmentProps = {
   variant: "dark" | "light";
 };
+
 const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [selectedDate, setSelectedDate] = useState<Value>();
   const [selectedTime, setSelectedTime] = useState<string>("");
@@ -26,6 +28,8 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
+  const [modal, setModal] = useState<boolean>(false);
+
 
   const timeIntervals: string[] = [];
 
@@ -79,6 +83,7 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
     };
 
     setAppointments([...appointments, newAppointment]);
+    setModal(!modal);
 
     console.log("Appointment saved:", newAppointment);
   };
@@ -110,10 +115,19 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
     };
 
     setAppointments([...appointments, newAppointment]);
+    setModal(!modal);
 
     console.log("Appointment saved:", newAppointment);
     // logic for saving data can be added here
   };
+
+  const handleContinue = () => {
+    setModal(false);
+  };
+
+  const confirmModal = [
+    <Button label={"Continue"} variant={"yellow"} onClick={handleContinue} />,
+  ];
 
   return (
     <div className="container">
@@ -121,6 +135,7 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
         <div className="book-appointment__navbar">
           <NavBar variant={variant} />
         </div>
+
         <div className="headerForm-container">
           <div className="book-appointment__header">
             <Header
@@ -132,8 +147,9 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
               buttonVariant="yellow"
               dropdownOption={false}
             />
-            {/* uses npmjs react-calendar package */}
           </div>
+          {!modal && (
+            
           <form className="book-appointment__form">
             <div className="leftRight-wrapper">
               <div className="book-appointment__form--leftside">
@@ -247,6 +263,16 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
               </div>
             </div>
           </form>
+
+)}
+
+          {modal && (
+            <Modal
+              title="Booking Confirmed!"
+              buttons={confirmModal}
+              variant={variant}
+            />
+          )}
         </div>
         <Footer variant={variant} />
       </div>

@@ -7,6 +7,7 @@ import Button from "../../components/Button/Button";
 import SettingsCard from "../../components/SettingsCard/SettingsCard";
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
+import { logout } from "../../firebase";
 
 type SettingsProps = {
   variant: "light" | "dark";
@@ -31,6 +32,7 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
    * Handles the button click event when the logout button is clicked.
    */
   const handleLogoutClicked = () => {
+    logout();
     setIsLogoutClicked(!isLogoutClicked);
   };
 
@@ -62,7 +64,6 @@ const Settings = ({ variant, setTheme }: SettingsProps) => {
     <Button
       label={"Back to Login"}
       variant={"red"}
-      onClick={handleLogoutClicked}
       path="/"
     />,
   ];

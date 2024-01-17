@@ -1,15 +1,25 @@
 import Layout from "../../components/Layout/Layout";
 import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
-import Button from "../../components/Button/Button";
 import NavCardList from "../../components/NavCardList/NavCardList";
 import { NavCardLabels } from "../../data/NavCardLabels";
 import "./Home.scss";
+import { useNavigate } from "react-router";
+import { logout } from "../../firebase";
+import Button from "../../components/Button/Button";
 type HomeProps = {
   variant: "light" | "dark";
+
 };
 
 const Home = ({ variant }: HomeProps) => {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout();
+    navigate('/')
+  }
+
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -21,7 +31,7 @@ const Home = ({ variant }: HomeProps) => {
           buttonLabel="Logout"
           buttonVariant="yellow"
           dropdownOption={false}
-          path="/"
+          onClick={handleLogout}
         />
         <div className="main__container">
           <NavCardList labels={NavCardLabels} variant={variant} />
