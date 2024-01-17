@@ -11,6 +11,11 @@
   background-color: $clr-white;
   font-weight: bold;
 
+  .headerForm-container {
+    width: 100%;
+    height: 100vh;
+  }
+
   &__form {
     font-size: 0.7rem;
 
@@ -353,6 +358,10 @@
             button {
               background-color: $clr-primary-dk;
               color: white;
+            }
+
+            button:disabled {
+              background-color: $clr-secondary-dk;
             }
 
             button:hover,
