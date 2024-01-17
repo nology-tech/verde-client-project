@@ -31,7 +31,7 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
         <section>
           {filteredClients.map((client) => {
             return(
-              <div className={`container${client.id}`}> 
+              <div className={`container${client.id}`} key={client.id} > 
             <ClientProfile
                   clientinfo={{
                     clientName: `${client.clientName}`,
@@ -42,8 +42,9 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
                     bookingDate: `${client.bookingDate}`,
                     bookingTime: `${client.bookingTime}`,
                     staffMember: `${client.staffMember}`,
+                    
                   }}
-                  variant={variant} size={"staffBooking"}            />
+                  variant={variant} size={"staffBooking"}          />
             </div>
             )
           })}
