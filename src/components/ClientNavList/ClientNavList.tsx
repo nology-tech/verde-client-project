@@ -21,7 +21,7 @@ const ClientNavList = ({
   const renderCards = () => {
     if (startingIndex > clients.length) return;
 
-    let cardsHtml: React.ReactNode[] = [];
+    const cardsHtml: React.ReactNode[] = [];
     for (let i = startingIndex; i < startingIndex + maxCards; i++) {
       const client = clients[i];
       if (!client) break;
