@@ -134,24 +134,23 @@ const ItemRequestCard = ({
             value={autoPurchaseLevel}
           />
         </div>
-      </div>
-      {editMode ? (
-        <div>
+        <div className="items-container__button-desktop">
           <Button
-            onClick={closeEditMode}
-            label={"Save"}
+            onClick={editMode ? closeEditMode : openEditMode}
+            label={editMode ? "Save" : "Edit"}
+            variant={"yellow"}
+            size="small"
+          />
+        </div>
+      </div>
+        <div className="items-container__button-mobile">
+          <Button
+            onClick={editMode ? closeEditMode : openEditMode}
+            label={editMode ? "Save" : "Edit"}
             variant={"yellow"}
             size="large"
           />
         </div>
-      ) : (
-        <Button
-          onClick={openEditMode}
-          label={"Edit"}
-          variant={"yellow"}
-          size="large"
-        />
-      )}
     </div>
   );
 };
