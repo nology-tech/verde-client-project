@@ -1,6 +1,6 @@
 export const ResourceCardList1 = [
   {
-    staffname: "Sarah Stanley",
+    staffName: "Sarah Stanley",
     id: 1,
     resourceName: "Syringes",
     quantityRemaining: 300,
@@ -10,7 +10,7 @@ export const ResourceCardList1 = [
     path: "/healthresource/1"
   },
   {
-    staffname: "Sarah Stanley",
+    staffName: "Sarah Stanley",
     id: 2,
     resourceName: "Needles",
     quantityRemaining: 300,
@@ -20,7 +20,7 @@ export const ResourceCardList1 = [
     path: "/healthresource/2",
   },
   {
-    staffname: "Sarah Stanley",
+    staffName: "Sarah Stanley",
     id: 3,
     resourceName: "Saline",
     quantityRemaining: 100,
@@ -33,9 +33,9 @@ export const ResourceCardList1 = [
 
 
 
-  export const resourceCardList2 = [
+  export const ResourceCardList2 = [
   {
-    staffname: "April Orr",
+    staffName: "April Orr",
     id: 1,
     resourceName: "Syringes",
     quantityRemaining: 200,
@@ -46,7 +46,7 @@ export const ResourceCardList1 = [
   },
 
   {
-    staffname: "April Orr",
+    staffName: "April Orr",
     id: 2,
     resourceName: "Needles",
     quantityRemaining: 300,
@@ -57,7 +57,7 @@ export const ResourceCardList1 = [
   },
 
   {
-    staffname: "April Orr",
+    staffName: "April Orr",
     id: 3,
     resourceName: "Saline",
     quantityRemaining: 100,
