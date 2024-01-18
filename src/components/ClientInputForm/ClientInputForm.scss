@@ -56,13 +56,40 @@
       }
 
       input {
-        margin-bottom: 0.6rem;
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+      }
+
+
+
+      .fileUpload {
+        height: 10rem;
         width: 100%;
         border: 0.03rem solid #e2e8f0;
-        height: 1.9rem;
         border-radius: 0.2rem;
-        font-family: "Poppins", sans-serif;
-        padding-left: 1rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img {
+        height: 2.5rem;
+        width: 2.5rem;
+        align-self: center;
+        }
+      }
+
+      .filePath {
+        font-weight: 400;
+
+      }
+    }
+
+    .upload-button {
+      .button--grey {
+        display: unset;
+        margin-top: 1rem;
       }
     }
      
@@ -78,8 +105,7 @@
         display: flex;
 
       }
-
-     
+  
 
   }
 
@@ -183,10 +209,24 @@
 
         input {
           background-color: $clr-secondary-lt;
+          padding: 5rem 1rem;
+          height: 13rem;
         }
 
         label {
             margin-left: 0.5rem;
+          }
+        .fileUpload {
+          height: 16rem;
+          width: 12rem;
+          background-color: $clr-secondary-lt;
+        }
+        
+          .upload-button {
+            .button--grey {
+              display: unset;
+              margin: 1rem 0.5rem;
+            }
           }
 
       }

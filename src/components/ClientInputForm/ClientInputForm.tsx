@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./ClientInputForm.scss"
+import uploadImage from "../../assets/images/upload-image.png"
 
 
 type ClientInputFormProps = {
@@ -67,19 +68,24 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
               <div className="client-input__form--rightside">
               <label>Client Thumbnail</label>
               <input
-                  type="text"
-                  name="clientPic"
-                  value={clientPic}
+                  type="file"
+                  accept="image/*"
+                  name="choose-file"
+                  id="choose-file"
+                  className="choose-file"
                   onChange={(e) => setClientPic(e.target.value)}
                 ></input>
-                 <div className="upload-button">
+                <label className="fileUpload" htmlFor="choose-file"><img src={uploadImage} alt="upload-image" />
+                <div className="upload-button">
                   <Button
                     label="Upload"
                     variant="grey"
-                    size="small"
+                    size="large"
                     onClick={handleSubmit}
                   />
-                </div>
+                </div></label>
+                <label className="filePath" htmlFor="choose-file">{clientPic.slice(12)}</label>
+                 
               </div>
             </div>
             <div className="buttons-wrapper">
