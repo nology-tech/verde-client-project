@@ -11,9 +11,9 @@ const EditClient = ({variant}:EditClientProps) => {
     return(
         <Layout>
             <NavBar variant={variant} />
-            <main className={`edit-clients edit-clients--${variant}`}>
-            <Header title={"Edit Client"} variant={variant} buttonOption={true} buttonLabel={"save"} buttonVariant={"yellow"} dropdownOption={false}/>
-            <div className="edit-clienta__card">
+            <main className={`edit-page edit-page--${variant}`}>
+            <Header title={"Edit Client"} variant={variant} buttonOption={true} buttonLabel={"Save"} buttonVariant={"yellow"} dropdownOption={false}/>
+            <div className="edit-page--container">
             <EditClientCard variant={variant}/>
             </div>
             </main>

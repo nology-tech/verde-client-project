@@ -1,15 +1,16 @@
 @use "../../styles/variables" as *;
 @import "../../styles/typography";
 
-.container {
-  width: 100%;
-}
 .edit-client {
   //background-color: $clr-white;
   font-weight: bold;
   // width: 57rem;
   // height:41rem;
   background-color: $clr-white;
+  display: flex;
+  width: 90%;
+  height: 90%;
+  align-items: center;
 
   &__form {
     font-size: 0.7rem;
@@ -67,6 +68,7 @@
         font-family: "Poppins", sans-serif;
         padding-left: 1rem;
       }
+
     }
      
 
@@ -147,19 +149,51 @@
       font-weight: bold;
     }
 
+    &__form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &--rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-weight: bold;
+        height: 100%;
+        width:15rem;
+        margin: 0;
+        padding: 0;
+
+
+        &--profile{
+          border: 2px solid $clr-secondary-lt;
+          width: 13.5rem;
+          height: 10rem;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &--button{
+          margin: 0.5rem 0;
+          height: 2rem;
+          width: 5rem;
+          border: none;
+          border-radius: 0.4rem;
+          font-size: 0.7rem;
+        }
+
+        
     &__buttons {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      width: 100%;
+      align-items: center;
       justify-content: center;
-      gap:1.5rem;
-      margin-top: 3rem;
-
-      .save-button {
-        display: block;
-        margin-right: 0.5rem;
-      }
+      gap:0.5rem;
+      width: 13.5rem;
 
       .submit-button {
         display: flex;
@@ -172,42 +206,56 @@
       }
     }
 
-    &__form {
-      width: 100%;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-
-      &--rightside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        font-weight: bold;
 
         input {
           background-color: $clr-secondary-lt;
+          width: 13.5rem;
         }
 
         label {
             margin-left: 0.5rem;
           }
 
+      &--delete{
+        border: none;
+        background-color: $clr-white;
+        font-weight: 600;
+        color: red;
+        text-decoration: underline;
+        font-size: 0.7rem;
+        padding-top: 0.3rem;
+        padding-left: 0.3rem;;
+      }
+
       }
 
       &--leftside {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         font-size: 0.6rem;
-        margin-bottom: 2rem;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 15rem;
 
         input {
           background-color: $clr-secondary-lt;
-          width: 17rem;
+          width: 13.5rem;;
         }
 
         label {
           width: 17rem;
+        }
+
+        select {
+          width: 13.5rem;
+          background-color: $clr-secondary-lt;
+          margin-bottom: 0.6rem;
+          border: 0.03rem solid #e2e8f0;
+          height: 1.9rem;
+          border-radius: 0.2rem;
+          padding-left: 1rem;
         }
       }
 

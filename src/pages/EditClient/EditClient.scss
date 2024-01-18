@@ -2,13 +2,25 @@
 @use "../../styles/typography" as *;
 
 
-.edit-clients{
+.edit-page{
     background-color:$clr-secondary-lt;
-}
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-.edit-clients__card{
+    &__card{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-self: center;
     }
+
+    &--container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+}
+
+
