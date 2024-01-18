@@ -23,7 +23,6 @@ const ClientProfile = ({clientinfo, variant, size} : ClientProfileProps) => {
             /></div>
 
             <div className={`clientcard clientcard--${variant}`}>
-                <h1 className={`clientcard__title clientcard__title--${variant} clientcard__mobile`} >Booking Details</h1>
                 <h1 className={`clientcard__title clientcard__title--${variant} clientcard__desktop`} >Contact Details</h1>
                 <h2 className={`clientcard__subtitle clientcard__subtitle--${variant}`} >Date of Birth:</h2>
                 <h3 className={`clientcard__info clientcard__info--${variant}`} >{clientinfo.dob}</h3>
