@@ -12,7 +12,7 @@
   width: 16.875rem;
   height: 19.2rem;
 
-  &--dark{
+  &--dark {
     background-color: $clr-primary-dk;
   }
 
@@ -31,19 +31,19 @@
     justify-content: center;
     align-items: center;
 
-    &--dark{
+    &--dark {
       color: $clr-white;
-     }
+    }
   }
 
   &__title {
     text-align: center;
     color: $clr-secondary-dk;
     font-weight: 400;
-    
-    &--dark{
+
+    &--dark {
       color: $clr-white;
-     }
+    }
   }
 
   &__edit {
@@ -51,24 +51,30 @@
     text-align: center;
     text-decoration: underline;
 
-    &--dark{
+    &--dark {
       color: $clr-white;
-     }
+    }
   }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .profile {
-    
-    margin: 0 1.25rem;
-    width: 13rem;
-    height: 15rem;
+    &--default {
+      margin: 0 1.25rem;
+      width: 13rem;
+      height: 15rem;
+    }
+
+    &--staffBooking {
+      width: 11rem;
+      height: 20rem;
+    }
 
     &__img {
       width: 7rem;
       height: 7rem;
     }
-    
+
     &__name {
       font-size: 1rem;
     }
@@ -77,7 +83,15 @@
       text-align: center;
       color: $clr-secondary-dk;
       font-weight: 400;
-      font-size: 0.8rem;;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .profile {
+    &--staffBooking {
+      width: 18rem;
     }
   }
 }

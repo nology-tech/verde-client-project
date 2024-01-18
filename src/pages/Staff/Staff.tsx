@@ -118,6 +118,7 @@ const Staff = ({ variant }: StaffProps) => {
               }}
               variant={variant}
               key={staff.id}
+              size={"default"}
             />
           ))}
         </section>
