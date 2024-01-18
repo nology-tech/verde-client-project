@@ -1,5 +1,5 @@
 import "./editClientCard.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import {ClientProfileList} from "../../data/ClientProfileList";
 import {useParams} from "react-router-dom";
@@ -26,7 +26,35 @@ const EditClient = ({variant}:EditClientProps) => {
     const filteredClient = ClientProfileList.filter(client =>
         client.id ===Number(clientId));
 
+    const client = filteredClient[0];
+
+    useEffect(() => {
+        if (client) {
+            setFirstName(client.clientName.split(" ").slice(0, -1).join(" "));
+            setLastName(client.clientName.split(" ").slice(-1).join(" "));
+            setMobileNumber(client.mobileNumber);
+            setDob(client.dob)
+            setEmailAddress(client.emailAddress);
+            setEmployer(client.staffMember);
+            setRole(client.role);
+            setEmployed("");
+          }
+        }, [clientId, client]);
+
     const handleSubmit = () => {
+        if (
+            !employer ||
+            !role ||
+            !firstName ||
+            !lastName ||
+            !emailAddress ||
+            !mobileNumber ||
+            !employed ||
+            !dob
+          ) {
+            console.log("Please fill in all fields");
+            return;
+        }
     }
 
 
@@ -155,5 +183,5 @@ const EditClient = ({variant}:EditClientProps) => {
   )
 }
 
-export default EditClient
+export default EditClient;
   

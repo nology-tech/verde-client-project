@@ -5,8 +5,11 @@
   width: 100%;
 }
 .edit-client {
-  background-color: $clr-white;
+  //background-color: $clr-white;
   font-weight: bold;
+  // width: 57rem;
+  // height:41rem;
+  background-color: $clr-white;
 
   &__form {
     font-size: 0.7rem;
@@ -16,7 +19,7 @@
       flex-direction: column;
       align-items: start;
       margin-top: 0.6rem;
-      padding-left: 1.2rem;
+      padding-left: 0.8rem;
       padding-top: 1rem;
       margin-right: 1.1rem;
 

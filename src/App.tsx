@@ -66,7 +66,7 @@ const App = () => {
           {/* <Route path="/resources/:resourceId" element={<ResourceItem />} /> */}
           {<Route path="/clients" element={<Clients variant={theme}/>} />}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
-          <Route path="/clients/edit" element={<EditClient variant="light" />} /> 
+          <Route path="/clients/:clientId" element={<EditClient variant={theme} />} /> 
           {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff" element={<Staff variant={theme} />} />
           <Route path={`/bookings/:bookingsId/:clientId`} element={<StaffEdit variant={theme}/>} />

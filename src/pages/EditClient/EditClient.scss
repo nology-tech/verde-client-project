@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+
+.edit-clients{
+    background-color:$clr-secondary-lt;
+}
+
+.edit-clients__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
