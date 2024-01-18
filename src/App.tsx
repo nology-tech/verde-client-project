@@ -23,15 +23,16 @@ const App = () => {
     const unsubscribe = onAuthStateChanged(auth, (authUser: User | null) => {
       if (authUser) {
         setUser(authUser);
-      } else {
-        setUser(null);
-        navigate("/");
+      }
+      else{
+        setUser(null)
+        navigate("/")
       }
     });
-
+    
     return () => unsubscribe();
   }, [navigate]);
-
+  
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [font, setFont] = useState<"modern" | "tech">("modern");
 
@@ -40,13 +41,14 @@ const App = () => {
   };
 
   const changeFont = () => {
-    setFont(font === "modern" ? "tech" : "modern");
-  };
+    setFont(font === "modern" ? "tech" : "modern")
+  }
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Login />} />
+    <div className={font}>
+    <Routes>
+      <Route path="/" element={<Login />} />
       </Routes>
 
       {user && (
@@ -61,11 +63,13 @@ const App = () => {
           {/* <Route path="/clients" element={<Clients />} /> */}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
+          {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff" element={<Staff variant={theme} />} />
           <Route path="/settings" element={<Settings variant={theme} setTheme={toggleTheme} font={font} setFont={changeFont}/>} />
         </Routes>
       )}
-    </>
+    </div>
+  </>
   );
 };
 
