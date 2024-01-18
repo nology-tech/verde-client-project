@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./ItemRequestCard.scss";
 import Button from "../Button/Button";
 import { ResourceCard } from "../../types/ResourceCardTypes";
