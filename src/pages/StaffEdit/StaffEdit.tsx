@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {  useParams } from "react-router-dom";
 import "./StaffEdit.scss";
 import Calendar from "react-calendar";
 import Button from "../../components/Button/Button";
@@ -12,6 +12,7 @@ import { Staff } from "../../types/StaffNavTypes";
 import Modal from "../../components/Modal/Modal";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
 import { useNavigate } from "react-router-dom";
+
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -34,7 +35,15 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
   const { clientId } = useParams();
   const navigate = useNavigate();
 
-  const filteredClient = StaffBookingsList.filter(client => client.id === Number(clientId))
+  const filteredClient = StaffBookingsList.filter(client => 
+    client.id === Number(clientId))
+
+    useEffect(() => {
+      if(clientId){
+        filteredClient.map(client => 
+          setFirstName(client.clientName.split(" ").slice(0, -1).join(" "))
+    )}
+    },[])
   
   const timeIntervals: string[] = [];
 
@@ -90,6 +99,8 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
     console.log("Appointment saved:", newAppointment);
   };
 
+
+
   const handleContinue = () => {
     setModal(false);
   };
@@ -126,34 +137,34 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                 <input
                   type="text"
                   name="firstName"
-                  value={client.clientName.split(" ").slice(0, -1).join(" ")}
+                  value={firstName/* .split(" ").slice(0, -1).join(" ") */}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
                 <label>Last Name</label>
                 <input
                   type="text"
                   name="lastName"
-                  value={client.clientName.split(" ").slice(-1).join(" ")}
+                  value={lastName/* .split(" ").slice(-1).join(" ") */}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
                 <label>Email Address</label>
                 <input
                   type="email"
                   name="emailAddress"
-                  value={client.emailAddress}
+                  value={emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
                 ></input>
                 <label>Mobile Number</label>
                 <input
                   type="text"
                   name="mobileNumber"
-                  value={client.mobNumber}
+                  value={mobileNumber}
                   onChange={(e) => setMobileNumber(e.target.value)}
                 ></input>
                 <label>Staff Member</label>
                 <select
                   name="staffMember"
-                  value={client.staffMember}
+                  value={selectedStaff}
                   onChange={(e) => setSelectedStaff(e.target.value)}
                 >
                   <option value="" disabled>
