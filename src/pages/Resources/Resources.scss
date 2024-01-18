@@ -54,6 +54,9 @@
 
     .resources {
 
+        &__container {
+            margin:2rem 1.8rem;
+        }
         &__staff {
             font-size: 0.8rem;
         }
@@ -61,7 +64,6 @@
         &__mobile-header {
             display: none;
         }
-        
 
         &__titles {
             display: grid;
