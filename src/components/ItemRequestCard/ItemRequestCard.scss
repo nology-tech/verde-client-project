@@ -14,11 +14,15 @@
   &--dark {
     * {
       color: $clr-white;
-
       background-color: $clr-primary-dk;
       &::placeholder {
         color: $clr-white;
       }
+    }
+    .button--small {
+      background-color: $clr-accent-yellow;
+      color: $clr-white;
+      border: none;
     }
     background-color: $clr-primary-dk;
     box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
@@ -36,7 +40,7 @@
   }
 }
 
-.button--small{
+.button--small {
   display: none;
 }
 
@@ -63,7 +67,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-    input, select{
+    input,
+    select {
       font-size: 1rem;
     }
 
@@ -71,15 +76,14 @@
       font-size: 5rem;
     }
 
-    &__button-mobile{
+    &__button-mobile {
       display: none;
     }
-
   }
 
-  .items-container__button-desktop{
+  .items-container__button-desktop {
     display: flex;
-    a{
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -87,10 +91,8 @@
       width: 100%;
     }
   }
-  .button--small{
+  .button--small {
     display: unset;
     justify-self: center;
   }
-
-
 }
