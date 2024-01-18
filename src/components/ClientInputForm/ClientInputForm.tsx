@@ -23,42 +23,47 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
 
   return (
     <div className={`client-input client-input--${variant}`}>
-    <form className="client-input__form">
+    <form className={`client-input__form client-input__form--${variant}`}>
             <div className="leftRight-wrapper">
               <div className="client-input__form--leftside">
-                <label>First Name</label>
+                <label className={`client-input__label client-input__label--${variant}`}>First Name</label>
                 <input
                   type="text"
                   name="firstName"
                   value={firstName}
+                  className={`client-input__input client-input__input--${variant}`}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
-                <label>Last Name</label>
+                <label className={`client-input__label client-input__label--${variant}`}>Last Name</label>
                 <input
                   type="text"
                   name="lastName"
                   value={lastName}
+                  className={`client-input__input client-input__input--${variant}`}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
-                <label>Date of Birth</label>
+                <label className={`client-input__label client-input__label--${variant}`}>Date of Birth</label>
                 <input
                   type="text"
                   name="dob"
                   value={dob}
+                  className={`client-input__input client-input__input--${variant}`}
                   onChange={(e) => setDob(e.target.value)}
                 ></input>
-                <label>Email Address</label>
+                <label className={`client-input__label client-input__label--${variant}`}>Email Address</label>
                 <input
                   type="email"
                   name="emailAddress"
                   value={emailAddress}
+                  className={`client-input__input client-input__input--${variant}`}
                   onChange={(e) => setEmailAddress(e.target.value)}
                 ></input>
-                <label>Mobile Number</label>
+                <label className={`client-input__label client-input__label--${variant}`}>Mobile Number</label>
                 <input
                   type="text"
                   name="mobileNumber"
                   value={mobileNumber}
+                  className={`client-input__input client-input__input--${variant}`}
                   onChange={(e) => setMobileNumber(e.target.value)}
                 ></input>
                 
@@ -66,7 +71,7 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
               </div>
 
               <div className="client-input__form--rightside">
-              <label>Client Thumbnail</label>
+              <label className={`client-input__label client-input__label--${variant}`}>Client Thumbnail</label>
               <input
                   type="file"
                   accept="image/*"

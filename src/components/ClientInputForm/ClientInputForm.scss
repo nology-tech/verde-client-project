@@ -5,8 +5,15 @@
   width: 100%;
 }
 .client-input {
-  background-color: $clr-white;
   font-weight: bold;
+
+  &--light{
+  background-color: $clr-white;
+  
+}
+  &--dark {
+    background-color: $clr-secondary-dk;
+}
 
   &__form {
     font-size: 0.7rem;
@@ -21,11 +28,11 @@
       margin-right: 1.1rem;
 
       label {
-        color: black;
         display: flex;
         margin-bottom: 0.3rem;
         width: 100%;
         font-family: "Poppins", sans-serif;
+
       }
 
       input {
@@ -48,7 +55,6 @@
       margin-right: 1.1rem;
 
       label {
-        color: black;
         display: flex;
         margin-bottom: 0.3rem;
         width: 100%;
@@ -105,41 +111,56 @@
         display: flex;
 
       }
-  
-
   }
 
-}
+  .buttons-wrapper {
+    padding-bottom: 2rem;
+  }
 
-.client-input--dark {
-  background-color: $clr-secondary-dk;
-
+ 
   .client-input {
-    color: white;
     &__form {
-      color: white;
+     
       &--leftside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
 
-        input {
-          background-color: $clr-secondary-dk;
-          color: white;
+        .client-input__label {
+
+           &--light {
+            color: $clr-black;
+          }
+      
+          &--dark {
+            color: $clr-white;
+        }
+        } 
+
+        .client-input__input {
+          &--light {
+            color: $clr-black;
+            background-color: $clr-secondary-lt;
+          }
+      
+          &--dark {
+            color: $clr-white;
+            background-color: $clr-secondary-dk;
+        }
         }
 
       }
 
       &--rightside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
+        .client-input__label {
 
+          &--light {
+           color: $clr-black;
+         }
+     
+         &--dark {
+           color: $clr-white;
+       }
+       } 
         input {
           background-color: $clr-secondary-dk;
-          color: white;
         }
 
       }
@@ -219,7 +240,15 @@
         .fileUpload {
           height: 16rem;
           width: 12rem;
-          background-color: $clr-secondary-lt;
+          &--light {
+            color: $clr-black;
+            background-color: $clr-secondary-lt;
+          }
+      
+          &--dark {
+            color: $clr-white;
+            background-color: $clr-secondary-dk;
+        }
         }
         
           .upload-button {
