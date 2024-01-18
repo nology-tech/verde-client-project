@@ -9,7 +9,7 @@
   border: $clr-accent-grey 1px solid;
   justify-content: center;
   align-items: center;
-  margin: 0.7rem 0;
+  margin-bottom: 0.7rem;
 
   &--light {
     background-color: $clr-white;
@@ -60,7 +60,6 @@
     background-color: $clr-white;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin: 0rem 0.5rem 1rem 0.5rem;
 
     &--light {
       background-color: $clr-white;

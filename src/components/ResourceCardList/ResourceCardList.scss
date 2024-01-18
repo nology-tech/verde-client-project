@@ -2,6 +2,9 @@
 @use "../../styles/typography";
 
 .resource-card-list {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
 
     &__titles {
         display: none;
@@ -19,7 +22,7 @@
             margin: 1rem, 0.5rem;
 
             &--spheadings {
-                margin-left: 1.5rem;
+                //margin-left: 1.5rem;
             }
 
             p {
