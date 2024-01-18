@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
 import "./StaffListBooking.scss";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
+
 import Footer from "../../components/Footer/Footer";
 
 type StaffBookingListProps = {
@@ -16,6 +17,7 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
 
   const filteredClients = StaffBookingsList.filter((client) => client.id === Number(bookingsId))
 
+
   return (
     <Layout>
     <NavBar variant={variant} />
@@ -23,10 +25,11 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
         <Header
           title={"Client Booking"}
           variant={variant}
-          buttonOption={false}
+          buttonOption={true}
           buttonLabel={"+ edit"}
           buttonVariant={"yellow"}
           dropdownOption={false}
+          path={`${bookingsId}`}
         />
 
         <section>

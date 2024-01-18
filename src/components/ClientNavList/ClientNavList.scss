@@ -21,6 +21,11 @@
   
   @media screen and (min-width: $desktop-breakpoint) {
     .client-list {
+      
+        overflow-y: scroll;
+        height: 100%;
+        padding: 0.5rem;
+     
       &__titles {
         display: grid;
         grid-template-columns: 1fr 1.2fr 1.5fr 1fr 1fr 0.5fr;

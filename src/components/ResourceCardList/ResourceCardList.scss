@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+.resource-card-list {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .resource-card-list {
+        margin-top: 0rem;
+    }
+
+    
+}

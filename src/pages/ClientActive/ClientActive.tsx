@@ -5,14 +5,23 @@ import Header from "../../components/Header/Header";
 import Layout from "../../components/Layout/Layout";
 import NavBar from "../../components/NavBar/NavBar";
 import { ClientInfo } from "../../types/ClientProfileTypes";
+import { useParams } from "react-router";
 import "./ClientActive.scss";
 
 type ClientActiveProps = {
   variant: "light" | "dark";
-  clientInfo: ClientInfo;
+  clientInfoList: ClientInfo[];
 };
 
-const ClientActive = ({ variant, clientInfo }: ClientActiveProps) => {
+const ClientActive = ({ variant, clientInfoList }: ClientActiveProps) => {
+
+  const { clientId } = useParams()
+  
+  const filteredclientInfo = clientInfoList.filter(client => 
+    client.id === Number(clientId))
+
+  const clientInfo = filteredclientInfo[0]
+
   return (
     <Layout>
       <NavBar variant={variant} />
