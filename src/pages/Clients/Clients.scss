@@ -31,7 +31,6 @@
         width:20rem;
         height:3.5rem;
         align-items: center;
-    
     }
 }
 
@@ -40,26 +39,44 @@
     flex-direction: row;
     align-items: center;
     margin-top: 1rem;
-    
 }
 
 #results-per-page {
-    
     padding:0.3rem;
     margin: 0 1rem;
- }
+}
 
 
 @media screen and (min-width:$desktop-breakpoint) {
     .clients {
-        &__page-results--arrow {
-            display:unset;
+
+        &__page-results--index {
+            text-align: center;
+            color: $clr-accent-grey;
+            margin-right: 1rem;
+            width: 6.5rem;
+        }
+
+        &__page-results {
+            margin-left:0.8rem;
+            margin-right: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                color: $clr-accent-grey;
+                padding-left: 11rem;
+            }
+
+            &--arrow {
+                display:unset;
+                color: $clr-accent-grey;
+                width: 1.8rem;
+                opacity: 40%;
+                }
         }
     }
-        
 }
 
-
-
-    
 
