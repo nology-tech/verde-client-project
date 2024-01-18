@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
 import "./StaffEdit.scss";
 import Calendar from "react-calendar";
-import DatePicker from "react-datepicker";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
@@ -11,6 +11,7 @@ import { StaffList } from "../../data/StaffNavList";
 import { Staff } from "../../types/StaffNavTypes";
 import Modal from "../../components/Modal/Modal";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
+import { useNavigate } from "react-router-dom";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -30,8 +31,11 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [selectedStaff, setSelectedStaff] = useState<string>("");
   const [modal, setModal] = useState<boolean>(false);
+  const { clientId } = useParams();
+  const navigate = useNavigate();
 
-
+  const filteredClient = StaffBookingsList.filter(client => client.id === Number(clientId))
+  
   const timeIntervals: string[] = [];
 
   const startTime = new Date();
@@ -39,9 +43,6 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
   const endTime = new Date();
   endTime.setHours(17, 30, 0);
 
-  // const handleDateChange = (value: Value) => {
-  //   setSelectedDate(value);
-  // };
 
   while (startTime < endTime) {
     timeIntervals.push(
@@ -97,9 +98,6 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
     <Button label={"Continue"} variant={"yellow"} onClick={handleContinue} />,
   ];
 
-  const filteredClient = StaffBookingsList.filter(client => client.clientName === "Joe Bloggs")
-  const bookingDate = StaffBookingsList.map(client => new Date(client.bookingDate));
-  // const bookingDate =filteredClient.map((client) => new Date(client.bookingDate))[0];
 
   return (
     <div className="container">
@@ -108,7 +106,7 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
           <NavBar variant={variant} />
         </div>
 
-        {filteredClient.map(client => <div className="headerForm-container">
+        {filteredClient.map(client => <div className="headerForm-container" key={client.id}>
           <div className="staff-edit__header">
             <Header
               title={`Clients - ${client.clientName}`}
@@ -202,7 +200,7 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                   <Button
                     label="Cancel"
                     variant="grey"
-                    onClick={() => console.log("Cancel button clicked")}
+                    onClick={() => navigate(-1)}
                   />
                 </div>
                 <div className="save-button">
