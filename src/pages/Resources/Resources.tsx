@@ -2,7 +2,7 @@ import "./Resources.scss";
 import ResourceCardList from "../../components/ResourceCardList/ResourceCardList";
 import Layout from "../../components/Layout/Layout";
 import Footer from "../../components/Footer/Footer";
-import { ResourceCardListHealth } from "../../data/ResourceCardLists";
+import { ResourceCardList1, resourceCardList2 } from "../../data/ResourceCardLists";
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -34,7 +34,8 @@ const Resources = ({ variant }: ResourcesProps) => {
           Auto-Purchase Level
         </p>
       </div>
-          <ResourceCardList resources={ResourceCardListHealth} variant={variant} />
+          <ResourceCardList resources={ResourceCardList1} variant={variant} />
+          <ResourceCardList resources={ResourceCardList1} variant={variant} />
         </div>
 
         
