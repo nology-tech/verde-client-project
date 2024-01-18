@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 type ItemRequestCardProps = {
   id: number;
   placeholder?: string;
+  variant : "light" | "dark";
 };
 
 const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
@@ -18,13 +19,13 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
     setEditMode(true);
   };
 
-  const handleRadioClicked = () =>{
+  const handleRadioClicked = () => {
     setAutoRenew(!autoRenew);
-  }
+  };
 
   return (
     <div className="div">
-      <div className="item-container">
+      <div className={`item-container ${autoRenew ? "edit-mode" : ""}`}>
         <div className="item">
           <label className={`${id}`}>Category Name</label>
           <input
@@ -89,10 +90,20 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
       </div>
       {editMode ? (
         <div>
-          <Button onClick={closeEditMode} label={"Save"} variant={"yellow"} size="large" />
+          <Button
+            onClick={closeEditMode}
+            label={"Save"}
+            variant={"yellow"}
+            size="large"
+          />
         </div>
       ) : (
-        <Button onClick={openEditMode} label={"Edit"} variant={"yellow"} size="large" />
+        <Button
+          onClick={openEditMode}
+          label={"Edit"}
+          variant={"yellow"}
+          size="large"
+        />
       )}
     </div>
   );
