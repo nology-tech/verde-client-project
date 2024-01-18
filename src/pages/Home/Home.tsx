@@ -35,7 +35,7 @@ const Home = ({ variant }: HomeProps) => {
           onClick={handleLogout}
         />
         <div className="main__container">
-       <ItemRequestCard id={0}  placeholder={"Edit ..."}/>
+       <ItemRequestCard variant="light" id={0}  placeholder={"Edit ..."}/>
         </div>
       </main>
     </Layout>

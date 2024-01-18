@@ -5,10 +5,14 @@ import Button from "../Button/Button";
 type ItemRequestCardProps = {
   id: number;
   placeholder?: string;
-  variant : "light" | "dark";
+  variant: "light" | "dark";
 };
 
-const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
+const ItemRequestCard = ({
+  id,
+  placeholder,
+  variant,
+}: ItemRequestCardProps) => {
   const [editMode, setEditMode] = useState<boolean>(true);
   const [autoRenew, setAutoRenew] = useState<boolean>(false);
 
@@ -23,16 +27,25 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
     setAutoRenew(!autoRenew);
   };
 
+  const inputClassName = `item-container__input-box item-container__input-box--${
+    editMode ? "edit-mode" : ""
+  }`;
+
+  const containerName = `item-container ${
+    editMode ? "edit-mode" : ""
+  } item-container--${variant}`;
+
   return (
     <div className="div">
-      <div className={`item-container ${autoRenew ? "edit-mode" : ""}`}>
+      <div className={containerName}>
         <div className="item">
-          <label className={`${id}`}>Category Name</label>
+          <label className={`item-container__name`}>Category Name</label>
           <input
             type="text"
             id={`${id}`}
             readOnly={!editMode}
             placeholder={placeholder}
+            className={inputClassName}
           />
         </div>
         <div className="item">
@@ -42,6 +55,7 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
             id={`${id}`}
             readOnly={!editMode}
             placeholder={placeholder}
+            className={inputClassName}
           />
         </div>
         <div className="item">
@@ -51,6 +65,7 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
             id={`${id}`}
             readOnly={!editMode}
             placeholder={placeholder}
+            className={inputClassName}
           />
         </div>
         <div className="item">
@@ -64,6 +79,7 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
               readOnly={!editMode}
               checked={autoRenew}
               onClick={handleRadioClicked}
+              className="item__radio"
             ></input>
           </div>
           <div className="radio-container">
@@ -75,6 +91,7 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
               readOnly={!editMode}
               checked={!autoRenew}
               onClick={handleRadioClicked}
+              className="item__radio"
             ></input>
           </div>
         </div>
@@ -85,6 +102,7 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
             id={`${id}`}
             readOnly={!editMode}
             placeholder={placeholder}
+            className={inputClassName}
           />
         </div>
       </div>
