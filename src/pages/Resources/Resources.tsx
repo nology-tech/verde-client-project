@@ -74,8 +74,8 @@ const Resources = ({ variant }: ResourcesProps) => {
             <ResourceCardList resources={ResourceCardList2} variant={variant} />
           </section>
 
-          <section className="resources__items--admin">
-            <h3 className={`resources__staff resources__staff--${variant}`}>
+          <section className="resources__items">
+            <h3 className={`resources__admin resources__admin--${variant}`}>
               Admin
             </h3>
             <ResourceCardList
