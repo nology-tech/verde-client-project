@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-items: center;
     overflow: auto;
+    overflow-x: hidden;
   }
 
   &__titles {
