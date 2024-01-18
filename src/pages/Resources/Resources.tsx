@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import {
   ResourceCardList1,
   ResourceCardList2,
+  resourceCardListAdmin,
 } from "../../data/ResourceCardLists";
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
@@ -18,6 +19,7 @@ const Resources = ({ variant }: ResourcesProps) => {
   return (
     <Layout>
       <NavBar variant={variant} />
+
       <main className={`resources resources--${variant}`}>
         <Header
           title="Resources"
@@ -60,16 +62,26 @@ const Resources = ({ variant }: ResourcesProps) => {
           <h3 className="resources__mobile-header">Health Products</h3>
 
           <section className="resources__items">
-          <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList1[0].staffName}</h3>
-          <ResourceCardList resources={ResourceCardList1} variant={variant} />
+            <h3 className={`resources__staff resources__staff--${variant}`}>
+              {ResourceCardList1[0].staffName}
+            </h3>
+            <ResourceCardList resources={ResourceCardList1} variant={variant} />
           </section>
           <section className="resources__items">
-          <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList2[0].staffName}</h3>
-          <ResourceCardList resources={ResourceCardList2} variant={variant} />
+            <h3 className={`resources__staff resources__staff--${variant}`}>
+              {ResourceCardList2[0].staffName}
+            </h3>
+            <ResourceCardList resources={ResourceCardList2} variant={variant} />
           </section>
-          <section className="resources__items">
-          <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList2[0].staffName}</h3>
-          <ResourceCardList resources={ResourceCardList2} variant={variant} />
+
+          <section className="resources__items--admin">
+            <h3 className={`resources__staff resources__staff--${variant}`}>
+              Admin
+            </h3>
+            <ResourceCardList
+              resources={resourceCardListAdmin}
+              variant={variant}
+            />
           </section>
         </div>
       </main>
