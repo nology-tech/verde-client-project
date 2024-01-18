@@ -6,49 +6,19 @@
     margin-right: 1rem;
     margin-top: 0.5rem;
    
-
-   
+    &__container {
+        overflow-y: scroll;
+    }
 }
 
 @media screen and (min-width: $tablet-breakpoint) {
     .resource-card-list {
-
         margin-top: 0rem;
-        
-       
+
+        &__container {
+            overflow-y: scroll;
+        }
     }
+
+    
 }
-
-// @media screen and (min-width: $desktop-breakpoint) {
-//     .resource-card-list {
-//         &__container {
-//             overflow-y: scroll;
-//             height: 18rem;
-//             padding: 0.5rem;
-//         }
-
-//         &__titles {
-//             display: grid;
-//             grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
-//             gap: 1rem;
-
-//             &--spheadings {
-//                 margin-left: 1rem;
-//             }
-
-//             p {
-//                 font-size: 0.6rem;
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (min-width: 1440px) {
-//     .resource-card-list {
-//         &__container {
-//             overflow-y: scroll;
-//             height: 10.5rem;
-//             padding: 0.5rem;
-//         }
-//     }
-// }

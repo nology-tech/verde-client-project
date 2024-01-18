@@ -49,6 +49,7 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
   .resource-card {
+
     &__quantity,
     &__cost,
     &__autopurchase,
@@ -75,6 +76,7 @@
       font-size: 0.7rem;
       justify-content: center;
     }
+
     &__autopurchase {
       font-weight: 600;
       font-size: 0.7rem;
@@ -90,15 +92,15 @@
       font-size: 0.7rem;
       color: #95accb;
       justify-content: center;
-      
+
 
     }
 
-    
-  &__arrow {
-    width: 0.7rem;
-    height: auto;
-  }
+
+    &__arrow {
+      width: 0.7rem;
+      height: auto;
+    }
   }
 
   @media screen and (min-width: $tablet-breakpoint) {

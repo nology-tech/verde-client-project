@@ -11,8 +11,6 @@ type ResourceCardListProps = {
 const ResourceCardList = ({ resources, variant }: ResourceCardListProps) => {
   return (
     <div className = {`resource-card-list resource-card-list--${variant}`}>
-      
-      {/* <h2 className="resource-card-list__title">{staff}</h2> */}
       <div className="resource-card-list__container">
         {resources.map((resource) => (
           <ResourceCard
