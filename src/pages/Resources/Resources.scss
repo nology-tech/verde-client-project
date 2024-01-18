@@ -21,10 +21,22 @@
     flex-direction: column;
     justify-items: center;
     overflow: auto;
+    overflow-x: hidden;
   }
 
   &__titles {
     display: none;
+  }
+
+  &__admin {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #102b3f;
+    margin-left: 1rem;
+
+    &--dark {
+      color: $clr-white;
+    }
   }
 
   &__staff {
@@ -68,14 +80,6 @@
     &__items {
       display: flex;
       flex-direction: column;
-
-      &--admin {
-        h3 {
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #102b3f;
-        }
-      }
     }
 
     &__titles {
