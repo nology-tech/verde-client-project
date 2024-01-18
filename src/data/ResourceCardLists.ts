@@ -1,4 +1,6 @@
-export const ResourceCardList1 = [
+import { ResourceCard } from "../types/ResourceCardTypes";
+
+export const ResourceCardList1 : ResourceCard[] = [
   {
     staffName: "Sarah Stanley",
     id: 1,
@@ -6,7 +8,7 @@ export const ResourceCardList1 = [
     quantityRemaining: 300,
     costPerUnit: "12.99",
     autoPurchase: "YES",
-    autoPurchaseLevel: 50,
+    autoPurchaseLevel: "50",
     path: "/healthresource/1"
   },
   {
@@ -16,7 +18,7 @@ export const ResourceCardList1 = [
     quantityRemaining: 300,
     costPerUnit: "12.99",
     autoPurchase: "YES",
-    autoPurchaseLevel: 100,
+    autoPurchaseLevel: "100",
     path: "/healthresource/2",
   },
   {

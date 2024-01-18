@@ -1,20 +1,38 @@
-import { useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useState } from "react";
 import "./ItemRequestCard.scss";
 import Button from "../Button/Button";
+import { ResourceCard } from "../../types/ResourceCardTypes";
 
 type ItemRequestCardProps = {
   id: number;
   placeholder?: string;
   variant: "light" | "dark";
+  resource: ResourceCard
 };
 
 const ItemRequestCard = ({
   id,
   placeholder,
   variant,
+  resource
 }: ItemRequestCardProps) => {
   const [editMode, setEditMode] = useState<boolean>(true);
-  const [autoRenew, setAutoRenew] = useState<boolean>(false);
+  const [autoRenew, setAutoRenew] = useState<boolean>(resource.autoPurchase === "YES");
+  const [resourceName, setResourceName] = useState<string>(resource.resourceName);
+  const [staffMember, setStaffMember] = useState<string>(resource.staffName);
+  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(resource.autoPurchaseLevel);
+
+  const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) =>{
+    setResourceName(event.currentTarget.value);
+  }
+
+  const handleStaffMemberInput = (event: ChangeEvent<HTMLInputElement>) =>{
+    setStaffMember(event.currentTarget.value);
+  }
+
+  const handleAutoPurchaseLevelInput = (event: ChangeEvent<HTMLInputElement>) =>{
+    setAutoPurchaseLevel(event.currentTarget.value);
+  } 
 
   const closeEditMode = () => {
     setEditMode(false);
@@ -40,13 +58,17 @@ const ItemRequestCard = ({
       <div className={containerName}>
         <div className="item">
           <label className={`item-container__name`}>Category Name</label>
-          <input
+          <select className={inputClassName} disabled={!editMode}>
+            <option value="">Health</option>
+            <option value="">Stationary</option>
+          </select>
+          {/* <input
             type="text"
             id={`${id}`}
             readOnly={!editMode}
             placeholder={placeholder}
             className={inputClassName}
-          />
+          /> */}
         </div>
         <div className="item">
           <label className={`${id}`}>Staff Member</label>
@@ -54,8 +76,11 @@ const ItemRequestCard = ({
             type="text"
             id={`${id}`}
             readOnly={!editMode}
+            value={staffMember}
             placeholder={placeholder}
             className={inputClassName}
+            onChange={handleStaffMemberInput}
+
           />
         </div>
         <div className="item">
@@ -64,8 +89,10 @@ const ItemRequestCard = ({
             type="text"
             id={`${id}`}
             readOnly={!editMode}
+            value={resourceName}
             placeholder={placeholder}
             className={inputClassName}
+            onChange={handleResourceNameInput}
           />
         </div>
         <div className="item">
@@ -103,6 +130,8 @@ const ItemRequestCard = ({
             readOnly={!editMode}
             placeholder={placeholder}
             className={inputClassName}
+            onChange={handleAutoPurchaseLevelInput}
+            value={autoPurchaseLevel}
           />
         </div>
       </div>
