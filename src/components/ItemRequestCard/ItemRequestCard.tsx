@@ -9,6 +9,7 @@ type ItemRequestCardProps = {
 
 const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
   const [editMode, setEditMode] = useState<boolean>(true);
+  const [autoRenew, setAutoRenew] = useState<boolean>(false);
 
   const closeEditMode = () => {
     setEditMode(false);
@@ -16,6 +17,10 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
   const openEditMode = () => {
     setEditMode(true);
   };
+
+  const handleRadioClicked = () =>{
+    setAutoRenew(!autoRenew);
+  }
 
   return (
     <div className="div">
@@ -56,6 +61,8 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
               name="yes"
               id={`${id}`}
               readOnly={!editMode}
+              checked={autoRenew}
+              onClick={handleRadioClicked}
             ></input>
           </div>
           <div className="radio-container">
@@ -65,6 +72,8 @@ const ItemRequestCard = ({ id, placeholder }: ItemRequestCardProps) => {
               name="no"
               id={`${id}`}
               readOnly={!editMode}
+              checked={!autoRenew}
+              onClick={handleRadioClicked}
             ></input>
           </div>
         </div>
