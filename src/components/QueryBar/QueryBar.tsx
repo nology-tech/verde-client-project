@@ -1,20 +1,21 @@
 import SearchBox from "../SearchBox/SearchBox";
-import sortImg from "./../../assets/images/sort.png"
+import sortImg from "./../../assets/images/sort-query-bar.png"
 import filterImg from "./../../assets/images/filter.png"
 import columnImg from "./../../assets/images/column-view.png"
 import gridImg from "./../../assets/images/grid-view.png"
 
 import "./QueryBar.scss";
+import {ChangeEventHandler } from "react";
 
 type QueryBarProps = {
   label: string;
   searchTerm: string;
   hasFilter: boolean;
-  handleInput: () => void;
-  columnViewClick: () => void;
-  gridViewClick: () => void;
+  handleInput: ChangeEventHandler<HTMLInputElement>;
+  columnViewClick?: () => void;
+  gridViewClick?: () => void;
   sortClick: () => void;
-  filterClick: () => void;
+  filterClick?: () => void;
   variant: "light" | "dark";
 };
 
