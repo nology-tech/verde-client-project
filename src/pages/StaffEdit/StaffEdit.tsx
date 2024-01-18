@@ -39,7 +39,9 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
     client.id === Number(clientId))
 
   useEffect(() => {
-      filteredClient.forEach(client => {
+      const client = filteredClient[0];
+      
+      if(client){
         setFirstName(client.clientName.split(" ").slice(0, -1).join(" "))
         setLastName(client.clientName.split(" ").slice(-1).join(" "))
         setMobileNumber(client.mobNumber)
@@ -47,8 +49,7 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
         setSelectedStaff(client.staffMember)
         setSelectedTime(client.bookingTime)
         setSelectedDate(new Date(client.bookingDate))
-   })
-    }, [clientId])
+   }}, [clientId])
   
   const timeIntervals: string[] = [];
 
