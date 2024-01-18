@@ -4,167 +4,6 @@
 @import "react-calendar/dist/Calendar.css"; //react-calendar default stylesheet
 @import "react-datepicker/dist/react-datepicker.css";
 
-/* .container {
-  width: 100%;
-}
-.staff-edit {
-  background-color: $clr-white;
-  font-weight: bold;
-
-  .headerForm-container {
-    width: 100%;
-    height: 100vh;
-  }
-
-  &__form {
-
-
-    &--leftside {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      margin-top: 0.6rem;
-      padding-left: 1.2rem;
-      padding-top: 1rem;
-      margin-right: 1.1rem;
-
-      label {
-        color: black;
-        display: flex;
-        margin-bottom: 0.3rem;
-        width: 100%;
-      }
-
-      input,
-      select {
-        margin-bottom: 0.6rem;
-        width: 100%;
-        height: 1.9rem;
-        border: 0.03rem solid #e2e8f0;
-        border-radius: 0.2rem;
-        padding-left: 1rem;
-      }
-    }
-
-    &--rightside {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      margin-right: 1.1rem;
-
-      label {
-        color: black;
-        display: flex;
-        margin-bottom: 0.3rem;
-        width: 100%;
-      }
-
-      input,
-      select {
-        margin-bottom: 0.6rem;
-        width: 100%;
-        border: 0.03rem solid #e2e8f0;
-        height: 1.9rem;
-        border-radius: 0.2rem;
-        padding-left: 1rem;
-      }
-
-      .react-datepicker-wrapper > .react-datepicker__input-container input {
-        all: unset !important;
-      }
-
-      .react-datepicker-wrapper
-        > .react-datepicker__input-container
-        input[placeholder] {
-        font-family: "Poppins";
-      }
-
-      .datepicker {
-        width: 100%;
-        border: 0.03rem solid #e2e8f0;
-        height: 1.9rem;
-        border-radius: 0.2rem;
-        padding-left: 1.2rem;
-        margin-bottom: 0.6rem;
-        font-size: 0.8rem;
-        display: flex;
-        align-items: center;
-        font-weight: lighter;
-      }
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-
-    .save-button {
-      display: none;
-    }
-
-  }
-
-  .calendar-desktop {
-    display: none;
-  }
-}
-
-.staff-edit--dark {
-  background-color: $clr-secondary-dk;
-
-  .staff-edit {
-    color: white;
-    &__form {
-      color: white;
-      &--leftside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        select {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        input {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        option {
-          color: white;
-        }
-      }
-
-      &--rightside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        select {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        input {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-        option {
-          color: white;
-        }
-      }
-    }
-  }
-} */
-
 @media screen and (min-width: $tablet-breakpoint) {
   .calendar-desktop {
     display: none;
@@ -375,6 +214,7 @@
           padding-left: 1.2rem;
           margin-right: 1.1rem;
           color: white;
+          
 
           label {
             color: black;
@@ -443,7 +283,7 @@
       
 
             button:disabled {
-              background-color: $clr-secondary-dk;
+              background-color: $clr-border-dk;
             }
 
             button:hover,
@@ -499,7 +339,7 @@
   }
 
   .staff-edit--dark {
-    background-color: $clr-secondary-dk;
+    background-color: $clr-primary-dk;
   
     .staff-edit {
       color: white;
@@ -507,17 +347,17 @@
         color: white;
         &--leftside {
           label {
-            background-color: $clr-secondary-dk;
+            background-color: $clr-primary-dk;
             color: white;
           }
   
           select {
-            background-color: $clr-secondary-dk;
+            background-color: $clr-primary-dk;
             color: white;
           }
   
           input {
-            background-color: $clr-secondary-dk;
+            background-color: $clr-primary-dk;
             color: white;
           }
   
@@ -528,12 +368,12 @@
   
         &--rightside {
           label {
-            background-color: $clr-secondary-dk;
+            background-color: $clr-primary-dk;
             color: white;
           }
   
           select {
-            background-color: $clr-secondary-dk;
+            background-color: $clr-primary-dk;
             color: white;
           }
   
