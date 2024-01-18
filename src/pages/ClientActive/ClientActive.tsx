@@ -25,7 +25,16 @@ const ClientActive = ({ variant, clientInfo }: ClientActiveProps) => {
           buttonVariant={"yellow"}
           dropdownOption={false}
         />
-        <ClientProfile clientinfo={clientInfo} variant={variant} />
+        <ClientProfile clientinfo={{
+            clientName: clientInfo.clientName,
+            role: clientInfo.role,
+            dob: clientInfo.dob,
+            emailAddress: clientInfo.emailAddress,
+            mobNumber: clientInfo.mobileNumber,
+            bookingDate: clientInfo.appointmentDate,
+            bookingTime: clientInfo.appointmentTime,
+            staffMember: clientInfo.staffMember,
+          }} variant={variant} size="staffBooking"/>
         <Button label={"Edit Client"} variant={"yellow"} size="large" />
       </main>
       <Footer variant={variant} />
