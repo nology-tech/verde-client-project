@@ -135,8 +135,8 @@ export const Clients = ({ variant }: ClientsProps) => {
             startingIndex={startingIndex}
             maxCards={numOfResults}
           />
-        </section>
-        <section className="clients__page-results">
+
+<section className="clients__page-results">
           <label htmlFor="results-per-page">Results per page: </label>
           <select
             onChange={handleNumOfResultsChange}
@@ -164,6 +164,8 @@ export const Clients = ({ variant }: ClientsProps) => {
             onClick={handleNextPageClick}
           />
         </section>
+        </section>
+  
       </main>
       <Footer variant={variant} />
     </Layout>
