@@ -48,7 +48,7 @@ const StaffEdit = ({ variant }: StaffEditProps) => {
       setSelectedTime(client.bookingTime);
       setSelectedDate(new Date(client.bookingDate));
     }
-  }, [clientId]);
+  }, [clientId, client]);
 
   const timeIntervals: string[] = [];
 
