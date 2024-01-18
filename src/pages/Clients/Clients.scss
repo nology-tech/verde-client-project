@@ -1,6 +1,13 @@
 @use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+
 
 .clients{
+
+    &__page-results--arrow {
+        display:none;
+    }
 
     width:100vw;
     display: flex;
@@ -18,10 +25,41 @@
         height:60%;
         margin: 2rem;
     }
+
+    &__heading{
+        display: flex;
+        width:20rem;
+        height:3.5rem;
+        align-items: center;
+    
+    }
 }
 
 .clients__page-results {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
     
 }
+
+#results-per-page {
+    
+    padding:0.3rem;
+    margin: 0 1rem;
+ }
+
+
+@media screen and (min-width:$desktop-breakpoint) {
+    .clients {
+        &__page-results--arrow {
+            display:unset;
+        }
+    }
+        
+}
+
+
+
+    
+

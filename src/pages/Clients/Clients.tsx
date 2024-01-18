@@ -7,8 +7,8 @@ import "./Clients.scss";
 import { ClientProfileList } from "../../data/ClientProfileList";
 import Footer from "../../components/Footer/Footer";
 import { ChangeEvent, useState } from "react";
-import leftArrowSrc from "../../assets/images/arrow - left.png";
-import rightArrowSrc from "../../assets/images/arrow - right.png";
+import leftArrowSrc from "../../assets/images/arrow - left.svg";
+import rightArrowSrc from "../../assets/images/arrow - right.svg";
 import { ClientInfo } from "../../types/ClientProfileTypes";
 
 type ClientsProps = {
@@ -137,7 +137,7 @@ export const Clients = ({ variant }: ClientsProps) => {
           />
 
 <section className="clients__page-results">
-          <label htmlFor="results-per-page">Results per page: </label>
+          <label className="clients__heading" htmlFor="results-per-page">Results per page: </label>
           <select
             onChange={handleNumOfResultsChange}
             name="results-per-page"
