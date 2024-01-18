@@ -18,6 +18,7 @@ import { ClientProfileList } from "./data/ClientProfileList";
 import StaffEdit from "./pages/StaffEdit/StaffEdit";
 import { Clients } from "./pages/Clients/Clients";
 import ClientActive from "./pages/ClientActive/ClientActive";
+import ResourceItem from "./pages/ResourceItem/ResourceItem";
 
 const App = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const App = () => {
           {/* Additional routes can be uncommented as needed */}
           <Route path="/resources" element={<Resources variant={theme} />} />
           {/* <Route path="/resources/edit" element={<EditResources />} /> */}
-          {/* <Route path="/resources/:resourceId" element={<ResourceItem />} /> */}
+          <Route path="/resources/:resourceId" element={<ResourceItem variant={theme} />} />
           {<Route path="/clients" element={<Clients variant={theme}/>} />}
           {/* <Route path="/clients/create" element={<CreateClient />} /> */}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
