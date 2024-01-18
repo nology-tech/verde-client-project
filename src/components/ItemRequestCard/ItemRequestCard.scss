@@ -2,28 +2,49 @@
 @use "../../styles/typography" as *;
 
 .item-container {
-  background-color: $clr-white;
   margin: 1rem;
-  box-shadow: 0rem 1rem 1.5rem rgba($clr-primary-accent, 0.107);
   border-radius: 0.5rem;
-  border: 0.6rem solid $clr-primary-accent;
 
-  &--light{
-    *{
-    color: red;
-    }
+  &--light {
+    background-color: $clr-white;
+    border: 0.1rem solid $clr-primary-accent;
+    box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
+  }
+
+  &--dark {
+    *{color:$clr-white;
+    background-color: $clr-primary-dk;
+  &::placeholder{color:$clr-white}}
+    background-color: $clr-primary-dk;
+    border: 0.15rem solid $clr-primary-accent;
+    box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
+  }
+
+  &__input-box-- {
+    border:none;
+    color: $clr-primary-lt;
+
+
+  }
+
+  &__input-box--edit-mode {
+    border:0.1rem solid $clr-accent-grey;
+  
+
   }
 }
 .div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+  
 
 .item {
   display: flex;
   flex-direction: column;
   padding: 0.75rem;
+ 
+}
 }
 
 .radio-container {
