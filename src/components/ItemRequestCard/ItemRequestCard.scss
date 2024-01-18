@@ -23,8 +23,7 @@
   &__input-box-- {
     border:none;
     color: $clr-primary-lt;
-
-
+    -webkit-appearance: none;
   }
 
   &__input-box--edit-mode {
