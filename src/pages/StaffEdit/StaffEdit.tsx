@@ -37,9 +37,9 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
 
   const filteredClient = StaffBookingsList.filter(client => 
     client.id === Number(clientId))
+  const client = filteredClient[0];
 
   useEffect(() => {
-      const client = filteredClient[0];
       
       if(client){
         setFirstName(client.clientName.split(" ").slice(0, -1).join(" "))
