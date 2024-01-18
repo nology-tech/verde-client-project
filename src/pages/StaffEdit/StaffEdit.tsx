@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {  useParams } from "react-router-dom";
 import "./StaffEdit.scss";
 import Calendar from "react-calendar";
@@ -12,7 +12,6 @@ import { Staff } from "../../types/StaffNavTypes";
 import Modal from "../../components/Modal/Modal";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
 import { useNavigate } from "react-router-dom";
-import StaffBookingList from "../../components/StaffBookingList/StaffBookingList";
 
 
 type ValuePiece = Date | null;
