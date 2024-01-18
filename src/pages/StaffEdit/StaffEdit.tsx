@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {  useParams } from "react-router-dom";
 import "./StaffEdit.scss";
 import Calendar from "react-calendar";
@@ -37,6 +37,18 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
 
   const filteredClient = StaffBookingsList.filter(client => 
     client.id === Number(clientId))
+
+  useEffect(() => {
+      filteredClient.forEach(client => {
+        setFirstName(client.clientName.split(" ").slice(0, -1).join(" "))
+        setLastName(client.clientName.split(" ").slice(-1).join(" "))
+        setMobileNumber(client.mobNumber)
+        setEmailAddress(client.emailAddress)
+        setSelectedStaff(client.staffMember)
+        setSelectedTime(client.bookingTime)
+        setSelectedDate(new Date(client.bookingDate))
+   })
+    }, [clientId])
   
   const timeIntervals: string[] = [];
 
@@ -126,34 +138,34 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                 <input
                   type="text"
                   name="firstName"
-                  value={client.clientName.split(" ").slice(0, -1).join(" ")}
+                  value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
                 <label>Last Name</label>
                 <input
                   type="text"
                   name="lastName"
-                  value={client.clientName.split(" ").slice(-1).join(" ")}
+                  value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
                 <label>Email Address</label>
                 <input
                   type="email"
                   name="emailAddress"
-                  value={client.emailAddress}
+                  value={emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
                 ></input>
                 <label>Mobile Number</label>
                 <input
                   type="text"
                   name="mobileNumber"
-                  value={client.mobNumber}
+                  value={mobileNumber}
                   onChange={(e) => setMobileNumber(e.target.value)}
                 ></input>
                 <label>Staff Member</label>
                 <select
                   name="staffMember"
-                  value={client.staffMember}
+                  value={selectedStaff}
                   onChange={(e) => setSelectedStaff(e.target.value)}
                 >
                   <option value="" disabled>
@@ -172,14 +184,14 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
                 <Calendar
                   className="calendar-desktop"
                   onChange={(date) => setSelectedDate(date as Date)}
-                  defaultValue={new Date(client.bookingDate)}
+                  value={selectedDate}
                   minDate={new Date()}
                 />
 
                 <label>Time:</label>
                 <select
                   name="appointmentTime"
-                  value={client.bookingTime}
+                  value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="" disabled>
@@ -218,6 +230,7 @@ const StaffEdit = ({variant}: StaffEditProps ) => {
 
           {modal && (
             <Modal
+              key={client.id}
               title="Booking Confirmed!"
               buttons={confirmModal}
               variant={variant}
