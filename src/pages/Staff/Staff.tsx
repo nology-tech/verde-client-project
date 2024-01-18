@@ -44,7 +44,7 @@ const Staff = ({ variant }: StaffProps) => {
    * @returns A Date object representing the parsed date and time.
    */
   const parseDateTime = (bookingDate: string, bookingTime: string): Date => {
-    const [day, month, year] = bookingDate.split("/");
+    const [year, month, day] = bookingDate.split("-");
     const [hours, minutes] = bookingTime.split(":");
 
     return new Date(
@@ -118,6 +118,7 @@ const Staff = ({ variant }: StaffProps) => {
               }}
               variant={variant}
               key={staff.id}
+              size={"default"}
             />
           ))}
         </section>
