@@ -8,6 +8,7 @@ import BookAppointment from "./pages/BookAppointment/BookAppointment";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
+import StaffListBooking from "./pages/StaffListBooking/StaffListBooking";
 import { Clients } from "./pages/Clients/Clients";
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home variant={theme} />} />
           <Route path="/book-appointment" element={<BookAppointment variant={theme}/>} />
+          <Route path={`/bookings/:bookingsId`} element={<StaffListBooking variant={theme}/> }   />  
           {/* Additional routes can be uncommented as needed */}
           {/* <Route path="/resources" element={<Resources />} /> */}
           {/* <Route path="/resources/edit" element={<EditResources />} /> */}

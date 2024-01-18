@@ -5,9 +5,10 @@ import { Staff } from "../../types/StaffNavTypes";
 type StaffCardProps = {
   staff: Staff;
   variant: "light" | "dark";
+  size: "default" | "staffBooking";
 };
 
-const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
+const StaffProfileCard = ({ staff, variant, size }: StaffCardProps) => {
   return (
     <div className={`staffcard staffcard--${variant}`}>
       <ProfilePicture
@@ -16,6 +17,7 @@ const StaffProfileCard = ({ staff, variant }: StaffCardProps) => {
         titleLabel={staff.role}
         editOption={true}
         variant={variant}
+        size={size}
       />
       <div className={`card-container card-container--${variant}`}>
         <div className={`description description--${variant}`}>
