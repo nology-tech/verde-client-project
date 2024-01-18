@@ -25,6 +25,15 @@ const Resources = ({ variant }: ResourcesProps) => {
           dropdownOption={false}
         />
       <div className="resources__container">
+      <div className="resource-card-list__titles">
+        <p>Resource Name</p>
+        <p>Quantity Remaining</p>
+        <p className="resource-card-list__titles--spheadings">Cost Per Unit</p>
+        <p className="resource-card-list__titles--spheadings">Auto-Purchase</p>
+        <p className="resource-card-list__titles--spheadings">
+          Auto-Purchase Level
+        </p>
+      </div>
           <ResourceCardList resources={ResourceCardListHealth} variant={variant} />
         </div>
 

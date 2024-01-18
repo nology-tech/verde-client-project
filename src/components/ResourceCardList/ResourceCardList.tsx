@@ -11,19 +11,12 @@ type ResourceCardListProps = {
 const ResourceCardList = ({ resources, variant }: ResourceCardListProps) => {
   return (
     <div className = {`resource-card-list resource-card-list--${variant}`}>
-      <div className="resource-card-list__titles">
-        <p>Resource Name</p>
-        <p>Quantity Remaining</p>
-        <p className="resource-card-list__titles--spheadings">Cost Per Unit</p>
-        <p className="resource-card-list__titles--spheadings">Auto-Purchase</p>
-        <p className="resource-card-list__titles--spheadings">
-          Auto-Purchase Level
-        </p>
-      </div>
+      
       {/* <h2 className="resource-card-list__title">{staff}</h2> */}
       <div className="resource-card-list__container">
         {resources.map((resource) => (
           <ResourceCard
+            key={resource.id}
             id={resource.id}
             resourceName={resource.resourceName}
             quantityRemaining={resource.quantityRemaining}
