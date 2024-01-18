@@ -16,11 +16,12 @@ const ItemRequestCard = ({
   variant,
   resource
 }: ItemRequestCardProps) => {
-  const [editMode, setEditMode] = useState<boolean>(true);
+  const [editMode, setEditMode] = useState<boolean>(false);
   const [autoRenew, setAutoRenew] = useState<boolean>(resource.autoPurchase === "YES");
   const [resourceName, setResourceName] = useState<string>(resource.resourceName);
   const [staffMember, setStaffMember] = useState<string>(resource.staffName);
   const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(resource.autoPurchaseLevel);
+  const [categoryName, setCategoryName] = useState<string>(resource.)
 
   const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) =>{
     setResourceName(event.currentTarget.value);
