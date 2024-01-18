@@ -1,7 +1,7 @@
 export const ClientProfileList = [
     {clientName: "John Doe",
     role: "Teacher",
-    dob: "24/03/1997",
+    dob: "26/03/1998",
     emailAddress: "john.doe@gmail.com",
     mobileNumber: "61928272888",
     appointmentDate: "07/02/2022",

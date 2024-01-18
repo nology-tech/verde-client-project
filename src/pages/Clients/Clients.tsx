@@ -6,7 +6,7 @@ import QueryBar from "../../components/QueryBar/QueryBar";
 import "./Clients.scss";
 import { ClientProfileList } from "../../data/ClientProfileList";
 import Footer from "../../components/Footer/Footer";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import leftArrowSrc from "../../assets/images/arrow - left.png";
 import rightArrowSrc from "../../assets/images/arrow - right.png";
 import { ClientInfo } from "../../types/ClientProfileTypes";
@@ -20,16 +20,7 @@ export const Clients = ({ variant }: ClientsProps) => {
   const [numOfResults, setNumOfResults] = useState<number>(10);
   const [startingIndex, setStartingIndex] = useState<number>(0);
   const [sortAsc, setSortAsc] = useState<boolean>(true);
-
-  useEffect(() => {
-    const mainElement = document.querySelector('.clients');
-
-    if (mainElement.scrollHeight > mainElement.clientHeight) {
-      console.log('Content is overflowing!');
-    } else {
-      console.log('Content is not overflowing.');
-    }
-  }, []);
+  const [filterAlph, setFilterAlph] = useState<boolean>(true);
 
   const handleNumOfResultsChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setNumOfResults(parseInt(event.currentTarget.value));
@@ -44,28 +35,78 @@ export const Clients = ({ variant }: ClientsProps) => {
     setStartingIndex(startingIndex + numOfResults);
   };
 
+  const handleFilterClick = () => {
+    setFilterAlph(!filterAlph);
+  };
+
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.currentTarget.value.toLowerCase());
   };
 
-  const handleSortClick = () =>{
+  const handleSortClick = () => {
     setSortAsc(!sortAsc);
-  }
+  };
 
-  const sortClients = (clients : ClientInfo[]) =>{
-    const sortedClients = clients.sort((a, b) => a.clientName.localeCompare(b.clientName));
+  /**
+   * Parses a booking date and time and returns a Date object.
+   *
+   * @param bookingDate - The date string in the format "DD/MM/YYYY".
+   * @param bookingTime - The time string in the format "HH:mm".
+   * @returns A Date object representing the parsed date and time.
+   */
+  const parseDateTime = (date: string): Date => {
+    const [day, month, year] = date.split("/");
+
+    return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+  };
+
+  /**
+   * Sorts an array of client information alphabetically based on client names.
+   *
+   * @param {ClientInfo[]} clients - The array of client information to be sorted.
+   * @returns {ClientInfo[]} - The sorted array of client information.
+   */
+  const sortClientsAlphabeticaly = (clients: ClientInfo[]) => {
+    const sortedClients = clients.sort((a, b) =>
+      a.clientName.localeCompare(b.clientName)
+    );
     return sortAsc ? sortedClients : sortedClients.reverse();
-  }
+  };
+
+  /**
+   * Compares two StaffBookings based on their booking date and time in ascending order.
+   *
+   * @param a - The first StaffBookings object to compare.
+   * @param b - The second StaffBookings object to compare.
+   * @returns A number less than 0 if a should come before b, a number greater than 0 if a should come after b,
+   *          and 0 if both objects are considered equal.
+   */
+  const sortDateAndTimeAsc = (a: ClientInfo, b: ClientInfo): number => {
+    const dateA = parseDateTime(a.dob);
+    const dateB = parseDateTime(b.dob);
+
+    return dateA > dateB ? 1 : -1;
+  };
+
+  /**
+   * Sorts an array of StaffBookings based on their booking date and time.
+   *
+   * @param bookings - An array of StaffBookings to be sorted.
+   * @returns A new array of StaffBookings sorted in ascending order by default or descending order if sortAsc is false.
+   */
+  const sortByDOB = (bookings: ClientInfo[]): ClientInfo[] => {
+    const sortedByDateAsc = bookings.sort(sortDateAndTimeAsc);
+    return sortAsc ? sortedByDateAsc : sortedByDateAsc.reverse();
+  };
 
   const filteredClients = ClientProfileList.filter((client) => {
     return client.clientName.toLowerCase().includes(searchTerm);
   });
 
-  const sortedClients = sortClients(filteredClients);
+  const sortedClients = filterAlph
+    ? sortClientsAlphabeticaly(filteredClients)
+    : sortByDOB(filteredClients);
 
-  console.log(startingIndex);
-  console.log(numOfResults);
-  
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -86,6 +127,7 @@ export const Clients = ({ variant }: ClientsProps) => {
             variant={variant}
             handleInput={handleInput}
             sortClick={handleSortClick}
+            filterClick={handleFilterClick}
           />
           <ClientNavList
             clients={sortedClients}
@@ -105,7 +147,10 @@ export const Clients = ({ variant }: ClientsProps) => {
             <option value="20">20</option>
             <option value="30">30</option>
           </select>
-          <p>{startingIndex + 1}-{startingIndex + numOfResults} of {filteredClients.length}</p>
+          <p>
+            {startingIndex + 1}-{startingIndex + numOfResults} of{" "}
+            {filteredClients.length}
+          </p>
           <img
             className="clients__page-results--arrow"
             src={leftArrowSrc}

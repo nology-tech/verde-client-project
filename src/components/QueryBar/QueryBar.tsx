@@ -12,8 +12,8 @@ type QueryBarProps = {
   searchTerm: string;
   hasFilter: boolean;
   handleInput: ChangeEventHandler<HTMLInputElement>;
-  columnViewClick: () => void;
-  gridViewClick: () => void;
+  columnViewClick?: () => void;
+  gridViewClick?: () => void;
   sortClick: () => void;
   filterClick?: () => void;
   variant: "light" | "dark";
