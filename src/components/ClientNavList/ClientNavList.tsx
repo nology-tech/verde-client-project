@@ -29,7 +29,7 @@ const ClientNavList = ({
       cardsHtml.push(
         <Link
           className="clientnavlist__link"
-          to={`/client-details`}
+          to={`/clients/${client.id}`}
           key={client.id}
         >
           <ClientNavCard
