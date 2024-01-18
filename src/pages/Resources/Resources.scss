@@ -62,6 +62,14 @@
             display: none;
         }
         
+        &__container {
+            margin: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        &__items {
+            height: 20%;
+        }
 
         &__titles {
             display: grid;

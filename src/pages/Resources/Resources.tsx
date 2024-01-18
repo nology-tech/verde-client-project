@@ -58,10 +58,19 @@ const Resources = ({ variant }: ResourcesProps) => {
             <p className="resources__titles--spheadings">Auto-Purchase Level</p>
           </div>
           <h3 className="resources__mobile-header">Health Products</h3>
+
+          <section className="resources__items">
           <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList1[0].staffName}</h3>
           <ResourceCardList resources={ResourceCardList1} variant={variant} />
+          </section>
+          <section className="resources__items">
           <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList2[0].staffName}</h3>
           <ResourceCardList resources={ResourceCardList2} variant={variant} />
+          </section>
+          <section className="resources__items">
+          <h3 className={`resources__staff resources__staff--${variant}`}>{ResourceCardList2[0].staffName}</h3>
+          <ResourceCardList resources={ResourceCardList2} variant={variant} />
+          </section>
         </div>
       </main>
       <Footer variant={variant} />
