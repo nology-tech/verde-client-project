@@ -18,22 +18,30 @@ type ResourcesProps = {
 };
 
 const Resources = ({ variant }: ResourcesProps) => {
-  const [sortAscending, setSortAscending] = useState(true);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const toggleSort = () => {
-    setSortAscending((prevSort) => !prevSort);
+  const sortResources = (
+    resources: ResourceCardProps[],
+    order: "asc" | "desc"
+  ) => {
+    return resources.sort((a, b) => {
+      const comparison = a.resourceName.localeCompare(b.resourceName);
+      return order === "asc" ? comparison : -comparison;
+    });
   };
 
-  const sortResources = (resources: ResourceCardProps[]) => {
-    return sortAscending
-      ? resources.sort((a, b) => {
-          const propA = a.resourceName;
-          const propB = b.resourceName;
+  const filteredResources1 = ResourceCardList1.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-          return propA.localeCompare(propB);
-        })
-      : [...resources].reverse();
-  };
+  const filteredResources2 = ResourceCardList2.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredResourcesAdmin = resourceCardListAdmin.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <Layout>
@@ -44,7 +52,6 @@ const Resources = ({ variant }: ResourcesProps) => {
           title="Resources"
           variant={variant}
           buttonOption={true}
-          //onClick={handleButtonClick}
           buttonLabel="+ Create"
           buttonVariant="yellow"
           dropdownOption={false}
@@ -53,21 +60,13 @@ const Resources = ({ variant }: ResourcesProps) => {
         <div className="resources__container">
           <QueryBar
             label={"Health Products"}
-            searchTerm={""}
+            searchTerm={searchTerm}
             hasFilter={true}
-            handleInput={function (): void {
-              console.log("");
-            }}
-            columnViewClick={function (): void {
-              console.log("");
-            }}
-            gridViewClick={function (): void {
-              console.log("");
-            }}
-            sortClick={toggleSort}
-            filterClick={function (): void {
-              console.log("");
-            }}
+            handleInput={(e) => setSearchTerm(e.target.value)}
+            columnViewClick={() => console.log("Column View")}
+            gridViewClick={() => console.log("Grid View")}
+            sortClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+            filterClick={() => console.log("Filter Click")}
             variant={variant}
           />
           <div className="resources__titles">
@@ -84,7 +83,7 @@ const Resources = ({ variant }: ResourcesProps) => {
               {ResourceCardList1[0].staffName}
             </h3>
             <ResourceCardList
-              resources={sortResources(ResourceCardList1)}
+              resources={sortResources(filteredResources1, sortOrder)}
               variant={variant}
             />
           </section>
@@ -93,7 +92,7 @@ const Resources = ({ variant }: ResourcesProps) => {
               {ResourceCardList2[0].staffName}
             </h3>
             <ResourceCardList
-              resources={sortResources(ResourceCardList2)}
+              resources={sortResources(filteredResources2, sortOrder)}
               variant={variant}
             />
           </section>
@@ -103,7 +102,7 @@ const Resources = ({ variant }: ResourcesProps) => {
               Admin
             </h3>
             <ResourceCardList
-              resources={sortResources(resourceCardListAdmin)}
+              resources={sortResources(filteredResourcesAdmin, sortOrder)}
               variant={variant}
             />
           </section>
