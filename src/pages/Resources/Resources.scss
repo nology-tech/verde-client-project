@@ -63,24 +63,19 @@
 }
 
 @media screen and (min-width: $tablet-breakpoint) {
-  .resources {
-    &__staff {
-      font-size: 0.8rem;
-    }
 
-    &__mobile-header {
-      display: none;
-    }
+    .resources {
 
-    &__container {
-      margin: 1rem;
-      margin-top: 1.5rem;
-    }
+        &__container {
+            margin:2rem 1.7rem;
+        }
+        &__staff {
+            font-size: 0.8rem;
+        }
 
-    &__items {
-      display: flex;
-      flex-direction: column;
-    }
+        &__mobile-header {
+            display: none;
+        }
 
     &__titles {
       display: grid;
