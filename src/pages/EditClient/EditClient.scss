@@ -23,4 +23,13 @@
 
 }
 
-
+@media screen and (min-width: $desktop-breakpoint) {
+    .edit-page{
+        &--container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55rem;
+        }
+    }
+}

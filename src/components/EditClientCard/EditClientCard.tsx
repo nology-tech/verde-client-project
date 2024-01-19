@@ -153,8 +153,9 @@ const EditClientCard = ({ variant }: EditClientProps) => {
                 className={`upload__img`}
                 alt="Upload Picture"
               />
-            <button className="edit-client__form--rightside--thumbnail__button">Upload</button>
+            <button className="edit-client__form--rightside--thumbnail__button--mobile">Upload</button>
             </div>
+            <button className="edit-client__form--rightside--thumbnail__button--desktop">Upload</button>
             <div className="edit-client__form--desktop">
             <label>Employer</label>
             <input
