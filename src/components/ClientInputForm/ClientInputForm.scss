@@ -1,0 +1,339 @@
+@use "../../styles/variables" as *;
+@import "../../styles/typography";
+
+.client-input {
+  font-weight: bold;
+
+  &--light{
+  background-color: $clr-white;
+  
+}
+  &--dark {
+    background-color: $clr-secondary-dk;
+}
+
+  &__form {
+    font-size: 0.7rem;
+
+    &--leftside {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-top: 0.6rem;
+      padding-left: 1.2rem;
+      padding-top: 1rem;
+      margin-right: 1.1rem;
+
+      label {
+        display: flex;
+        margin-bottom: 0.3rem;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+
+      }
+
+      input {
+        margin-bottom: 0.6rem;
+        width: 100%;
+        height: 1.9rem;
+        border: 0.03rem solid #e2e8f0;
+        border-radius: 0.2rem;
+        font-family: "Poppins", sans-serif;
+        padding-left: 1rem;
+      }
+    }
+
+    &--rightside {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      margin-right: 1.1rem;
+
+      label {
+        display: flex;
+        margin-bottom: 0.3rem;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+      }
+
+      input {
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+      }
+
+
+
+      .fileUpload {
+        height: 10rem;
+        width: 100%;
+        border: 0.03rem solid #e2e8f0;
+        border-radius: 0.2rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img {
+        height: 2.5rem;
+        width: 2.5rem;
+        align-self: center;
+        }
+      }
+
+      .filePath {
+        font-weight: 400;
+
+      }
+    }
+
+    .upload-button {
+      .button--grey {
+        display: unset;
+        margin-top: 1rem;
+      }
+    }
+     
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    .save-button {
+        display: flex;
+
+      }
+  }
+
+  .buttons-wrapper {
+    padding-bottom: 2rem;
+  }
+
+ 
+  .client-input {
+    &__form {
+     
+      &--leftside {
+
+        .client-input__label {
+
+           &--light {
+            color: $clr-black;
+          }
+      
+          &--dark {
+            color: $clr-white;
+        }
+        } 
+
+        .client-input__input {
+          &--light {
+            color: $clr-black;
+            background-color: $clr-secondary-lt;
+          }
+      
+          &--dark {
+            color: $clr-white;
+            background-color: $clr-secondary-dk;
+        }
+        }
+
+      }
+
+      &--rightside {
+        .client-input__label {
+
+          &--light {
+           color: $clr-black;
+         }
+     
+         &--dark {
+           color: $clr-white;
+       }
+       } 
+        input {
+          background-color: $clr-secondary-dk;
+        }
+
+      }
+    }
+  }
+}
+
+.cancel-button a {
+    display: none;
+  }
+
+.submit-button {
+    display:none;
+  }  
+
+
+
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .client-input {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    background-color: $clr-white;
+    font-weight: normal;
+
+    label {
+      font-weight: bold;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+      justify-content: center;
+      gap:1.5rem;
+      margin-top: 3rem;
+
+      .save-button {
+        display: block;
+        margin-right: 0.5rem;
+      }
+
+      .submit-button {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cancel-button a {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__form {
+      width: 100%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      &--rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-weight: bold;
+
+        input {
+          background-color: $clr-secondary-lt;
+          padding: 5rem 1rem;
+          height: 13rem;
+        }
+
+        label {
+            margin-left: 0.5rem;
+          }
+        .fileUpload {
+          height: 16rem;
+          width: 12rem;
+          &--light {
+            color: $clr-black;
+            background-color: $clr-secondary-lt;
+          }
+      
+          &--dark {
+            color: $clr-white;
+            background-color: $clr-secondary-dk;
+        }
+        }
+        
+          .upload-button {
+            .button--grey {
+              display: unset;
+              margin: 1rem 0.5rem;
+            }
+          }
+
+      }
+
+      &--leftside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 0.6rem;
+        margin-bottom: 2rem;
+
+        input {
+          background-color: $clr-secondary-lt;
+          width: 17rem;
+        }
+
+        label {
+          width: 17rem;
+        }
+      }
+
+      .leftRight-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+
+
+  }
+
+  .client-input--dark {
+
+    .leftRight-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk;
+    }
+
+    .buttons-wrapper {
+      background-color: $clr-primary-dk;
+      border: 2px solid $clr-primary-dk;
+      padding-bottom: 2rem;
+    }
+
+    .client-input {
+      &__form {
+        &--rightside {
+          color: white;
+          
+        }
+
+          background-color: $clr-primary-dk;
+          label {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+
+          input {
+            background-color: $clr-primary-dk;
+            color: white;
+          }
+        }
+
+        &--leftside {
+          background-color: $clr-primary-dk;
+          label {
+            background-color: $clr-primary-dk;
+            color: white;
+          }
+
+          input {
+            background-color: $clr-primary-dk;
+            color: white;
+            border-color: #405066;
+          }
+         
+        }
+      }
+    }
+  }
+}
+}

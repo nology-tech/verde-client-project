@@ -7,9 +7,18 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
   .querybar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr 0.5fr 0.5fr;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
+    margin: 0 0.6rem;
+    padding-right: .8rem;
+
+    &__title {
+      font-size: 1rem;
+      width: 10%;
+      margin-right: 3rem;
+    }
 
     &--dark {
       * {
@@ -18,10 +27,9 @@
     }
 
     &__views {
-      width: max-content;
-      height: max-content;
-      justify-self: flex-start;
-      align-self: center;
+      display: flex;
+      align-items: center;
+      margin-right: 8rem;
 
       &--grid,
       &--column {
@@ -33,26 +41,22 @@
 
     &__sort,
     &__filter {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
       align-items: center;
 
-      &--img {
-        margin-left: auto;
-      }
-
       &--text {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
 
     &__sort {
-      justify-self: flex-end;
+      margin-left: 1rem;
     }
-    &__filter {
-      justify-self: flex-start;
-      display: flex;
-      justify-items: flex-start;
+
+    .search-box__input {
+      height: 1.5rem;
+      width: 8rem;
+      margin-right: 0.2rem;
     }
   }
 }

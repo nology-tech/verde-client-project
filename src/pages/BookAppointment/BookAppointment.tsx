@@ -258,6 +258,7 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
                     label="Cancel"
                     variant="grey"
                     onClick={() => console.log("Cancel button clicked")}
+                    path="/home"
                   />
                 </div>
               </div>
@@ -273,8 +274,8 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
               variant={variant}
             />
           )}
+          <Footer variant={variant} />
         </div>
-        <Footer variant={variant} />
       </div>
     </div>
   );
