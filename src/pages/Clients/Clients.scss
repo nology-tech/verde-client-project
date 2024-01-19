@@ -2,7 +2,6 @@
 @use "../../styles/typography" as *;
 
 
-
 .clients{
 
     &__page-results--arrow {
@@ -28,47 +27,62 @@
 
     &__heading{
         display: flex;
-        width:9rem;
+        width:20rem;
         height:3.5rem;
         align-items: center;
-        font-size: 0.7rem;
-    }
-    &__page-results--index {
-        text-align: center;
+        font-size: smaller;
         color: $clr-accent-grey;
-        margin-right: 0.5rem;
-        width: 6.5rem;
+        margin-left: 1rem;
+    }
+
+    &__page-results--index {
+        color: $clr-accent-grey;
         font-size: 0.7rem;
     }
+}
 
-    &__page-results {
-        margin-left:0.8rem;
-        margin-right: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        label {
-            color: $clr-accent-grey;
-        }
-
-        &--arrow {
-            display:unset;
-            color: $clr-accent-grey;
-            width: 1rem;
-            opacity: 40%;
-            }
-    }
+.clients__page-results {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
 }
 
 #results-per-page {
-    width: 2.5rem;
-    height: 2rem;
-    padding:0.2rem;
-    font-size: 0.5rem;        
-
+    padding:0.3rem;
+    margin: 0 1rem;
 }
+// @media screen and (min-width:$mobile-breakpoint) {
+//     .clients {
 
+//         &__heading{
+//         display: flex;
+//         width:9rem;
+//         height:3.5rem;
+//         align-items: center;
+//         font-size: 0.7rem;
+//     }
+//     &__page-results--index {
+//         text-align: center;
+//         color: $clr-accent-grey;
+//         margin-right: 0.5rem;
+//         width: 6.5rem;
+//         font-size: 0.7rem;
+//     }
+
+//     &__page-results {
+//         margin-left:1rem;
+//         margin-right: 1.5rem;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-around;
+
+//         label {
+//             color: $clr-accent-grey;
+//         }
+//     }
+//     }
+// }
 
 @media screen and (min-width:$desktop-breakpoint) {
     .clients {
