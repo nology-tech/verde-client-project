@@ -7,6 +7,7 @@ import StaffProfileCard from "../../components/StaffProfileCard/StaffProfileCard
 import { useParams } from "react-router-dom";
 import { StaffList } from "../../data/StaffNavList";
 import { StaffBookingsList } from "../../data/StaffBookingsList";
+import "./StaffMobile.scss"
 
 type StaffMobileProps = {
   variant: "light" | "dark";
@@ -40,6 +41,7 @@ const StaffMobile = ({ variant }: StaffMobileProps) => {
           variant={variant}
           size={"default"}
         />
+        <p className={`main-mobile__heading main-mobile__heading--${variant}`}>{filteredStaff[0].name} Bookings</p>
         <StaffBookingList bookings={filteredBookings} variant={variant} />
       </main>
       <Footer variant={variant} />
