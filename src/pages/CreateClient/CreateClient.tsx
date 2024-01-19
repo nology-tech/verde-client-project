@@ -23,7 +23,9 @@ const CreateClient = ({ variant }: CreateClientProps) => {
           buttonVariant={"yellow"}
           dropdownOption={false}
         />
+        <div className="main__container">
        <ClientInputForm variant={variant} />
+       </div>
       </main>
       <Footer variant={variant} />
     </Layout>

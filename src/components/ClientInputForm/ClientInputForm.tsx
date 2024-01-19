@@ -116,6 +116,7 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
                     label="Cancel"
                     variant="grey"
                     onClick={() => console.log("Cancel button clicked")}
+                    path="/clients"
                   />
                 </div>
               </div>
