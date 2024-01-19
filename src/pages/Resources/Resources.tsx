@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Resources.scss";
 import ResourceCardList from "../../components/ResourceCardList/ResourceCardList";
 import Layout from "../../components/Layout/Layout";
@@ -10,12 +11,44 @@ import {
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import QueryBar from "../../components/QueryBar/QueryBar";
+import { ResourceCardProps } from "../../types/ResourceCardTypes";
 
 type ResourcesProps = {
   variant: "light" | "dark";
 };
 
 const Resources = ({ variant }: ResourcesProps) => {
+
+
+  //create a function that sorts the resources by name alphabetically
+
+  const sortResources = (resources: ResourceCardProps[]) => {
+
+    //sort the resources by name alphabetically
+    const sortedResources = resources.sort((a, b) => {
+      if (a.resourceName < b.resourceName) {
+        return -1;
+      }
+      if (a.resourceName > b.resourceName) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return sortedResources;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <Layout>
       <NavBar variant={variant} />
