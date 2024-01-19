@@ -10,6 +10,7 @@ import { ChangeEvent, useState } from "react";
 import leftArrowSrc from "../../assets/images/arrow - left.svg";
 import rightArrowSrc from "../../assets/images/arrow - right.svg";
 import { ClientInfo } from "../../types/ClientProfileTypes";
+import Button from "../../components/Button/Button";
 
 type ClientsProps = {
   variant: "light" | "dark";
@@ -165,6 +166,15 @@ export const Clients = ({ variant }: ClientsProps) => {
             onClick={handleNextPageClick}
           />
         </section>
+        <div>
+                  <Button
+                    label="Create Client"
+                    variant="yellow"
+                    size="large"
+                    path="/clients/create"
+                  />
+                </div>
+
         </section>
   
       </main>
