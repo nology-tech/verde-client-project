@@ -1,3 +1,5 @@
+
+
 export type ResourceCardProps = {
   id: number;
   resourceName: string;
@@ -8,3 +10,14 @@ export type ResourceCardProps = {
   path: string;
   variant?:  "light" | "dark";
 };
+
+export type ResourceCard = {
+  staffName: string,
+  id: number,
+  resourceName: string,
+  quantityRemaining: number,
+  costPerUnit: string,
+  autoPurchase: "YES" | "NO",
+  autoPurchaseLevel: string,
+  path: string
+}

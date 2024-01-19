@@ -118,6 +118,7 @@ export const Clients = ({ variant }: ClientsProps) => {
           buttonLabel="+ Create"
           buttonVariant="yellow"
           dropdownOption={false}
+          path="/clients/create"
         />
         <section className="clients__list">
           <QueryBar
