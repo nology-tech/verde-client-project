@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.main-mobile{
+ width:100%;
+
+    &--light {
+        background-color: $clr-secondary-lt;
+      }
+    
+      &--dark {
+        background-color: $clr-secondary-dk;
+      }
+}
