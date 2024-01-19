@@ -9,7 +9,7 @@
 
   &--light {
     background-color: $clr-white;
-    border: 0.1rem solid $clr-primary-accent;
+    border: $clr-accent-grey 1px solid;
     box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
   }
 
