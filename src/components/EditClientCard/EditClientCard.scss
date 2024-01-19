@@ -142,6 +142,7 @@
 .submit-button {
     display:none;
   }  
+}
 
 .upload__img{
   display: flex;
@@ -150,10 +151,13 @@
 
 
 
-
 @media screen and (min-width: $desktop-breakpoint) {
+  .upload__img{
+    display: none;
+  }
+  
   .edit-client {
-    width: 100vw;
+    width: 90%;
     height: 80%;
     display: flex;
     background-color: $clr-white;
@@ -359,18 +363,17 @@
 
   }
     }
+      
+
+
   }
-  
-.upload__img{
-  display: none;
-}
 
 .profile__img{
   height: 5.2rem;
   width: 5.2rem;
 }
 
-}
+
 .edit-client--dark {
 
   background-color: $clr-primary-dk;
@@ -431,5 +434,4 @@
        
       }
     }
-
-}
+  }
