@@ -18,6 +18,7 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
     const [clientPic, setClientPic] = useState<string>("");
 
     const handleSubmit = () => {
+      console.log("submitted")
     }
 
 
