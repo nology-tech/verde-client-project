@@ -105,6 +105,7 @@ const Staff = ({ variant }: StaffProps) => {
 
         <section className="profile--section">
           <h1 className="profile--section__heading">Overview</h1>
+          <div className="profile--section__cards">
           {filteredStaff.map((staff) => (
             <StaffProfileCard
               staff={{
@@ -121,6 +122,7 @@ const Staff = ({ variant }: StaffProps) => {
               size={"default"}
             />
           ))}
+          </div>
         </section>
         <StaffNavList staff={StaffList} variant={variant} />
         <section className="booking">
