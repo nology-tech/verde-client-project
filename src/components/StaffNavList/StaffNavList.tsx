@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Staff } from "../../types/StaffNavTypes";
 import StaffNavCard from "../StaffNavCard/StaffNavCard";
-import { useParams } from "react-router-dom";
 import "./StaffNavList.scss";
 
 type StaffNavListProps = {
