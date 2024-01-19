@@ -1,0 +1,98 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.item-container {
+  margin: 1rem;
+  border-radius: 0.5rem;
+
+  &--light {
+    background-color: $clr-white;
+    border: 0.1rem solid $clr-primary-accent;
+    box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
+  }
+
+  &--dark {
+    * {
+      color: $clr-white;
+      background-color: $clr-primary-dk;
+      &::placeholder {
+        color: $clr-white;
+      }
+    }
+    .button--small {
+      background-color: $clr-accent-yellow;
+      color: $clr-white;
+      border: none;
+    }
+    background-color: $clr-primary-dk;
+    box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
+  }
+
+  &__input-box-- {
+    border: none;
+    color: $clr-primary-lt;
+    -webkit-appearance: none;
+  }
+
+  &__input-box--edit-mode {
+    border: 0.1rem solid $clr-accent-grey;
+    border-radius: 0;
+  }
+}
+
+.button--small {
+  display: none;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .item {
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+}
+
+.radio-container {
+  display: flex;
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .item-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    input,
+    select {
+      font-size: 1rem;
+    }
+
+    &::placeholder {
+      font-size: 5rem;
+    }
+
+    &__button-mobile {
+      display: none;
+    }
+  }
+
+  .items-container__button-desktop {
+    display: flex;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .button--small {
+    display: unset;
+    justify-self: center;
+  }
+}

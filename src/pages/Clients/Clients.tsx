@@ -118,6 +118,7 @@ export const Clients = ({ variant }: ClientsProps) => {
           buttonLabel="+ Create"
           buttonVariant="yellow"
           dropdownOption={false}
+          path="/clients/create"
         />
         <section className="clients__list">
           <QueryBar
@@ -147,7 +148,7 @@ export const Clients = ({ variant }: ClientsProps) => {
             <option value="20">20</option>
             <option value="30">30</option>
           </select>
-          <p>
+          <p className="clients__page-results--index">
             {startingIndex + 1}-{startingIndex + numOfResults} of{" "}
             {filteredClients.length}
           </p>
