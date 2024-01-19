@@ -10,8 +10,8 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
 import StaffListBooking from "./pages/StaffListBooking/StaffListBooking";
+import CreateClient from "./pages/CreateClient/CreateClient";
 import { ClientProfileList } from "./data/ClientProfileList";
-
 
 
 
