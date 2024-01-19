@@ -49,7 +49,11 @@ const ItemRequestCard = ({
   };
 
   const closeEditMode = () => {
-    isRequestCard ? setShowModal(!showModal) : setEditMode(false);
+    if (!noEmptyInputs()) {
+      alert("Fill in all fields");
+    } else {
+      isRequestCard ? setShowModal(!showModal) : setEditMode(false);
+    }
   };
 
   const openEditMode = () => {
@@ -58,6 +62,10 @@ const ItemRequestCard = ({
 
   const handleRadioClicked = () => {
     setAutoRenew(!autoRenew);
+  };
+
+  const noEmptyInputs = () => {
+    return resourceName && staffMember && autoPurchaseLevel;
   };
 
   const inputClassName = `item-container__input-box item-container__input-box--${
