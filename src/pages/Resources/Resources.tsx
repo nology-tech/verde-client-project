@@ -29,6 +29,7 @@ const Resources = ({ variant }: ResourcesProps) => {
           buttonLabel="+ Create"
           buttonVariant="yellow"
           dropdownOption={false}
+          path="/resources/create"
         />
         <div className="resources__container">
           <QueryBar
