@@ -5,6 +5,8 @@
   margin: 1rem;
   border-radius: 0.5rem;
 
+
+
   &--light {
     background-color: $clr-white;
     border: 0.1rem solid $clr-primary-accent;
@@ -28,12 +30,13 @@
     box-shadow: 0rem 0rem 1.5rem rgba($clr-primary-accent, 0.107);
   }
 
+  
   &__input-box-- {
     border: none;
     color: $clr-primary-lt;
     -webkit-appearance: none;
   }
-
+  
   &__input-box--edit-mode {
     border: 0.1rem solid $clr-accent-grey;
     border-radius: 0;
@@ -42,6 +45,14 @@
 
 .button--small {
   display: none;
+}
+
+.radio-container__text{
+  color: $clr-primary-lt;
+  font-size: 1rem;
+  &--edit-mode{
+    color: $clr-black;
+  }
 }
 
 .div {

@@ -7,33 +7,40 @@ type ItemRequestCardProps = {
   id: number;
   placeholder?: string;
   variant: "light" | "dark";
-  resource: ResourceCard
+  resource: ResourceCard;
 };
 
 const ItemRequestCard = ({
   id,
   placeholder,
   variant,
-  resource
+  resource,
 }: ItemRequestCardProps) => {
   const [editMode, setEditMode] = useState<boolean>(false);
-  const [autoRenew, setAutoRenew] = useState<boolean>(resource.autoPurchase === "YES");
-  const [resourceName, setResourceName] = useState<string>(resource.resourceName);
+  const [autoRenew, setAutoRenew] = useState<boolean>(
+    resource.autoPurchase === "YES"
+  );
+  const [resourceName, setResourceName] = useState<string>(
+    resource.resourceName
+  );
   const [staffMember, setStaffMember] = useState<string>(resource.staffName);
-  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(resource.autoPurchaseLevel);
-  const [categoryName, setCategoryName] = useState<string>(resource.)
+  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(
+    resource.autoPurchaseLevel
+  );
 
-  const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) =>{
+  const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) => {
     setResourceName(event.currentTarget.value);
-  }
+  };
 
-  const handleStaffMemberInput = (event: ChangeEvent<HTMLInputElement>) =>{
+  const handleStaffMemberInput = (event: ChangeEvent<HTMLInputElement>) => {
     setStaffMember(event.currentTarget.value);
-  }
+  };
 
-  const handleAutoPurchaseLevelInput = (event: ChangeEvent<HTMLInputElement>) =>{
+  const handleAutoPurchaseLevelInput = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
     setAutoPurchaseLevel(event.currentTarget.value);
-  } 
+  };
 
   const closeEditMode = () => {
     setEditMode(false);
@@ -54,6 +61,10 @@ const ItemRequestCard = ({
     editMode ? "edit-mode" : ""
   } item-container--${variant}`;
 
+  const pTagClassName = `radio-container__text radio-container__text--${
+    editMode ? "edit-mode" : ""
+  } radio-container--${variant}`;
+
   return (
     <div className="div">
       <div className={containerName}>
@@ -63,13 +74,6 @@ const ItemRequestCard = ({
             <option value="">Health</option>
             <option value="">Stationary</option>
           </select>
-          {/* <input
-            type="text"
-            id={`${id}`}
-            readOnly={!editMode}
-            placeholder={placeholder}
-            className={inputClassName}
-          /> */}
         </div>
         <div className="item">
           <label className={`${id}`}>Staff Member</label>
@@ -81,7 +85,6 @@ const ItemRequestCard = ({
             placeholder={placeholder}
             className={inputClassName}
             onChange={handleStaffMemberInput}
-
           />
         </div>
         <div className="item">
@@ -99,24 +102,24 @@ const ItemRequestCard = ({
         <div className="item">
           <label className={`${id}`}>Auto-purchase</label>
           <div className="radio-container">
-            <p>Yes</p>
+            <p className={pTagClassName}>Yes</p>
             <input
               type="radio"
               name="yes"
               id={`${id}`}
-              readOnly={!editMode}
+              disabled={!editMode}
               checked={autoRenew}
               onClick={handleRadioClicked}
               className="item__radio"
             ></input>
           </div>
           <div className="radio-container">
-            <p>No</p>
+            <p className={pTagClassName}>No</p>
             <input
               type="radio"
               name="no"
               id={`${id}`}
-              readOnly={!editMode}
+              disabled={!editMode}
               checked={!autoRenew}
               onClick={handleRadioClicked}
               className="item__radio"
@@ -144,14 +147,14 @@ const ItemRequestCard = ({
           />
         </div>
       </div>
-        <div className="items-container__button-mobile">
-          <Button
-            onClick={editMode ? closeEditMode : openEditMode}
-            label={editMode ? "Save" : "Edit"}
-            variant={"yellow"}
-            size="large"
-          />
-        </div>
+      <div className="items-container__button-mobile">
+        <Button
+          onClick={editMode ? closeEditMode : openEditMode}
+          label={editMode ? "Save" : "Edit"}
+          variant={"yellow"}
+          size="large"
+        />
+      </div>
     </div>
   );
 };
