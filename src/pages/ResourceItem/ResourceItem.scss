@@ -1,0 +1,14 @@
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.resource-page {
+    width:100vw;
+
+    &--light{
+        background-color: $clr-secondary-lt;
+    }
+
+    &--dark{
+        background-color: $clr-secondary-dk;
+    }
+}

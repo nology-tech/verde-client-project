@@ -21,7 +21,7 @@ const ResourceCardList = ({ resources, variant }: ResourceCardListProps) => {
             costPerUnit={resource.costPerUnit}
             autoPurchase={resource.autoPurchase}
             autoPurchaseLevel={resource.autoPurchaseLevel}
-            path={resource.path}
+            path={resource.path + "/" + resource.id}
             variant={variant}
           />
         ))}
