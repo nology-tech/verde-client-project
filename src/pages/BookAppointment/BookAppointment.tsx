@@ -275,7 +275,6 @@ const BookAppointment = ({variant}: BookAppointmentProps ) => {
             />
           )}
           <Footer variant={variant} />
-
         </div>
       </div>
     </div>
