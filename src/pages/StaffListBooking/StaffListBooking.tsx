@@ -21,7 +21,7 @@ const StaffListBooking = ({ variant }: StaffBookingListProps) => {
   return (
     <Layout>
     <NavBar variant={variant} />
-      <main className="booking-main">
+      <main className={`booking-main booking-main--${variant}`}>
         <Header
           title={"Client Booking"}
           variant={variant}

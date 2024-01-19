@@ -1,6 +1,9 @@
 @use "../../styles/variables" as *; 
 @use "../../styles/typography" as *;
 
-.booking-main{
+.booking-main {
     width: 100%;
+    &--dark {
+    background-color: $clr-secondary-dk;
+    }
 }
