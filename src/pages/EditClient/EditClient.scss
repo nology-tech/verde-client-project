@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.edit-page{
+    background-color:$clr-secondary-lt;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &--dark{
+        background-color: $clr-secondary-dk;
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &--container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 44.5rem;
+    }
+
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .edit-page{
+        &--container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55rem;
+            width: 100%;
+        }
+    }
+}
+

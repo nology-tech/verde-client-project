@@ -1,0 +1,27 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.main-mobile {
+  width: 100%;
+
+  &__heading {
+    padding: 1.5rem;
+    text-decoration: underline;
+    
+    &--light {
+      color: $clr-black;
+    }
+
+    &--dark {
+      color: $clr-white;
+    }
+  }
+
+  &--light {
+    background-color: $clr-secondary-lt;
+  }
+
+  &--dark {
+    background-color: $clr-secondary-dk;
+  }
+}
