@@ -17,7 +17,7 @@ const ClientActive = ({ variant, clientInfoList }: ClientActiveProps) => {
 
   const { clientId } = useParams()
   
-  const filteredclientInfo = clientInfoList(client => 
+  const filteredclientInfo = clientInfoList.filter(client => 
     client.id === Number(clientId))
 
   const clientInfo = filteredclientInfo[0]
