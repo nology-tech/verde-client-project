@@ -7,15 +7,7 @@
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-
-
-    &__container{
-      padding-left: 1.5rem;
-      width: 65vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
+  overflow-y: scroll;
 
   &--light {
     background-color: $clr-secondary-lt;
@@ -23,5 +15,17 @@
 
   &--dark {
     background-color: $clr-secondary-dk;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .main {
+    &__container {
+      padding-left: 1.5rem;
+      width: 65vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
   }
 }
