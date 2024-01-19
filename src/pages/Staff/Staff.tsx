@@ -106,22 +106,22 @@ const Staff = ({ variant }: StaffProps) => {
         <section className="profile--section">
           <h1 className="profile--section__heading">Overview</h1>
           <div className="profile--section__cards">
-          {filteredStaff.map((staff) => (
-            <StaffProfileCard
-              staff={{
-                id: Number(`${staff.id}`),
-                name: `${staff.name}`,
-                start: `${staff.start}`,
-                courseEnd: `${staff.courseEnd}`,
-                manager: `${staff.manager}`,
-                role: `${staff.role}`,
-                description: `${staff.description}`,
-              }}
-              variant={variant}
-              key={staff.id}
-              size={"default"}
-            />
-          ))}
+            {filteredStaff.map((staff) => (
+              <StaffProfileCard
+                staff={{
+                  id: Number(`${staff.id}`),
+                  name: `${staff.name}`,
+                  start: `${staff.start}`,
+                  courseEnd: `${staff.courseEnd}`,
+                  manager: `${staff.manager}`,
+                  role: `${staff.role}`,
+                  description: `${staff.description}`,
+                }}
+                variant={variant}
+                key={staff.id}
+                size={"default"}
+              />
+            ))}
           </div>
         </section>
         <StaffNavList staff={StaffList} variant={variant} />
