@@ -1,0 +1,437 @@
+@use "../../styles/variables" as *;
+@import "../../styles/typography";
+
+.edit-client {
+  font-weight: bold;
+  background-color: $clr-white;
+  display: flex;
+  width: 90%;
+  height: 43rem;
+  align-items: center;
+
+  &__form {
+    font-size: 0.7rem;
+    width: 100%;
+    height: 43rem;
+    display: flex;
+    justify-content: center;
+
+    
+    &--image{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+
+      &__pic{
+        height: 7rem;
+      }
+
+      &__title{
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+
+    &--mobile{
+
+      &__button{
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+
+    &--desktop{
+      display: none;
+    }
+
+    &--leftside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 0 0.7rem;
+
+      &--dropdown{
+        display: none;
+      }
+      label {
+        color: black;
+        display: flex;
+        margin-bottom: 0.3rem;
+        width: 100%;
+      }
+
+      input {
+        margin-bottom: 0.6rem;
+        width: 16.5rem;
+        height: 1.9rem;
+        border: 0.03rem solid #e2e8f0;
+        border-radius: 0.2rem;
+        padding-left: 1rem;
+      }
+    }
+
+    &--rightside {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 0 0.7rem;
+
+
+      &--delete{
+        display: none;
+      }
+
+      &--profile{
+        display: none;
+      }
+
+      &--thumbnail{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e8f0;
+        width: 16.5rem;
+        height: 7rem;
+        justify-content: center;
+        align-items: center;
+
+        &__button{
+          &--mobile{
+          margin: 0.5rem 0;
+          height: 2rem;
+          width: 6rem;
+          border: none;
+          border-radius: 0.4rem;
+          font-size: 0.7rem;
+        }
+
+        &--desktop{
+        display: none;
+        }
+      }
+    }
+
+      label {
+        color: black;
+        display: flex;
+        margin-bottom: 0.3rem;
+        width: 100%;
+      }
+
+      input {
+        margin-bottom: 0.6rem;
+        width: 100;
+        border: 0.03rem solid #e2e8f0;
+        height: 1.9rem;
+        border-radius: 0.2rem;
+        padding-left: 1rem;
+      }
+
+      &__buttons{
+        display: none;
+      }
+
+    }   
+  }
+
+.cancel-button a {
+    display: none;
+  }
+
+.submit-button {
+    display:none;
+  }  
+}
+
+.upload__img{
+  display: flex;
+  height: 1.5rem;
+}
+
+
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .upload__img{
+    display: none;
+  }
+  
+  .edit-client {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    background-color: $clr-white;
+    font-weight: normal;
+    align-items: center;
+    justify-items: center;
+
+    label {
+      font-weight: bold;
+    }
+
+    &__form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &--image{
+        display: none;
+      }
+
+      &--mobile{
+
+        &__button{
+          display: none;
+        }
+      }
+
+      
+      &--desktop{
+        display: unset;
+      }
+
+
+      &--rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        height: 100%;
+        width:15rem;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        font-size: 0.7rem;
+
+        &--delete{
+          display: unset;
+          background-color: $clr-secondary-lt;
+          border: none;
+          outline: none;
+        }
+
+        &--thumbnail{
+          display: flex;
+          flex-direction: column;
+          border: 1px solid #e2e8f0;
+          width: 14.5rem;
+          height: 10rem;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+
+  
+          &__button{
+
+            &--mobile{
+              display: none;
+            }
+
+            &--desktop{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-start;
+            width: 8rem;
+            height: 3rem;
+            padding: 1rem 0;
+            border: none;
+            border-radius: 0.4rem;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+          }
+          }
+        }
+
+        &--delete{
+          display: unset;
+        }
+
+        &--profile{
+          border: none;
+          width: 13.5rem;
+          height: 10rem;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &--thumbnail{
+          
+          &__button{
+          margin: 0.5rem 0;
+          height: 2rem;
+          width: 5rem;
+          border: none;
+          border-radius: 0.4rem;
+          font-size: 0.7rem;
+        }
+        }
+
+        
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap:0.5rem;
+      width: 13.5rem;
+
+      .submit-button {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cancel-button a {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+
+        input {
+          width: 14.5rem;
+          height: 3rem;
+        }
+
+        label {
+            margin-left: 0.5rem;
+          }
+
+      &--delete{
+        border: none;
+        background-color: transparent;
+        font-weight: 600;
+        color: red;
+        text-decoration: underline;
+        font-size: 0.7rem;
+        padding-top: 0.3rem;
+        padding-left: 0.3rem;;
+      }
+
+      }
+
+      &--leftside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.7rem;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 15rem;
+        font-weight: 600;
+        
+        
+      &--dropdown{
+        display: unset;
+      }
+
+        input {
+          width: 14.5rem;
+          height: 3rem;
+          padding: 1rem 0;
+        }
+
+        label {
+          width: 14.5rem;
+          margin-bottom: 0.6rem;
+        }
+
+        select {
+          width: 14.5rem;
+          height: 3rem;
+          margin-bottom: 0.6rem;
+          border: 0.03rem solid #e2e8f0;
+          border-radius: 0.2rem;
+          padding-left: 1rem;
+        }
+      }
+
+      .leftRight-wrapper {
+        width: 100%;
+        height: 40rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+
+
+  }
+    }
+      
+
+
+  }
+
+.profile__img{
+  height: 5.2rem;
+  width: 5.2rem;
+}
+
+
+.edit-client--dark {
+
+  background-color: $clr-primary-dk;
+
+ 
+  h1 {
+    color:$clr-white;
+  }
+
+  select{
+    background-color: $clr-primary-dk;
+    color: $clr-white;
+  }
+
+  .leftRight-wrapper--dark {
+    background-color: $clr-primary-dk;
+    border: 2px solid $clr-primary-dk;
+  }
+
+  .buttons-wrapper {
+    background-color: $clr-primary-dk;
+    border: 2px solid $clr-primary-dk;
+    padding-bottom: 2rem;
+  }
+
+  .edit-client {
+    &__form {
+      &--rightside {
+        color: white;
+        
+      }
+
+        background-color: $clr-primary-dk;
+        label {
+          background-color: $clr-primary-dk;
+          color: white;
+          border-color: #405066;
+        }
+
+        input {
+          background-color: $clr-primary-dk;
+          color: white;
+        }
+      }
+
+      &--leftside {
+        background-color: $clr-primary-dk;
+        label {
+          background-color: $clr-primary-dk;
+          color: white;
+        }
+
+        input {
+          background-color: $clr-primary-dk;
+          color: white;
+          border-color: #405066;
+        }
+       
+      }
+    }
+  }

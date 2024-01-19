@@ -10,10 +10,8 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
 import StaffListBooking from "./pages/StaffListBooking/StaffListBooking";
+import EditClient from "./pages/EditClient/EditClient";
 import { ClientProfileList } from "./data/ClientProfileList";
-
-
-
 import StaffEdit from "./pages/StaffEdit/StaffEdit";
 import { Clients } from "./pages/Clients/Clients";
 import ClientActive from "./pages/ClientActive/ClientActive";
@@ -69,6 +67,9 @@ const App = () => {
           <Route path="/resources/create" element={<RequestResources variant={theme} />} />
           <Route path="/resources/:resourceId" element={<ResourceItem variant={theme} />} />
           {<Route path="/clients" element={<Clients variant={theme}/>} />}
+          {/* <Route path="/clients/create" element={<CreateClient />} /> */}
+          <Route path="/clients/:clientId" element={<EditClient variant={theme} />} /> 
+          {/* <Route path="/clients/:clientId" element={<ClientProfile />} /> */}
           <Route path="/staff/:staffId" element={<StaffMobile variant={theme}/>}/>
           {<Route path="/clients/create" element={<CreateClient variant={theme} />} />}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
