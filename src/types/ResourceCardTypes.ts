@@ -13,6 +13,7 @@ export type ResourceCardProps = {
 
 export type ResourceCard = {
   staffName: string,
+  category:string;
   id: number,
   resourceName: string,
   quantityRemaining: number,

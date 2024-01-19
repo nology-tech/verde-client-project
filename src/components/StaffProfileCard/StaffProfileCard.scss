@@ -1,10 +1,6 @@
 @use "../../styles/variables" as *;
 
 .staffcard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   &--dark {
     background-color: $clr-secondary-dk;
   }
@@ -12,14 +8,10 @@
 .card-container {
   border-radius: 0.5rem;
   width: 18.4rem;
-  display: flex;
-  flex-direction: column;
 
   .description {
-    display: flex;
-    flex-direction: column;
     background-color: $clr-white;
-    padding: 1.25rem;
+
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -99,28 +91,32 @@
   .staffcard {
     display: flex;
     flex-direction: row;
-    height: 16rem;
   }
 
   .card-container {
-    width: 13rem;
+    width: 20rem;
     height: 15rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
 
     .description {
+      justify-content: center;
       text-align: start;
       padding: 0.625rem;
-      margin-right: 1.5rem;
+
       border-bottom: 0rem;
+
+      h2 {
+        margin-bottom: 0.5rem;
+      }
     }
 
     .information {
       gap: 0rem;
-      padding: 0.625rem;
 
       &__content {
-        padding-right: 0.625rem;
+        text-align: center;
       }
     }
   }
