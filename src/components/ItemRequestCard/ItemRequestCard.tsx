@@ -2,12 +2,14 @@ import { ChangeEvent, useState } from "react";
 import "./ItemRequestCard.scss";
 import Button from "../Button/Button";
 import { ResourceCard } from "../../types/ResourceCardTypes";
+import Modal from "../Modal/Modal";
 
 type ItemRequestCardProps = {
   id: number;
   placeholder?: string;
   variant: "light" | "dark";
   resource: ResourceCard;
+  isRequestCard: boolean;
 };
 
 const ItemRequestCard = ({
@@ -15,18 +17,14 @@ const ItemRequestCard = ({
   placeholder,
   variant,
   resource,
+  isRequestCard
 }: ItemRequestCardProps) => {
-  const [editMode, setEditMode] = useState<boolean>(false);
-  const [autoRenew, setAutoRenew] = useState<boolean>(
-    resource.autoPurchase === "YES"
-  );
-  const [resourceName, setResourceName] = useState<string>(
-    resource.resourceName
-  );
-  const [staffMember, setStaffMember] = useState<string>(resource.staffName);
-  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(
-    resource.autoPurchaseLevel
-  );
+  const [editMode, setEditMode] = useState<boolean>(isRequestCard);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [autoRenew, setAutoRenew] = useState<boolean>(resource.autoPurchase === "YES");
+  const [resourceName, setResourceName] = useState<string>(isRequestCard ? "" : resource.resourceName);
+  const [staffMember, setStaffMember] = useState<string>(isRequestCard ? "" : resource.staffName);
+  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(isRequestCard ? "" : resource.autoPurchaseLevel);
 
   const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) => {
     setResourceName(event.currentTarget.value);
@@ -43,8 +41,9 @@ const ItemRequestCard = ({
   };
 
   const closeEditMode = () => {
-    setEditMode(false);
+    isRequestCard ? setShowModal(!showModal) : setEditMode(false);
   };
+
   const openEditMode = () => {
     setEditMode(true);
   };
@@ -64,6 +63,8 @@ const ItemRequestCard = ({
   const pTagClassName = `radio-container__text radio-container__text--${
     editMode ? "edit-mode" : ""
   } radio-container--${variant}`;
+
+  const modalButton : React.ReactNode[] = [<Button label="Home" variant="yellow" path="/home"/>];
 
   return (
     <div className="div">
