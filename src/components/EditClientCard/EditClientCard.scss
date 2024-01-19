@@ -2,28 +2,58 @@
 @import "../../styles/typography";
 
 .edit-client {
-  //background-color: $clr-white;
   font-weight: bold;
-  // width: 57rem;
-  // height:41rem;
   background-color: $clr-white;
   display: flex;
   width: 90%;
-  height: 90%;
+  height: 43rem;
   align-items: center;
+
 
   &__form {
     font-size: 0.7rem;
+    width: 100%;
+    height: 43rem;
+
+    
+    &--image{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+
+      &__pic{
+        height: 7rem;
+      }
+
+      &__title{
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+
+    &--mobile{
+
+      &__button{
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+
+    &--desktop{
+      display: none;
+    }
 
     &--leftside {
       display: flex;
       flex-direction: column;
-      align-items: start;
-      margin-top: 0.6rem;
-      padding-left: 0.8rem;
-      padding-top: 1rem;
-      margin-right: 1.1rem;
+      justify-content: space-evenly;
+      padding: 0 0.7rem;
 
+      &--dropdown{
+        display: none;
+      }
       label {
         color: black;
         display: flex;
@@ -34,7 +64,7 @@
 
       input {
         margin-bottom: 0.6rem;
-        width: 100%;
+        width: 19rem;
         height: 1.9rem;
         border: 0.03rem solid #e2e8f0;
         border-radius: 0.2rem;
@@ -47,9 +77,35 @@
       display: flex;
       flex-direction: column;
       align-items: start;
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      margin-right: 1.1rem;
+      padding: 0 0.7rem;
+
+
+      &--delete{
+        display: none;
+      }
+
+      &--profile{
+        display: none;
+      }
+
+      &--thumbnail{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e8f0;
+        width: 19rem;
+        height: 7rem;
+        justify-content: center;
+        align-items: center;
+
+        &__button{
+          margin: 0.5rem 0;
+          height: 2rem;
+          width: 6rem;
+          border: none;
+          border-radius: 0.4rem;
+          font-size: 0.7rem;
+        }
+      }
 
       label {
         color: black;
@@ -69,26 +125,14 @@
         padding-left: 1rem;
       }
 
-    }
-     
-
-  &__buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-
-    .save-button {
-        display: flex;
-
+      &__buttons{
+        display: none;
       }
 
-     
-
+    }   
   }
 
-}
+
 
 .edit-client--dark {
   background-color: $clr-secondary-dk;
@@ -134,6 +178,11 @@
     display:none;
   }  
 
+.upload__img{
+  display: flex;
+  height: 1.5rem;
+}
+
 
 
 
@@ -156,6 +205,23 @@
       flex-direction: column;
       justify-content: center;
 
+      &--image{
+        display: none;
+      }
+
+      &--mobile{
+
+        &__button{
+          display: none;
+        }
+      }
+
+      
+      &--desktop{
+        display: unset;
+      }
+
+
       &--rightside {
         display: flex;
         flex-direction: column;
@@ -166,6 +232,28 @@
         margin: 0;
         padding: 0;
 
+        &--thumbnail{
+          display: flex;
+          flex-direction: column;
+          border: 1px solid #e2e8f0;
+          width: 13.5rem;
+          height: 7rem;
+          justify-content: center;
+          align-items: center;
+  
+          &__button{
+            margin: 0.5rem 0;
+            height: 2rem;
+            width: 6rem;
+            border: none;
+            border-radius: 0.4rem;
+            font-size: 0.7rem;
+          }
+        }
+
+        &--delete{
+          display: unset;
+        }
 
         &--profile{
           border: 2px solid $clr-secondary-lt;
@@ -176,13 +264,16 @@
           align-items: center;
         }
 
-        &--button{
+        &--thumbnail{
+          
+          &__button{
           margin: 0.5rem 0;
           height: 2rem;
           width: 5rem;
           border: none;
           border-radius: 0.4rem;
           font-size: 0.7rem;
+        }
         }
 
         
@@ -238,6 +329,11 @@
         padding: 0;
         height: 100%;
         width: 15rem;
+        
+        
+      &--dropdown{
+        display: unset;
+      }
 
         input {
           background-color: $clr-secondary-lt;
@@ -320,5 +416,11 @@
       }
     }
   }
+  
+.upload__img{
+  display: none;
 }
+}
+
+
 }

@@ -5,6 +5,7 @@ import { ClientProfileList } from "../../data/ClientProfileList";
 import { useNavigate, useParams } from "react-router-dom";
 import profilePicture from "../../assets/images/profile-picture.png";
 import Modal from "../Modal/Modal";
+import Upload from "../../assets/images/upload-image.svg";
 
 type EditClientProps = {
   variant: "dark" | "light";
@@ -21,8 +22,7 @@ const EditClientCard = ({ variant }: EditClientProps) => {
 /*   const [clientPic, setClientPic] = useState<string>(""); */
   const [employed, setEmployed] = useState<string>("");
   const { clientId } = useParams();
-  const [modal, setModal] = useState<boolean>(false);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false); 
   const [saveModal, setSaveModal] = useState<boolean>(false)
 
   const navigate = useNavigate()
@@ -45,23 +45,6 @@ const EditClientCard = ({ variant }: EditClientProps) => {
       setEmployed("");
     }
   }, [clientId, client]);
-
-  const handleSubmit = () => {
-    if (
-      !employer ||
-      !role ||
-      !firstName ||
-      !lastName ||
-      !emailAddress ||
-      !mobileNumber ||
-      // !employed ||
-      !dob
-    ) {
-      console.log("Please fill in all fields");
-      console.log(employer, role, firstName, lastName, emailAddress, mobileNumber, employed, dob)
-      return;
-    }
-  };
 
   // const handleDeleteUser = () => {
   //   const index = ClientProfileList.indexOf(client);
@@ -91,10 +74,17 @@ const EditClientCard = ({ variant }: EditClientProps) => {
 
   return (
     <div className={`edit-client edit-client--${variant}`}>
-
       {!modal  && (
       <form className="edit-client__form">
         <div className="leftRight-wrapper">
+        <div className={`edit-client__form--image`}>
+              <img
+                src={profilePicture}
+                className={`edit-client__form--image__pic edit-client__form--image__pic--${variant}`}
+                alt="Profile Picture"
+              />
+              <h1 className="edit-client__form--image__title">{`${firstName} ${lastName}` }</h1>
+            </div>
           <div className="edit-client__form--leftside">
             <label>First Name</label>
             <input
@@ -131,6 +121,7 @@ const EditClientCard = ({ variant }: EditClientProps) => {
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
             ></input>
+            <div className="edit-client__form--leftside--dropdown">
             <label>Employed Post Course</label>
                 <select
                   name="employed"
@@ -144,10 +135,12 @@ const EditClientCard = ({ variant }: EditClientProps) => {
                     NO
                   </option>
                 </select> 
+                </div>
           </div>
 
           <div className="edit-client__form--rightside">
-            <label>Client Thumbnail</label>
+          <label>Client Thumbnail</label>
+            <div className="edit-client__form--rightside--thumbnail">
             <div className={`edit-client__form--rightside--profile`}>
               <img
                 src={profilePicture}
@@ -155,7 +148,14 @@ const EditClientCard = ({ variant }: EditClientProps) => {
                 alt="Profile Picture"
               />
             </div>
-            <button className="edit-client__form--rightside--button">Upload</button>
+              <img
+                src={Upload}
+                className={`upload__img`}
+                alt="Upload Picture"
+              />
+            <button className="edit-client__form--rightside--thumbnail__button">Upload</button>
+            </div>
+            <div className="edit-client__form--desktop">
             <label>Employer</label>
             <input
               type="text"
@@ -170,6 +170,7 @@ const EditClientCard = ({ variant }: EditClientProps) => {
               value={role}
               onChange={(e) => setRole(e.target.value)}
             ></input>
+            </div>
           <div className="edit-client__form--rightside__buttons">
           <div className="cancel-button">
               <Button
@@ -183,13 +184,16 @@ const EditClientCard = ({ variant }: EditClientProps) => {
               <Button label="Save" variant="yellow" onClick={handleSaveButton} />
             </div>
           </div>
+          <div className="edit-client__form--mobile__button">
+          <Button label="Submit" variant="yellow" onClick={handleSaveButton} size="extra-large" />
+          </div>
           <button className="edit-client__form--rightside--delete" onClick={handleDeleteClicked}>Delete User</button>
         </div>
             </div>
       </form>
-)};
+)}
 
-{modal &&(
+{saveModal &&(
   <Modal title={"Client Saved!"} buttons={[<Button label={"Back"} variant={"yellow"} onClick={handleSaveButton} />]} variant={variant}/> 
 )}
 
