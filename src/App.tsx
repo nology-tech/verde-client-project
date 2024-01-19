@@ -20,6 +20,7 @@ import ClientActive from "./pages/ClientActive/ClientActive";
 import ResourceItem from "./pages/ResourceItem/ResourceItem";
 import RequestResources from "./pages/RequestResource/RequestResource";
 import StaffMobile from "./pages/StaffMobile/StaffMobile";
+import CreateClient from "./pages/CreateClient/CreateClient";
 
 const App = () => {
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const App = () => {
           <Route path="/resources/:resourceId" element={<ResourceItem variant={theme} />} />
           {<Route path="/clients" element={<Clients variant={theme}/>} />}
           <Route path="/staff/:staffId" element={<StaffMobile variant={theme}/>}/>
-          {/* <Route path="/clients/create" element={<CreateClient />} /> */}
+          {<Route path="/clients/create" element={<CreateClient variant={theme} />} />}
           {/* <Route path="/clients/edit" element={<EditClient />} /> */}
           <Route path="/clients/:clientId" element={<ClientActive variant={theme} clientInfoList={ClientProfileList} />} />
           <Route path="/staff" element={<Staff variant={theme} />} />
