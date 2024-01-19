@@ -19,7 +19,6 @@ const EditClientCard = ({ variant }: EditClientProps) => {
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [employer, setEmployer] = useState<string>("");
   const [role, setRole] = useState<string>("");
-/*   const [clientPic, setClientPic] = useState<string>(""); */
   const [employed, setEmployed] = useState<string>("");
   const { clientId } = useParams();
   const [modal, setModal] = useState<boolean>(false); 
@@ -46,15 +45,8 @@ const EditClientCard = ({ variant }: EditClientProps) => {
     }
   }, [clientId, client]);
 
-  // const handleDeleteUser = () => {
-  //   const index = ClientProfileList.indexOf(client);
-  //   ClientProfileList.splice(index)
-  // };
-
   const handleDeleteClicked = () => {
     console.log("confirmed");
-    // const index = ClientProfileList.indexOf(client);
-    // ClientProfileList.splice(index)
     console.log(ClientProfileList);
     setModal(!modal);
   }

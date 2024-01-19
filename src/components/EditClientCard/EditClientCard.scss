@@ -9,13 +9,6 @@
   height: 33rem;
   align-items: center;
 
-  .leftRight-wrapper--dark {
-    background-color: $clr-primary-dk;
-    border: 2px solid $clr-primary-dk;
-
-  }
-
-
   &__form {
     font-size: 0.7rem;
     width: 100%;
@@ -246,12 +239,9 @@
           }
         }
 
-        // &--delete{
-        //   display: unset;
-        //   background-color: transparent;
-        //   border: none;
-        //   outline: none;
-        // }
+        &--delete{
+          display: unset;
+        }
 
         &--profile{
           border: none;
