@@ -8,7 +8,7 @@
     border-radius: 0.3rem;
     justify-content: center;
     align-items: center;
-    margin-top:1rem; 
+    margin-top:1rem;
 
     &__info, &__sp {
         display:none;
@@ -16,7 +16,9 @@
 
     &--light {
         background-color: $clr-white;
-        border: solid 0.12rem $clr-accent-grey;
+        border-radius: 0.5rem;
+        border: 1px solid $clr-accent-grey;
+        height: 3rem;
     }
 
     &--dark {
@@ -31,16 +33,11 @@
         &--dark {
             color: $clr-white;
         }
-      
-
     }
 
   &__arrow {
     width: 1.7rem;
     height: auto;
-
-    
-
   }
 
 
@@ -72,8 +69,6 @@
         &__sp{
             text-align: center;
         }
-
-    
     }
 
 }
