@@ -4,6 +4,9 @@ import Header from "../../components/Header/Header";
 import Layout from "../../components/Layout/Layout";
 import NavBar from "../../components/NavBar/NavBar";
 import ClientInputForm from "../../components/ClientInputForm/ClientInputForm";
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
+import Button from "../../components/Button/Button";
 
 type CreateClientProps = {
   variant: "light" | "dark";
@@ -11,6 +14,20 @@ type CreateClientProps = {
 };
 
 const CreateClient = ({ variant }: CreateClientProps) => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+
+  const handleButtonClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const modalButton = [
+    <Button
+      label={"Return to clients"}
+      variant={"yellow"}
+      path="/clients"
+    />,
+  ];
+
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -24,8 +41,13 @@ const CreateClient = ({ variant }: CreateClientProps) => {
           dropdownOption={false}
         />
         <div className="main__container">
-       <ClientInputForm variant={variant} />
+       <ClientInputForm variant={variant} onClick={handleButtonClick}/>
        </div>
+       <div>
+          {isClicked && (
+            <Modal title={"You have successfully added a client!"} buttons={modalButton} variant={variant} />
+          )}
+        </div>
       </main>
       <Footer variant={variant} />
     </Layout>

@@ -6,10 +6,11 @@ import uploadImage from "../../assets/images/upload-image.png"
 
 type ClientInputFormProps = {
     variant: "dark" | "light";
+    onClick: () => void;
   };
     
 
-const ClientInputForm = ({variant}:ClientInputFormProps) => {
+const ClientInputForm = ({variant, onClick}:ClientInputFormProps) => {
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [dob, setDob] = useState<string>("");
@@ -17,8 +18,8 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
     const [mobileNumber, setMobileNumber] = useState<string>("");
     const [clientPic, setClientPic] = useState<string>("");
 
-    const handleSubmit = () => {
-      console.log("submitted")
+    const handleUpload = () => {
+      console.log("Photo Uploaded")
     }
 
 
@@ -87,7 +88,7 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
                     label="Upload"
                     variant="grey"
                     size="large"
-                    onClick={handleSubmit}
+                    onClick={handleUpload}
                   />
                 </div></label>
                 <label className="filePath" htmlFor="choose-file">{clientPic.slice(12)}</label>
@@ -101,14 +102,14 @@ const ClientInputForm = ({variant}:ClientInputFormProps) => {
                     label="Save"
                     variant="yellow"
                     size="large"
-                    onClick={handleSubmit}
+                    onClick={onClick}
                   />
                 </div>
                 <div className="submit-button">
                   <Button
                     label="Submit"
                     variant="yellow"
-                    onClick={handleSubmit}
+                    onClick={onClick}
                   />
                 </div>
                 <div className="cancel-button">
