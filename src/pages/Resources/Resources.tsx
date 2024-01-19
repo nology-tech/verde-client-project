@@ -18,37 +18,23 @@ type ResourcesProps = {
 };
 
 const Resources = ({ variant }: ResourcesProps) => {
+  const [sortAscending, setSortAscending] = useState(true);
 
-
-  //create a function that sorts the resources by name alphabetically
+  const toggleSort = () => {
+    setSortAscending((prevSort) => !prevSort);
+  };
 
   const sortResources = (resources: ResourceCardProps[]) => {
+    return sortAscending
+      ? resources.sort((a, b) => {
+          const propA = a.resourceName;
+          const propB = b.resourceName;
 
-    //sort the resources by name alphabetically
-    const sortedResources = resources.sort((a, b) => {
-      if (a.resourceName < b.resourceName) {
-        return -1;
-      }
-      if (a.resourceName > b.resourceName) {
-        return 1;
-      }
-      return 0;
-    });
+          return propA.localeCompare(propB);
+        })
+      : [...resources].reverse();
+  };
 
-    return sortedResources;
-  }
-
-
-
-
-
-
-
-
-
-
-
-  
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -78,9 +64,7 @@ const Resources = ({ variant }: ResourcesProps) => {
             gridViewClick={function (): void {
               console.log("");
             }}
-            sortClick={function (): void {
-              console.log("");
-            }}
+            sortClick={toggleSort}
             filterClick={function (): void {
               console.log("");
             }}
@@ -99,13 +83,19 @@ const Resources = ({ variant }: ResourcesProps) => {
             <h3 className={`resources__staff resources__staff--${variant}`}>
               {ResourceCardList1[0].staffName}
             </h3>
-            <ResourceCardList resources={ResourceCardList1} variant={variant} />
+            <ResourceCardList
+              resources={sortResources(ResourceCardList1)}
+              variant={variant}
+            />
           </section>
           <section className="resources__items">
             <h3 className={`resources__staff resources__staff--${variant}`}>
               {ResourceCardList2[0].staffName}
             </h3>
-            <ResourceCardList resources={ResourceCardList2} variant={variant} />
+            <ResourceCardList
+              resources={sortResources(ResourceCardList2)}
+              variant={variant}
+            />
           </section>
 
           <section className="resources__items">
@@ -113,7 +103,7 @@ const Resources = ({ variant }: ResourcesProps) => {
               Admin
             </h3>
             <ResourceCardList
-              resources={resourceCardListAdmin}
+              resources={sortResources(resourceCardListAdmin)}
               variant={variant}
             />
           </section>
