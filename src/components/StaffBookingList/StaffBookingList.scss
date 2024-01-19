@@ -32,9 +32,9 @@
 @media screen and (min-width: $desktop-breakpoint) {
   .booking-list {
     &__container {
-      overflow-y: scroll;
-      height: 18rem;
+      height: 8rem;
       padding: 0.5rem;
+      overflow-y: scroll !important;
     }
 
     &__titles {
@@ -45,6 +45,7 @@
       &--spheadings {
         margin-left: 1rem;
       }
+
       p {
         font-size: 0.6rem;
       }
@@ -56,8 +57,7 @@
   .booking-list {
     &__container {
       overflow-y: scroll;
-      height: 10.5rem;
-      padding: 0.5rem;
+      height: 12.5rem;
     }
   }
 }
