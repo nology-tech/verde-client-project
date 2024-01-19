@@ -6,8 +6,14 @@
   background-color: $clr-white;
   display: flex;
   width: 90%;
-  height: 43rem;
+  height: 33rem;
   align-items: center;
+
+  .leftRight-wrapper--dark {
+    background-color: $clr-primary-dk;
+    border: 2px solid $clr-primary-dk;
+
+  }
 
 
   &__form {
@@ -59,16 +65,14 @@
         display: flex;
         margin-bottom: 0.3rem;
         width: 100%;
-        font-family: "Poppins", sans-serif;
       }
 
       input {
         margin-bottom: 0.6rem;
-        width: 19rem;
+        width: 16.5rem;
         height: 1.9rem;
         border: 0.03rem solid #e2e8f0;
         border-radius: 0.2rem;
-        font-family: "Poppins", sans-serif;
         padding-left: 1rem;
       }
     }
@@ -92,7 +96,7 @@
         display: flex;
         flex-direction: column;
         border: 1px solid #e2e8f0;
-        width: 19rem;
+        width: 16.5rem;
         height: 7rem;
         justify-content: center;
         align-items: center;
@@ -118,16 +122,14 @@
         display: flex;
         margin-bottom: 0.3rem;
         width: 100%;
-        font-family: "Poppins", sans-serif;
       }
 
       input {
         margin-bottom: 0.6rem;
-        width: 100%;
+        width: 100;
         border: 0.03rem solid #e2e8f0;
         height: 1.9rem;
         border-radius: 0.2rem;
-        font-family: "Poppins", sans-serif;
         padding-left: 1rem;
       }
 
@@ -137,44 +139,6 @@
 
     }   
   }
-
-
-
-.edit-client--dark {
-  background-color: $clr-secondary-dk;
-
-  .edit-client {
-    color: white;
-    &__form {
-      color: white;
-      &--leftside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        input {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-      }
-
-      &--rightside {
-        label {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-        input {
-          background-color: $clr-secondary-dk;
-          color: white;
-        }
-
-      }
-    }
-  }
-}
 
 .cancel-button a {
     display: none;
@@ -242,6 +206,13 @@
         font-weight: 600;
         font-size: 0.7rem;
 
+        &--delete{
+          display: unset;
+          background-color: $clr-secondary-lt;
+          border: none;
+          outline: none;
+        }
+
         &--thumbnail{
           display: flex;
           flex-direction: column;
@@ -275,12 +246,15 @@
           }
         }
 
-        &--delete{
-          display: unset;
-        }
+        // &--delete{
+        //   display: unset;
+        //   background-color: transparent;
+        //   border: none;
+        //   outline: none;
+        // }
 
         &--profile{
-          border: 2px solid $clr-secondary-lt;
+          border: none;
           width: 13.5rem;
           height: 10rem;
           display:flex;
@@ -333,7 +307,7 @@
 
       &--delete{
         border: none;
-        background-color: $clr-white;
+        background-color: transparent;
         font-weight: 600;
         color: red;
         text-decoration: underline;
@@ -392,55 +366,6 @@
 
 
   }
-
-  .edit-client--dark {
-
-    .leftRight-wrapper {
-      background-color: $clr-primary-dk;
-      border: 2px solid $clr-primary-dk;
-    }
-
-    .buttons-wrapper {
-      background-color: $clr-primary-dk;
-      border: 2px solid $clr-primary-dk;
-      padding-bottom: 2rem;
-    }
-
-    .edit-client {
-      &__form {
-        &--rightside {
-          color: white;
-          
-        }
-
-          background-color: $clr-primary-dk;
-          label {
-            background-color: $clr-primary-dk;
-            color: white;
-            border-color: #405066;
-          }
-
-          input {
-            background-color: $clr-primary-dk;
-            color: white;
-          }
-        }
-
-        &--leftside {
-          background-color: $clr-primary-dk;
-          label {
-            background-color: $clr-primary-dk;
-            color: white;
-          }
-
-          input {
-            background-color: $clr-primary-dk;
-            color: white;
-            border-color: #405066;
-          }
-         
-        }
-      }
     }
   }
   
@@ -452,7 +377,67 @@
   height: 5.2rem;
   width: 5.2rem;
 }
-}
 
+}
+.edit-client--dark {
+
+  background-color: $clr-primary-dk;
+
+ 
+  h1 {
+    color:$clr-white;
+  }
+
+  select{
+    background-color: $clr-primary-dk;
+    color: $clr-white;
+  }
+
+  .leftRight-wrapper--dark {
+    background-color: $clr-primary-dk;
+    border: 2px solid $clr-primary-dk;
+  }
+
+  .buttons-wrapper {
+    background-color: $clr-primary-dk;
+    border: 2px solid $clr-primary-dk;
+    padding-bottom: 2rem;
+  }
+
+  .edit-client {
+    &__form {
+      &--rightside {
+        color: white;
+        
+      }
+
+        background-color: $clr-primary-dk;
+        label {
+          background-color: $clr-primary-dk;
+          color: white;
+          border-color: #405066;
+        }
+
+        input {
+          background-color: $clr-primary-dk;
+          color: white;
+        }
+      }
+
+      &--leftside {
+        background-color: $clr-primary-dk;
+        label {
+          background-color: $clr-primary-dk;
+          color: white;
+        }
+
+        input {
+          background-color: $clr-primary-dk;
+          color: white;
+          border-color: #405066;
+        }
+       
+      }
+    }
 
 }

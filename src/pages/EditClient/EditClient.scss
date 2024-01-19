@@ -1,12 +1,15 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography" as *;
 
-
 .edit-page{
     background-color:$clr-secondary-lt;
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    &--dark{
+        background-color: $clr-secondary-dk;
+    }
 
     &__card{
         display: flex;
@@ -33,3 +36,4 @@
         }
     }
 }
+

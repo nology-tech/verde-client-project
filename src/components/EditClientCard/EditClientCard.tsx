@@ -76,7 +76,7 @@ const EditClientCard = ({ variant }: EditClientProps) => {
     <div className={`edit-client edit-client--${variant}`}>
       {!modal  && (
       <form className="edit-client__form">
-        <div className="leftRight-wrapper">
+        <div className={`leftRight-wrapper leftRight-wrapper--${variant}`}>
         <div className={`edit-client__form--image`}>
               <img
                 src={profilePicture}
@@ -85,7 +85,7 @@ const EditClientCard = ({ variant }: EditClientProps) => {
               />
               <h1 className="edit-client__form--image__title">{`${firstName} ${lastName}` }</h1>
             </div>
-          <div className="edit-client__form--leftside">
+          <div className={`edit-client__form--leftside edit-client__form--lefside--${variant}`}>
             <label>First Name</label>
             <input
               type="text"
