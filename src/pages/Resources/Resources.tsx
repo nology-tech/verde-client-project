@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Resources.scss";
 import ResourceCardList from "../../components/ResourceCardList/ResourceCardList";
 import Layout from "../../components/Layout/Layout";
@@ -10,12 +11,38 @@ import {
 import Header from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import QueryBar from "../../components/QueryBar/QueryBar";
+import { ResourceCardProps } from "../../types/ResourceCardTypes";
 
 type ResourcesProps = {
   variant: "light" | "dark";
 };
 
 const Resources = ({ variant }: ResourcesProps) => {
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const sortResources = (
+    resources: ResourceCardProps[],
+    order: "asc" | "desc"
+  ) => {
+    return resources.sort((a, b) => {
+      const comparison = a.resourceName.localeCompare(b.resourceName);
+      return order === "asc" ? comparison : -comparison;
+    });
+  };
+
+  const filteredResources1 = ResourceCardList1.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredResources2 = ResourceCardList2.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredResourcesAdmin = resourceCardListAdmin.filter((resource) =>
+    resource.resourceName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <Layout>
       <NavBar variant={variant} />
@@ -25,7 +52,6 @@ const Resources = ({ variant }: ResourcesProps) => {
           title="Resources"
           variant={variant}
           buttonOption={true}
-          //onClick={handleButtonClick}
           buttonLabel="+ Create"
           buttonVariant="yellow"
           dropdownOption={false}
@@ -34,23 +60,13 @@ const Resources = ({ variant }: ResourcesProps) => {
         <div className="resources__container">
           <QueryBar
             label={"Health Products"}
-            searchTerm={""}
+            searchTerm={searchTerm}
             hasFilter={true}
-            handleInput={function (): void {
-              console.log("");
-            }}
-            columnViewClick={function (): void {
-              console.log("");
-            }}
-            gridViewClick={function (): void {
-              console.log("");
-            }}
-            sortClick={function (): void {
-              console.log("");
-            }}
-            filterClick={function (): void {
-              console.log("");
-            }}
+            handleInput={(e) => setSearchTerm(e.target.value)}
+            columnViewClick={() => console.log("Column View")}
+            gridViewClick={() => console.log("Grid View")}
+            sortClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+            filterClick={() => console.log("Filter Click")}
             variant={variant}
           />
           <div className="resources__titles">
@@ -66,13 +82,19 @@ const Resources = ({ variant }: ResourcesProps) => {
             <h3 className={`resources__staff resources__staff--${variant}`}>
               {ResourceCardList1[0].staffName}
             </h3>
-            <ResourceCardList resources={ResourceCardList1} variant={variant} />
+            <ResourceCardList
+              resources={sortResources(filteredResources1, sortOrder)}
+              variant={variant}
+            />
           </section>
           <section className="resources__items">
             <h3 className={`resources__staff resources__staff--${variant}`}>
               {ResourceCardList2[0].staffName}
             </h3>
-            <ResourceCardList resources={ResourceCardList2} variant={variant} />
+            <ResourceCardList
+              resources={sortResources(filteredResources2, sortOrder)}
+              variant={variant}
+            />
           </section>
 
           <section className="resources__items">
@@ -80,7 +102,7 @@ const Resources = ({ variant }: ResourcesProps) => {
               Admin
             </h3>
             <ResourceCardList
-              resources={resourceCardListAdmin}
+              resources={sortResources(filteredResourcesAdmin, sortOrder)}
               variant={variant}
             />
           </section>
