@@ -1,4 +1,4 @@
-import "./editClientCard.scss";
+import "./EditClientCard.scss";
 import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import { ClientProfileList } from "../../data/ClientProfileList";
