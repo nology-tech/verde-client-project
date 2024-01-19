@@ -17,14 +17,22 @@ const ItemRequestCard = ({
   placeholder,
   variant,
   resource,
-  isRequestCard
+  isRequestCard,
 }: ItemRequestCardProps) => {
   const [editMode, setEditMode] = useState<boolean>(isRequestCard);
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [autoRenew, setAutoRenew] = useState<boolean>(resource.autoPurchase === "YES");
-  const [resourceName, setResourceName] = useState<string>(isRequestCard ? "" : resource.resourceName);
-  const [staffMember, setStaffMember] = useState<string>(isRequestCard ? "" : resource.staffName);
-  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(isRequestCard ? "" : resource.autoPurchaseLevel);
+  const [autoRenew, setAutoRenew] = useState<boolean>(
+    resource.autoPurchase === "YES"
+  );
+  const [resourceName, setResourceName] = useState<string>(
+    isRequestCard ? "" : resource.resourceName
+  );
+  const [staffMember, setStaffMember] = useState<string>(
+    isRequestCard ? "" : resource.staffName
+  );
+  const [autoPurchaseLevel, setAutoPurchaseLevel] = useState<string>(
+    isRequestCard ? "" : resource.autoPurchaseLevel
+  );
 
   const handleResourceNameInput = (event: ChangeEvent<HTMLInputElement>) => {
     setResourceName(event.currentTarget.value);
@@ -64,10 +72,12 @@ const ItemRequestCard = ({
     editMode ? "edit-mode" : ""
   } radio-container--${variant}`;
 
-  const modalButton : React.ReactNode[] = [<Button label="Home" variant="yellow" path="/home"/>];
+  const modalButton: React.ReactNode[] = [
+    <Button label="Home" variant="yellow" path="/home" />,
+  ];
 
-  return (
-    <div className="div">
+  const pageHtml = (
+    <>
       <div className={containerName}>
         <div className="item">
           <label className={`item-container__name`}>Category Name</label>
@@ -156,6 +166,20 @@ const ItemRequestCard = ({
           size="large"
         />
       </div>
+    </>
+  );
+
+  return (
+    <div className="div">
+      {showModal ? (
+        <Modal
+          title="Request Complete"
+          variant={variant}
+          buttons={modalButton}
+        />
+      ) : (
+        pageHtml
+      )}
     </div>
   );
 };

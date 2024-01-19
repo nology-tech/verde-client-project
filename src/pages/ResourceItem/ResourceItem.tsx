@@ -8,10 +8,8 @@ import { ResourceCardList1 } from "../../data/ResourceCardLists"
 import ItemRequestCard from "../../components/ItemRequestCard/ItemRequestCard"
 
 type ResourceItemPageProps = {
-    variant: "light" | "dark"
+    variant: "light" | "dark";
 }
-
-
 
 const ResourceItemPage = ({variant}: ResourceItemPageProps) => {
 
@@ -24,7 +22,7 @@ const filteredResources = ResourceCardList1.filter(resource =>
         <NavBar variant={variant}/>
         <main className="resource-page">
             <Header title={"Edit Resource"} variant={variant} buttonOption={false} buttonLabel={""} buttonVariant={"yellow"} dropdownOption={false}/>
-            <ItemRequestCard isRequestCard={true} id={0} variant={variant} resource={filteredResources[0]}/>
+            <ItemRequestCard isRequestCard={false} id={0} variant={variant} resource={filteredResources[0]}/>
         </main>
         <Footer variant={variant}/>
 
