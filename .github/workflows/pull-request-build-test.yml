@@ -1,3 +1,7 @@
+env:
+  VITE_TEST_PW: ${{secrets.TEST_PW}}
+  VITE_TEST_EM: ${{secrets.TEST_EM}}
+
 name: Pull Requests build and test
 on: [pull_request]
 jobs:
