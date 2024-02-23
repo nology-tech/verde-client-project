@@ -8,6 +8,8 @@ name: Deploy to Firebase Hosting on merge
       - main
 env:
   VITE_FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+  VITE_TEST_PW: ${{secrets.TEST_PW}}
+  VITE_TEST_EM: ${{secrets.TEST_EM}}
   
 jobs:
   build_and_deploy:

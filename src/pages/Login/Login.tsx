@@ -7,12 +7,10 @@ import { ChangeEvent, useState } from "react";
 import { FirebaseError } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  
 
   /**
    * Handles the change event when the user inputs their email.
@@ -42,9 +40,9 @@ const Login = () => {
    * @async
    * @returns {Promise<void>}
    */
-  const handleLogin = async () => {
+  const handleLogin = async (userEmail: string, userPassword: string) => {
     try {
-      await loginEmailPassword(email, password);
+      await loginEmailPassword(userEmail, userPassword);
       navigate("/home");
     } catch (error) {
       if (
@@ -103,7 +101,19 @@ const Login = () => {
                 label={"Login"}
                 variant={"yellow"}
                 size={"extra-large"}
-                onClick={handleLogin}
+                onClick={handleLogin.bind(this, email, password)}
+              />
+            </div>
+            <div className="login__form--button">
+              <Button
+                label={"Preview Application"}
+                variant={"yellow"}
+                size={"extra-large"}
+                onClick={handleLogin.bind(
+                  this,
+                  import.meta.env.VITE_TEST_EM,
+                  import.meta.env.VITE_TEST_PW
+                )}
               />
             </div>
           </form>
